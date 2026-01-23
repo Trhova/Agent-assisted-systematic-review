@@ -133,25 +133,29 @@ def main() -> None:
 
         root_xml = ET.fromstring(xml)
         for article in root_xml.findall(".//PubmedArticle"):
-            pmid = "".join(article.findtext(".//PMID") or "").strip()
-            title = "".join(article.findtext(".//ArticleTitle") or "").strip()
+            pmid = "".join(article.findtext("./MedlineCitation/PMID") or "").strip()
+            title = "".join(article.findtext("./MedlineCitation/Article/ArticleTitle") or "").strip()
             abstract_parts = []
-            for a in article.findall(".//Abstract/AbstractText"):
+            for a in article.findall("./MedlineCitation/Article/Abstract/AbstractText"):
                 label = (a.attrib.get("Label") or "").strip()
                 t = "".join(a.itertext()).strip()
                 abstract_parts.append(f"{label}: {t}".strip(": ").strip() if label else t)
             abstract = "\n".join([p for p in abstract_parts if p]).strip()
 
-            journal = "".join(article.findtext(".//Journal/Title") or "").strip()
-            year = "".join(article.findtext(".//PubDate/Year") or "").strip()
+            journal = "".join(article.findtext("./MedlineCitation/Article/Journal/Title") or "").strip()
+            year = "".join(
+                article.findtext("./MedlineCitation/Article/Journal/JournalIssue/PubDate/Year") or ""
+            ).strip()
             if not year:
-                medline = "".join(article.findtext(".//MedlineDate") or "").strip()
+                medline = "".join(
+                    article.findtext("./MedlineCitation/Article/Journal/JournalIssue/PubDate/MedlineDate") or ""
+                ).strip()
                 m = re.search(r"(19|20)\\d{2}", medline)
                 year = m.group(0) if m else ""
 
             doi = ""
             pmcid = ""
-            for aid in article.findall(".//ArticleIdList/ArticleId"):
+            for aid in article.findall("./PubmedData/ArticleIdList/ArticleId"):
                 t = (aid.attrib.get("IdType") or "").lower()
                 if t == "doi":
                     doi = "".join(aid.itertext()).strip()
@@ -159,7 +163,7 @@ def main() -> None:
                     pmcid = "".join(aid.itertext()).strip()
 
             publication_types = []
-            for pt in article.findall(".//PublicationTypeList/PublicationType"):
+            for pt in article.findall("./MedlineCitation/Article/PublicationTypeList/PublicationType"):
                 v = "".join(pt.itertext()).strip()
                 if v:
                     publication_types.append(v)
