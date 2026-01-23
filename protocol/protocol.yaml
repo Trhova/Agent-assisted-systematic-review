@@ -1,0 +1,62 @@
+timeframe:
+  start_year: 2014
+  end_year: 2024
+
+indications:
+  - t2d_prediabetes
+  - obesity_overweight
+  - masld_nafld
+  - nash
+
+included_interventions:
+  - probiotics
+  - synbiotics_live
+  - defined_consortia
+  - engineered_live_microbes
+
+exclusions:
+  - fmt
+  - postbiotics_or_nonliving
+  - nonliving_small_molecules
+  - diet_only
+
+durability_thresholds_weeks:
+  glycemic: 12
+  weight: 12
+  liver_fat_imaging: 12
+
+multiplicity_rule:
+  primary_fails_then_tier3_unless_multiplicity_control: true
+
+endpoint_taxonomy:
+  clinical_non_surrogate:
+    - incident_t2d
+    - medication_change
+    - clinical_events
+  validated_surrogate:
+    - hba1c
+    - fasting_glucose
+    - homa_ir
+    - weight
+    - bmi
+    - waist_circumference
+    - mri_pdff
+    - mrs_liver_fat
+  weak_surrogate:
+    - alt_ast
+    - lipids
+    - inflammatory_markers
+  exploratory:
+    - microbiome_only
+    - scfa_bile_acids
+
+tier_rules:
+  acceptable_rob2:
+    - low
+    - some_concerns
+  tiers:
+    tier_1: "Tier 1"
+    tier_2a: "Tier 2a"
+    tier_2b: "Tier 2b"
+    tier_3: "Tier 3"
+

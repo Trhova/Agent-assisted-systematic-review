@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Full-text extraction output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Intervention_Class",
+    "Intervention_Name",
+    "Strains_or_Consortium",
+    "Dose",
+    "Duration_weeks",
+    "Population_notes",
+    "Primary_endpoint_verbatim",
+    "Primary_endpoint_category",
+    "Outcome_direction",
+    "Effect_size",
+    "Durability_timepoint"
+  ],
+  "properties": {
+    "Intervention_Class": { "type": "string" },
+    "Intervention_Name": { "type": "string" },
+    "Strains_or_Consortium": { "type": "string" },
+    "Dose": { "type": "string" },
+    "Duration_weeks": { "type": ["number", "string"] },
+    "Population_notes": { "type": "string" },
+    "Primary_endpoint_verbatim": { "type": "string" },
+    "Primary_endpoint_category": { "type": "string" },
+    "Outcome_direction": { "type": "string", "enum": ["improved", "no_effect", "worsened", "mixed", "unknown"] },
+    "Effect_size": { "type": "string" },
+    "Durability_timepoint": { "type": "string" },
+    "TierSuggestedFromFulltext": { "type": "string" }
+  }
+}
+

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Abstract screening output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Include_YN",
+    "Reason_Exclude",
+    "IndicationBucketHint",
+    "EndpointsTagged",
+    "InterventionAliveHint",
+    "RandomizedHint",
+    "PlaceboHint",
+    "DoubleBlindHint",
+    "TrialRegistryIDs",
+    "TierSuggestedFromAbstract",
+    "confidence"
+  ],
+  "properties": {
+    "Include_YN": { "type": "string", "enum": ["Y", "N", ""] },
+    "Reason_Exclude": { "type": "string" },
+    "IndicationBucketHint": { "type": "string" },
+    "EndpointsTagged": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "TierSuggestedFromAbstract": { "type": "string" },
+    "InterventionAliveHint": { "type": "string", "enum": ["true", "false", "unknown"] },
+    "RandomizedHint": { "type": "string", "enum": ["true", "false", "unknown"] },
+    "PlaceboHint": { "type": "string", "enum": ["true", "false", "unknown"] },
+    "DoubleBlindHint": { "type": "string", "enum": ["true", "false", "unknown"] },
+    "TrialRegistryIDs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "Intervention_Class": { "type": "string" },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["include_decision", "overall"],
+      "properties": {
+        "include_decision": { "type": "number", "minimum": 0, "maximum": 1 },
+        "overall": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}
+

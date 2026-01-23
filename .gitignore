@@ -1,0 +1,32 @@
+.env
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Data products (keep folder structure via .gitkeep)
+data/raw/pubmed_search.json
+data/raw/pubmed_records.jsonl
+data/raw/pdfs/*.pdf
+data/intermediate/**
+data/outputs/**
+!data/raw/.gitkeep
+!data/raw/pdfs/.gitkeep
+!data/intermediate/.gitkeep
+!data/intermediate/fulltext_text/.gitkeep
+!data/intermediate/llm/.gitkeep
+!data/outputs/.gitkeep
+!data/outputs/figures/.gitkeep
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/

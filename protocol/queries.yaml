@@ -1,0 +1,8 @@
+queries:
+  - name: "live_microbiome_metabolic"
+    # Broad query; downstream steps enforce RCT/placebo and indication constraints.
+    term: >
+      (probiotic*[tiab] OR synbiotic*[tiab] OR "live biotherapeutic"[tiab] OR "defined consortium"[tiab] OR "engineered microbe"[tiab])
+      AND (type 2 diabetes[tiab] OR prediabet*[tiab] OR obes*[tiab] OR overweight[tiab] OR NAFLD[tiab] OR MASLD[tiab] OR NASH[tiab])
+      AND (random*[tiab] OR placebo[tiab] OR trial[tiab])
+

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RoB2 output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "domain_1_randomization",
+    "domain_2_deviations",
+    "domain_3_missing_data",
+    "domain_4_measurement",
+    "domain_5_reporting",
+    "overall",
+    "notes"
+  ],
+  "properties": {
+    "domain_1_randomization": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
+    "domain_2_deviations": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
+    "domain_3_missing_data": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
+    "domain_4_measurement": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
+    "domain_5_reporting": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
+    "overall": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
+    "notes": { "type": "string" }
+  }
+}
+
