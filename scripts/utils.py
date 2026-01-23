@@ -280,13 +280,17 @@ class OpenAIConfig:
     api_key: str
     model: str
     temperature: float
+    base_url: str
+    timeout_s: float
 
 
 def openai_client() -> OpenAIConfig:
     api_key = os.environ.get("OPENAI_API_KEY", "").strip()
     model = os.environ.get("OPENAI_MODEL", "gpt-4.1-mini").strip()
     temperature = float(os.environ.get("OPENAI_TEMPERATURE", "0.2"))
-    return OpenAIConfig(api_key=api_key, model=model, temperature=temperature)
+    base_url = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com").strip() or "https://api.openai.com"
+    timeout_s = float(os.environ.get("OPENAI_TIMEOUT_S", "120"))
+    return OpenAIConfig(api_key=api_key, model=model, temperature=temperature, base_url=base_url, timeout_s=timeout_s)
 
 
 def _openai_headers(cfg: OpenAIConfig) -> dict[str, str]:
@@ -365,14 +369,14 @@ def call_llm_json(
     }
 
     def do_request_responses(payload: dict[str, Any]) -> dict[str, Any]:
-        url = "https://api.openai.com/v1/responses"
-        r = requests.post(url, headers=_openai_headers(cfg), json=payload, timeout=120)
+        url = cfg.base_url.rstrip("/") + "/v1/responses"
+        r = requests.post(url, headers=_openai_headers(cfg), json=payload, timeout=cfg.timeout_s)
         r.raise_for_status()
         return r.json()
 
     def do_request_chat(payload: dict[str, Any]) -> dict[str, Any]:
-        url = "https://api.openai.com/v1/chat/completions"
-        r = requests.post(url, headers=_openai_headers(cfg), json=payload, timeout=120)
+        url = cfg.base_url.rstrip("/") + "/v1/chat/completions"
+        r = requests.post(url, headers=_openai_headers(cfg), json=payload, timeout=cfg.timeout_s)
         r.raise_for_status()
         return r.json()
 
@@ -443,6 +447,7 @@ def call_llm_json(
             "input_identifiers": input_identifiers or {},
             "model": cfg.model,
             "temperature": cfg.temperature,
+            "base_url": cfg.base_url,
             "prompt_path": str(prompt_path),
             "schema_path": str(schema_path),
             "prompt_text": prompt,
