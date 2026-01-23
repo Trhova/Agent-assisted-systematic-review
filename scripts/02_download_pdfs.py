@@ -19,6 +19,30 @@ from scripts.utils import (
 )
 
 
+def _email_for_unpaywall() -> str:
+    import os
+
+    return os.environ.get("UNPAYWALL_EMAIL", "").strip() or os.environ.get("NCBI_EMAIL", "").strip()
+
+
+def pmid_to_pmcid(pmid: str) -> Optional[str]:
+    if not pmid:
+        return None
+    url = "https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/"
+    r = requests.get(url, params={"ids": pmid, "format": "json"}, timeout=60)
+    if r.status_code != 200:
+        return None
+    try:
+        obj = r.json()
+    except Exception:
+        return None
+    recs = obj.get("records") or []
+    if not recs:
+        return None
+    pmcid = (recs[0].get("pmcid") or "").strip()
+    return pmcid or None
+
+
 def pmc_oa_pdf_url(pmcid: str) -> Optional[str]:
     if not pmcid:
         return None
@@ -42,6 +66,56 @@ def pmc_oa_pdf_url(pmcid: str) -> Optional[str]:
                 return href
     return None
 
+
+def unpaywall_pdf_url(doi: str) -> tuple[Optional[str], dict[str, Any]]:
+    email = _email_for_unpaywall()
+    if not doi or not email:
+        return None, {"status": "skipped", "reason": "missing_doi_or_unpaywall_email"}
+    url = f"https://api.unpaywall.org/v2/{doi}"
+    r = requests.get(url, params={"email": email}, timeout=60)
+    if r.status_code != 200:
+        return None, {"status": "error", "http_status": r.status_code, "text": r.text[:500]}
+    obj = r.json()
+    best = obj.get("best_oa_location") or {}
+    pdf = (best.get("url_for_pdf") or "").strip()
+    if pdf:
+        return pdf, {"status": "ok", "url_for_pdf": pdf}
+    return None, {"status": "no_pdf_url", "best_oa_location": best}
+
+
+def try_download_doi_pdf(doi: str, dest: Path) -> tuple[bool, dict[str, Any]]:
+    if not doi:
+        return False, {"status": "skipped", "reason": "missing_doi"}
+    url = f"https://doi.org/{doi}"
+    tmp = dest.with_suffix(dest.suffix + ".part")
+    headers = {"Accept": "application/pdf"}
+    try:
+        with requests.get(url, headers=headers, stream=True, timeout=45, allow_redirects=True) as r:
+            r.raise_for_status()
+            final_url = r.url
+            first = b""
+            for chunk in r.iter_content(chunk_size=8192):
+                if chunk:
+                    first = chunk
+                    break
+            ct = (r.headers.get("Content-Type") or "").lower()
+            if not first.startswith(b"%PDF"):
+                return False, {"status": "not_pdf", "content_type": ct, "final_url": final_url}
+            ensure_dir(dest.parent)
+            with tmp.open("wb") as f:
+                f.write(first)
+                for chunk in r.iter_content(chunk_size=1024 * 128):
+                    if chunk:
+                        f.write(chunk)
+        tmp.replace(dest)
+        return True, {"status": "ok", "final_url": final_url}
+    except Exception as e:
+        try:
+            if tmp.exists():
+                tmp.unlink()
+        except Exception:
+            pass
+        return False, {"status": "error", "error": str(e), "url": url}
 
 def download_file(url: str, dest: Path) -> None:
     ensure_dir(dest.parent)
@@ -142,6 +216,9 @@ def main() -> None:
             continue
 
         status: dict[str, Any] = {"record_id": record_id, "pmid": pmid, "pdf_status": "missing", "text_status": "missing"}
+        meta = meta_by_record.get(record_id, {}) or {}
+        doi = str(meta.get("doi") or "").strip()
+        pmcid = str(meta.get("pmcid") or "").strip()
 
         # 3) Local ingest first
         if args.pdf_dir and args.pdf_dir.exists():
@@ -151,9 +228,12 @@ def main() -> None:
                 shutil.copyfile(candidates[0], pdf_path)
                 status["pdf_status"] = "local_ingest"
 
-        # 1) PMC OA
+        # 1) PMC OA (including PMID->PMCID conversion)
         if not pdf_path.exists():
-            pmcid = str(meta_by_record.get(record_id, {}).get("pmcid") or "")
+            if not pmcid:
+                pmcid = pmid_to_pmcid(pmid) or ""
+                if pmcid:
+                    status["pmcid_from_idconv"] = pmcid
             pdf_url = pmc_oa_pdf_url(pmcid) if pmcid else None
             if pdf_url:
                 try:
@@ -163,10 +243,26 @@ def main() -> None:
                     status["pdf_status"] = "pmc_oa_failed"
                     status["pdf_error"] = str(e)
 
-        # 2) DOI resolver (TODO)
+        # 2) DOI resolver (Unpaywall OA only)
         if not pdf_path.exists():
-            status["pdf_status"] = "missing"
-            status["pdf_note"] = "TODO: implement DOI-based PDF retrieval; use --pdf-dir for local ingest."
+            if doi:
+                url, meta_u = unpaywall_pdf_url(doi)
+                status["unpaywall"] = meta_u
+                if url:
+                    try:
+                        download_file(url, pdf_path)
+                        status["pdf_status"] = "unpaywall_oa_pdf"
+                    except Exception as e:
+                        status["pdf_status"] = "unpaywall_failed"
+                        status["pdf_error"] = str(e)
+                else:
+                    ok, meta_doi = try_download_doi_pdf(doi, pdf_path)
+                    status["doi_direct"] = meta_doi
+                    if ok:
+                        status["pdf_status"] = "doi_direct_pdf"
+            else:
+                status["pdf_status"] = "missing"
+                status["pdf_note"] = "No DOI available; use --pdf-dir for local ingest."
 
         if pdf_path.exists():
             pdf_found += 1
