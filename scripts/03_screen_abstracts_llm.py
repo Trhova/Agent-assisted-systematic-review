@@ -39,6 +39,9 @@ def main() -> None:
     df = df[cols]
 
     todo = df.copy()
+    # Do not send obviously non-trial records to the LLM.
+    if "ExcludedByPTFilter" in todo.columns:
+        todo = todo[todo["ExcludedByPTFilter"].fillna(False) == False]  # noqa: E712
     if only:
         todo = todo[todo["record_id"].astype(str).isin(only)]
 
@@ -138,4 +141,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

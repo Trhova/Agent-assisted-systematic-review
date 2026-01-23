@@ -69,7 +69,12 @@ def main() -> None:
 
     start = protocol["timeframe"]["start_year"]
     end = protocol["timeframe"]["end_year"]
-    date_filter = f"({start}:{end}[pdat])"
+    date_filter = f"({start}:{end}[dp])"
+    human_filter = "(humans[mh] NOT (animals[mh] NOT humans[mh]))"
+    pubmed_cfg = protocol.get("pubmed", {}) or {}
+    excluded_pt_cfg = {str(x).strip().lower() for x in (pubmed_cfg.get("exclude_publication_types") or []) if str(x).strip()}
+    preferred_trial_pt_cfg = {str(x).strip().lower() for x in (pubmed_cfg.get("require_publication_types") or []) if str(x).strip()}
+    rct_signal_terms = [str(x).strip().lower() for x in (pubmed_cfg.get("rct_signal_terms") or []) if str(x).strip()]
 
     raw_search_path = Path("data/raw/pubmed_search.json")
     raw_records_path = Path("data/raw/pubmed_records.jsonl")
@@ -78,7 +83,9 @@ def main() -> None:
 
     if args.dry_run:
         for q in queries:
-            term = f"({q['term']}) AND {date_filter} AND humans[mesh]"
+            if q.get("enabled", True) is False:
+                continue
+            term = f"({q['term']}) AND {date_filter} AND {human_filter}"
             logger.info("Dry run query: %s", q.get("name", "query"))
             logger.info("  term=%s", term)
         logger.info("Dry run: would search + efetch PubMed (retmax=%d, limit=%d).", args.retmax, args.limit)
@@ -94,10 +101,12 @@ def main() -> None:
     all_pmids: list[str] = []
     searches: list[dict[str, Any]] = []
     for q in queries:
-        term = f"({q['term']}) AND {date_filter} AND humans[mesh]"
+        if q.get("enabled", True) is False:
+            continue
+        term = f"({q['term']}) AND {date_filter} AND {human_filter}"
         logger.info("PubMed esearch: %s", q.get("name", "query"))
         resp = esearch(term, retmax=args.retmax)
-        searches.append({"name": q.get("name", ""), "term": term, "response": resp})
+        searches.append({"name": q.get("name", ""), "kind": q.get("kind", ""), "enabled": True, "term": term, "response": resp})
         ids = resp.get("esearchresult", {}).get("idlist", []) or []
         all_pmids.extend([str(i) for i in ids])
 
@@ -155,6 +164,24 @@ def main() -> None:
                 if v:
                     publication_types.append(v)
 
+            pt_norm = {p.strip().lower() for p in publication_types if p.strip()}
+            excluded_pt = excluded_pt_cfg
+            preferred_trial_pt = preferred_trial_pt_cfg
+            text = f"{title}\n\n{abstract}".lower()
+            has_trial_language = any(w in text for w in (rct_signal_terms or ["randomized", "placebo", "trial"]))
+
+            excluded_by_filter = False
+            exclusion_reason = ""
+            if pt_norm & excluded_pt:
+                excluded_by_filter = True
+                exclusion_reason = "Excluded by PublicationTypeList: " + "; ".join(sorted(pt_norm & excluded_pt))
+            elif pt_norm & preferred_trial_pt:
+                excluded_by_filter = False
+            else:
+                if not has_trial_language:
+                    excluded_by_filter = True
+                    exclusion_reason = "Not clearly a primary clinical trial (PT missing/ambiguous + no trial language)"
+
             record_id = record_id_from(pmid, title)
             rec = {
                 "pmid": pmid,
@@ -165,6 +192,8 @@ def main() -> None:
                 "doi": doi,
                 "pmcid": pmcid,
                 "publication_types": publication_types,
+                "excluded_by_pt_filter": excluded_by_filter,
+                "exclusion_reason_auto": exclusion_reason,
                 "record_id": record_id,
             }
             parsed_records.append(rec)

@@ -91,6 +91,13 @@ def main() -> None:
 
     df = load_table(args.table)
     included = df[df["Include_YN"].astype(str).str.upper().str.strip() == "Y"].copy()
+    if included.empty:
+        # Early-stage convenience: fetch PDFs for likely trials even before screening.
+        candidates = df.copy()
+        if "ExcludedByPTFilter" in candidates.columns:
+            candidates = candidates[candidates["ExcludedByPTFilter"].fillna(False) == False]  # noqa: E712
+        candidates = candidates[candidates["Include_YN"].astype(str).str.upper().str.strip() != "N"]
+        included = candidates
     if only:
         included = included[included["record_id"].astype(str).isin(only)]
     if args.limit and args.limit > 0:
@@ -179,4 +186,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

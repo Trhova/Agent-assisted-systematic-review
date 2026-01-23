@@ -22,6 +22,9 @@ Columns:
 - `DoubleBlindHint` (auto/llm): `true/false/unknown`.
 - `TrialRegistryIDs` (auto/llm): comma-separated IDs (e.g., NCT01234567).
 - `NeedsRegistryCheck` (auto/llm): boolean.
+- `PublicationTypes` (auto): semicolon-separated PubMed publication types (from `PublicationTypeList`).
+- `ExcludedByPTFilter` (auto): boolean; true if removed from downstream screening due to publication type / heuristic.
+- `ExclusionReasonAuto` (auto): populated explanation for `ExcludedByPTFilter` (PT-based or heuristic).
 - `Include_YN` (manual/llm): `Y`, `N`, or empty.
 - `Reason_Exclude` (manual/llm): short canonical reason.
 - `Intervention_Class` (llm/manual)
@@ -41,4 +44,3 @@ Columns:
 - `Multiplicity_flags` (derived): semicolon-separated flags.
 - `Comments` (manual)
 - `record_id` (derived): deterministic sha256(PMID + normalized title).
-

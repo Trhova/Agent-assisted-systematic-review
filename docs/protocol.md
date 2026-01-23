@@ -20,3 +20,10 @@ Exclusions:
 
 See `protocol/protocol.yaml` for machine-readable rules and `docs/decision_rules.md` for tier logic.
 
+## Search strategy (2-pass)
+
+This repo uses a 2-pass PubMed strategy defined in `protocol/queries.yaml`:
+- **Precision** query: uses PubMed publication-type trial filters (`[pt]`) plus exclusions for reviews/editorials/protocols.
+- **Recall** query (optional): omits trial `[pt]` filters but requires trial language in title/abstract to catch mis-tagged trials.
+
+After fetching, we apply strict cleanup using PubMed `PublicationTypeList` plus a small heuristic on trial language; see `PublicationTypes`, `ExcludedByPTFilter`, and `ExclusionReasonAuto` columns in the master table for auditability.

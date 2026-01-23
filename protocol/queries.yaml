@@ -1,6 +1,7 @@
 queries:
-  - name: "live_microbiome_metabolic"
-    # Prefer trial-only retrieval; downstream steps still enforce additional constraints.
+  - name: "precision_trials"
+    enabled: true
+    kind: "precision"
     term: >
       (
         (Probiotics[Mesh] OR probiotic*[tiab] OR Synbiotics[Mesh] OR synbiotic*[tiab] OR "live biotherapeutic"[tiab] OR "defined consortium"[tiab] OR "engineered microbe"[tiab])
@@ -9,8 +10,22 @@ queries:
          OR type 2 diabetes[tiab] OR t2d[tiab] OR prediabet*[tiab] OR obes*[tiab] OR overweight[tiab] OR nafld[tiab] OR masld[tiab] OR nash[tiab])
         AND
         (randomized controlled trial[pt] OR controlled clinical trial[pt] OR clinical trial[pt])
-        AND
-        (placebo[tiab] OR blind*[tiab])
       )
-      NOT (review[pt] OR systematic review[pt] OR meta-analysis[pt] OR editorial[pt] OR comment[pt] OR guideline[pt] OR practice guideline[pt])
-      NOT (protocol[ti] OR "study protocol"[ti] OR "trial protocol"[ti])
+      NOT (Review[pt] OR Systematic Review[pt] OR Meta-Analysis[pt] OR Editorial[pt] OR Comment[pt] OR Guideline[pt] OR Practice Guideline[pt] OR Letter[pt] OR News[pt])
+      NOT (trial protocol[ti] OR study protocol[ti] OR protocol[ti])
+      AND (placebo[tiab] OR double-blind[tiab] OR blind*[tiab] OR random*[tiab] OR trial[tiab])
+
+  - name: "recall_mistagged_trials"
+    enabled: false
+    kind: "recall"
+    term: >
+      (
+        (Probiotics[Mesh] OR probiotic*[tiab] OR Synbiotics[Mesh] OR synbiotic*[tiab] OR "live biotherapeutic"[tiab] OR "defined consortium"[tiab] OR "engineered microbe"[tiab])
+        AND
+        (Diabetes Mellitus, Type 2[Mesh] OR Prediabetic State[Mesh] OR Obesity[Mesh] OR Overweight[Mesh] OR Fatty Liver[Mesh] OR Non-alcoholic Fatty Liver Disease[Mesh] OR Steatohepatitis, Nonalcoholic[Mesh]
+         OR type 2 diabetes[tiab] OR t2d[tiab] OR prediabet*[tiab] OR obes*[tiab] OR overweight[tiab] OR nafld[tiab] OR masld[tiab] OR nash[tiab])
+        AND
+        (random*[tiab] OR placebo[tiab] OR double-blind[tiab] OR blind*[tiab] OR trial[tiab] OR assigned[tiab])
+      )
+      NOT (Review[pt] OR Systematic Review[pt] OR Meta-Analysis[pt] OR Editorial[pt] OR Comment[pt] OR Guideline[pt] OR Practice Guideline[pt] OR Letter[pt] OR News[pt])
+      NOT (trial protocol[ti] OR study protocol[ti] OR protocol[ti])

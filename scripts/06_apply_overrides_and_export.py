@@ -137,6 +137,15 @@ def apply_overrides(df: pd.DataFrame, overrides_path: Path, logger) -> int:
 def prisma_counts(df: pd.DataFrame) -> dict[str, Any]:
     identified = len(df)
     deduplicated = len(df)
+    excluded_by_pt_filter = 0
+    excluded_by_heuristic_filter = 0
+    if "ExcludedByPTFilter" in df.columns:
+        excluded_mask = df["ExcludedByPTFilter"].fillna(False) == True  # noqa: E712
+        excluded_by_pt_filter = int(excluded_mask.sum())
+        if "ExclusionReasonAuto" in df.columns:
+            heur = df["ExclusionReasonAuto"].astype(str).str.startswith("Not clearly a primary clinical trial")
+            excluded_by_heuristic_filter = int((excluded_mask & heur).sum())
+
     screened = int((df["Include_YN"].astype(str).str.strip() != "").sum())
     excluded_title_abstract = int((df["Include_YN"].astype(str).str.upper().str.strip() == "N").sum())
     included = int((df["Include_YN"].astype(str).str.upper().str.strip() == "Y").sum())
@@ -155,6 +164,8 @@ def prisma_counts(df: pd.DataFrame) -> dict[str, Any]:
     return {
         "identified": identified,
         "deduplicated": deduplicated,
+        "excluded_by_pt_filter": excluded_by_pt_filter,
+        "excluded_by_heuristic_filter": excluded_by_heuristic_filter,
         "screened": screened,
         "excluded_title_abstract": excluded_title_abstract,
         "fulltext_assessed": fulltext_assessed,
@@ -226,4 +237,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

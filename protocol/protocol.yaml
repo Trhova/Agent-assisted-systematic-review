@@ -73,3 +73,14 @@ pubmed:
     - "Comment"
     - "Guideline"
     - "Practice Guideline"
+    - "Letter"
+    - "News"
+    - "Interview"
+  rct_signal_terms:
+    - randomized
+    - randomised
+    - placebo
+    - double-blind
+    - "double blind"
+    - trial
+    - assigned
