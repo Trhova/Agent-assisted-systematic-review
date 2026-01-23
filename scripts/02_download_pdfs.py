@@ -441,8 +441,24 @@ def main() -> None:
         per_dir = step_dir / "records" / record_id
         ensure_dir(per_dir)
 
-        pdf_path = pdf_out_dir / f"{record_id}__{pmid}.pdf"
+        # Prefer PMID-first naming so filenames correspond to PubMed IDs.
+        pdf_path = pdf_out_dir / f"{pmid}__{record_id}.pdf"
+        legacy_pdf_path = pdf_out_dir / f"{record_id}__{pmid}.pdf"
         text_path = text_out_dir / f"{record_id}.json"
+
+        # Migrate legacy filename if present.
+        if legacy_pdf_path.exists() and (not pdf_path.exists() or args.overwrite):
+            try:
+                ensure_dir(pdf_path.parent)
+                legacy_pdf_path.replace(pdf_path)
+            except Exception:
+                # If cross-device rename fails, fall back to copy+unlink.
+                try:
+                    ensure_dir(pdf_path.parent)
+                    shutil.copyfile(legacy_pdf_path, pdf_path)
+                    legacy_pdf_path.unlink()
+                except Exception:
+                    pass
 
         if text_path.exists() and not args.overwrite:
             logger.info("Skip (exists): %s", record_id)
