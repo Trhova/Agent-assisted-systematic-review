@@ -149,6 +149,12 @@ def main() -> None:
                 if t == "pmc":
                     pmcid = "".join(aid.itertext()).strip()
 
+            publication_types = []
+            for pt in article.findall(".//PublicationTypeList/PublicationType"):
+                v = "".join(pt.itertext()).strip()
+                if v:
+                    publication_types.append(v)
+
             record_id = record_id_from(pmid, title)
             rec = {
                 "pmid": pmid,
@@ -158,6 +164,7 @@ def main() -> None:
                 "abstract": abstract,
                 "doi": doi,
                 "pmcid": pmcid,
+                "publication_types": publication_types,
                 "record_id": record_id,
             }
             parsed_records.append(rec)
@@ -182,4 +189,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

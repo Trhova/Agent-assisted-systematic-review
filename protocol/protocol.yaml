@@ -60,3 +60,16 @@ tier_rules:
     tier_2b: "Tier 2b"
     tier_3: "Tier 3"
 
+pubmed:
+  require_publication_types:
+    - "Randomized Controlled Trial"
+    - "Controlled Clinical Trial"
+    - "Clinical Trial"
+  exclude_publication_types:
+    - "Review"
+    - "Systematic Review"
+    - "Meta-Analysis"
+    - "Editorial"
+    - "Comment"
+    - "Guideline"
+    - "Practice Guideline"

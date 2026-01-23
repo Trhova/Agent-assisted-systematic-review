@@ -13,6 +13,7 @@ from scripts.utils import (
     iter_jsonl,
     make_run_manifest,
     parse_only_list,
+    read_yaml,
     setup_logging,
     stable_screening_columns,
     write_json,
@@ -87,6 +88,7 @@ def main() -> None:
     logger = setup_logging(args.verbose)
     root = Path(".").resolve()
     only = parse_only_list(args.only)
+    protocol = read_yaml(args.protocol)
 
     raw_records_path = Path("data/raw/pubmed_records.jsonl")
     out_parquet = Path("data/outputs/screening_table.parquet")
@@ -109,6 +111,23 @@ def main() -> None:
 
     cols = stable_screening_columns()
     records = list(iter_jsonl(raw_records_path))
+
+    # Protocol-driven filter to reduce systematic reviews/meta-analyses, etc.
+    pubmed_cfg = (protocol or {}).get("pubmed", {}) or {}
+    req_types = {str(x).strip().lower() for x in (pubmed_cfg.get("require_publication_types") or []) if str(x).strip()}
+    excl_types = {str(x).strip().lower() for x in (pubmed_cfg.get("exclude_publication_types") or []) if str(x).strip()}
+    if req_types or excl_types:
+        filtered = []
+        for r in records:
+            pts = [str(x).strip().lower() for x in (r.get("publication_types") or []) if str(x).strip()]
+            pt_set = set(pts)
+            if excl_types and (pt_set & excl_types):
+                continue
+            if req_types and not (pt_set & req_types):
+                continue
+            filtered.append(r)
+        logger.info("PubMed publication-type filter: %d -> %d records", len(records), len(filtered))
+        records = filtered
 
     if only:
         records = [r for r in records if str(r.get("record_id")) in only]
@@ -172,4 +191,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
