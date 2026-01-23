@@ -18,6 +18,35 @@ from scripts.utils import (
 )
 
 
+def _merge_registry_ids(existing: str, new_ids: list[str]) -> str:
+    parts: list[str] = []
+    for chunk in (existing or "").replace(",", ";").split(";"):
+        c = chunk.strip()
+        if c:
+            parts.append(c)
+    for x in new_ids or []:
+        s = str(x).strip()
+        if s:
+            parts.append(s)
+    seen: set[str] = set()
+    out: list[str] = []
+    for p in parts:
+        if p in seen:
+            continue
+        seen.add(p)
+        out.append(p)
+    return ";".join(out)
+
+
+def _flag_to_hint(v: str) -> str:
+    v = (v or "").strip().upper()
+    if v == "Y":
+        return "true"
+    if v == "N":
+        return "false"
+    return "unknown"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="LLM abstract screening with structured outputs.")
     add_common_args(parser, table_required=True)
@@ -35,7 +64,7 @@ def main() -> None:
     cols = stable_screening_columns()
     for c in cols:
         if c not in df.columns:
-            df[c] = ""
+            df[c] = "" if c not in {"NeedsFullTextReview"} else False
     df = df[cols]
 
     todo = df.copy()
@@ -96,21 +125,45 @@ def main() -> None:
                 input_identifiers={"pmid": pmid, "record_id": record_id},
             )
 
-            df.loc[df["record_id"] == record_id, "Include_YN"] = str(parsed.get("Include_YN", "")).strip()
-            df.loc[df["record_id"] == record_id, "Reason_Exclude"] = str(parsed.get("Reason_Exclude", "")).strip()
-            df.loc[df["record_id"] == record_id, "IndicationBucketHint"] = str(parsed.get("IndicationBucketHint", "")).strip()
-            df.loc[df["record_id"] == record_id, "EndpointsTagged"] = ";".join(parsed.get("EndpointsTagged", []) or [])
-            df.loc[df["record_id"] == record_id, "TierSuggestedFromAbstract"] = str(parsed.get("TierSuggestedFromAbstract", "")).strip()
+            include_yn = str(parsed.get("include_yn", "")).strip().upper()
+            if include_yn not in {"Y", "N", "U"}:
+                include_yn = "U"
+            df.loc[df["record_id"] == record_id, "Include_YN"] = include_yn
 
-            df.loc[df["record_id"] == record_id, "InterventionAliveHint"] = coerce_bool_hint(parsed.get("InterventionAliveHint"))
-            df.loc[df["record_id"] == record_id, "RandomizedHint"] = coerce_bool_hint(parsed.get("RandomizedHint"))
-            df.loc[df["record_id"] == record_id, "PlaceboHint"] = coerce_bool_hint(parsed.get("PlaceboHint"))
-            df.loc[df["record_id"] == record_id, "DoubleBlindHint"] = coerce_bool_hint(parsed.get("DoubleBlindHint"))
+            reason_cat = str(parsed.get("exclusion_reason_category", "") or "").strip()
+            reason_free = str(parsed.get("exclusion_reason_free_text", "") or "").strip()
+            df.loc[df["record_id"] == record_id, "Reason_Exclude_Category"] = reason_cat
+            if include_yn == "N":
+                joined_reason = reason_cat
+                if reason_free:
+                    joined_reason = f"{reason_cat}: {reason_free}".strip(": ").strip()
+                df.loc[df["record_id"] == record_id, "Reason_Exclude"] = joined_reason
+            else:
+                df.loc[df["record_id"] == record_id, "Reason_Exclude"] = ""
 
-            trial_ids = parsed.get("TrialRegistryIDs", []) or []
-            df.loc[df["record_id"] == record_id, "TrialRegistryIDs"] = ",".join([str(x).strip() for x in trial_ids if str(x).strip()])
-            needs_registry = True if not any(re.match(r"^NCT\\d{8}$", str(x).strip()) for x in trial_ids) else False
-            df.loc[df["record_id"] == record_id, "NeedsRegistryCheck"] = needs_registry
+            df.loc[df["record_id"] == record_id, "NeedsFullTextReview"] = bool(parsed.get("needs_fulltext_review", False))
+
+            # Optional hints (keep existing heuristics if not provided)
+            ib = str(parsed.get("indication_bucket_hint", "") or "").strip()
+            if ib:
+                df.loc[df["record_id"] == record_id, "IndicationBucketHint"] = ib
+            ep = parsed.get("endpoints_tagged", None)
+            if isinstance(ep, list) and ep:
+                df.loc[df["record_id"] == record_id, "EndpointsTagged"] = ";".join([str(x).strip() for x in ep if str(x).strip()])
+            ts = str(parsed.get("tier_suggested_from_abstract", "") or "").strip()
+            if ts:
+                df.loc[df["record_id"] == record_id, "TierSuggestedFromAbstract"] = ts
+
+            flags = parsed.get("flags") or {}
+            df.loc[df["record_id"] == record_id, "RandomizedHint"] = coerce_bool_hint(_flag_to_hint(str(flags.get("randomized", "U"))))
+            df.loc[df["record_id"] == record_id, "PlaceboHint"] = coerce_bool_hint(_flag_to_hint(str(flags.get("placebo", "U"))))
+            df.loc[df["record_id"] == record_id, "DoubleBlindHint"] = coerce_bool_hint(_flag_to_hint(str(flags.get("double_blind", "U"))))
+            df.loc[df["record_id"] == record_id, "InterventionAliveHint"] = coerce_bool_hint(_flag_to_hint(str(flags.get("live_intervention", "U"))))
+
+            trial_ids = parsed.get("trial_registry_ids", []) or []
+            merged = _merge_registry_ids(str(row.get("TrialRegistryIDs", "") or ""), [str(x).strip() for x in trial_ids])
+            df.loc[df["record_id"] == record_id, "TrialRegistryIDs"] = merged
+            df.loc[df["record_id"] == record_id, "NeedsRegistryCheck"] = merged.strip() == ""
 
             processed += 1
         except Exception as e:

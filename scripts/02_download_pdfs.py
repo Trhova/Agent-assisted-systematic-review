@@ -401,7 +401,7 @@ def main() -> None:
         return
 
     df = load_table(args.table)
-    included = df[df["Include_YN"].astype(str).str.upper().str.strip() == "Y"].copy()
+    included = df[df["Include_YN"].astype(str).str.upper().str.strip().isin(["Y", "U"])].copy()
     if included.empty:
         # Early-stage convenience: fetch PDFs for likely trials even before screening.
         candidates = df.copy()

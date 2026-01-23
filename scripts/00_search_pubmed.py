@@ -56,6 +56,44 @@ def efetch(pmids: list[str]) -> str:
     return r.text
 
 
+_REGISTRY_PATTERNS: list[tuple[str, str]] = [
+    ("NCT", r"\\bNCT\\d{8}\\b"),
+    ("ISRCTN", r"\\bISRCTN\\d{8}\\b"),
+    ("EudraCT", r"\\bEudraCT\\s*\\d{4}-\\d{6}-\\d{2}\\b"),
+    ("ChiCTR", r"\\bChiCTR[- ]?[A-Za-z0-9]{6,}\\b"),
+    ("DRKS", r"\\bDRKS\\d{8}\\b"),
+    ("ACTRN", r"\\bACTRN\\d{14}\\b"),
+    ("UMIN", r"\\bUMIN\\d{9}\\b"),
+]
+
+
+def extract_trial_registry_ids(text: str) -> list[str]:
+    t = text or ""
+    hits: list[str] = []
+    for _, pat in _REGISTRY_PATTERNS:
+        hits.extend(re.findall(pat, t, flags=re.IGNORECASE))
+    # Normalize casing for common IDs
+    norm: list[str] = []
+    for h in hits:
+        h = h.strip()
+        if not h:
+            continue
+        if h.lower().startswith("nct"):
+            h = "NCT" + re.sub(r"\\D", "", h)[-8:]
+        elif h.lower().startswith("isrctn"):
+            h = "ISRCTN" + re.sub(r"\\D", "", h)[-8:]
+        norm.append(h)
+    # De-dupe preserve order
+    seen: set[str] = set()
+    out: list[str] = []
+    for h in norm:
+        if h in seen:
+            continue
+        seen.add(h)
+        out.append(h)
+    return out
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="PubMed search + metadata/abstract fetch (writes raw JSON/JSONL).")
     add_common_args(parser, table_required=False)
@@ -168,6 +206,39 @@ def main() -> None:
                 if v:
                     publication_types.append(v)
 
+            # Trial registry IDs: from abstract/title, and from DataBankList (e.g., ClinicalTrials.gov accession numbers).
+            trial_registry_ids: list[str] = []
+            trial_registry_ids.extend(extract_trial_registry_ids(f"{title}\n{abstract}".strip()))
+            for db in article.findall("./MedlineCitation/Article/DataBankList/DataBank"):
+                name = "".join(db.findtext("./DataBankName") or "").strip()
+                for acc in db.findall("./AccessionNumberList/AccessionNumber"):
+                    v = "".join(acc.itertext()).strip()
+                    if not v:
+                        continue
+                    trial_registry_ids.extend(extract_trial_registry_ids(v))
+                    # Some sources provide a bare NCT number without "NCT" prefix.
+                    if name.lower() in {"clinicaltrials.gov", "clinical trials.gov", "clinicaltrials.gov registry"}:
+                        m = re.fullmatch(r"\\d{8}", v)
+                        if m:
+                            trial_registry_ids.append("NCT" + v)
+
+            # Additional IDs sometimes appear in MedlineCitation/OtherID.
+            for other in article.findall("./MedlineCitation/OtherID"):
+                v = "".join(other.itertext()).strip()
+                if v:
+                    trial_registry_ids.extend(extract_trial_registry_ids(v))
+
+            # De-dupe preserve order
+            seen_ids: set[str] = set()
+            dedup_trial_ids: list[str] = []
+            for x in trial_registry_ids:
+                x = str(x).strip()
+                if not x or x in seen_ids:
+                    continue
+                seen_ids.add(x)
+                dedup_trial_ids.append(x)
+            trial_registry_ids = dedup_trial_ids
+
             pt_norm = {p.strip().lower() for p in publication_types if p.strip()}
             excluded_pt = excluded_pt_cfg
             preferred_trial_pt = preferred_trial_pt_cfg
@@ -196,6 +267,7 @@ def main() -> None:
                 "doi": doi,
                 "pmcid": pmcid,
                 "publication_types": publication_types,
+                "trial_registry_ids": trial_registry_ids,
                 "excluded_by_pt_filter": excluded_by_filter,
                 "exclusion_reason_auto": exclusion_reason,
                 "record_id": record_id,

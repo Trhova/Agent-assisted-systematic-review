@@ -64,7 +64,25 @@ def hints_from_text(text: str) -> dict[str, Any]:
     if has("diagnos", "incident diabetes"):
         tier_suggest = "Tier 1"
 
-    trial_ids = sorted(set(re.findall(r"\\bNCT\\d{8}\\b", text or "")))
+    trial_ids = []
+    for pat in [
+        r"\\bNCT\\d{8}\\b",
+        r"\\bISRCTN\\d{8}\\b",
+        r"\\bEudraCT\\s*\\d{4}-\\d{6}-\\d{2}\\b",
+        r"\\bChiCTR[- ]?[A-Za-z0-9]{6,}\\b",
+        r"\\bDRKS\\d{8}\\b",
+        r"\\bACTRN\\d{14}\\b",
+        r"\\bUMIN\\d{9}\\b",
+    ]:
+        trial_ids.extend(re.findall(pat, text or "", flags=re.IGNORECASE))
+    # De-dupe preserve order
+    seen: set[str] = set()
+    trial_ids_out: list[str] = []
+    for x in [t.strip() for t in trial_ids if str(t).strip()]:
+        if x in seen:
+            continue
+        seen.add(x)
+        trial_ids_out.append(x)
 
     return {
         "IndicationBucketHint": indication,
@@ -74,8 +92,8 @@ def hints_from_text(text: str) -> dict[str, Any]:
         "RandomizedHint": "true" if randomized else "unknown",
         "PlaceboHint": "true" if placebo else "unknown",
         "DoubleBlindHint": "true" if double_blind else "unknown",
-        "TrialRegistryIDs": ",".join(trial_ids),
-        "NeedsRegistryCheck": len(trial_ids) == 0,
+        "TrialRegistryIDs": ";".join(trial_ids_out),
+        "NeedsRegistryCheck": len(trial_ids_out) == 0,
     }
 
 
@@ -118,6 +136,23 @@ def main() -> None:
     for r in records:
         text = f"{r.get('title','')}\n\n{r.get('abstract','')}".strip()
         hints = hints_from_text(text)
+        raw_trial_ids = r.get("trial_registry_ids") or []
+        raw_trial_ids = [str(x).strip() for x in raw_trial_ids if str(x).strip()]
+        # Merge raw registry IDs with heuristic regex output (never delete).
+        merged_ids = []
+        for v in (hints.get("TrialRegistryIDs", "") or "").split(";"):
+            v = v.strip()
+            if v:
+                merged_ids.append(v)
+        merged_ids.extend(raw_trial_ids)
+        seen_ids: set[str] = set()
+        merged_out: list[str] = []
+        for x in merged_ids:
+            if x in seen_ids:
+                continue
+            seen_ids.add(x)
+            merged_out.append(x)
+        merged_str = ";".join(merged_out)
         publication_types = r.get("publication_types") or []
         pubtypes_str = ";".join([str(x).strip() for x in publication_types if str(x).strip()])
 
@@ -134,13 +169,15 @@ def main() -> None:
                 "RandomizedHint": hints["RandomizedHint"],
                 "PlaceboHint": hints["PlaceboHint"],
                 "DoubleBlindHint": hints["DoubleBlindHint"],
-                "TrialRegistryIDs": hints["TrialRegistryIDs"],
-                "NeedsRegistryCheck": hints["NeedsRegistryCheck"],
+                "TrialRegistryIDs": merged_str,
+                "NeedsRegistryCheck": merged_str.strip() == "",
                 "PublicationTypes": pubtypes_str,
                 "ExcludedByPTFilter": bool(r.get("excluded_by_pt_filter", False)),
                 "ExclusionReasonAuto": str(r.get("exclusion_reason_auto", "") or ""),
                 "Include_YN": "",
                 "Reason_Exclude": "",
+                "Reason_Exclude_Category": "",
+                "NeedsFullTextReview": False,
                 "Intervention_Class": "",
                 "Intervention_Name": "",
                 "Strains_or_Consortium": "",
@@ -153,8 +190,11 @@ def main() -> None:
                 "Effect_size": "",
                 "Durability_timepoint": "",
                 "TierFinal": "",
+                "MagnitudeBarPass": "",
+                "MagnitudeBarNotes": "",
                 "RoB2_overall": "",
                 "RoB2_notes": "",
+                "RoB2_domains_json": "",
                 "Multiplicity_flags": "",
                 "Comments": "",
                 "record_id": r.get("record_id", ""),

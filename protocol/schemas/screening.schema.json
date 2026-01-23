@@ -1,48 +1,60 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Abstract screening output",
+  "title": "PRISMA-aware title/abstract screening output",
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "Include_YN",
-    "Reason_Exclude",
-    "IndicationBucketHint",
-    "EndpointsTagged",
-    "InterventionAliveHint",
-    "RandomizedHint",
-    "PlaceboHint",
-    "DoubleBlindHint",
-    "TrialRegistryIDs",
-    "TierSuggestedFromAbstract",
-    "confidence"
+    "include_yn",
+    "exclusion_reason_category",
+    "exclusion_reason_free_text",
+    "flags",
+    "trial_registry_ids",
+    "confidence",
+    "needs_fulltext_review"
   ],
   "properties": {
-    "Include_YN": { "type": "string", "enum": ["Y", "N", ""] },
-    "Reason_Exclude": { "type": "string" },
-    "IndicationBucketHint": { "type": "string" },
-    "EndpointsTagged": {
-      "type": "array",
-      "items": { "type": "string" }
+    "include_yn": { "type": "string", "enum": ["Y", "N", "U"] },
+    "exclusion_reason_category": {
+      "type": "string",
+      "enum": [
+        "",
+        "Not human",
+        "Not RCT",
+        "Not placebo-controlled",
+        "Not metabolic indication",
+        "Not live microbiome intervention",
+        "Protocol/secondary analysis/review/commentary",
+        "Outside timeframe",
+        "Other"
+      ]
     },
-    "TierSuggestedFromAbstract": { "type": "string" },
-    "InterventionAliveHint": { "type": "string", "enum": ["true", "false", "unknown"] },
-    "RandomizedHint": { "type": "string", "enum": ["true", "false", "unknown"] },
-    "PlaceboHint": { "type": "string", "enum": ["true", "false", "unknown"] },
-    "DoubleBlindHint": { "type": "string", "enum": ["true", "false", "unknown"] },
-    "TrialRegistryIDs": {
-      "type": "array",
-      "items": { "type": "string" }
-    },
-    "Intervention_Class": { "type": "string" },
-    "confidence": {
+    "exclusion_reason_free_text": { "type": "string" },
+    "flags": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["include_decision", "overall"],
+      "required": ["randomized", "placebo", "double_blind", "live_intervention", "metabolic_indication"],
       "properties": {
-        "include_decision": { "type": "number", "minimum": 0, "maximum": 1 },
-        "overall": { "type": "number", "minimum": 0, "maximum": 1 }
+        "randomized": { "type": "string", "enum": ["Y", "N", "U"] },
+        "placebo": { "type": "string", "enum": ["Y", "N", "U"] },
+        "double_blind": { "type": "string", "enum": ["Y", "N", "U"] },
+        "live_intervention": { "type": "string", "enum": ["Y", "N", "U"] },
+        "metabolic_indication": { "type": "string", "enum": ["Y", "N", "U"] }
       }
-    }
+    },
+    "trial_registry_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "needs_fulltext_review": { "type": "boolean" },
+
+    "indication_bucket_hint": { "type": "string" },
+    "endpoints_tagged": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tier_suggested_from_abstract": { "type": "string" },
+    "intervention_class": { "type": "string" }
   }
 }
 

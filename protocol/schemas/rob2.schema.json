@@ -1,25 +1,196 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "RoB2 output",
+  "title": "RoB 2.0 (parallel-group RCT) structured output",
   "type": "object",
   "additionalProperties": false,
   "required": [
+    "study_metadata",
     "domain_1_randomization",
-    "domain_2_deviations",
-    "domain_3_missing_data",
-    "domain_4_measurement",
-    "domain_5_reporting",
-    "overall",
-    "notes"
+    "domain_2_deviations_from_intended_interventions",
+    "domain_3_missing_outcome_data",
+    "domain_4_measurement_of_outcome",
+    "domain_5_selection_of_reported_result",
+    "overall_risk_of_bias"
   ],
   "properties": {
-    "domain_1_randomization": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
-    "domain_2_deviations": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
-    "domain_3_missing_data": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
-    "domain_4_measurement": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
-    "domain_5_reporting": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
-    "overall": { "type": "string", "enum": ["low", "some_concerns", "high", "unknown"] },
-    "notes": { "type": "string" }
+    "study_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference", "outcome_assessed", "effect_of_interest", "sources_used"],
+      "properties": {
+        "reference": { "type": "string" },
+        "outcome_assessed": { "type": "string" },
+        "effect_of_interest": { "type": "string", "enum": ["assignment", "adherence"] },
+        "sources_used": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "journal_article",
+              "trial_protocol",
+              "statistical_analysis_plan",
+              "trial_registry",
+              "company_registry",
+              "grey_literature",
+              "conference_abstract",
+              "regulatory_document",
+              "ethics_application",
+              "grant_database",
+              "personal_communication",
+              "other"
+            ]
+          }
+        }
+      }
+    },
+
+    "domain_1_randomization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["signaling_questions", "judgment", "rationale", "evidence_snippets"],
+      "properties": {
+        "signaling_questions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["allocation_sequence_random", "allocation_concealed", "baseline_imbalance"],
+          "properties": {
+            "allocation_sequence_random": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] },
+            "allocation_concealed": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] },
+            "baseline_imbalance": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] }
+          }
+        },
+        "judgment": { "type": "string", "enum": ["Low", "Some concerns", "High"] },
+        "rationale": { "type": "string" },
+        "evidence_snippets": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "domain_2_deviations_from_intended_interventions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["effect_of_interest", "signaling_questions", "judgment", "rationale", "evidence_snippets"],
+      "properties": {
+        "effect_of_interest": { "type": "string", "enum": ["assignment", "adherence"] },
+        "signaling_questions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "participants_aware",
+            "carers_aware",
+            "contextual_deviations",
+            "deviations_affect_outcome",
+            "deviations_balanced",
+            "appropriate_analysis_used",
+            "failure_impacts_result"
+          ],
+          "properties": {
+            "participants_aware": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] },
+            "carers_aware": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] },
+            "contextual_deviations": { "type": "string", "enum": ["NA", "Y", "PY", "PN", "N", "NI"] },
+            "deviations_affect_outcome": { "type": "string", "enum": ["NA", "Y", "PY", "PN", "N", "NI"] },
+            "deviations_balanced": { "type": "string", "enum": ["NA", "Y", "PY", "PN", "N", "NI"] },
+            "appropriate_analysis_used": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] },
+            "failure_impacts_result": { "type": "string", "enum": ["NA", "Y", "PY", "PN", "N", "NI"] }
+          }
+        },
+        "judgment": { "type": "string", "enum": ["Low", "Some concerns", "High"] },
+        "rationale": { "type": "string" },
+        "evidence_snippets": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "domain_3_missing_outcome_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["signaling_questions", "judgment", "rationale", "evidence_snippets"],
+      "properties": {
+        "signaling_questions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["data_complete", "bias_from_missing_unlikely", "missing_depends_on_true_value", "dependence_likely"],
+          "properties": {
+            "data_complete": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] },
+            "bias_from_missing_unlikely": { "type": "string", "enum": ["NA", "Y", "PY", "PN", "N", "NI"] },
+            "missing_depends_on_true_value": { "type": "string", "enum": ["NA", "Y", "PY", "PN", "N", "NI"] },
+            "dependence_likely": { "type": "string", "enum": ["NA", "Y", "PY", "PN", "N", "NI"] }
+          }
+        },
+        "judgment": { "type": "string", "enum": ["Low", "Some concerns", "High"] },
+        "rationale": { "type": "string" },
+        "evidence_snippets": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "domain_4_measurement_of_outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["signaling_questions", "judgment", "rationale", "evidence_snippets"],
+      "properties": {
+        "signaling_questions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "measurement_inappropriate",
+            "measurement_differs_between_groups",
+            "assessors_aware",
+            "assessment_influenced",
+            "influence_likely"
+          ],
+          "properties": {
+            "measurement_inappropriate": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] },
+            "measurement_differs_between_groups": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] },
+            "assessors_aware": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] },
+            "assessment_influenced": { "type": "string", "enum": ["NA", "Y", "PY", "PN", "N", "NI"] },
+            "influence_likely": { "type": "string", "enum": ["NA", "Y", "PY", "PN", "N", "NI"] }
+          }
+        },
+        "judgment": { "type": "string", "enum": ["Low", "Some concerns", "High"] },
+        "rationale": { "type": "string" },
+        "evidence_snippets": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "domain_5_selection_of_reported_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["signaling_questions", "judgment", "rationale", "evidence_snippets"],
+      "properties": {
+        "signaling_questions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["analysis_prespecified", "multiple_eligible_outcomes", "multiple_eligible_analyses"],
+          "properties": {
+            "analysis_prespecified": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] },
+            "multiple_eligible_outcomes": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] },
+            "multiple_eligible_analyses": { "type": "string", "enum": ["Y", "PY", "PN", "N", "NI"] }
+          }
+        },
+        "judgment": { "type": "string", "enum": ["Low", "Some concerns", "High"] },
+        "rationale": { "type": "string" },
+        "evidence_snippets": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "overall_risk_of_bias": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["judgment", "rationale", "highest_risk_domain", "confidence"],
+      "properties": {
+        "judgment": { "type": "string", "enum": ["Low", "Some concerns", "High"] },
+        "rationale": { "type": "string" },
+        "highest_risk_domain": {
+          "type": "string",
+          "enum": [
+            "domain_1_randomization",
+            "domain_2_deviations_from_intended_interventions",
+            "domain_3_missing_outcome_data",
+            "domain_4_measurement_of_outcome",
+            "domain_5_selection_of_reported_result"
+          ]
+        },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
   }
 }
 

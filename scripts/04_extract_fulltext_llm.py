@@ -17,6 +17,26 @@ from scripts.utils import (
 )
 
 
+def _merge_registry_ids(existing: str, new_ids: list[str]) -> str:
+    parts: list[str] = []
+    for chunk in (existing or "").replace(",", ";").split(";"):
+        c = chunk.strip()
+        if c:
+            parts.append(c)
+    for x in new_ids or []:
+        s = str(x).strip()
+        if s:
+            parts.append(s)
+    seen: set[str] = set()
+    out: list[str] = []
+    for p in parts:
+        if p in seen:
+            continue
+        seen.add(p)
+        out.append(p)
+    return ";".join(out)
+
+
 def _load_fulltext_text(record_id: str) -> str:
     path = Path("data/intermediate/fulltext_text") / f"{record_id}.json"
     if not path.exists():
@@ -50,10 +70,10 @@ def main() -> None:
     cols = stable_screening_columns()
     for c in cols:
         if c not in df.columns:
-            df[c] = ""
+            df[c] = "" if c not in {"NeedsFullTextReview"} else False
     df = df[cols]
 
-    included = df[df["Include_YN"].astype(str).str.upper().str.strip() == "Y"].copy()
+    included = df[df["Include_YN"].astype(str).str.upper().str.strip().isin(["Y", "U"])].copy()
     if only:
         included = included[included["record_id"].astype(str).isin(only)]
     if args.limit and args.limit > 0:
@@ -84,7 +104,7 @@ def main() -> None:
 
         try:
             input_text = f"PMID: {pmid}\nTitle: {row.get('Title','')}\n\nFULLTEXT_EXTRACT:\n{fulltext}"
-            pdf_path = Path("data/raw/pdfs") / f"{record_id}__{pmid}.pdf"
+            pdf_path = Path("data/raw/pdfs") / f"{pmid}__{record_id}.pdf"
             fulltext_json_path = Path("data/intermediate/fulltext_text") / f"{record_id}.json"
             parsed = call_llm_json(
                 step="extraction",
@@ -117,6 +137,11 @@ def main() -> None:
                 "Durability_timepoint",
             ]:
                 df.loc[df["record_id"] == record_id, field] = str(parsed.get(field, "")).strip()
+
+            trial_ids = parsed.get("trial_registry_ids", []) or []
+            merged = _merge_registry_ids(str(row.get("TrialRegistryIDs", "") or ""), [str(x).strip() for x in trial_ids])
+            df.loc[df["record_id"] == record_id, "TrialRegistryIDs"] = merged
+            df.loc[df["record_id"] == record_id, "NeedsRegistryCheck"] = merged.strip() == ""
 
             processed += 1
         except Exception as e:

@@ -105,6 +105,8 @@ def stable_screening_columns() -> list[str]:
         "ExclusionReasonAuto",
         "Include_YN",
         "Reason_Exclude",
+        "Reason_Exclude_Category",
+        "NeedsFullTextReview",
         "Intervention_Class",
         "Intervention_Name",
         "Strains_or_Consortium",
@@ -117,8 +119,11 @@ def stable_screening_columns() -> list[str]:
         "Effect_size",
         "Durability_timepoint",
         "TierFinal",
+        "MagnitudeBarPass",
+        "MagnitudeBarNotes",
         "RoB2_overall",
         "RoB2_notes",
+        "RoB2_domains_json",
         "Multiplicity_flags",
         "Comments",
         "record_id",
@@ -217,24 +222,26 @@ def validate_json(schema: dict[str, Any], instance: Any) -> tuple[bool, list[str
     return False, msgs
 
 
-class ConfidenceModel(BaseModel):
-    include_decision: float = Field(ge=0, le=1)
-    overall: float = Field(ge=0, le=1)
+class ScreeningFlagsModel(BaseModel):
+    randomized: Literal["Y", "N", "U"]
+    placebo: Literal["Y", "N", "U"]
+    double_blind: Literal["Y", "N", "U"]
+    live_intervention: Literal["Y", "N", "U"]
+    metabolic_indication: Literal["Y", "N", "U"]
 
 
 class ScreeningOutputModel(BaseModel):
-    Include_YN: Literal["Y", "N", ""]
-    Reason_Exclude: str
-    IndicationBucketHint: str
-    EndpointsTagged: list[str]
-    TierSuggestedFromAbstract: str
-    InterventionAliveHint: Literal["true", "false", "unknown"]
-    RandomizedHint: Literal["true", "false", "unknown"]
-    PlaceboHint: Literal["true", "false", "unknown"]
-    DoubleBlindHint: Literal["true", "false", "unknown"]
-    TrialRegistryIDs: list[str]
-    confidence: ConfidenceModel
-    Intervention_Class: str = ""
+    include_yn: Literal["Y", "N", "U"]
+    exclusion_reason_category: str
+    exclusion_reason_free_text: str
+    flags: ScreeningFlagsModel
+    trial_registry_ids: list[str]
+    confidence: float = Field(ge=0, le=1)
+    needs_fulltext_review: bool
+    indication_bucket_hint: str = "Unknown"
+    endpoints_tagged: list[str] = []
+    tier_suggested_from_abstract: str = "Unknown"
+    intervention_class: str = "Unknown"
 
 
 class ExtractionOutputModel(BaseModel):
@@ -250,16 +257,124 @@ class ExtractionOutputModel(BaseModel):
     Effect_size: str
     Durability_timepoint: str
     TierSuggestedFromFulltext: str = ""
+    trial_registry_ids: list[str] = []
+
+class Rob2StudyMetadataModel(BaseModel):
+    reference: str
+    outcome_assessed: str
+    effect_of_interest: Literal["assignment", "adherence"]
+    sources_used: list[
+        Literal[
+            "journal_article",
+            "trial_protocol",
+            "statistical_analysis_plan",
+            "trial_registry",
+            "company_registry",
+            "grey_literature",
+            "conference_abstract",
+            "regulatory_document",
+            "ethics_application",
+            "grant_database",
+            "personal_communication",
+            "other",
+        ]
+    ]
+
+
+class Rob2Domain1SQModel(BaseModel):
+    allocation_sequence_random: Literal["Y", "PY", "PN", "N", "NI"]
+    allocation_concealed: Literal["Y", "PY", "PN", "N", "NI"]
+    baseline_imbalance: Literal["Y", "PY", "PN", "N", "NI"]
+
+
+class Rob2Domain2SQModel(BaseModel):
+    participants_aware: Literal["Y", "PY", "PN", "N", "NI"]
+    carers_aware: Literal["Y", "PY", "PN", "N", "NI"]
+    contextual_deviations: Literal["NA", "Y", "PY", "PN", "N", "NI"]
+    deviations_affect_outcome: Literal["NA", "Y", "PY", "PN", "N", "NI"]
+    deviations_balanced: Literal["NA", "Y", "PY", "PN", "N", "NI"]
+    appropriate_analysis_used: Literal["Y", "PY", "PN", "N", "NI"]
+    failure_impacts_result: Literal["NA", "Y", "PY", "PN", "N", "NI"]
+
+
+class Rob2Domain3SQModel(BaseModel):
+    data_complete: Literal["Y", "PY", "PN", "N", "NI"]
+    bias_from_missing_unlikely: Literal["NA", "Y", "PY", "PN", "N", "NI"]
+    missing_depends_on_true_value: Literal["NA", "Y", "PY", "PN", "N", "NI"]
+    dependence_likely: Literal["NA", "Y", "PY", "PN", "N", "NI"]
+
+
+class Rob2Domain4SQModel(BaseModel):
+    measurement_inappropriate: Literal["Y", "PY", "PN", "N", "NI"]
+    measurement_differs_between_groups: Literal["Y", "PY", "PN", "N", "NI"]
+    assessors_aware: Literal["Y", "PY", "PN", "N", "NI"]
+    assessment_influenced: Literal["NA", "Y", "PY", "PN", "N", "NI"]
+    influence_likely: Literal["NA", "Y", "PY", "PN", "N", "NI"]
+
+
+class Rob2Domain5SQModel(BaseModel):
+    analysis_prespecified: Literal["Y", "PY", "PN", "N", "NI"]
+    multiple_eligible_outcomes: Literal["Y", "PY", "PN", "N", "NI"]
+    multiple_eligible_analyses: Literal["Y", "PY", "PN", "N", "NI"]
+
+
+class Rob2Domain1Model(BaseModel):
+    signaling_questions: Rob2Domain1SQModel
+    judgment: Literal["Low", "Some concerns", "High"]
+    rationale: str
+    evidence_snippets: list[str]
+
+
+class Rob2Domain2Model(BaseModel):
+    effect_of_interest: Literal["assignment", "adherence"]
+    signaling_questions: Rob2Domain2SQModel
+    judgment: Literal["Low", "Some concerns", "High"]
+    rationale: str
+    evidence_snippets: list[str]
+
+
+class Rob2Domain3Model(BaseModel):
+    signaling_questions: Rob2Domain3SQModel
+    judgment: Literal["Low", "Some concerns", "High"]
+    rationale: str
+    evidence_snippets: list[str]
+
+
+class Rob2Domain4Model(BaseModel):
+    signaling_questions: Rob2Domain4SQModel
+    judgment: Literal["Low", "Some concerns", "High"]
+    rationale: str
+    evidence_snippets: list[str]
+
+
+class Rob2Domain5Model(BaseModel):
+    signaling_questions: Rob2Domain5SQModel
+    judgment: Literal["Low", "Some concerns", "High"]
+    rationale: str
+    evidence_snippets: list[str]
+
+
+class Rob2OverallModel(BaseModel):
+    judgment: Literal["Low", "Some concerns", "High"]
+    rationale: str
+    highest_risk_domain: Literal[
+        "domain_1_randomization",
+        "domain_2_deviations_from_intended_interventions",
+        "domain_3_missing_outcome_data",
+        "domain_4_measurement_of_outcome",
+        "domain_5_selection_of_reported_result",
+    ]
+    confidence: float = Field(ge=0, le=1)
 
 
 class Rob2OutputModel(BaseModel):
-    domain_1_randomization: Literal["low", "some_concerns", "high", "unknown"]
-    domain_2_deviations: Literal["low", "some_concerns", "high", "unknown"]
-    domain_3_missing_data: Literal["low", "some_concerns", "high", "unknown"]
-    domain_4_measurement: Literal["low", "some_concerns", "high", "unknown"]
-    domain_5_reporting: Literal["low", "some_concerns", "high", "unknown"]
-    overall: Literal["low", "some_concerns", "high", "unknown"]
-    notes: str
+    study_metadata: Rob2StudyMetadataModel
+    domain_1_randomization: Rob2Domain1Model
+    domain_2_deviations_from_intended_interventions: Rob2Domain2Model
+    domain_3_missing_outcome_data: Rob2Domain3Model
+    domain_4_measurement_of_outcome: Rob2Domain4Model
+    domain_5_selection_of_reported_result: Rob2Domain5Model
+    overall_risk_of_bias: Rob2OverallModel
 
 
 def validate_llm_output(step: str, instance: Any) -> tuple[bool, dict[str, Any] | None, str]:
@@ -330,9 +445,38 @@ def call_llm_json(
     schema = load_json_schema(schema_path)
     prompt = prompt_path.read_text(encoding="utf-8")
 
+    def read_optional(path: Path) -> str:
+        try:
+            if path.exists():
+                return path.read_text(encoding="utf-8").strip()
+        except Exception:
+            return ""
+        return ""
+
+    protocol_text = read_optional(Path("protocol/protocol.yaml"))
+    decision_rules_text = read_optional(Path("docs/decision_rules.md"))
+    endpoint_taxonomy_text = read_optional(Path("docs/endpoint_taxonomy.md"))
+    rob2_text = read_optional(Path("ROB_protocols/ROB2.0.txt"))
+    rob2_json_template_text = read_optional(Path("ROB_protocols/ROB2.0_json.txt"))
+
+    extra_context_parts: list[str] = []
+    if protocol_text:
+        extra_context_parts.append("=== protocol/protocol.yaml ===\n" + protocol_text)
+    if decision_rules_text:
+        extra_context_parts.append("=== docs/decision_rules.md ===\n" + decision_rules_text)
+    if step == "extraction" and endpoint_taxonomy_text:
+        extra_context_parts.append("=== docs/endpoint_taxonomy.md ===\n" + endpoint_taxonomy_text)
+    if step == "rob2":
+        if rob2_text:
+            extra_context_parts.append("=== ROB_protocols/ROB2.0.txt ===\n" + rob2_text)
+        if rob2_json_template_text:
+            extra_context_parts.append("=== ROB_protocols/ROB2.0_json.txt ===\n" + rob2_json_template_text)
+    extra_context = "\n\n".join([p for p in extra_context_parts if p]).strip()
+
     system_text = (
-        "You are a careful data extraction assistant. "
-        "Return strictly valid JSON. Do not include markdown or explanations."
+        "You are a careful, conservative systematic review assistant. "
+        "Return strictly valid JSON. Do not include markdown or explanations. "
+        "Never hallucinate; if information is not explicitly present, use Unknown / U / NI as appropriate."
     )
 
     payload_responses = {
@@ -344,6 +488,7 @@ def call_llm_json(
                 "role": "user",
                 "content": [
                     {"type": "text", "text": prompt},
+                    *([{"type": "text", "text": "\n\n=== CONTEXT ===\n" + extra_context}] if extra_context else []),
                     {"type": "text", "text": f"\n\n=== INPUT (record_id={record_id}) ===\n{input_text}\n"},
                 ],
             },
@@ -362,6 +507,7 @@ def call_llm_json(
             {
                 "role": "user",
                 "content": prompt
+                + ("\n\n=== CONTEXT ===\n" + extra_context if extra_context else "")
                 + "\n\n=== INPUT ===\n"
                 + input_text
                 + "\n\nReturn ONLY valid JSON matching this schema:\n"

@@ -1,0 +1,342 @@
+RoB 2.0 Template for Parallel-Group Randomized Trials
+
+(LLM-completion version)
+
+Source: Revised Cochrane risk-of-bias tool for randomized trials (RoB 2)
+Version: 22 August 2019
+License: CC BY-NC-ND 4.0
+
+Study Details
+
+Reference:
+(text citation)
+
+Study design (select one):
+
+Individually randomized parallel-group trial
+
+Cluster-randomized parallel-group trial
+
+Individually randomized cross-over or matched trial
+
+Interventions compared:
+
+Experimental:
+
+Comparator:
+
+Outcome assessed for risk of bias:
+(name of outcome)
+
+Numerical result assessed:
+(e.g., RR, MD, CI, table/figure reference)
+
+Effect of interest:
+
+Intention-to-treat (effect of assignment to intervention)
+
+Per-protocol (effect of adhering to intervention)
+
+If per-protocol, which deviations are addressed:
+
+Non-protocol interventions
+
+Implementation failures
+
+Non-adherence
+
+Sources used for assessment (select all that apply):
+
+Journal article
+
+Trial protocol
+
+Statistical analysis plan (SAP)
+
+Trial registry record (e.g., ClinicalTrials.gov)
+
+Company registry
+
+Grey literature
+
+Conference abstract
+
+Regulatory document
+
+Ethics application
+
+Grant database
+
+Personal communication (trialist or sponsor)
+
+Risk of Bias Assessment
+
+Response options for signalling questions:
+Y / PY / PN / N / NI
+(Yes / Probably Yes / Probably No / No / No Information)
+
+Domain 1: Bias arising from the randomization process
+
+1.1 Was the allocation sequence random?
+Response:
+
+1.2 Was allocation concealed until participants were enrolled and assigned?
+Response:
+
+1.3 Did baseline differences suggest a problem with randomization?
+Response:
+
+Risk of bias judgement:
+
+Low
+
+Some concerns
+
+High
+
+Predicted direction of bias (optional):
+
+NA
+
+Favours experimental
+
+Favours comparator
+
+Towards null
+
+Away from null
+
+Unpredictable
+
+Domain 2: Bias due to deviations from intended interventions
+
+(Effect of assignment to intervention)
+
+2.1 Were participants aware of their assigned intervention?
+Response:
+
+2.2 Were carers or intervention deliverers aware?
+Response:
+
+2.3 If yes/probably/NI above: Did deviations arise due to trial context?
+Response: NA / Y / PY / PN / N / NI
+
+2.4 If yes/probably: Were deviations likely to affect the outcome?
+Response:
+
+2.5 If yes/probably/NI: Were deviations balanced between groups?
+Response:
+
+2.6 Was an appropriate ITT analysis used?
+Response:
+
+2.7 If not: Could failure to analyze as randomized substantially impact results?
+Response:
+
+Risk of bias judgement:
+
+Low
+
+Some concerns
+
+High
+
+Predicted direction of bias (optional):
+
+NA
+
+Favours experimental
+
+Favours comparator
+
+Towards null
+
+Away from null
+
+Unpredictable
+
+Domain 2 (alternative): Bias due to deviations from intended interventions
+
+(Effect of adhering to intervention)
+
+2.1 Were participants aware of intervention?
+Response:
+
+2.2 Were carers/deliverers aware?
+Response:
+
+2.3 Were non-protocol interventions balanced?
+Response: NA / Y / PY / PN / N / NI
+
+2.4 Were there failures in implementing the intervention?
+Response:
+
+2.5 Was there non-adherence that could affect outcomes?
+Response:
+
+2.6 Was an appropriate per-protocol analysis used?
+Response:
+
+Risk of bias judgement:
+
+Low
+
+Some concerns
+
+High
+
+Predicted direction of bias (optional):
+
+NA
+
+Favours experimental
+
+Favours comparator
+
+Towards null
+
+Away from null
+
+Unpredictable
+
+Domain 3: Bias due to missing outcome data
+
+3.1 Were outcome data available for all or nearly all participants?
+Response:
+
+3.2 If not: Is there evidence results were not biased by missing data?
+Response:
+
+3.3 Could missingness depend on the true outcome value?
+Response:
+
+3.4 If yes/probably: Is it likely missingness depended on true value?
+Response:
+
+Risk of bias judgement:
+
+Low
+
+Some concerns
+
+High
+
+Predicted direction of bias (optional):
+
+NA
+
+Favours experimental
+
+Favours comparator
+
+Towards null
+
+Away from null
+
+Unpredictable
+
+Domain 4: Bias in measurement of the outcome
+
+4.1 Was outcome measurement inappropriate?
+Response:
+
+4.2 Could outcome measurement differ between groups?
+Response:
+
+4.3 Were outcome assessors aware of intervention received?
+Response:
+
+4.4 Could assessment have been influenced by this knowledge?
+Response:
+
+4.5 Is it likely assessment was influenced?
+Response:
+
+Risk of bias judgement:
+
+Low
+
+Some concerns
+
+High
+
+Predicted direction of bias (optional):
+
+NA
+
+Favours experimental
+
+Favours comparator
+
+Towards null
+
+Away from null
+
+Unpredictable
+
+Domain 5: Bias in selection of the reported result
+
+5.1 Was analysis pre-specified before unblinded outcome data were available?
+Response:
+
+5.2 Is the result likely selected from multiple eligible outcome measurements?
+Response:
+
+5.3 Is the result likely selected from multiple eligible analyses?
+Response:
+
+Risk of bias judgement:
+
+Low
+
+Some concerns
+
+High
+
+Predicted direction of bias (optional):
+
+NA
+
+Favours experimental
+
+Favours comparator
+
+Towards null
+
+Away from null
+
+Unpredictable
+
+Overall Risk of Bias
+
+Overall judgement:
+
+Low
+
+Some concerns
+
+High
+
+Overall predicted direction of bias (optional):
+
+NA
+
+Favours experimental
+
+Favours comparator
+
+Towards null
+
+Away from null
+
+Unpredictable
+
+Notes for LLM use (recommended to include in prompt, not output)
+
+Quote trial text where possible.
+
+If information is missing, use NI, not inference.
+
+Domain judgements must be internally consistent with signalling questions.
+
+Overall RoB must not be lower than the highest-risk domain.

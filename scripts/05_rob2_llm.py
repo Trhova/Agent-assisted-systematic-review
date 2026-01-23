@@ -50,10 +50,10 @@ def main() -> None:
     cols = stable_screening_columns()
     for c in cols:
         if c not in df.columns:
-            df[c] = ""
+            df[c] = "" if c not in {"NeedsFullTextReview"} else False
     df = df[cols]
 
-    included = df[df["Include_YN"].astype(str).str.upper().str.strip() == "Y"].copy()
+    included = df[df["Include_YN"].astype(str).str.upper().str.strip().isin(["Y", "U"])].copy()
     if only:
         included = included[included["record_id"].astype(str).isin(only)]
     if args.limit and args.limit > 0:
@@ -84,7 +84,7 @@ def main() -> None:
 
         try:
             input_text = f"PMID: {pmid}\nTitle: {row.get('Title','')}\n\nFULLTEXT_EXTRACT:\n{fulltext}"
-            pdf_path = Path("data/raw/pdfs") / f"{record_id}__{pmid}.pdf"
+            pdf_path = Path("data/raw/pdfs") / f"{pmid}__{record_id}.pdf"
             fulltext_json_path = Path("data/intermediate/fulltext_text") / f"{record_id}.json"
             parsed = call_llm_json(
                 step="rob2",
@@ -103,8 +103,16 @@ def main() -> None:
                 },
             )
 
-            df.loc[df["record_id"] == record_id, "RoB2_overall"] = str(parsed.get("overall", "")).strip()
-            df.loc[df["record_id"] == record_id, "RoB2_notes"] = str(parsed.get("notes", "")).strip()
+            overall = parsed.get("overall_risk_of_bias") or {}
+            overall_j = str((overall.get("judgment") or "")).strip()
+            overall_r = str((overall.get("rationale") or "")).strip()
+            df.loc[df["record_id"] == record_id, "RoB2_overall"] = overall_j
+
+            notes = overall_r
+            if len(notes) > 600:
+                notes = notes[:600].rstrip() + "…"
+            df.loc[df["record_id"] == record_id, "RoB2_notes"] = notes
+            df.loc[df["record_id"] == record_id, "RoB2_domains_json"] = json.dumps(parsed, ensure_ascii=False)
 
             processed += 1
         except Exception as e:

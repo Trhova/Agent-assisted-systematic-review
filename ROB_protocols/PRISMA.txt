@@ -1,0 +1,67 @@
+{
+  "prisma_version": "2020",
+  "review_type": "new_systematic_review_databases_and_registers_only",
+
+  "identification": {
+    "records_identified": {
+      "databases": 0,
+      "registers": 0
+    },
+    "records_removed_before_screening": {
+      "duplicate_records_removed": 0,
+      "records_marked_ineligible_by_automation": 0,
+      "records_removed_for_other_reasons": 0
+    }
+  },
+
+  "screening": {
+    "records_screened": 0,
+    "records_excluded": {
+      "total": 0,
+      "by_automation": 0,
+      "by_human": 0
+    }
+  },
+
+  "eligibility": {
+    "reports_sought_for_retrieval": 0,
+    "reports_not_retrieved": 0,
+    "reports_assessed_for_eligibility": 0,
+    "reports_excluded": {
+      "total": 0,
+      "reasons": [
+        {
+          "reason": "Not randomized or not placebo-controlled",
+          "count": 0
+        },
+        {
+          "reason": "Not a live microbiome intervention",
+          "count": 0
+        },
+        {
+          "reason": "Not a metabolic indication",
+          "count": 0
+        },
+        {
+          "reason": "Protocol, secondary analysis, or review",
+          "count": 0
+        },
+        {
+          "reason": "Other",
+          "count": 0
+        }
+      ]
+    }
+  },
+
+  "included": {
+    "studies_included_in_review": 0,
+    "reports_of_included_studies": 0
+  },
+
+  "notes": {
+    "automation_tools_used": true,
+    "automation_description": "LLM-assisted screening and extraction with human-in-the-loop adjudication",
+    "comments": ""
+  }
+}

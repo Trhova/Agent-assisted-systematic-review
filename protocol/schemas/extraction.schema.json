@@ -14,7 +14,8 @@
     "Primary_endpoint_category",
     "Outcome_direction",
     "Effect_size",
-    "Durability_timepoint"
+    "Durability_timepoint",
+    "trial_registry_ids"
   ],
   "properties": {
     "Intervention_Class": { "type": "string" },
@@ -28,7 +29,10 @@
     "Outcome_direction": { "type": "string", "enum": ["improved", "no_effect", "worsened", "mixed", "unknown"] },
     "Effect_size": { "type": "string" },
     "Durability_timepoint": { "type": "string" },
-    "TierSuggestedFromFulltext": { "type": "string" }
+    "TierSuggestedFromFulltext": { "type": "string" },
+    "trial_registry_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
   }
 }
-

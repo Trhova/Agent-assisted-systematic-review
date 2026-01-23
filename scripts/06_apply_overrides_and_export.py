@@ -42,29 +42,52 @@ def _flag_join(flags: list[str]) -> str:
     return ";".join([f for f in flags if f])
 
 
-def assign_tier(row: pd.Series, protocol: dict[str, Any]) -> tuple[str, str]:
+def _is_true_hint(value: Any) -> bool:
+    return str(value or "").strip().lower() == "true"
+
+
+def _is_false_hint(value: Any) -> bool:
+    return str(value or "").strip().lower() == "false"
+
+
+def _normalize_rob2(value: Any) -> str:
+    s = str(value or "").strip().lower()
+    if s in {"low", "some_concerns", "high"}:
+        return s
+    # Back-compat: some scripts store "Low"/"Some concerns"/"High"
+    if s in {"some concerns"}:
+        return "some_concerns"
+    return s or "unknown"
+
+
+def _intervention_alive_ok(row: pd.Series) -> bool:
+    if _is_false_hint(row.get("InterventionAliveHint")):
+        return False
+    cls = str(row.get("Intervention_Class") or "").strip().lower()
+    if cls in {"fmt", "postbiotic", "postbiotics_or_nonliving", "nonliving_small_molecules", "diet_only"}:
+        return False
+    return True
+
+
+def _primary_outcome_met(row: pd.Series) -> tuple[bool, list[str]]:
     flags: list[str] = []
-
-    randomized = str(row.get("RandomizedHint", "")).strip().lower() == "true"
-    placebo = str(row.get("PlaceboHint", "")).strip().lower() == "true"
-    rob2 = str(row.get("RoB2_overall", "")).strip().lower() or "unknown"
-
-    if not randomized:
-        flags.append("not_randomized")
-    if not placebo:
-        flags.append("no_placebo")
-
-    acceptable_rob2 = set(protocol["tier_rules"]["acceptable_rob2"])
-    rob2_ok = rob2 in acceptable_rob2
-    if not rob2_ok:
-        flags.append(f"rob2_{rob2 or 'unknown'}")
-
-    category = str(row.get("Primary_endpoint_category", "")).strip()
     outcome = str(row.get("Outcome_direction", "")).strip().lower()
-    primary_met = outcome == "improved"
+    effect_size = str(row.get("Effect_size", "")).strip().lower()
     if outcome in {"", "unknown"}:
         flags.append("primary_outcome_unknown")
+        return False, flags
+    if outcome != "improved":
+        flags.append(f"primary_outcome_{outcome}")
+        return False, flags
+    if re.search(r"\\bns\\b|p\\s*>\\s*0\\.05|not significant|non-significant", effect_size):
+        flags.append("primary_not_significant")
+        return False, flags
+    return True, flags
 
+
+def _durability_ok(row: pd.Series, protocol: dict[str, Any]) -> tuple[bool, list[str]]:
+    flags: list[str] = []
+    category = str(row.get("Primary_endpoint_category", "")).strip()
     duration_weeks = _parse_weeks(row.get("Duration_weeks"))
     durability = _parse_weeks(row.get("Durability_timepoint")) or duration_weeks
     thresholds = protocol["durability_thresholds_weeks"]
@@ -77,11 +100,94 @@ def assign_tier(row: pd.Series, protocol: dict[str, Any]) -> tuple[str, str]:
         needs_weeks = thresholds["liver_fat_imaging"]
     if needs_weeks and (durability is None or durability < float(needs_weeks)):
         flags.append("durability_below_threshold")
+        return False, flags
+    return True, flags
 
-    effect_size = str(row.get("Effect_size", "")).lower()
-    if re.search(r"\\bns\\b|p\\s*>\\s*0\\.05|not significant", effect_size):
-        flags.append("primary_not_significant")
-        primary_met = False
+
+def _has_multiplicity_concerns(row: pd.Series) -> list[str]:
+    flags: list[str] = []
+    txt = f"{row.get('Primary_endpoint_verbatim','')}\n{row.get('Effect_size','')}\n{row.get('Population_notes','')}".lower()
+    if "post hoc" in txt or "post-hoc" in txt:
+        flags.append("post_hoc")
+    if "secondary endpoint" in txt or "secondary outcome" in txt:
+        flags.append("secondary_only")
+    if "multiple comparisons" in txt or "multiple testing" in txt:
+        flags.append("multiple_testing")
+    if "exploratory" in txt:
+        flags.append("exploratory")
+    return flags
+
+
+def _magnitude_bar(row: pd.Series, protocol: dict[str, Any]) -> tuple[str, str]:
+    """
+    Separate classification layer (not part of TierFinal assignment).
+    Returns (MagnitudeBarPass, MagnitudeBarNotes) where pass is Y/N/U.
+    """
+    tier = str(row.get("TierFinal") or "").strip()
+    if tier not in {protocol["tier_rules"]["tiers"]["tier_1"], protocol["tier_rules"]["tiers"]["tier_2a"]}:
+        return "", ""
+
+    category = str(row.get("Primary_endpoint_category", "")).strip().lower()
+    effect = str(row.get("Effect_size", "")).strip()
+    if not effect:
+        return "U", "insufficient data (Effect_size empty)"
+
+    thresholds = protocol.get("magnitude_thresholds", {}) or {}
+
+    if category == "hba1c":
+        m = re.search(r"(-?\\d+(?:\\.\\d+)?)", effect)
+        if not m:
+            return "U", "insufficient data (no numeric HbA1c delta found)"
+        delta = abs(float(m.group(1)))
+        need = float(thresholds.get("hba1c_absolute_vs_placebo_min", 0.3))
+        return ("Y" if delta >= need else "N"), f"parsed_abs_delta={delta}; threshold={need}"
+
+    if category in {"weight", "bmi", "waist_circumference"}:
+        m = re.search(r"(\\d+(?:\\.\\d+)?)\\s*%", effect)
+        if not m:
+            return "U", "insufficient data (no % change found)"
+        pct = float(m.group(1))
+        need = float(thresholds.get("weight_percent_vs_placebo_min", 3.0))
+        strong = float(thresholds.get("weight_percent_vs_placebo_strong", 5.0))
+        passed = "Y" if pct >= need else "N"
+        strength = "strong" if pct >= strong else "minimal" if pct >= need else "below"
+        return passed, f"parsed_pct={pct}; threshold={need}; strength={strength}"
+
+    if category in {"alt_ast"}:
+        return "N", "ALT/AST are weak surrogates; never count as strong magnitude"
+
+    return "U", f"no magnitude rule implemented for category={category}"
+
+
+def assign_tier(row: pd.Series, protocol: dict[str, Any]) -> tuple[str, str]:
+    flags: list[str] = []
+
+    randomized = _is_true_hint(row.get("RandomizedHint"))
+    placebo = _is_true_hint(row.get("PlaceboHint"))
+    rob2 = _normalize_rob2(row.get("RoB2_overall"))
+
+    if not randomized:
+        flags.append("not_randomized_or_unknown")
+    if not placebo:
+        flags.append("no_placebo_or_unknown")
+
+    acceptable_rob2 = set(protocol["tier_rules"]["acceptable_rob2"])
+    rob2_ok = rob2 in acceptable_rob2
+    if not rob2_ok:
+        flags.append(f"rob2_{rob2 or 'unknown'}")
+
+    if not _intervention_alive_ok(row):
+        flags.append("not_alive_intervention")
+        return protocol["tier_rules"]["tiers"]["tier_3"], _flag_join(flags)
+
+    primary_met, primary_flags = _primary_outcome_met(row)
+    flags.extend(primary_flags)
+
+    durability_ok, dur_flags = _durability_ok(row, protocol)
+    flags.extend(dur_flags)
+
+    mult_flags = _has_multiplicity_concerns(row)
+    flags.extend(mult_flags)
 
     minimum_bar = randomized and placebo
     if not minimum_bar:
@@ -90,9 +196,14 @@ def assign_tier(row: pd.Series, protocol: dict[str, Any]) -> tuple[str, str]:
     if not primary_met:
         return protocol["tier_rules"]["tiers"]["tier_3"], _flag_join(flags)
 
+    # If effect is present but follow-up is short, treat as fragile signal.
+    if not durability_ok:
+        return protocol["tier_rules"]["tiers"]["tier_2b"], _flag_join(flags)
+
     if not rob2_ok:
         return protocol["tier_rules"]["tiers"]["tier_2b"], _flag_join(flags)
 
+    category = str(row.get("Primary_endpoint_category", "")).strip()
     clinical_non = set(protocol["endpoint_taxonomy"]["clinical_non_surrogate"])
     validated = set(protocol["endpoint_taxonomy"]["validated_surrogate"])
     if category in clinical_non:
@@ -193,7 +304,7 @@ def main() -> None:
     cols = stable_screening_columns()
     for c in cols:
         if c not in df.columns:
-            df[c] = ""
+            df[c] = "" if c not in {"NeedsFullTextReview"} else False
     df = df[cols]
 
     df_work = df[df["record_id"].astype(str).isin(only)].copy() if only else df.copy()
@@ -212,7 +323,20 @@ def main() -> None:
         tier, flags = assign_tier(row, protocol)
         df.loc[df["record_id"] == rid, "TierFinal"] = tier
         df.loc[df["record_id"] == rid, "Multiplicity_flags"] = flags
-        write_json(per_dir / f"{rid}.json", {"record_id": rid, "TierFinal": tier, "Multiplicity_flags": flags}, overwrite=True)
+        mbp, mbn = _magnitude_bar(df.loc[df["record_id"] == rid].iloc[0], protocol)
+        df.loc[df["record_id"] == rid, "MagnitudeBarPass"] = mbp
+        df.loc[df["record_id"] == rid, "MagnitudeBarNotes"] = mbn
+        write_json(
+            per_dir / f"{rid}.json",
+            {
+                "record_id": rid,
+                "TierFinal": tier,
+                "Multiplicity_flags": flags,
+                "MagnitudeBarPass": mbp,
+                "MagnitudeBarNotes": mbn,
+            },
+            overwrite=True,
+        )
 
     overrides_path = Path("overrides/overrides.jsonl")
     applied = apply_overrides(df, overrides_path, logger)

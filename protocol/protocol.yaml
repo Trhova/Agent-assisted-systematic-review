@@ -60,6 +60,20 @@ tier_rules:
     tier_2b: "Tier 2b"
     tier_3: "Tier 3"
 
+minimal_efficacy_bar:
+  randomized_placebo_required: true
+  primary_endpoint_met_required: true
+  prespecified_primary_required: true
+  no_primary_switch_required: true
+  interpretable_direction_required: true
+  multiplicity_control_required_if_primary_fails: true
+
+magnitude_thresholds:
+  # Separate classification layer; not part of TierFinal assignment.
+  hba1c_absolute_vs_placebo_min: 0.3
+  weight_percent_vs_placebo_min: 3.0
+  weight_percent_vs_placebo_strong: 5.0
+
 pubmed:
   require_publication_types:
     - "Randomized Controlled Trial"

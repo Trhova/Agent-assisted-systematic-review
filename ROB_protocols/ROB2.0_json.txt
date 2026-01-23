@@ -1,0 +1,84 @@
+{
+  "study_metadata": {
+    "reference": "",
+    "outcome_assessed": "",
+    "effect_of_interest": "assignment | adherence",
+    "sources_used": [
+      "journal_article",
+      "trial_protocol",
+      "statistical_analysis_plan",
+      "trial_registry",
+      "other"
+    ]
+  },
+
+  "domain_1_randomization": {
+    "signaling_questions": {
+      "allocation_sequence_random": "Y | PY | PN | N | NI",
+      "allocation_concealed": "Y | PY | PN | N | NI",
+      "baseline_imbalance": "Y | PY | PN | N | NI"
+    },
+    "judgment": "Low | Some concerns | High",
+    "rationale": "",
+    "evidence_snippets": []
+  },
+
+  "domain_2_deviations_from_intended_interventions": {
+    "effect_of_interest": "assignment | adherence",
+    "signaling_questions": {
+      "participants_aware": "Y | PY | PN | N | NI",
+      "carers_aware": "Y | PY | PN | N | NI",
+      "contextual_deviations": "NA | Y | PY | PN | N | NI",
+      "deviations_affect_outcome": "NA | Y | PY | PN | N | NI",
+      "deviations_balanced": "NA | Y | PY | PN | N | NI",
+      "appropriate_analysis_used": "Y | PY | PN | N | NI",
+      "failure_impacts_result": "NA | Y | PY | PN | N | NI"
+    },
+    "judgment": "Low | Some concerns | High",
+    "rationale": "",
+    "evidence_snippets": []
+  },
+
+  "domain_3_missing_outcome_data": {
+    "signaling_questions": {
+      "data_complete": "Y | PY | PN | N | NI",
+      "bias_from_missing_unlikely": "NA | Y | PY | PN | N | NI",
+      "missing_depends_on_true_value": "NA | Y | PY | PN | N | NI",
+      "dependence_likely": "NA | Y | PY | PN | N | NI"
+    },
+    "judgment": "Low | Some concerns | High",
+    "rationale": "",
+    "evidence_snippets": []
+  },
+
+  "domain_4_measurement_of_outcome": {
+    "signaling_questions": {
+      "measurement_inappropriate": "Y | PY | PN | N | NI",
+      "measurement_differs_between_groups": "Y | PY | PN | N | NI",
+      "assessors_aware": "Y | PY | PN | N | NI",
+      "assessment_influenced": "NA | Y | PY | PN | N | NI",
+      "influence_likely": "NA | Y | PY | PN | N | NI"
+    },
+    "judgment": "Low | Some concerns | High",
+    "rationale": "",
+    "evidence_snippets": []
+  },
+
+  "domain_5_selection_of_reported_result": {
+    "signaling_questions": {
+      "analysis_prespecified": "Y | PY | PN | N | NI",
+      "multiple_eligible_outcomes": "Y | PY | PN | N | NI",
+      "multiple_eligible_analyses": "Y | PY | PN | N | NI"
+    },
+    "judgment": "Low | Some concerns | High",
+    "rationale": "",
+    "evidence_snippets": []
+  },
+
+  "overall_risk_of_bias": {
+    "judgment": "Low | Some concerns | High",
+    "rationale": "",
+    "highest_risk_domain": "domain_1_randomization | domain_2_deviations_from_intended_interventions | domain_3_missing_outcome_data | domain_4_measurement_of_outcome | domain_5_selection_of_reported_result",
+    "confidence": 0.0
+  }
+}
