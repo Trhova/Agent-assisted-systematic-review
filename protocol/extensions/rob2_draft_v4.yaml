@@ -1,0 +1,7 @@
+id: rob2_draft_v4
+extends: rob2_draft_v3
+prespecified_on: '2026-10-15'
+reason: The runtime narrowed source metadata to journal_article/conference_abstract, forcing an original preprint into an incorrect type despite the base schema supporting other. A real Clemency draft was rejected for this conflict.
+change: Permit other alongside journal_article and conference_abstract; instruct original preprints to retain that classification and source version even when linked to a journal PMID.
+unchanged: No new source access is implied. Cited registry/protocol documents remain unaccessed unless supplied; source-grounded verification, exact quotations, assignment estimand, null confidence, abbreviated draft limitations and no numerical effects remain unchanged.
+provenance: Preserve prior frozen schema, failed draft and verification. This successor applies only to newly frozen executions.

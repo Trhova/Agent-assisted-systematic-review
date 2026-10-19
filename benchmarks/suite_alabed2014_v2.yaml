@@ -1,0 +1,9 @@
+id: alabed2014_development_v2
+prespecified_model: gpt-6-astra
+prespecified_backend: codex
+cases:
+- id: alabed2014_total_adverse_effects_development_v2
+  protocol: benchmarks/protocols/alabed2014_total_adverse_effects_v2.yaml
+  protocol_sha256: c61de79a722225aa332dd00eb16ec6de9689c9f20de06cc9da8c385f411d1ede
+  reference: benchmarks/references/alabed2014_total_adverse_effects_v2.json
+  reference_sha256: db41013a1bcfcdf9eff06b5537589c441d4df12730ec1db6a28988f70c4caee1

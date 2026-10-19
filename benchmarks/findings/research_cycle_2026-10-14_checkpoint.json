@@ -1,0 +1,11 @@
+{
+  "completed_at_utc": "2026-10-13T22:44:28.582556+00:00",
+  "state": "bounded_iteration_complete",
+  "live_runners": [],
+  "worker": "/root/meta_analysis_execution",
+  "worker_model": "gpt-6-astra",
+  "worker_effort": "medium",
+  "result": "failed additional reproduction; no pooled autonomous result",
+  "next_candidate": "Zheng2023 pulse pressure, not yet primary-qualified",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10270119/"
+}

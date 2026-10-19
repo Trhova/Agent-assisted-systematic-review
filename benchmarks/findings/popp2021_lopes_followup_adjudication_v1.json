@@ -1,0 +1,19 @@
+{
+  "scope": "Independent primary-methods adjudication; not a model inclusion override or a new mortality estimate",
+  "record_id": "33542047",
+  "registry": "https://ensaiosclinicos.gov.br/rg/RBR-8jyhxh/1",
+  "registry_version_date": "2020-07-30",
+  "registry_source": "data/benchmarks/popp2021_followup_sources_v2/rebec_web_capture.json",
+  "registry_quote": "To evaluate the percentage of death.",
+  "registry_locator": "Original registration, Primary outcomes, English mortality field",
+  "primary_article_source": "data/benchmarks/popp2021_v1/popp2021_hospital_mortality_development_v1/d2cc93475219/sources/33542047/article.xml",
+  "observations": [
+    "Original registry specifies ten-day drug regimens, hospitalization duration from admission to discharge, ICU admission and mortality, but no scheduled mortality follow-up interval.",
+    "Primary paper describes daily evaluation, discharge criteria and observed hospital courses. It does not establish complete mortality ascertainment at a scheduled21\u201328-day horizon.",
+    "These sources establish an eligible randomized trial with reported mortality data; they do not identify the protocol-defined mortality timepoint.",
+    "A10-day treatment course is not a10-day mortality follow-up; individual23/26-day stays do not establish scheduled follow-up for all participants.",
+    "Published review classifies discharge-only mortality separately, but secondary classification alone is not used to override the primary-input contract."
+  ],
+  "decision": "Retain unresolved target follow-up under unchanged v1 contract; neither exclude trial nor pool its deaths as21/28-day mortality.",
+  "code_or_completion_semantics_changed": false
+}

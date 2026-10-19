@@ -1,0 +1,25 @@
+# Primary companion denominator assessment — 15 October 2026
+
+The new original registry and cached primary companion support one Mohamadshahi trial family, but do **not** establish arm-specific analyzed fasting-glucose denominators. No inputs were admitted and no numerical analysis was repeated.
+
+## Evidence and scientific finding
+
+Recovered [original IRCT2014021516588N1 record](https://en.irct.ir/trial/15497) through a new lawful route: HTTP200,45,247bytes, preserved original HTML, parsed text and receipt. Its target sample size is44; it describes the same300g/day probiotic-versus-conventional yogurt intervention,8weeks and before/after fasting glucose. Registration on4March2014 was retrospective; expected recruitment dates are not actual enrollment or outcome denominators. The direct WHO route returned403 and was retained without repetition. Primary report25197295/PMC4155708 was already cached and was reused, not described as newly recovered.
+
+The target25035851 says44randomized,22perarm,42attending two visits and two withdrawals without allocation; sex counts are10men/32women. Companion25197295 says42attended randomization and blood collection,21assigned perarm, with11men/31women. Shared thesis, grantNRC-9008, intervention and matching characteristics support family linkage. These inconsistencies and the missing explicit outcome-population bridge prevent transferring21/21 to target fasting glucose. The registry's planned44 cannot resolve them. Both2014reports precede the original Li cutoff, while today's registry snapshot is retrospective supporting evidence, not a historical-search reproduction. Secondary review counts were discovery leads only and never entered adjudication requests.
+
+[Cochrane Chapter6§6.5.2](https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-06) requires the number for whom the continuous outcome was measured in each intervention group. A target or randomized total is insufficient when analyzed allocation remains uncertain.
+
+## Executed workflow
+
+Implemented generic `scripts/companion_denominators.py`: jointly source-grounded proposal and separate verification distinguish trial-family linkage from analyzed-N transfer. Strict exact quotations, source identity/hash checks, outcome-population bridge, explicit discrepancy resolution and successful request provenance are required. The source-only result cannot itself authorize pooling. `scripts/outcome_availability.py --companion-assessment` now imports verified assessments into the normal continuation queue, requiring exact target source hash. Existing unresolved categories, eligibility and synthesis remain unchanged.
+
+Frozen policy: `protocol/extensions/mohamadshahi_companion_denominators_v1.md`. Artifacts: `data/benchmarks/mohamadshahi_companions_v1`. Launcher8120/child8121 ran12:47:27–12:49:22UTC, exit0. Explicit gpt-6-astra/codex; workerMedium, nested effort default/unpinned. Two fresh adapter calls, one attempt each, no outer retry. Assessment code d05bbb4665a796fc91c59a921b26345d1aada0289d4ddfdb3c4509cd83fd5bb4. Result: source_checked=true, family_supported=true, denominators_supported=false, both arm Ns null. Same-model procedural verification does not remove correlated-error risk.
+
+Separate frozen normal-export code02e3c854e832a0c9a5b833e2e95a62326f650db68a64185f34595bd3bf2e2201 incorporates the exact target-hash binding added after assessment freeze. Export completed without model calls. `audit_replay.py` validates both bundles,6input pins,2actual request chains,33exact anchors and all1040original baseline files unchanged. Normal queue annotation is present; old categories and synthesis are unchanged. Reproduce read-only audit from repository root with `.venv/bin/python data/benchmarks/mohamadshahi_companions_v1/audit_replay.py`; exact frozen execution/export commands are retained in launch/export receipts.412tests pass, including negative cases for planned/randomized N, unsupported population transfer, conflicting evidence, wrong source hash and missing quotations.
+
+## Independent next blocker
+
+Read-only diagnosis of Firouzi26988693 located a real, narrower failure: every table/dispersion quotation matches, but the narrative design and PP-population quotations reconstruct two-column reading order and therefore fail literal anchoring. `firouzi_anchor_diagnosis.json` preserves exact checks and source/extraction hashes. The original proposed48/53, week12 endpoint values remain unaccepted. No claim that the model's proposed row is verified. Existing image-input admission supports binary outcomes only and should not be misapplied here. Next useful step is a separately frozen exact quotation/reading-order repair with complete statistical verification under the unchanged continuous contract, followed by ordinary integrity/family gates if supported.
+
+No runner remains. This is developer-assisted source adjudication and a reusable continuation improvement, not a completed review or prospective validation. Original Li, Ma, Alabed and Popp gaps and all failed observations remain preserved; overall project objective is incomplete.

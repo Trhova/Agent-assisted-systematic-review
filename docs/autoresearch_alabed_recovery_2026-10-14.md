@@ -1,0 +1,23 @@
+Dated evidence correction,14October2026 09:52UTC: the retained `16446775_publisher_preview.txt` contains a failed Nature redirect, not a synopsis. Earlier descriptions of a preserved publisher synopsis are unsupported by that artifact. A new Springer publisher route also failed. No non-primary exclusion has been made; all five access gaps remain. Historical text is retained below for provenance.
+
+# Alabed recovery: actual result and code-pin deviation
+
+The bounded recovery ended at 08:33:52 UTC on 14 October 2026 (launcher14735/suite14736, exit2). No runner remains. Explicit model `gpt-6-astra`, backend `codex`; nested reasoning effort remains backend-default/unpinned. This is a post-hoc, developer-assisted four-trial quantitative comparison, not complete autonomous review reproduction or prospective validation. CORP-2 and the broader published eligibility remain outside this restricted contract.
+
+157 records screened,9 full-text candidates,4 accepted independent primary trials,5 unresolved source-access records. All six family pairs now pass the evidence-tier policy with residual theoretical reenrollment uncertainty retained. The two previously failed calls recovered;25 successful cached calls were imported only after request identity, model/backend, schema and matching successful isolated-response verification. No unchanged missing-source requests were repeated.
+
+The primary-supported fixed Mantel–Haenszel risk ratio is **1.000000 (95% CI0.595957–1.677972), I²0**, from564 participants. ICAP14/120 versus12/120; CORP4/60 versus4/60; CORE3/42 versus6/42; COPE5/60 versus4/60. Semantic comparison agrees and all four published contributors are represented. Numerical reproduction is false against the unchanged published1.26[0.75,2.12] target.
+
+CORE original Table2 reports group1 conventional care6/42 and group2 colchicine3/42. The review forest reverses those arms. A separately labeled post-hoc arithmetic calibration swapping only that row gives1.260870[0.748814,2.123080], explaining the published aggregate. It does not replace primary extraction or establish scientific success. The original PDF/text and source quotations remain preserved in the qualification and run directories.
+
+## Execution-integrity limitation
+
+Preregistration specified code95037f43b03035679d93fdce29197f7a57f7189ae7f36b2168226a82d02813ef. The suite/RoB/evaluator used that bundle, but its nested `python -m` review child imported repository code7e790fb1defb190e5782457c95850ebe2394578a5771c5270a17f00cdadb7935. Only audit_run.py, outcome_availability.py and newly added import_model_cache.py differ; scientific modules are identical. Nevertheless full-code preregistration adherence failed. This observation is exploratory with disclosed actual provenance, not an unchanged frozen execution. Neither preregistration nor failed original runs were rewritten.
+
+A generic repair now freezes the whole suite CLI, including later RoB/evaluation imports, verifies the package before nested import, accepts an optional `prespecified_code_sha256` suite pin, and rejects an unexpected child code before dependent RoB/evaluation. Tests exercise a competing repository package, bundle tampering, an incorrect prespecified pin and a mismatched child with forbidden dependent calls.223 tests pass; selected lint and CLI-help smoke pass. No additional scientific rerun was launched to conceal this defect.
+
+Full-tier replay audit is valid with zeroissues; all218 files hashed from originalv2 remain unchanged. RoB drafts:3 source-checked,1 unverified; these are abbreviated automated drafts, not expert RoB2/GRADE. Five unresolved records remain16446775,8184826,8284902,1826159,2892065. Publisher evidence classifies16446775 as a Practice Point but has not been silently substituted for full text.
+
+Artifacts: `data/benchmarks/alabed2014_v2_recovery1/`: original launch/preregistration/completion, `suite_report.json`, `code_pin_deviation.json`, `model_cache_import` inside run, `recovery_artifact_audit.json`, `original_preservation_check.json`, and `secondary_core_arm_reversal_calibration.json`. Run path ends `alabed2014_total_adverse_effects_development_v2/c61de79a7222`.
+
+Next useful step is provenance-aware non-primary-report adjudication using the existing publisher genre evidence, and inspection of the one unverified RoB draft. Any new policy must be generic, separately versioned and must not turn absent full text into certainty about an original study. Further numerical execution requires genuinely new evidence or a separately frozen validation objective. Source completeness and reliable evidence adjudication remain larger obstacles than pooling arithmetic.

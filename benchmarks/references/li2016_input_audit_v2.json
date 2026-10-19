@@ -1,0 +1,118 @@
+{
+  "evidence_level": "published_forest_plot_recalculation_NOT_independent_trial_extraction",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4937966/figure/F3/",
+  "source_asset": "PMC4937966.1/medi-95-e4088-g004.jpg",
+  "measure": "SMD",
+  "model": "random",
+  "rows": [
+    {
+      "study_id": "Asemi 2013",
+      "mean_treatment": 145.4,
+      "sd_treatment": 9.5,
+      "n_treatment": 27,
+      "mean_control": 163.3,
+      "sd_control": 12,
+      "n_control": 27,
+      "record_id": "23899653",
+      "unit": "mg/dL",
+      "value_type": "endpoint"
+    },
+    {
+      "study_id": "Bayat 2016",
+      "mean_treatment": 126.25,
+      "sd_treatment": 34.01,
+      "n_treatment": 20,
+      "mean_control": 165.5,
+      "sd_control": 41.34,
+      "n_control": 20,
+      "record_id": "26955460",
+      "unit": "mg/dL",
+      "value_type": "endpoint"
+    },
+    {
+      "study_id": "Ejtahed 2012",
+      "mean_treatment": 7.36,
+      "sd_treatment": 2.41,
+      "n_treatment": 30,
+      "mean_control": 7.53,
+      "sd_control": 1.32,
+      "n_control": 30,
+      "record_id": "22129852",
+      "unit": "mmol/L",
+      "value_type": "endpoint"
+    },
+    {
+      "study_id": "Firouzi 2016",
+      "mean_treatment": 7.2,
+      "sd_treatment": 1.2,
+      "n_treatment": 48,
+      "mean_control": 8.2,
+      "sd_control": 2.3,
+      "n_control": 53,
+      "record_id": "26988693",
+      "unit": "mmol/L",
+      "value_type": "endpoint"
+    },
+    {
+      "study_id": "Hosseinzadeh 2013",
+      "mean_treatment": 163.3,
+      "sd_treatment": 53.3,
+      "n_treatment": 42,
+      "mean_control": 166.9,
+      "sd_control": 44.6,
+      "n_control": 42,
+      "record_id": "24319552",
+      "unit": "mg/dL",
+      "value_type": "endpoint"
+    },
+    {
+      "study_id": "Hove 2015",
+      "mean_treatment": 7.9,
+      "sd_treatment": 1.926,
+      "n_treatment": 23,
+      "mean_control": 9.9,
+      "sd_control": 3.407,
+      "n_control": 18,
+      "record_id": "25300285",
+      "unit": "mmol/L",
+      "value_type": "endpoint"
+    },
+    {
+      "study_id": "Mazloom 2013",
+      "mean_treatment": 158.69,
+      "sd_treatment": 16.38,
+      "n_treatment": 16,
+      "mean_control": 162.67,
+      "sd_control": 16.38,
+      "n_control": 18,
+      "record_id": "23645956",
+      "unit": "mg/dL",
+      "value_type": "endpoint"
+    },
+    {
+      "study_id": "Shakeri 2014",
+      "mean_treatment": 123.7,
+      "sd_treatment": 38.9,
+      "n_treatment": 26,
+      "mean_control": 168.4,
+      "sd_control": 86.1,
+      "n_control": 26,
+      "record_id": "24706266",
+      "unit": "mg/dL",
+      "value_type": "endpoint"
+    },
+    {
+      "study_id": "Tajadadi-Ebrahimi 2014",
+      "mean_treatment": 126.6,
+      "sd_treatment": 39.9,
+      "n_treatment": 27,
+      "mean_control": 170.1,
+      "sd_control": 71.6,
+      "n_control": 27,
+      "record_id": "25196301",
+      "unit": "mg/dL",
+      "value_type": "endpoint"
+    }
+  ],
+  "notes": "Numeric cells transcribed from the published forest figure. This is secondary-source engine validation only. Source trials have NOT independently validated these cells. Figure mixes underlying source units; SMD is dimensionless. No data in this file may enter autonomous extraction prompts."
+}

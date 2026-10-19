@@ -1,0 +1,56 @@
+id: rawat2021_iv_covid_hospital_stay_v1
+frozen_on: '2026-10-13'
+query: TITLE_ABS:("ascorbic acid" OR "vitamin C" OR "Sodium Ascorbate" OR "L-ascorbic")
+  AND TITLE_ABS:(coronavirus OR "COVID 19" OR "COVID-19" OR Corona OR COVID OR "SARS-CoV2")
+  AND FIRST_PDATE:[1900-01-01 TO 2021-09-18] AND SRC:MED
+eligibility: English peer-reviewed parallel randomized controlled trials in adults
+  hospitalized with COVID-19, published online by 2021-09-18, comparing an INTRAVENOUS
+  vitamin-C-containing regimen (including other active vitamins or combination therapies)
+  against standard care without vitamin C or placebo. This outcome-specific reconstruction
+  concerns total hospital length of stay; studies explicitly measuring only outpatient
+  symptom duration or ICU length of stay and not total hospitalization are outside
+  this outcome-specific scope. Do not substitute ICU stay, time to clinical improvement
+  or discharge among survivors for total hospital stay. Missing numerical reporting
+  of a measured hospital-stay outcome remains unresolved, not excluded. Retain documented
+  analyzed populations and report attrition; never infer analyzed n from randomized
+  n where incomplete outcomes are reported. All severity levels, doses and routes
+  eligible. Exclude observational, nonhuman, pediatric, protocols and non-peer-reviewed/preprints.
+  This is the published intravenous administration subgroup. Oral-only vitamin C interventions
+  are excluded regardless of other ingredients. Route must be confirmed from primary
+  methods. The clinical effect is of the IV-vitamin-C-containing regimen, not isolated
+  vitamin C if other agents were added.
+outcome: hospital_length_of_stay
+unit: dimensionless
+allowed_source_units:
+- days
+- day
+value_type: endpoint
+measure: SMD
+model: random
+timing_rule: Total hospital length of stay for the index admission
+dependence_rule: One independent parallel comparison per trial; no shared controls
+  or crossover designs.
+summary_policy: luo_wan_quartiles_v1
+evaluation_scope: Post-hoc development evaluation of the published Figure 7b IV subgroup,
+  selected after broad-case source ambiguities were observed. The broader case and
+  failures remain separate. New protocol and target frozen before this execution;
+  not held-out validation.
+bibliographic_supplement:
+  path: benchmarks/sources/rawat2021_iv_bibliographic_leads_v1.json
+  sha256: 03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d
+validate_query_fields: true
+method_sources:
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC8552785/
+- https://doi.org/10.1177/0962280216669183
+- https://doi.org/10.1186/1471-2288-14-135
+search_implementation: Accessible Europe PMC MED title/abstract implementation plus
+  frozen bibliographic-only backward-citation lead for a non-MED report; does not
+  recreate the original Embase, Scopus or author correspondence.
+conversion_note: Review cites Luo/ Shi/Hozo. Quartile-only inputs use Luo Eq11 and
+  Wan Eq16, the quartile-only case of the Luo/Wan/Shi framework. Estimates retain
+  full precision, rather than rounding intermediate values to the published forest.
+  Reported-only sensitivity mandatory.
+intervention_route: intravenous
+version_note: "Compatible published subgroup alongside the broader failed benchmark,\
+  \ not a relabeling. Route-specific scope resolves neither the oral report\u2019\
+  s undefined \xB1 statistic nor the additional oral trial\u2019s missing inputs."

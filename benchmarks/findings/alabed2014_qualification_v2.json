@@ -1,0 +1,112 @@
+{
+  "candidate": "Alabed2014 total adverse effects",
+  "source_access_qualified": true,
+  "routes": [
+    {
+      "receipt": "data/benchmarks/alabed2014_qualification_v1/COPE.receipt.json",
+      "receipt_sha256": "f49de279dadc42090f8ad60ccd1cd5d36e9b9e048ce54e897e810060752d7b0d",
+      "url": "https://www.ahajournals.org/doi/pdf/10.1161/circulationaha.105.542738?download=true",
+      "final_url": "https://www.ahajournals.org/doi/pdf/10.1161/circulationaha.105.542738?download=true",
+      "status": 403,
+      "sha256": "4435ea4a4729578a9593213f2a2cf2951d9413b1f5f0b4547d2f39d7588eb592"
+    },
+    {
+      "receipt": "data/benchmarks/alabed2014_qualification_v1/CORE.receipt.json",
+      "receipt_sha256": "2d25c394a1c7698b6bba0b5c2eb028db992f68040500ec39eb40181cea054236",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/486974",
+      "final_url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/486974",
+      "status": 403,
+      "sha256": "f01bc7e17e85053e6af1b85dc4ad5416342edae9cca97b02807cf31fc72ccfcb"
+    },
+    {
+      "receipt": "data/benchmarks/alabed2014_qualification_v1/CORE_jama.receipt.json",
+      "receipt_sha256": "3ede7b732e35a821e32dec976061b0bb6623579a4d5d182a1608fdcdf029a1f2",
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/articlepdf/486705/ioi50076.pdf",
+      "final_url": "https://jamanetwork.com/journals/jamainternalmedicine/articlepdf/486705/ioi50076.pdf",
+      "status": 403,
+      "sha256": "f9f7d0a9b5365f2b79927120b2b6e92772c5bd9c7d1f81496d9bc7e320a90280"
+    },
+    {
+      "receipt": "data/benchmarks/alabed2014_qualification_v1/CORE_rima.receipt.json",
+      "receipt_sha256": "b0eeb0b90d1b3fa00224d3e2cfad16461bc560013853e87f48d5cd6caed69df4",
+      "url": "https://www.rima.org/web/medline_pdf/ArchInternMed2005_1987-91.pdf",
+      "final_url": "https://www.rima.org/web/medline_pdf/ArchInternMed2005_1987-91.pdf",
+      "status": 200,
+      "sha256": "6d61a4731199a99c8b9be2aba8f10a83af9d79ae88ccabf6a65afeb6ff0dfe37"
+    },
+    {
+      "receipt": "data/benchmarks/alabed2014_qualification_v1/CORP.receipt.json",
+      "receipt_sha256": "c2d5d00974efb98beb96ff3e673d7e976319757b51e4d12e47ffc54c181b7197",
+      "url": "https://pharmaselect.sk/wp-content/uploads/ImazioM_Colchicine_for_Recurrent_Pericarditis_CORP.pdf",
+      "final_url": "https://pharmaselect.sk/wp-content/uploads/ImazioM_Colchicine_for_Recurrent_Pericarditis_CORP.pdf",
+      "status": 200,
+      "sha256": "1b284efed0e934f716c1b341ce6395fbdf2b536487eee537f42a24d5098cfb6b"
+    },
+    {
+      "receipt": "data/benchmarks/alabed2014_qualification_v1/ICAP.receipt.json",
+      "receipt_sha256": "9721891fcd5967a0561a0c3d9a0434c5c0cb4dbb595cf4a00daa6e7332f19f30",
+      "url": "https://www.nejm.org/doi/pdf/10.1056/NEJMoa1208536",
+      "final_url": "https://www.nejm.org/doi/pdf/10.1056/NEJMoa1208536",
+      "status": 403,
+      "sha256": "ac79f8baffc64048989a50733f2a095d07a40b58d96f50bcc84eff519e11c878"
+    },
+    {
+      "receipt": "data/benchmarks/alabed2014_qualification_v1/ICAP_umem.receipt.json",
+      "receipt_sha256": "319d9598786de6e46ee3b2bd8105dfa9410aae6c4ce9a2af83521e31193d0d71",
+      "url": "https://umem.org/files/uploads/1309151219_NEJM-Colchicine_RCT.pdf",
+      "status": 200,
+      "sha256": "cc9a1403a8db4a46ec5d5447965ab53c3f4ab500fe3a9610a5fa02d19e239065"
+    }
+  ],
+  "capture_source": "COPE_import/text.json",
+  "scope_limitation": "Post-hoc four-trial quantitative comparison. Broader review includes multiple recurrences; CORP-2 awaiting assessment not covered.",
+  "evaluator_primary_counts": {
+    "16186437": {
+      "colchicine": [
+        5,
+        60
+      ],
+      "control": [
+        4,
+        60
+      ],
+      "locator": "Table2; original captured lines727-754"
+    },
+    "16186468": {
+      "colchicine": [
+        3,
+        42
+      ],
+      "control": [
+        6,
+        42
+      ],
+      "locator": "Table2 and group definitions in Results/footnote"
+    },
+    "21873705": {
+      "colchicine": [
+        4,
+        60
+      ],
+      "control": [
+        4,
+        60
+      ],
+      "locator": "Table3 Overall"
+    },
+    "23992557": {
+      "colchicine": [
+        14,
+        120
+      ],
+      "control": [
+        12,
+        120
+      ],
+      "locator": "Table3 Overall"
+    }
+  },
+  "reference_discrepancy": "Analysis2.1 has CORE arm counts reversed versus primary Table2; preserve original target.",
+  "not_model_input": true,
+  "artifact_root": "data/benchmarks/alabed2014_qualification_v1"
+}

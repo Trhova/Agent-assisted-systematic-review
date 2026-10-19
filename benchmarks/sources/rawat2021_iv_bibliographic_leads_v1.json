@@ -1,0 +1,36 @@
+[
+  {
+    "id": "doi-10.34172-ipp.2022.08",
+    "title": "The effect of vitamin E and vitamin C in patients with COVID-19 pneumonia; a randomized controlled clinical trial",
+    "abstract": "Hospitalized non-severe COVID-19 patients received vitamins C and E plus standard treatment or standard treatment alone. The primary outcome was clinical response; duration of hospitalization was also assessed.",
+    "pmcid": "",
+    "doi": "10.34172/ipp.2022.08",
+    "date": "2021-04-14",
+    "publication_types": [
+      "Randomized Controlled Trial"
+    ],
+    "related_notices": [],
+    "source_urls": [
+      "https://www.immunopathol.com/PDF/ipp-8-e8.pdf"
+    ],
+    "discovery_source": "Backward citation from Rawat2021; independently verified publisher full text",
+    "date_evidence": "Publisher PDF page 1: Published online 14 Apr. 2021; assigned 2022 issue"
+  },
+  {
+    "id": "doi-10.22037-jcma.v6i2.32182",
+    "title": "Efficacy of High Dose Vitamin C, Melatonin and Zinc in Iranian Patients with Acute Respiratory Syndrome due to Coronavirus Infection: A Pilot Randomized Trial",
+    "abstract": "Pilot randomized trial of standard care versus standard care plus intravenous vitamin C, oral melatonin and oral zinc. Patients were monitored for hypoxemia and inflammatory markers. ICU length of stay was reported.",
+    "pmcid": "",
+    "doi": "10.22037/jcma.v6i2.32182",
+    "date": "Spring 2021",
+    "publication_types": [
+      "Randomized Controlled Trial"
+    ],
+    "related_notices": [],
+    "source_urls": [
+      "https://brieflands.com/journals/jcma/articles/149653.pdf"
+    ],
+    "discovery_source": "Backward citation from Rawat2021; independently verified primary journal PDF",
+    "date_evidence": "Primary PDF footer: Vol 6, No 2, Spring 2021"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "id": "alabed2014_total_adverse_effects_development_v1",
+  "source": "https://openaccess.city.ac.uk/id/eprint/4043/5/Colchicine%20for%20pericarditis.pdf",
+  "doi": "10.1002/14651858.CD010652.pub2",
+  "outcome": "total_adverse_effects_during_study_followup",
+  "unit": "dimensionless",
+  "value_type": "binary_rr_mh_fixed_v1",
+  "measure": "RR",
+  "model": "mantel_haenszel_fixed",
+  "estimate": 1.26,
+  "ci_low": 0.75,
+  "ci_high": 2.12,
+  "k": 4,
+  "absolute_tolerance": 0.01,
+  "expected_record_ids": [
+    "16186437",
+    "16186468",
+    "21873705",
+    "23992557"
+  ],
+  "notes": "Original Analysis2.1 total adverse effects, published target unchanged. Evaluate primary-supported disagreements; comparator narrower than broad review eligibility as explicitly prespecified."
+}

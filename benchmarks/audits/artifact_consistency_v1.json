@@ -1,0 +1,14 @@
+{
+  "id": "artifact_consistency_development_v1",
+  "type": "read_only_replay_and_isolated_corruption",
+  "model_execution": "none; deterministic evaluation of explicit gpt-6-astra codex runs",
+  "cases": {
+    "ma2013": "data/benchmarks/reproduction_v3_final/ma2013_nafld_alt_reproduction_v2/bb8851b1d3fc",
+    "li2016": "data/benchmarks/reproduction_v3_final/li2016_t2d_fbg_reproduction_v3/664e53794051",
+    "rawat2021_all_routes": "data/benchmarks/rawat2021_v1_repair2/rawat2021_covid_hospital_stay_v1/b99a2892bf59",
+    "rawat2021_iv": "data/benchmarks/rawat2021_iv_v1/rawat2021_iv_covid_hospital_stay_v1/64f1fbb555e4"
+  },
+  "corruption_parent": "rawat2021_iv",
+  "corruptions": ["synthesis_estimate", "source_text", "family_rows", "false_completion", "quartile_derivation"],
+  "reference": "benchmarks/references/rawat2021_iv_hospital_stay_v1.json"
+}

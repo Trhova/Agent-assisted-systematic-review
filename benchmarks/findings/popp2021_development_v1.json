@@ -1,0 +1,26 @@
+{
+  "scope": "Development evaluation of one complete published quantitative outcome; overall autonomous review incomplete",
+  "suite_report": "data/benchmarks/popp2021_v1/suite_report.json",
+  "code_sha256": "fb3dd76fca92bc1767cd9da6d4e3ae4ff2840ede9f4f2e0ee703961ffbbda2bd",
+  "counts": {
+    "retrieved": 132,
+    "screened": 132,
+    "fulltexts_attempted": 9,
+    "independent_effects": 2,
+    "supplemental_records": 1,
+    "abstract_candidates": 9,
+    "accepted_effects": 2,
+    "unresolved": 4
+  },
+  "numerically_matches": true,
+  "reproduced": false,
+  "artifact_integrity_valid": true,
+  "postlaunch_source": "data/benchmarks/popp2021_followup_sources_v1",
+  "limitations": [
+    "Three abstract-free letters missing from completed run",
+    "Lopes scheduled mortality horizon unresolved",
+    "Single database plus prespecified bibliographic companion lead",
+    "Nested reasoning effort unpinned",
+    "Not held-out or entire multi-outcome review validation"
+  ]
+}

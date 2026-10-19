@@ -1,0 +1,38 @@
+{
+  "classification": "apparent secondary-review extraction discrepancy; requires independent scientific adjudication",
+  "date": "2026-10-12",
+  "review_doi": "10.1097/MD.0000000000004088",
+  "review_figure": "Figure 3 fasting glucose",
+  "records": [
+    {
+      "pmid": "23899653",
+      "doi": "10.1159/000349922",
+      "primary_source_url": "https://magistralbr.caldic.com/storage/product-files/1151404700.pdf",
+      "primary_table": "Table 3",
+      "primary_dispersion_label": "Data are means \u00b1 SE.",
+      "endpoint_treatment_mean": 145.4,
+      "endpoint_treatment_SE": 9.5,
+      "endpoint_control_mean": 163.3,
+      "endpoint_control_SE": 12,
+      "review_SD_columns": [
+        9.5,
+        12
+      ]
+    },
+    {
+      "pmid": "23645956",
+      "primary_table": "Table 2",
+      "primary_dispersion_label": "mean\u00b1SE",
+      "endpoint_treatment_mean": 158.69,
+      "endpoint_treatment_SE": 16.38,
+      "endpoint_control_mean": 162.67,
+      "endpoint_control_SE": 16.38,
+      "review_SD_columns": [
+        16.38,
+        16.38
+      ],
+      "primary_source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3642943/"
+    }
+  ],
+  "interpretation": "The review places identically valued primary-report standard errors in SD columns. The pipeline does not substitute SE for SD. This is a separate evaluation finding and is never supplied to extraction."
+}

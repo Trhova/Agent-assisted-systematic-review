@@ -1,0 +1,29 @@
+{
+  "scope": "Bounded source qualification outside frozen model run; unavailable originals remain unavailable",
+  "records": {
+    "32337546": {
+      "publisher_pdf": "HTTP403; audit found exact URL already attempted in v1, so not new evidence and no further repeats",
+      "new_bioc_route": "NCBI primary BioC endpoint returned no result, not usable article text"
+    },
+    "33769172": {
+      "new_hal_route": "Corrected DOI search found hal-03858424v1; full metadata declares openAccess_bool=false and supplies no file URL",
+      "initial_query_error": "Initial DOI field query returned API error; never interpreted as zero results",
+      "fulltext_qualified": false
+    }
+  },
+  "receipts": {
+    "data/benchmarks/popp2021_followup_sources_v2/PMC7197570_bioc.body": "478f38e0765ee9c406831bb2fc27e8019ac5227c20c6b28ca0de582d8449354a",
+    "data/benchmarks/popp2021_followup_sources_v2/PMC7197570_bioc.receipt.json": "606d3f90e76397ee2b068f70b84588d654ed7d37e40d594ecbde09b11da91675",
+    "data/benchmarks/popp2021_followup_sources_v2/hal_query.body": "b06688a7b8b577f623be74935e8fc7e333dd36cdafa51fa4fe1c3d6157118f24",
+    "data/benchmarks/popp2021_followup_sources_v2/hal_query.receipt.json": "de82d3fcc3dad9f4866d52d3122c4499faabfac0d82c5db3422d1222ba4da7e3",
+    "data/benchmarks/popp2021_followup_sources_v2/hal_query_corrected.body": "c10911ed4ca1bcc586a2ed1277ef929f9f42d0b29f736551605c76cd25eb1c61",
+    "data/benchmarks/popp2021_followup_sources_v2/hal_query_corrected.receipt.json": "0e7412cf9ae7ff18a107aca6711ab99c03e1fe11210ee6696ec6e6baf85bc9db",
+    "data/benchmarks/popp2021_followup_sources_v2/hal_record.body": "c80ce69436ebdd5e9dc19ede5624d0b5f90925c92459b6fcb91d483b582ed7eb",
+    "data/benchmarks/popp2021_followup_sources_v2/hal_record.receipt.json": "65e1eef3eef35713359bb5771f0245e2666cd4cb900d256a38038014a92396a1",
+    "data/benchmarks/popp2021_followup_sources_v2/oup_letter.body": "c2fc22f4a0b755526d3afbf40d0556ec01b616bc7185dcbeece5466bef85ddee",
+    "data/benchmarks/popp2021_followup_sources_v2/oup_letter.receipt.json": "7e24cc6599f34b32b9f52025eefef28cb066e7706f55f7a2119d4acb25745eef",
+    "data/benchmarks/popp2021_followup_sources_v2/rebec_original.body": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
+    "data/benchmarks/popp2021_followup_sources_v2/rebec_original.receipt.json": "1e97995f74a9170de1c4c8d39dccd201230a8845197b20d3f0c4df292f7261da",
+    "data/benchmarks/popp2021_followup_sources_v2/rebec_web_capture.json": "6141f37f39206a5b95680d9b8a49da4320de3401a446a411425bb2b0c03e9bf0"
+  }
+}

@@ -1,0 +1,11 @@
+id: rob2_draft_v1
+prespecified_on: '2026-10-12'
+scope: Outcome-specific automated draft for accepted independent parallel-trial results, using the existing project RoB2 schema and template.
+effect_of_interest: assignment
+sources: Only the supplied primary report and its retrieved attachments. Cited registrations or protocols are not treated as independently accessed documents.
+validation: Exact source snippets, consistent overall/domain ratings, and a separate model verification. Unreported information remains NI; failures remain unverified drafts.
+benchmark_effect: No exclusions, weights, estimands, numerical values or frozen reference targets change. This audit is separate from historical numerical reproduction.
+limitations: The repository template is abbreviated. Automated agreement is not expert validation, a complete independent protocol/registry search, or GRADE certainty assessment.
+method_sources:
+  - https://www.riskofbias.info/welcome/rob-2-0-tool
+  - https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-08

@@ -1,0 +1,29 @@
+{
+  "id": "rawat2021_covid_hospital_stay_v1",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8552785/",
+  "doi": "10.1016/j.dsx.2021.102324",
+  "outcome": "hospital_length_of_stay",
+  "measure": "SMD",
+  "unit": "dimensionless",
+  "value_type": "endpoint",
+  "model": "random",
+  "estimate": -0.23,
+  "ci_low": -1.04,
+  "ci_high": 0.58,
+  "k": 4,
+  "absolute_tolerance": 0.02,
+  "expected_record_ids": [
+    "33420963",
+    "33409026",
+    "33573699",
+    "doi-10.34172-ipp.2022.08"
+  ],
+  "expected_review_record_ids": [
+    "33420963",
+    "33409026",
+    "33573699",
+    "doi-10.34172-ipp.2022.08"
+  ],
+  "notes": "Outcome-specific four-contributor hospital-stay comparison, Figure2c. Review includes six reports across all outcomes; these four are not asserted to be its entire review. Model DL normal IV Hedges SMD. Full-precision conversions may differ from rounded forest entries; no calibration to target. Trial coverage, extraction provenance and eligibility required alongside numerical agreement.",
+  "contract_version": "rawat_development_v1"
+}

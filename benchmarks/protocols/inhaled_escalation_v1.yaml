@@ -1,0 +1,65 @@
+id: inhaled_escalation_development_v1
+frozen_on: '2026-10-15'
+query: (EXT_ID:33844996 OR EXT_ID:34388395 OR EXT_ID:34728476 OR EXT_ID:34807241)
+  AND SRC:MED
+validate_query_fields: true
+eligibility: 'Citation-defined complete four-trial published inhaled-corticosteroid
+  escalation comparison: original individually randomized parallel outpatient COVID-19
+  trials STOIC, PRINCIPLE budesonide versus concurrent usual-care control, CONTAIN,
+  and Clemency/Covis. Include open-label and placebo-controlled studies and original
+  preprints available by30December2021; collate preprint/journal companions as one
+  study. Do not include other platform arms or duplicate controls. This is the complete
+  declared four-trial quantitative scope, not an exhaustive independent search or
+  whole-review reproduction.'
+outcome: study_defined_hospital_admission_death_or_urgent_care
+unit: dimensionless
+value_type: binary_rr_mh_fixed_v1
+measure: RR
+model: mantel_haenszel_fixed
+binary_policy: binary_rr_mh_fixed_v1
+randomization_unit_policy: randomization_unit_v2
+family_policy: family_evidence_tiers_v2
+model_adapter_attempts: 1
+timing_rule: 'Extract explicitly reported study-defined escalation events: STOIC COVID-19-related
+  urgent-care/ED/hospitalization composite over its28-day follow-up, using the reported
+  per-protocol analysis and its matching event counts and denominators. PRINCIPLE
+  COVID-related hospital admission or death within28days, concurrent eligible SARS-CoV2-positive
+  cohort, using the secondary WHO clinical progression table and its outcome-specific
+  observed denominators. CONTAIN hospital admission or death over14-day follow-up.
+  Clemency hospital admission or death byDay30, ITT; do not substitute its separate
+  ED/hospital-admission composite. Preserve these different time horizons and composite
+  definitions in each row. This benchmark intentionally retains the published heterogeneous
+  outcome grouping and must never be described as a pure hospitalization effect or
+  uniform fixed-time event. No symptom recovery endpoint or inverse/complement recoding.'
+denominator_rule: Use the original outcome-specific population and analyzed N. STOIC
+  per-protocol events must pair with per-protocol N, never ITT events with PP denominators.
+  PRINCIPLE concurrent WHO outcome Ns, not nonconcurrent primary-model controls or
+  symptom-recovery Ns. CONTAIN modified ITT analyzed population and Clemency ITT population
+  require original evidence. Preserve missing-data and follow-up limitations; no balanced-loss
+  inference or assumed complete outcomes.
+zero_event_policy: Add0.5 to all four cells when a cell is zero; retain originalcounts;
+  exclude double-zero or double-all-event relative effects with explicit ledger.
+estimator_rationale: Independently specified fixed Mantel-Haenszel RR and normal logRR
+  intervals for comparison to the published fixed sensitivity. Common-effect assumption
+  is a conditional working model, not evidence of one universal effect across urgent-care
+  versus hospital/death thresholds,14/28/30-day windows, ages or blinding. Report
+  all trial estimates, heterogeneity and these limitations; no clinical decision recommendation.
+  Exact published metan weighting/interval method is not established, so no exact-method
+  reproduction claim.
+evaluation_scope: Agent-assisted post-hoc development comparison of all four contributors
+  to the published hospitalization analysis, retaining its broader STOIC composite
+  and explicit primary operational definitions. Not a pure hospitalization analysis,
+  whole systematic review, exhaustive discovery, prospective validation or exact estimator
+  reproduction. Qualification disclosed primary/reference population differences before
+  execution; no reference counts or pooled results are included here. Original preprint
+  represents its journal companion with explicit version limitation.
+method_sources:
+- https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-06
+- https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10
+- https://training.cochrane.org/handbook/current/statistical-methods-revman5
+aggregation_rule: Direct event totals are preferred. For PRINCIPLE only if the original
+  WHO ordinal clinical progression table establishes mutually exclusive outcome states
+  for the same population/timepoint, sum explicit hospitalized severity categories
+  and death; preserve original components and exact source evidence. Never add deaths
+  to hospital totals that already include them. No subtraction from non-events, rounding
+  percentages, survival-curve digitization or imputation.

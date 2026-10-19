@@ -1,0 +1,95 @@
+{
+  "suite": "rawat2021_iv_hospital_stay_development_v1",
+  "suite_sha256": "3a2fa94ab9e27d251daa99f0f3f8aec04365134deb82bed74a61838e8d4d517d",
+  "status": "not_reproduced",
+  "evaluation_only": false,
+  "cases": [
+    {
+      "id": "rawat2021_iv_covid_hospital_stay_v1",
+      "run": "data/benchmarks/rawat2021_iv_v1/rawat2021_iv_covid_hospital_stay_v1/64f1fbb555e4",
+      "run_status": "incomplete",
+      "counts": {
+        "retrieved": 231,
+        "screened": 231,
+        "fulltexts_attempted": 12,
+        "independent_effects": 3,
+        "supplemental_records": 2,
+        "abstract_candidates": 12,
+        "accepted_effects": 3,
+        "unresolved": 1
+      },
+      "code_sha256": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+      "comparison": {
+        "reference": {
+          "id": "rawat2021_iv_covid_hospital_stay_v1",
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8552785/",
+          "doi": "10.1016/j.dsx.2021.102324",
+          "outcome": "hospital_length_of_stay",
+          "measure": "SMD",
+          "unit": "dimensionless",
+          "value_type": "endpoint",
+          "model": "random",
+          "estimate": -0.3,
+          "ci_low": -1.39,
+          "ci_high": 0.8,
+          "k": 3,
+          "absolute_tolerance": 0.02,
+          "expected_record_ids": [
+            "33420963",
+            "33409026",
+            "33573699"
+          ],
+          "expected_review_record_ids": [
+            "33420963",
+            "33409026",
+            "33573699"
+          ],
+          "notes": "Published Figure7b IV administration subgroup, not the full all-routes review. Three independent IV hospital-stay comparisons. Same DL normal Hedges SMD and source-supported quartile estimator; complete subgroup coverage and explicit route semantics required. Post-hoc development target, inspected alongside primary evidence before this run.",
+          "contract_version": "rawat_iv_development_v1",
+          "intervention_route": "intravenous"
+        },
+        "run_status": "incomplete",
+        "reproduced": false,
+        "reason": "Not reproduced; inspect coverage, definitions and extraction evidence",
+        "report_coverage": {
+          "reference_reports": 3,
+          "retrieved": 3,
+          "retrieved_original_search": 3,
+          "retrieved_via_supplement": 0,
+          "retained_after_abstract_screening": 3,
+          "accessible_fulltexts": 3,
+          "missing_from_search": [],
+          "excluded_at_abstract": [],
+          "missing_fulltexts": []
+        },
+        "semantic_agreement": {
+          "agrees": true,
+          "issues": []
+        },
+        "differences": {
+          "estimate": 0.004266127980590784,
+          "ci_low": 0.0007274037911331188,
+          "ci_high": -0.0021951478299515603
+        },
+        "k_observed": 3,
+        "k_expected": 3,
+        "missing_studies": [],
+        "extra_studies": [],
+        "numerically_matches": true
+      },
+      "reproduced": false,
+      "risk_of_bias_drafts": {
+        "source_checked": 3,
+        "unverified": 0,
+        "limitations": [
+          "Automated drafts are not expert-validated RoB2 assessments.",
+          "Abbreviated project template; no independent registry/protocol retrieval or GRADE assessment.",
+          "These ratings do not change numerical inclusion, effects, weights or benchmark comparisons."
+        ]
+      },
+      "execution_exit_code": 2,
+      "evaluation_only": false
+    }
+  ],
+  "note": "Unit tests, cached development execution and secondary forest-plot calibration are not successful independent reproduction. Incomplete reviews cannot pass."
+}

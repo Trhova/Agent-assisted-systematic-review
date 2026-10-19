@@ -1,0 +1,18 @@
+{
+  "experiment": "Alter only Rawat IV status from incomplete to complete in isolated copy; unresolved extraction remains.",
+  "legacy_code_sha256": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+  "legacy_reproduced": true,
+  "current_reproduced": false,
+  "current_issues": [
+    "unsupported_complete_status"
+  ],
+  "original_run_unchanged": true,
+  "command": [
+    "/home/trhova/agentic_systematic_review/.venv/bin/python",
+    "-c",
+    "import sys;sys.path.insert(0,sys.argv[1]);from pathlib import Path;from scripts.autonomous_review import compare;compare(Path(sys.argv[2]),Path(sys.argv[3]))",
+    "/home/trhova/agentic_systematic_review/data/benchmarks/code_bundles/e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+    "data/benchmarks/artifact_consistency_v1/corruptions/false_completion",
+    "benchmarks/references/rawat2021_iv_hospital_stay_v1.json"
+  ]
+}

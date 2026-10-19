@@ -1,0 +1,10 @@
+id: inhaled_symptom_recovery_development_v1
+prespecified_model: gpt-6-astra
+prespecified_backend: codex
+prespecified_code_sha256: e128f7852eba1920da8dce49011bb93e75bc5dfa3be3ca027533860f5ed105cf
+cases:
+- id: inhaled_symptom_recovery_development_v1
+  protocol: benchmarks/protocols/inhaled_symptom_recovery_v1.yaml
+  protocol_sha256: c2504171a4b3de96c6fb1e5a2626efa2265e3e3c19715ca317000f205232fff8
+  reference: benchmarks/references/inhaled_symptom_recovery_v1.json
+  reference_sha256: 4b9495ab59609aeb3f6a45d6a5031ca563675a94360cdaf90979ca5a969da4ce

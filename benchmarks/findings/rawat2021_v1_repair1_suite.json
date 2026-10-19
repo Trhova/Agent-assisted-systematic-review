@@ -1,0 +1,98 @@
+{
+  "suite": "rawat2021_hospital_stay_development_v1",
+  "suite_sha256": "5c9b7e4bf44b8b84f74ff1a5a44892f52c554878f5bc38a2c843a9fbc7a076af",
+  "status": "not_reproduced",
+  "evaluation_only": false,
+  "cases": [
+    {
+      "id": "rawat2021_covid_hospital_stay_v1",
+      "run": "data/benchmarks/rawat2021_v1_repair1/rawat2021_covid_hospital_stay_v1/b99a2892bf59",
+      "run_status": "incomplete",
+      "counts": {
+        "retrieved": 230,
+        "fulltexts_attempted": 8,
+        "independent_effects": 3,
+        "supplemental_records": 1,
+        "screened": 230,
+        "abstract_candidates": 8,
+        "accepted_effects": 3,
+        "unresolved": 2
+      },
+      "code_sha256": "bbc97b97c0ebbccdbe2a5b7e442c2c7eda8c039af1ec09fdf17b6bbf09cb035c",
+      "comparison": {
+        "reference": {
+          "id": "rawat2021_covid_hospital_stay_v1",
+          "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8552785/",
+          "doi": "10.1016/j.dsx.2021.102324",
+          "outcome": "hospital_length_of_stay",
+          "measure": "SMD",
+          "unit": "dimensionless",
+          "value_type": "endpoint",
+          "model": "random",
+          "estimate": -0.23,
+          "ci_low": -1.04,
+          "ci_high": 0.58,
+          "k": 4,
+          "absolute_tolerance": 0.02,
+          "expected_record_ids": [
+            "33420963",
+            "33409026",
+            "33573699",
+            "doi-10.34172-ipp.2022.08"
+          ],
+          "expected_review_record_ids": [
+            "33420963",
+            "33409026",
+            "33573699",
+            "doi-10.34172-ipp.2022.08"
+          ],
+          "notes": "Outcome-specific four-contributor hospital-stay comparison, Figure2c. Review includes six reports across all outcomes; these four are not asserted to be its entire review. Model DL normal IV Hedges SMD. Full-precision conversions may differ from rounded forest entries; no calibration to target. Trial coverage, extraction provenance and eligibility required alongside numerical agreement.",
+          "contract_version": "rawat_development_v1"
+        },
+        "run_status": "incomplete",
+        "reproduced": false,
+        "reason": "Not reproduced; inspect coverage, definitions and extraction evidence",
+        "report_coverage": {
+          "reference_reports": 4,
+          "retrieved": 4,
+          "retrieved_original_search": 3,
+          "retrieved_via_supplement": 1,
+          "retained_after_abstract_screening": 4,
+          "accessible_fulltexts": 4,
+          "missing_from_search": [],
+          "excluded_at_abstract": [],
+          "missing_fulltexts": []
+        },
+        "semantic_agreement": {
+          "agrees": true,
+          "issues": []
+        },
+        "differences": {
+          "estimate": -0.0657338720194092,
+          "ci_low": -0.34927259620886675,
+          "ci_high": 0.21780485217004852
+        },
+        "k_observed": 3,
+        "k_expected": 4,
+        "missing_studies": [
+          "doi-10.34172-ipp.2022.08"
+        ],
+        "extra_studies": [],
+        "numerically_matches": false
+      },
+      "reproduced": false,
+      "risk_of_bias_drafts": {
+        "source_checked": 3,
+        "unverified": 0,
+        "limitations": [
+          "Automated drafts are not expert-validated RoB2 assessments.",
+          "Abbreviated project template; no independent registry/protocol retrieval or GRADE assessment.",
+          "These ratings do not change numerical inclusion, effects, weights or benchmark comparisons."
+        ]
+      },
+      "execution_exit_code": 2,
+      "evaluation_only": false
+    }
+  ],
+  "note": "Unit tests, cached development execution and secondary forest-plot calibration are not successful independent reproduction. Incomplete reviews cannot pass."
+}

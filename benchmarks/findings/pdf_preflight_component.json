@@ -1,0 +1,97 @@
+{
+  "role": "Offline performance-path and identity-consistency check using real previously acquired PDFs; not a benchmark reproduction or a controlled speed comparison.",
+  "checks": [
+    {
+      "record_id": "19669370",
+      "pdf_bytes": 450493,
+      "prior_identity_status": "accepted",
+      "front_page_verified": true,
+      "front_page_seconds": 0.028
+    },
+    {
+      "record_id": "19350330",
+      "pdf_bytes": 6646401,
+      "prior_identity_status": "identity_unverified",
+      "front_page_verified": false,
+      "front_page_seconds": 0.458
+    },
+    {
+      "record_id": "16163567",
+      "pdf_bytes": 130986,
+      "prior_identity_status": "identity_unverified",
+      "front_page_verified": false,
+      "front_page_seconds": 0.114
+    },
+    {
+      "record_id": "7389731",
+      "pdf_bytes": 570995,
+      "prior_identity_status": "identity_unverified",
+      "front_page_verified": false,
+      "front_page_seconds": 0.162
+    },
+    {
+      "record_id": "32226152",
+      "pdf_bytes": 12631522,
+      "prior_identity_status": "identity_unverified",
+      "front_page_verified": false,
+      "front_page_seconds": 0.175
+    },
+    {
+      "record_id": "19669273",
+      "pdf_bytes": 5530415,
+      "prior_identity_status": "identity_unverified",
+      "front_page_verified": false,
+      "front_page_seconds": 0.465
+    },
+    {
+      "record_id": "20345018",
+      "pdf_bytes": 282317,
+      "prior_identity_status": "accepted",
+      "front_page_verified": true,
+      "front_page_seconds": 0.633
+    },
+    {
+      "record_id": "24318398",
+      "pdf_bytes": 863967,
+      "prior_identity_status": "accepted",
+      "front_page_verified": true,
+      "front_page_seconds": 0.197
+    },
+    {
+      "record_id": "23427197",
+      "pdf_bytes": 619175,
+      "prior_identity_status": "identity_unverified",
+      "front_page_verified": false,
+      "front_page_seconds": 0.081
+    },
+    {
+      "record_id": "32226156",
+      "pdf_bytes": 4704406,
+      "prior_identity_status": "identity_unverified",
+      "front_page_verified": false,
+      "front_page_seconds": 0.366
+    },
+    {
+      "record_id": "21484580",
+      "pdf_bytes": 8136063,
+      "prior_identity_status": "accepted",
+      "front_page_verified": true,
+      "front_page_seconds": 0.628
+    },
+    {
+      "record_id": "19288110",
+      "pdf_bytes": 1391563,
+      "prior_identity_status": "identity_unverified",
+      "front_page_verified": false,
+      "front_page_seconds": 0.335
+    },
+    {
+      "record_id": "20431960",
+      "pdf_bytes": 8912086,
+      "prior_identity_status": "identity_unverified",
+      "front_page_verified": false,
+      "front_page_seconds": 0.444
+    }
+  ],
+  "all_identity_decisions_unchanged": true
+}

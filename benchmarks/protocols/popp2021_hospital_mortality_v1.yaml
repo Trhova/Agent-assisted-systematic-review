@@ -1,0 +1,60 @@
+id: popp2021_hospital_mortality_development_v1
+frozen_on: '2026-10-14'
+query: TITLE_ABS:colchicine AND TITLE_ABS:(COVID OR SARS-CoV-2 OR coronavirus) AND
+  FIRST_PDATE:[2019-01-01 TO 2021-05-21] AND SRC:MED
+validate_query_fields: true
+eligibility: "Individually randomized parallel trials of colchicine added to standard\
+  \ care versus the same standard care with or without placebo in hospitalized people\
+  \ with suspected or confirmed COVID-19. No restriction on age, dose, severity beyond\
+  \ hospitalization, language or concomitant usual-care drugs. Trial results must\
+  \ have been publicly available by21 May2021, including preprints; a later final\
+  \ companion report may supply fuller methods and the same original randomized cohort,\
+  \ and is not a new trial. Exclude outpatient-only populations, prophylaxis, nonrandomized\
+  \ designs, protocols and review articles. The outcome-specific comparison is all-cause\
+  \ mortality up to28 days as defined in the reference outcome: accept scheduled follow-up\
+  \ within21\u201328 days, including follow-up ending at discharge before the scheduled\
+  \ horizon. Mortality only described at eventual hospital discharge without a scheduled\
+  \ day horizon is a separate outcome, not this comparison. A different outcome/timepoint\
+  \ is not interchangeable with the target. Otherwise eligible trials with missing\
+  \ or ambiguous target data remain unresolved; do not exclude just because numbers\
+  \ are unavailable. Do not require a trial to call mortality its primary outcome.\
+  \ Count participants with an event, not clinical-deterioration composites or recurrent\
+  \ events."
+outcome: all_cause_mortality_up_to_28_days
+unit: dimensionless
+value_type: binary_rr_mh_fixed_v1
+measure: RR
+model: mantel_haenszel_fixed
+timing_rule: "Latest scheduled mortality assessment within21\u201328 days after randomization,\
+  \ permitting discharge as earlier observation end when the scheduled maximum is\
+  \ explicit. Retain original days and censoring/discharge limitations. Never substitute\
+  \ discharge-only mortality with no scheduled horizon."
+denominator_rule: Use explicit primary outcome-table/analysis denominators. A source-explicit
+  ITT denominator may be retained with documented incomplete follow-up, without inventing
+  events or altering counts. Record missing-outcome uncertainty. Conflicting denominators
+  remain unresolved.
+binary_policy: binary_rr_mh_fixed_v1
+zero_event_policy: Add0.5 to all four cells if a cell is zero; retain originals; exclude
+  double-zero or double-all-event relative effects with explicit ledger; require two
+  informative independent trials.
+dependence_rule: One comparison per independent trial; link preprint/final reports
+  by registry and source-supported family evidence. Never pool companion reports twice.
+bibliographic_supplement:
+  path: benchmarks/sources/popp2021_bibliographic_leads_v1.json
+  sha256: 03fdbb3b450aa46af47fcfec4069cabd973bb539177c69dd26d4bfe812f0b924
+search_implementation: Europe PMC MED search through21 May2021 plus frozen bibliographic-only
+  preprint-to-final companion lead. Does not recreate all Cochrane registry/Embase/Web
+  of Science searches.
+evaluation_scope: Historical development evaluation of the complete published hospitalized
+  up-to28-day mortality quantitative outcome, not the entire multi-outcome Cochrane
+  review or held-out validation. Chosen for accessible primary counts and supported
+  parallel design. Fixed MH main comparison is prespecified; published random-effects
+  sensitivity is not implemented in this version.
+method_sources:
+- https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10
+- https://training.cochrane.org/handbook/current/statistical-methods-revman5
+qualification_note: Two independent primary reports accessible. One provides mortality
+  through a mutually exclusive narrative partition; preserve components and source
+  evidence. Another provides explicit ITT outcome-table denominators with incomplete
+  follow-up noted. The review differs in scheduled follow-up lengths; this heterogeneity
+  is preserved, not redefined as identical28-day observation.

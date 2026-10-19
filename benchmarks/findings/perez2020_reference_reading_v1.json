@@ -1,0 +1,260 @@
+{
+  "role": "Secondary forest transcription and arithmetic calibration only. Never supplied to screening/extraction or treated as primary truth.",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7230697/",
+  "locator": "Figure3, PDF page6",
+  "preserved_image": "data/benchmarks/candidate_review_sources_2026-10-14/review_page_6.png",
+  "rows": [
+    {
+      "study_id": "Shenoy2012",
+      "outcome": "VO2max",
+      "unit": "mL/kg/min",
+      "value_type": "endpoint",
+      "n_treatment": 20,
+      "mean_treatment": 52,
+      "sd_treatment": 4.8,
+      "n_control": 20,
+      "mean_control": 44.4,
+      "sd_control": 5.7,
+      "timepoint_reported": "8 weeks"
+    },
+    {
+      "study_id": "Malik2013",
+      "outcome": "VO2max",
+      "unit": "mL/kg/min",
+      "value_type": "endpoint",
+      "n_treatment": 16,
+      "mean_treatment": 51.45,
+      "sd_treatment": 2.86,
+      "n_control": 16,
+      "mean_control": 49.25,
+      "sd_control": 3.12,
+      "timepoint_reported": "8 weeks"
+    },
+    {
+      "study_id": "Choudhary2015",
+      "outcome": "VO2max",
+      "unit": "mL/kg/min",
+      "value_type": "endpoint",
+      "n_treatment": 25,
+      "mean_treatment": 46.65,
+      "sd_treatment": 6.29,
+      "n_control": 25,
+      "mean_control": 43.59,
+      "sd_control": 5,
+      "timepoint_reported": "8 weeks"
+    },
+    {
+      "study_id": "Tripathi2016",
+      "outcome": "VO2max",
+      "unit": "mL/kg/min",
+      "value_type": "endpoint",
+      "n_treatment": 10,
+      "mean_treatment": 34.63,
+      "sd_treatment": 1.54,
+      "n_control": 10,
+      "mean_control": 34.42,
+      "sd_control": 1.47,
+      "timepoint_reported": "14 days"
+    }
+  ],
+  "synthesis": {
+    "k": 4,
+    "model": "random",
+    "tau2_estimator": "DerSimonian-Laird",
+    "ci_method": "normal",
+    "estimate": 2.9982777834457837,
+    "se": 1.439931866628048,
+    "ci_low": 0.17606318466327764,
+    "ci_high": 5.82049238222829,
+    "Q": 18.365717528181122,
+    "I2": 83.66521756965565,
+    "tau2": 6.676776356347566,
+    "studies": [
+      "Shenoy2012",
+      "Malik2013",
+      "Choudhary2015",
+      "Tripathi2016"
+    ],
+    "weights": [
+      0.2193317641812843,
+      0.2659436945024437,
+      0.22392564704779988,
+      0.29079889426847205
+    ],
+    "effects": [
+      {
+        "study_id": "Shenoy2012",
+        "outcome": "VO2max",
+        "unit": "mL/kg/min",
+        "value_type": "endpoint",
+        "n_treatment": 20,
+        "mean_treatment": 52,
+        "sd_treatment": 4.8,
+        "n_control": 20,
+        "mean_control": 44.4,
+        "sd_control": 5.7,
+        "timepoint_reported": "8 weeks",
+        "source_unit": "mL/kg/min",
+        "effect": 7.600000000000001,
+        "variance": 2.7765,
+        "measure": "MD"
+      },
+      {
+        "study_id": "Malik2013",
+        "outcome": "VO2max",
+        "unit": "mL/kg/min",
+        "value_type": "endpoint",
+        "n_treatment": 16,
+        "mean_treatment": 51.45,
+        "sd_treatment": 2.86,
+        "n_control": 16,
+        "mean_control": 49.25,
+        "sd_control": 3.12,
+        "timepoint_reported": "8 weeks",
+        "source_unit": "mL/kg/min",
+        "effect": 2.200000000000003,
+        "variance": 1.119625,
+        "measure": "MD"
+      },
+      {
+        "study_id": "Choudhary2015",
+        "outcome": "VO2max",
+        "unit": "mL/kg/min",
+        "value_type": "endpoint",
+        "n_treatment": 25,
+        "mean_treatment": 46.65,
+        "sd_treatment": 6.29,
+        "n_control": 25,
+        "mean_control": 43.59,
+        "sd_control": 5,
+        "timepoint_reported": "8 weeks",
+        "source_unit": "mL/kg/min",
+        "effect": 3.059999999999995,
+        "variance": 2.582564,
+        "measure": "MD"
+      },
+      {
+        "study_id": "Tripathi2016",
+        "outcome": "VO2max",
+        "unit": "mL/kg/min",
+        "value_type": "endpoint",
+        "n_treatment": 10,
+        "mean_treatment": 34.63,
+        "sd_treatment": 1.54,
+        "n_control": 10,
+        "mean_control": 34.42,
+        "sd_control": 1.47,
+        "timepoint_reported": "14 days",
+        "source_unit": "mL/kg/min",
+        "effect": 0.21000000000000085,
+        "variance": 0.45324999999999993,
+        "measure": "MD"
+      }
+    ],
+    "leave_one_out": [
+      {
+        "omitted": "Shenoy2012",
+        "k": 3,
+        "model": "random",
+        "tau2_estimator": "DerSimonian-Laird",
+        "ci_method": "normal",
+        "estimate": 1.459032472001485,
+        "se": 0.8905368910398638,
+        "ci_low": -0.28638776134091803,
+        "ci_high": 3.204452705343888,
+        "Q": 4.301674533087513,
+        "I2": 53.506477893284355,
+        "tau2": 1.2655159531159017,
+        "studies": [
+          "Malik2013",
+          "Choudhary2015",
+          "Tripathi2016"
+        ],
+        "weights": [
+          0.3324985692216275,
+          0.20609134008787572,
+          0.46141009069049677
+        ]
+      },
+      {
+        "omitted": "Malik2013",
+        "k": 3,
+        "model": "random",
+        "tau2_estimator": "DerSimonian-Laird",
+        "ci_method": "normal",
+        "estimate": 3.438968862504724,
+        "se": 2.242439843778802,
+        "ci_low": -0.956132468799352,
+        "ci_high": 7.834070193808801,
+        "Q": 18.01488076775001,
+        "I2": 88.89806696039658,
+        "tau2": 13.224905172569823,
+        "studies": [
+          "Shenoy2012",
+          "Choudhary2015",
+          "Tripathi2016"
+        ],
+        "weights": [
+          0.3142559293221819,
+          0.3181114192329124,
+          0.36763265144490576
+        ]
+      },
+      {
+        "omitted": "Choudhary2015",
+        "k": 3,
+        "model": "random",
+        "tau2_estimator": "DerSimonian-Laird",
+        "ci_method": "normal",
+        "estimate": 3.048531638255383,
+        "se": 1.8304241750144927,
+        "ci_low": -0.5390338212044625,
+        "ci_high": 6.636097097715228,
+        "Q": 17.510730083645612,
+        "I2": 88.57843167905416,
+        "tau2": 8.691817235234948,
+        "studies": [
+          "Shenoy2012",
+          "Malik2013",
+          "Tripathi2016"
+        ],
+        "weights": [
+          0.292148585686455,
+          0.341484216096723,
+          0.36636719821682195
+        ]
+      },
+      {
+        "omitted": "Tripathi2016",
+        "k": 3,
+        "model": "random",
+        "tau2_estimator": "DerSimonian-Laird",
+        "ci_method": "normal",
+        "estimate": 4.123068855919961,
+        "se": 1.61286010751445,
+        "ci_low": 0.96192113309024,
+        "ci_high": 7.284216578749682,
+        "Q": 7.625931397318504,
+        "I2": 73.77369535866455,
+        "tau2": 5.718523171586101,
+        "studies": [
+          "Shenoy2012",
+          "Malik2013",
+          "Choudhary2015"
+        ],
+        "weights": [
+          0.30621667226433624,
+          0.38041260018619194,
+          0.31337072754947176
+        ]
+      }
+    ]
+  },
+  "source_disagreements": [
+    "Shenoy nominal20/20 conflicts with primary analyzed18/19.",
+    "Choudhary uses week8 even though treatment lasts12weeks; uses25/25 although only49participants analyzed; SD5 is rounded from4.97. Primary table also reverses24/25denominator labels and contains inconsistent units.",
+    "Tripathi uses one330mg arm at interimday14 while article describes twoactivearms and finalday28; final activeSDs are absent from printedTable2.",
+    "Malik endpoint meanSD matches the original primary tables."
+  ],
+  "interpretation": "Arithmetic reproduction of the published forest is separate from independent review reproduction."
+}

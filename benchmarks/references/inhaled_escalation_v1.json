@@ -1,0 +1,22 @@
+{
+  "id": "inhaled_escalation_development_v1",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9068973/",
+  "doi": "10.1183/13993003.02921-2021",
+  "outcome": "study_defined_hospital_admission_death_or_urgent_care",
+  "unit": "dimensionless",
+  "value_type": "binary_rr_mh_fixed_v1",
+  "measure": "RR",
+  "model": "published_fixed_effect_estimator_unspecified",
+  "estimate": 0.72,
+  "ci_low": 0.55,
+  "ci_high": 0.95,
+  "k": 4,
+  "absolute_tolerance": 0.01,
+  "expected_record_ids": [
+    "33844996",
+    "34388395",
+    "34728476",
+    "34807241"
+  ],
+  "notes": "Evaluator-only Table1 hospitalization overall fixed sensitivity; source transcription pending independent verification. Exact estimator unspecified. Broader STOIC urgent-care composite and different horizons explicitly retained; no pure-hospitalization/common-timepoint interpretation."
+}

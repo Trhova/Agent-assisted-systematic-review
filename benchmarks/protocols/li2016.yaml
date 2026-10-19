@@ -1,0 +1,12 @@
+id: li2016_t2d_fbg
+frozen_on: '2026-10-12'
+query: '("type 2 diabetes" OR T2DM OR "type II diabetes") AND (probiotic* OR synbiotic* OR lactobacill* OR bifidobacter* OR yogurt OR yoghurt) AND FIRST_PDATE:[1900-01-01 TO 2016-04-12] AND SRC:MED'
+eligibility: 'Randomized controlled trials in people with type 2 diabetes, probiotic supplementation versus placebo. Accessible full articles in English are required. Publication by 2016-04-12. Exclude nonrandomized trials, other diabetes types, animal/in vitro studies, and reviews. Extract fasting blood glucose at end of treatment. Resolve eligibility conservatively from full text.'
+outcome: FBG
+unit: dimensionless
+allowed_source_units: [mmol/L, mg/dL]
+value_type: endpoint
+measure: SMD
+model: random
+timing_rule: end of treatment
+dependence_rule: one independent parallel comparison per trial; unresolved multiarm/crossover excluded from pooling

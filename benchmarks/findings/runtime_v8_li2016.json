@@ -1,0 +1,245 @@
+{
+  "run": "data/benchmarks/runtime_v8/li2016_t2d_fbg/08f8481c02f3",
+  "status": {
+    "protocol_sha256": "08f8481c02f3e2496af3894aaf596169e069fd99dce8878b9ac69bc48b0b3b3d",
+    "backend": "codex",
+    "model": null,
+    "source_search_model": null,
+    "code_sha256": "9a954511139ebd9ef0dbae04d6c169c350c6dfbeaed41b78ab030b362676a446",
+    "started_at": "2026-10-12T17:38:33Z",
+    "status": "incomplete",
+    "errors": [],
+    "publication_integrity_flags": [
+      {
+        "record_id": "26430929",
+        "indexed_flags": [
+          "Retracted Publication"
+        ]
+      }
+    ],
+    "counts": {
+      "retrieved": 2180,
+      "fulltexts_attempted": 49,
+      "independent_effects": 2,
+      "supplemental_records": 0,
+      "screened": 2180,
+      "abstract_candidates": 49,
+      "accepted_effects": 2,
+      "unresolved": 28
+    },
+    "limitations": [
+      "Single accessible bibliographic database; no claim of historical multi-database search equivalence.",
+      "No model-independent guarantee against training-data contamination.",
+      "Only independent parallel continuous outcomes with reported SDs; no imputation."
+    ],
+    "finished_at": "2026-10-12T17:40:58Z",
+    "pending_segments": 0,
+    "can_resume_internal_work": false
+  },
+  "comparison": {
+    "reference": {
+      "id": "li2016_t2d_fbg",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/27368052/",
+      "doi": "10.1097/MD.0000000000004088",
+      "outcome": "FBG",
+      "measure": "SMD",
+      "unit": "dimensionless",
+      "model": "random",
+      "estimate": -0.61,
+      "ci_low": -0.92,
+      "ci_high": -0.3,
+      "k": 9,
+      "absolute_tolerance": 0.02,
+      "notes": "Article abstract labels SMD with mmol/L and figure captions call effects weighted mean differences. Frozen primary comparison follows abstract SMD. This inconsistency is a scientific uncertainty, not a tuning opportunity.",
+      "expected_review_record_ids": [
+        "23967428",
+        "25196301",
+        "25300285",
+        "26988693",
+        "21700013",
+        "22129852",
+        "24319552",
+        "23899653",
+        "24706266",
+        "25197295",
+        "26955460",
+        "23645956"
+      ],
+      "identity_note": "Twelve reports cited as included in the review (references 23–34); not asserted to be twelve independent trials, or all nine FBG contributors.",
+      "expected_record_ids": [
+        "23899653",
+        "26955460",
+        "22129852",
+        "26988693",
+        "24319552",
+        "25300285",
+        "23645956",
+        "24706266",
+        "25196301"
+      ]
+    },
+    "run_status": "incomplete",
+    "reproduced": false,
+    "reason": "Not reproduced; inspect coverage, definitions and extraction evidence",
+    "report_coverage": {
+      "reference_reports": 12,
+      "retrieved": 11,
+      "retrieved_original_search": 11,
+      "retrieved_via_supplement": 0,
+      "retained_after_abstract_screening": 10,
+      "accessible_fulltexts": 5,
+      "missing_from_search": [
+        "24319552"
+      ],
+      "excluded_at_abstract": [
+        "26955460"
+      ],
+      "missing_fulltexts": [
+        "21700013",
+        "22129852",
+        "24319552",
+        "24706266",
+        "25196301",
+        "25300285",
+        "26955460"
+      ]
+    },
+    "differences": {
+      "estimate": 0.02034105746376247,
+      "ci_low": 0.014059818896322906,
+      "ci_high": 0.02662229603120214
+    },
+    "k_observed": 2,
+    "k_expected": 9,
+    "missing_studies": [
+      "22129852",
+      "23645956",
+      "23899653",
+      "24319552",
+      "24706266",
+      "25196301",
+      "25300285",
+      "26955460"
+    ],
+    "extra_studies": [
+      "25905057"
+    ],
+    "numerically_matches": false
+  },
+  "source_count": 31,
+  "synthesis": {
+    "k": 2,
+    "model": "random",
+    "tau2_estimator": "DerSimonian-Laird",
+    "ci_method": "normal",
+    "estimate": -0.5896589425362375,
+    "se": 0.16137094408990463,
+    "ci_low": -0.9059401811036771,
+    "ci_high": -0.27337770396879785,
+    "Q": 0.20962540104633584,
+    "I2": 0,
+    "tau2": 0,
+    "studies": [
+      "IRCT201307092017N14",
+      "NCT01752803"
+    ],
+    "weights": [
+      0.367434949829149,
+      0.6325650501708511
+    ]
+  },
+  "supplement_observations": [
+    {
+      "record_id": "27047743",
+      "attachments": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4794792/bin/FEB4-6-64-s001.docx",
+          "status": "unavailable_or_unsupported",
+          "reason": "Cached acquisition failure: 404 Client Error: Not Found for url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4794792/bin/FEB4-6-64-s001.docx",
+          "archive_error": "HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out."
+        }
+      ]
+    },
+    {
+      "record_id": "26134388",
+      "attachments": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4531470/bin/S0007114515001786sup001.jpg",
+          "status": "unsupported_format",
+          "reason": "No automatic parser for this attachment format"
+        }
+      ]
+    },
+    {
+      "record_id": "26577825",
+      "attachments": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov:443/articles/instance/4648806/bin/12263_2015_503_MOESM1_ESM.docx",
+          "raw_sha256": "b6d6f5f92f00a0eaf2412d6c1e8754b1200509e4020f5e345334e039f8d4ceb3",
+          "relative_path": "supplement-b6d6f5f92f00a0ea.docx",
+          "status": "unavailable_or_unsupported",
+          "reason": "Attachment is not a DOCX ZIP container",
+          "archive": {
+            "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4648806/supplementaryFiles",
+            "relative_path": "supplement-archive-2aaa5cb1ca1fd9b7.bin",
+            "sha256": "2aaa5cb1ca1fd9b70d7af8d63f332816402aeb0b608e8479b760bfabf8c7c947"
+          },
+          "archive_error": "Europe PMC supplementary response is not a ZIP archive"
+        }
+      ]
+    },
+    {
+      "record_id": "24603757",
+      "attachments": [
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3946202/bin/pone.0090702.s001.tiff",
+          "status": "unsupported_format",
+          "reason": "No automatic parser for this attachment format"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3946202/bin/pone.0090702.s002.tiff",
+          "status": "unsupported_format",
+          "reason": "No automatic parser for this attachment format"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3946202/bin/pone.0090702.s003.tiff",
+          "status": "unsupported_format",
+          "reason": "No automatic parser for this attachment format"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3946202/bin/pone.0090702.s004.tiff",
+          "status": "unsupported_format",
+          "reason": "No automatic parser for this attachment format"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3946202/bin/pone.0090702.s005.tiff",
+          "status": "unsupported_format",
+          "reason": "No automatic parser for this attachment format"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3946202/bin/pone.0090702.s006.tiff",
+          "status": "unsupported_format",
+          "reason": "No automatic parser for this attachment format"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3946202/bin/pone.0090702.s007.tiff",
+          "status": "unsupported_format",
+          "reason": "No automatic parser for this attachment format"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3946202/bin/pone.0090702.s008.tiff",
+          "status": "unsupported_format",
+          "reason": "No automatic parser for this attachment format"
+        },
+        {
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3946202/bin/pone.0090702.s009.docx",
+          "status": "unavailable_or_unsupported",
+          "reason": "404 Client Error: Not Found for url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3946202/bin/pone.0090702.s009.docx",
+          "archive_error": "HTTPSConnectionPool(host='www.ebi.ac.uk', port=443): Read timed out."
+        }
+      ]
+    }
+  ],
+  "interpretation": "Autonomous warm validation; incomplete and not reproduced. Neither references nor assisted sources were supplied to pipeline decisions.",
+  "primary_extraction_evidence": "Complete rows, quotes and model verification remain in the unchanged run synthesis/extraction artifacts."
+}

@@ -1,0 +1,7 @@
+id: publication_integrity_hold_v1
+prespecified_on: '2026-10-12'
+status: runtime_revision_6_safeguard
+reason: Current bibliographic snapshots contain explicit retracted-publication flags that must not silently disappear across source formats.
+rule: Preserve retained reports flagged Retracted Publication, Retraction of Publication or Expression of Concern as unresolved; do not extract a pooled comparison until the notice, affected results and historical timing have been verified.
+collections: A flag on a multi-article collection does not identify every contained report as retracted. Preserve the collection-level flag and allow segmented lead discovery; separately resolved reports retain their own identity and integrity status.
+benchmark_effect: Frozen eligibility and numerical targets remain unchanged. This current-index safeguard is a separately documented runtime extension, not a claim that the historical review authors had the later information. Original observations remain preserved; a historical replay involving affected reports would require separately specified treatment of notice dates.

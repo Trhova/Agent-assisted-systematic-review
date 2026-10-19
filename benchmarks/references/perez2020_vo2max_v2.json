@@ -1,0 +1,30 @@
+{
+  "id": "perez2020_ashwagandha_vo2max_development_v2",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7230697/",
+  "doi": "10.3390/nu12041119",
+  "outcome": "VO2max",
+  "unit": "mL/kg/min",
+  "value_type": "endpoint",
+  "measure": "MD",
+  "model": "random",
+  "estimate": 3.0,
+  "ci_low": 0.18,
+  "ci_high": 5.82,
+  "k": 4,
+  "absolute_tolerance": 0.02,
+  "expected_record_ids": [
+    "23326093",
+    "26730141",
+    "journal-malik-2013-vo2",
+    "doi-10.18203-2319-2003.ijbcp20164114"
+  ],
+  "expected_review_record_ids": [
+    "21170205",
+    "23326093",
+    "26730141",
+    "journal-malik-2013-vo2",
+    "doi-10.18203-2319-2003.ijbcp20164114"
+  ],
+  "notes": "Published Figure3 whole quantitative review. Primary-source eligibility, denominators, all-dose and final-timepoint selection take precedence over copying possible errors. A manual arm/timepoint audit is mandatory before interpreting any numerical match as reproduction; unsupported Sandhu units remain unresolved, not omitted merely because values are low.",
+  "contract_version": "perez_development_v2"
+}

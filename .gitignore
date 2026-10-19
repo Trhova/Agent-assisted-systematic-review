@@ -30,3 +30,6 @@ data/outputs/**
 .DS_Store
 .idea/
 .vscode/
+
+# Autonomous review run products
+data/benchmarks/

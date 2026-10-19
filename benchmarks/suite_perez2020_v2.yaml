@@ -1,0 +1,9 @@
+id: perez2020_vo2max_development_v2
+prespecified_model: gpt-6-astra
+prespecified_backend: codex
+cases:
+- id: perez2020_ashwagandha_vo2max_development_v2
+  protocol: benchmarks/protocols/perez2020_vo2max_v2.yaml
+  protocol_sha256: 3576ccdea7d5a8799820ad1cf5cd98c24f9f1b7f5e954dab9e66e3884f42465e
+  reference: benchmarks/references/perez2020_vo2max_v2.json
+  reference_sha256: ab4b96eb5ad6f32aef1e443ddd8232fcc9f4b6ec74ac91267a068dca45897bfa

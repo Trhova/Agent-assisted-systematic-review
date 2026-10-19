@@ -1,0 +1,5 @@
+# Original table image input admission v2
+
+All v1 admission and uncertainty gates remain. The v1 original ORCHID run failed exact design-quote matching because the retained PDF text interleaved two columns. Its failure is immutable; verifier support alone cannot override exact evidence checks.
+
+V2 additionally accepts a separately preserved primary-context projection using pypdf's content-stream text order. Every complete context page must reproduce exactly from the pinned original PDF with a recorded parser version, PDF hash and one-based page locator. This projection does not replace the cached source text or assert that all reading order is correct. Exact quotations must still appear in supplied context. Pixel cells and all nine semantic axes remain independently required. No existing cells are corrected or prefilled; the successor performs two fresh requests with only original image/context and the revised frozen contract. This is a bounded repair of demonstrated source parsing, not a relaxed quotation rule.

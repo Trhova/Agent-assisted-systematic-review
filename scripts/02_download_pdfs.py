@@ -4,7 +4,6 @@ import argparse
 import json
 import re
 import shutil
-import tarfile
 from pathlib import Path
 from typing import Any, Optional
 
@@ -138,78 +137,12 @@ def _ftp_to_https(url: str) -> str:
 
 
 def try_download_pmc_oa(pmcid: str, dest_pdf: Path, *, work_dir: Path) -> tuple[bool, dict[str, Any]]:
-    """
-    Prefer OA direct PDF links; otherwise download the OA tgz package and extract a PDF (or fallback to NXML text).
-    """
-    meta = {"status": "skipped", "reason": "missing_pmcid"}
-    if not pmcid:
-        return False, meta
-
-    info = pmc_oa_links(pmcid)
-    meta = {"status": "ok", "oa": info}
-    if info.get("status") != "ok":
-        return False, {"status": "error", "oa": info}
-
-    links = (info.get("links") or {}) if isinstance(info.get("links"), dict) else {}
-    pdf_url = _ftp_to_https(str(links.get("pdf") or "").strip())
-    tgz_url = _ftp_to_https(str(links.get("tgz") or "").strip())
-
-    if pdf_url:
-        try:
-            download_file(pdf_url, dest_pdf)
-            return True, {"status": "ok", "via": "oa_pdf", "url": pdf_url}
-        except Exception as e:
-            meta["oa_pdf_error"] = str(e)
-
-    if not tgz_url:
-        return False, {"status": "not_found", "reason": "no_pdf_or_tgz_link", "oa": info}
-
+    """Use the public 2026 PMC Cloud dataset; legacy OA/FTP retired Aug 2026."""
+    from scripts.pmc_cloud import download_pdf
     ensure_dir(work_dir)
-    tgz_path = work_dir / "oa_package.tar.gz"
-    try:
-        download_file(tgz_url, tgz_path)
-    except Exception as e:
-        return False, {"status": "error", "via": "oa_tgz_download", "url": tgz_url, "error": str(e)}
-
-    extracted_pdf = False
-    extracted_nxml = False
-    try:
-        with tarfile.open(tgz_path, "r:gz") as tf:
-            pdf_members = [m for m in tf.getmembers() if m.isfile() and m.name.lower().endswith(".pdf")]
-            if pdf_members:
-                m = pdf_members[0]
-                f = tf.extractfile(m)
-                if f is None:
-                    raise RuntimeError("tar_extractfile_returned_none")
-                tmp = dest_pdf.with_suffix(dest_pdf.suffix + ".part")
-                ensure_dir(dest_pdf.parent)
-                with tmp.open("wb") as out:
-                    out.write(f.read())
-                tmp.replace(dest_pdf)
-                extracted_pdf = True
-                return True, {"status": "ok", "via": "oa_tgz_pdf", "url": tgz_url, "member": m.name}
-
-            nxml_members = [m for m in tf.getmembers() if m.isfile() and m.name.lower().endswith(".nxml")]
-            if nxml_members:
-                m = nxml_members[0]
-                f = tf.extractfile(m)
-                if f is None:
-                    raise RuntimeError("tar_extractfile_returned_none")
-                nxml_path = work_dir / "fulltext.nxml"
-                nxml_path.write_bytes(f.read())
-                extracted_nxml = True
-                return False, {"status": "no_pdf_in_tgz", "via": "oa_tgz", "url": tgz_url, "nxml_member": m.name}
-    except Exception as e:
-        return False, {
-            "status": "error",
-            "via": "oa_tgz_extract",
-            "url": tgz_url,
-            "error": str(e),
-            "extracted_pdf": extracted_pdf,
-            "extracted_nxml": extracted_nxml,
-        }
-
-    return False, {"status": "no_pdf_or_nxml_in_tgz", "via": "oa_tgz", "url": tgz_url}
+    ok, metadata = download_pdf(pmcid, dest_pdf)
+    write_json(work_dir / "cloud_status.json", metadata)
+    return ok, metadata
 
 
 def try_download_pmc_pdf(pmcid: str, dest: Path) -> tuple[bool, dict[str, Any]]:
@@ -372,6 +305,7 @@ def extract_pdf_text(pdf_path: Path) -> dict[str, Any]:
         with pdfplumber.open(str(pdf_path)) as pdf:
             for i, page in enumerate(pdf.pages, start=1):
                 pages.append({"page": i, "text": (page.extract_text() or "").strip()})
+                page.close()
         return {"status": "ok", "pages": pages}
     except Exception as e:
         try:

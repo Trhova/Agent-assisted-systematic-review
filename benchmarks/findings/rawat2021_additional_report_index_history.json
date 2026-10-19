@@ -1,0 +1,14 @@
+{
+  "record_id": "34803451",
+  "doi": "10.3906/biy-2104-16",
+  "title": "Treatment of COVID-19 patients with quercetin: a prospective, single center, randomized, controlled trial.",
+  "firstPublicationDate": "2021-08-30",
+  "firstIndexDate": "2021-11-30",
+  "dateOfCreation": "2021-11-22",
+  "raw_source": "data/benchmarks/rawat2021_v1/rawat2021_covid_hospital_stay_v1/b99a2892bf59/search_raw.json",
+  "review_search_cutoff": "2021-09-18",
+  "interpretation": "Published before cutoff but MED entry creation and Europe PMC first indexing occurred after cutoff. This explains absence from a historical MED search, but does not prove absence from the review’s other databases or Google Scholar. Retained in the prespecified current-index publication-date query; not retroactively excluded.",
+  "route_audit_correction": "Initially described as oral from context; primary methods and NCT04377789 registry do not explicitly establish vitamin-C administration route. IV eligibility remains unclear; the contextual label in frozen protocol version_note is not evidence.",
+  "registry_source": "https://clinicaltrials.gov/api/v2/studies/NCT04377789",
+  "registry_local": "data/benchmarks/candidate_review_sources/NCT04377789.json"
+}

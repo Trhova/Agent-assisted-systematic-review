@@ -1,0 +1,11 @@
+# Fixed-input soy addendum v2: evidence-only pair continuation
+
+Successor to the completed v1 attempt, which made11fresh calls and withheld the four-effect sensitivity because one pair's quotes included added quotation marks/page labels. Its separate verifier supported the scientific features; two other pairs passed every gate. V1 and its no-pool outcome remain immutable.
+
+All scientific inputs, baseline membership, source documents, chronological scope, estimand, estimator, numerical replay tolerance and study-identity/reuse evidence threshold remain exactly as specified in v1. No new study or numerical input is extracted. Before any fresh call, replay every v1 pair request/schema/response against original sources and require exact resulting family links. Reuse fully verified pairs without new submissions.
+
+For a pair with failed literal anchors but a positive scientific verifier only, allow one evidence-only repair call. It returns exactly one pair of raw source substrings for each existing ordered feature. It cannot change study identity, participant reuse, feature domain/count, reason or limitations. Each substring must match the original source apart from whitespace. Added quotation marks, locator labels, joined fragments and unanchored text still fail. A second fresh full-source verification must support every feature and conclusion; exact matching alone is insufficient. Never repair an adverse/uncertain scientific verdict into acceptance. Documented reuse and conflicting linkage remain blocked under the unchanged evidence-tier rule.
+
+Bound: at most2fresh adapter invocations, one attempt each,300seconds each; no outer retry. Explicitgpt-6-astra/codex, workerMedium, nested effortdefault/unpinned; same-model errors may correlate. Pin code, all prior attempt files and underlying inputs before calls. No pooled targets or review numbers enter family requests. If the sole remaining pair fails, preserve no-pool outcome; no further repair in this contract. If all four exact trials survive, run the unchanged SMD/DL fixed-input sensitivity and audit both baseline and added set.
+
+This corrects a demonstrated evidence-formatting workflow defect, not a participant-independence threshold. It does not establish participant-level disjointness, complete update searching or historical review reproduction.

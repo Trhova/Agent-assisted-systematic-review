@@ -1,0 +1,87 @@
+{
+  "role": "Autonomous source-discovery development check; not a benchmark reproduction result.",
+  "selection": {
+    "rule": "First three missing-fulltext reports in actual Ma revision-4 extraction order whose initial automatic search returned at least one public-copy URL. No reference-list selection. Snapshot before alternate searches.",
+    "records": [
+      {
+        "record": {
+          "id": "24605611",
+          "title": "[Effect of probiotics on proinflammatory cytokines level in patients with type 2 diabetes and nonalcoholic fatty liver disease].",
+          "abstract": "We examined 72 patients with T2D and NAFLD. All patients divided by us on the way of therapy into 2 groups. The main group (n = 45) received oral antidiabetic therapy and multiprobiotic \"Symbiter\" within 30 days. Patients of comparison group (n = 27) received only hypoglycemic drugs. Also in each group we identified patients with normal and elevated level of transaminases. We observed 1.5-2 times increasing of cytokines in patients with NAFLD and elevated transaminase levels compared to patients with normal transaminase levels. We noted statistically significant reduction of proinflammatory cytokines in plasma, after 30 days of therapy, in patients with elevated levels of transaminases. In particular, the level of IL-6 decreased on 30.9% (P < 0.001), IL-8 - 19.9% (P = 0.001), TNF-alpha - 13.4% (P < 0.001), IL-1beta - 17.9% (P < 0.001) and IFN-gamma on 18.7% (P < 0.001) respectively. In patients with normal levels transaminases and NAFLD were significantly decreased only TNF-alpha on 15.1% (P = 0.003) and IL-8 on 15.2% (P = 0.017). Significant changes in cytokines levels in patients of comparative group we don't observed. Probiotics can be recommended for use in patients with different stages of NAFLD and T2D as an adjunct to standard treatment regimens because it decreases manifestations of low-grade systemic inflammatory response.",
+          "pmcid": "",
+          "doi": "",
+          "date": "2013-03-01",
+          "publication_types": [
+            "Clinical Trial",
+            "Journal Article",
+            "English Abstract"
+          ]
+        },
+        "failed_urls": [
+          "https://liksprava.com/index.php/journal/article/view/1113"
+        ]
+      },
+      {
+        "record": {
+          "id": "18936646",
+          "title": "The effect of a probiotic on hepatic steatosis.",
+          "abstract": "",
+          "pmcid": "PMC4539951",
+          "doi": "10.1097/mcg.0b013e31816d920c",
+          "date": "2008-11-01",
+          "publication_types": [
+            "Letter",
+            "Clinical Trial",
+            "research-article"
+          ]
+        },
+        "failed_urls": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC4539951/"
+        ]
+      },
+      {
+        "record": {
+          "id": "21901256",
+          "title": "Bifidobacterium longum with fructo-oligosaccharides in patients with non alcoholic steatohepatitis.",
+          "abstract": " Background Increased exposure to intestinal bacterial products may contribute to the pathogenesis of non alcoholic steatohepatitis (NASH). Bifidobacteria are predominant bacterial species in the human gut microbiota and have been considered to exert a beneficial effect on human health by maintaining the equilibrium of the resident microbiota. Aims To evaluate the effects of Bifidobacterium longum with fructo-oligosaccharides (Fos) in the treatment of NASH. Methods A total of 66 patients were randomly and equally divided into two groups receiving Bifidobacterium longum with Fos and lifestyle modification (i.e., diet and exercise) versus lifestyle modification alone. The following variables were assessed at -4 (beginning of the dietary lead-in period), 0 (randomization), 6, 12, 18, and 24 weeks: aspartate transaminase (AST), alanine transaminase (ALT), bilirubin, albumin, total cholesterol, high-density lipoprotein (HDL) cholesterol, low-density lipoprotein (LDL) cholesterol, triglycerides, fasting plasma glucose, insulin, C-peptide, C-reactive protein (CRP), tumor necrosis factor (TNF)-α, homeostasis model assessment of insulin resistance (HOMA-IR), and serum endotoxins. Liver biopsies were performed at entry and repeated after 24 weeks of treatment. Results At the end of study period, we observed that the Bifidobacterium longum with Fos and lifestyle modification group versus the lifestyle modification alone group showed significant differences in the AST -69.6 versus -45.9 IU/mL (P  Conclusions Bifidobacterium longum with Fos and lifestyle modification, when compared to lifestyle modification alone, significantly reduces TNF-α, CRP, serum AST levels, HOMA-IR, serum endotoxin, steatosis, and the NASH activity index.",
+          "pmcid": "",
+          "doi": "10.1007/s10620-011-1887-4",
+          "date": "2011-09-08",
+          "publication_types": [
+            "Research Support, Non-U.S. Gov't",
+            "Randomized Controlled Trial",
+            "Journal Article"
+          ]
+        },
+        "failed_urls": [
+          "https://www.researchgate.net/publication/51627144_Bifidobacterium_longum_with_Fructo-Oligosaccharides_in_Patients_with_Non_Alcoholic_Steatohepatitis"
+        ]
+      }
+    ]
+  },
+  "results": [
+    {
+      "id": "24605611",
+      "new_urls": [
+        "https://www.researchgate.net/publication/376371181_Vpliv_probiotikoterapii_na_riven_prozapalnih_citokiniv_u_hvorih_na_cukrovij_diabet_tipu_2_z_nealkogolnou_zirovou_hvorobou_pecinki"
+      ],
+      "retrieved": false,
+      "source_sha256": null
+    },
+    {
+      "id": "18936646",
+      "new_urls": [],
+      "retrieved": false,
+      "source_sha256": null
+    },
+    {
+      "id": "21901256",
+      "new_urls": [
+        "https://magistralbr.caldic.com/storage/product-files/1689970583.pdf"
+      ],
+      "retrieved": true,
+      "source_sha256": "43ba58e9e4fa33429e49750c80dafe9f7d6cf76c301c38b237e591df5995a939"
+    }
+  ],
+  "provenance_note": "The model received exact primary-article identity and previously failed public URLs only. The earlier evaluator-known Caldic URL was not supplied. New automatic search recovered it independently. Raw requests/search events/downloads retained under the component directory."
+}

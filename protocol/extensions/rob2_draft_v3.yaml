@@ -1,0 +1,7 @@
+id: rob2_draft_v3
+extends: rob2_draft_v2
+prespecified_on: '2026-10-13'
+reason: Independent source checking could identify repairable unsupported certainty but previously stopped without a revision.
+repair: At most one source-grounded revision after independent verifier feedback, followed by deterministic quotation/coherence checks and a fresh independent verification request. Feedback supplies no new evidence. Unresolved failures remain unverified.
+provenance: Retain both drafts, both checks, request identities, sources and versioned assets. Preserve earlier report attempts.
+unchanged: Assignment estimand, article-only scope, null confidence, abbreviated draft status and no effect on numeric inclusion or pooling.

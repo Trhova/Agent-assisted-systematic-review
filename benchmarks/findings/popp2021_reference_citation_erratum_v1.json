@@ -1,0 +1,8 @@
+{
+  "reference": "benchmarks/references/popp2021_hospital_mortality_v1.json",
+  "field": "doi",
+  "frozen_value": "10.1002/14651858.CD015045.pub2",
+  "correct_value": "10.1002/14651858.CD015045",
+  "evidence": "Official Cochrane page raw HTML in qualification directory. PMCID8521385 and PMID34658014 identify the intended review.",
+  "scope": "Bibliographic typo only; outcome, estimator, target, tolerance and original reference artifact unchanged. Discovered after launch; preserve immutable reference and disclose correction."
+}

@@ -1,0 +1,11 @@
+# Evaluator-only source verification v1
+
+Two isolated authenticated Codex gpt-6-astra calls, one adapter invocation each. First reads original forest image and original review text without proposed manual cells or accepted extracted inputs. Second sees the image, blind reading, proposed published cells, proposed trial/arm/time mapping, review and primary original text. It verifies published cells separately from primary results. Null/illegible/ambiguous/unsupported evidence fails closed; no repair loop or automatic resubmission. Transport calls internal to CLI are not bounded by adapter count.
+
+Image bytes are content-addressed in request version3, copied into isolated request workspace and attached via --image. The request stores PNG bytes and submission modality/hash receipt; success verification checks image hashes, request identity, schema, isolated terminal response and matching submission. Existing text-only identities remain unchanged. Sources, code/model/schema/policy and contract are frozen before execution. Same-model separate conversations are procedural separation, not independent human expertise, and correlated errors remain possible.
+
+Deterministic validation requires exact blind cells to match each proposed reference row, unique coverage, positive separate verification, nonempty source locators and mapping evidence quotation present in supplied original text. Quotation presence is not proof the claim follows. No fabricated coordinates: locators identify the source figure and visible row. Original embedded-image bytes are preserved without crop/resizing; the ZIP→DOCX→embedded-image member chain is recorded rather than inventing PDF pages.
+
+An output receipt binds reference and mapping digests plus successful request receipts. It can support a new evaluation contract; never alter original scientific results or historical evaluation. Negative/uncertain receipt remains invalid and cannot establish verified input agreement. Published pooled targets remain entirely outside scientific screening/extraction.
+
+CLI image input reference: https://learn.chatgpt.com/docs/developer-commands?surface=cli (retrieved14October2026); local codex exec --help independently confirms --image. No model substitution.

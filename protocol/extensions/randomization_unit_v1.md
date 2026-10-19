@@ -1,0 +1,11 @@
+# Allocation-unit preflight v1
+
+Opt in with `randomization_unit_policy: randomization_unit_v1`. This policy adds a source-linked design preflight before numerical extraction of non-collection original reports. It does not change original frozen protocols.
+
+Parallel arrangement and individual allocation are different properties. Before independent-participant synthesis, require affirmative evidence from the study's own allocation methods/participant flow, exact matched quotations and independent model verification. Individual allocation stratified by site is not site allocation; recruiting household contacts is not by itself household randomization. Designs described only in background/citations do not establish the current study's design. Missing methods or conflicting attribution remain unresolved.
+
+Verified household or other cluster allocation is unsupported by the present independent-person estimators, even when called parallel. Keep its report, primary evidence and unresolved status; do not automatically label the study ineligible. A new cluster-aware estimand would require a separately specified method and an appropriate adjusted effect/SE or justified cluster correction inputs. Do not assume ICC=0 or infer missing inputs. Accepted rows retain the preflight and its source hash for audit replay.
+
+Basis: Cochrane Handbook current Chapter23§23.1.1–23.1.5, https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-23 (consulted14October2026): grouped allocation induces dependence; ignoring it can overstate precision; adjusted analyses or justified correction are required. This does not prove any particular published significance conclusion wrong.
+
+The standalone `scripts.randomization_unit` entry point exercises exactly the same assessment on pinned primary-source documents. It requires a frozen Python identity, explicit model/backend and all source checksums before calls, fresh output, one adapter invocation per proposal/verification and preserves execution failures separately from scientific decisions. CLI transport retries are internal and are not counted as new adapter invocations. Successful assessments do not establish overall eligibility, numerical input validity, family independence or review completeness.

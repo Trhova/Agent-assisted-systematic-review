@@ -1,0 +1,49 @@
+{
+  "policy": "artifact_consistency_v1",
+  "run": "data/benchmarks/rawat2021_iv_v1/rawat2021_iv_covid_hospital_stay_v1/64f1fbb555e4",
+  "valid": true,
+  "issues": [],
+  "artifact_sha256": {
+    "status.json": "31f68eea0154eefe2a121bbdfa447d93bb7419976f3292890cf690e0bae1c565",
+    "protocol.json": "64f1fbb555e4a3427e1d52522505d2cf4756c3f9a4dda42b64f5e2e5b51ada80",
+    "code_snapshots/e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745.json": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+    "accepted.json": "015164a40d80906b1ebe80eeae8da212c08adf197acd9ca7c839e30bbf3a2cde",
+    "extractions.json": "c03ad031ae20d1b13d97c9df2dc2dbcf7f6caa069b0000bfafba72be27932e31",
+    "trial_families.json": "ac5e26c8d5ea82da8a2a012d3276b8d9478c7be0bcb300370aab76ebee216995",
+    "family_links.json": "a6a6b574c4f9dd9d3a8cc55efa8e3930fb4b261e3911eb7919d7f7b8b9f98491",
+    "screening.json": "fe2f47086189dcde2dc993c2622df997b65c06fd4fede8b4eb1407182ea356fe",
+    "search.json": "877b7b34ee53caec026e92e7fa97d62ba98e7afd5fd9cc949429db299f029708",
+    "search_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+    "sources/33409026/text.json": "80058448c1a2df22481de792252977be4e21b3bff03f7f6a21893abc6e06bf89",
+    "sources/33420963/text.json": "6c4873d326c4a644d1d08eb053124994f2305b99d155de6cfa1da5ba9c45c72d",
+    "sources/33573699/text.json": "bb6054bace4b918c0fb63e28e71f1b96318fc6e66d0bae94c79e81002b064157",
+    "synthesis.json": "611a3c3d5a6fce5a9d873763c550c1d79ec20312f03dc713fc20e0fd0d0f5f73"
+  },
+  "limitations": [
+    "Internal consistency and deterministic replay do not independently establish the scientific truth of model decisions.",
+    "Hashes detect inconsistent artifacts; this is not a signed attestation against coordinated alteration.",
+    "Replay uses the current audited implementation; historical method changes can require separate evaluation."
+  ],
+  "run_status": "incomplete",
+  "model": "gpt-6-astra",
+  "backend": "codex",
+  "code_sha256": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+  "observed_counts": {
+    "screened": 231,
+    "fulltexts_attempted": 12,
+    "accepted_effects": 3,
+    "independent_effects": 3,
+    "abstract_candidates": 12,
+    "unresolved": 1
+  },
+  "completion_supported": false,
+  "replayed_synthesis": {
+    "k": 3,
+    "estimate": -0.2957338720194092,
+    "ci_low": -1.3892725962088668,
+    "ci_high": 0.7978048521700485,
+    "I2": 94.15358138430358,
+    "tau2": 0.877039507693203
+  },
+  "auditor_sha256": "274fa6bd07b402ccb07254e642a3a79e3407dda88f4ec9b008c5d2c1bb1f97f9"
+}

@@ -1,0 +1,25 @@
+{
+  "role": "Real cached-source format validation, not benchmark reproduction.",
+  "selection": "All three missing Li reports with cached HTML containing candidate methods/results headings; no reference-list selection.",
+  "results": [
+    {
+      "record_id": "24569536",
+      "full_article_accepted": false,
+      "characters": null,
+      "html_sha256": null
+    },
+    {
+      "record_id": "26577825",
+      "full_article_accepted": true,
+      "characters": 30381,
+      "html_sha256": "6014e098900937fb7cac1ef2981b6a82b300985011050dfa239d695289620b07"
+    },
+    {
+      "record_id": "25802471",
+      "full_article_accepted": true,
+      "characters": 25401,
+      "html_sha256": "56beb11a0c91b42407ab28cebf1a233b40dfde5a2d5e89468852cd4f0be777ae"
+    }
+  ],
+  "validation": "Nature subscription page contains only a structured abstract and is rejected. Both PMC HTML reports have matching article metadata and full methods/results sections; complete article-body text and table-cell boundaries are preserved. No numbers are extracted in this component check."
+}

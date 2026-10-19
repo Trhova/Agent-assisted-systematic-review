@@ -1,0 +1,247 @@
+{
+  "run_directory": "data/benchmarks/runtime_v3/li2016_t2d_fbg/08f8481c02f3",
+  "evaluation_type": "Development continuation of autonomous revision 2; only its own screening/source/model caches reused. No evaluator-assisted sources copied. Not a holdout.",
+  "status": {
+    "protocol_sha256": "08f8481c02f3e2496af3894aaf596169e069fd99dce8878b9ac69bc48b0b3b3d",
+    "backend": "codex",
+    "model": null,
+    "code_sha256": "04a781099c2010da9113595e8199bd94f563773a3651118513f02edbe5b03264",
+    "started_at": "2026-10-12T15:29:12Z",
+    "status": "incomplete",
+    "errors": [],
+    "counts": {
+      "retrieved": 2180,
+      "fulltexts_attempted": 49,
+      "independent_effects": 2,
+      "supplemental_records": 0,
+      "screened": 2180,
+      "abstract_candidates": 49,
+      "accepted_effects": 2,
+      "unresolved": 29
+    },
+    "limitations": [
+      "Single accessible bibliographic database; no claim of historical multi-database search equivalence.",
+      "No model-independent guarantee against training-data contamination.",
+      "Only independent parallel continuous outcomes with reported SDs; no imputation."
+    ],
+    "finished_at": "2026-10-12T15:45:04Z",
+    "pending_segments": 0,
+    "can_resume_internal_work": false
+  },
+  "comparison": {
+    "reference": {
+      "id": "li2016_t2d_fbg",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/27368052/",
+      "doi": "10.1097/MD.0000000000004088",
+      "outcome": "FBG",
+      "measure": "SMD",
+      "unit": "dimensionless",
+      "model": "random",
+      "estimate": -0.61,
+      "ci_low": -0.92,
+      "ci_high": -0.3,
+      "k": 9,
+      "absolute_tolerance": 0.02,
+      "notes": "Article abstract labels SMD with mmol/L and figure captions call effects weighted mean differences. Frozen primary comparison follows abstract SMD. This inconsistency is a scientific uncertainty, not a tuning opportunity.",
+      "expected_review_record_ids": [
+        "23967428",
+        "25196301",
+        "25300285",
+        "26988693",
+        "21700013",
+        "22129852",
+        "24319552",
+        "23899653",
+        "24706266",
+        "25197295",
+        "26955460",
+        "23645956"
+      ],
+      "identity_note": "Twelve reports cited as included in the review (references 23–34); not asserted to be twelve independent trials, or all nine FBG contributors.",
+      "expected_record_ids": [
+        "23899653",
+        "26955460",
+        "22129852",
+        "26988693",
+        "24319552",
+        "25300285",
+        "23645956",
+        "24706266",
+        "25196301"
+      ]
+    },
+    "run_status": "incomplete",
+    "reproduced": false,
+    "reason": "Not reproduced; inspect coverage, definitions and extraction evidence",
+    "report_coverage": {
+      "reference_reports": 12,
+      "retrieved": 11,
+      "retrieved_original_search": 11,
+      "retrieved_via_supplement": 0,
+      "retained_after_abstract_screening": 10,
+      "accessible_fulltexts": 5,
+      "missing_from_search": [
+        "24319552"
+      ],
+      "excluded_at_abstract": [
+        "26955460"
+      ],
+      "missing_fulltexts": [
+        "21700013",
+        "22129852",
+        "24319552",
+        "24706266",
+        "25196301",
+        "25300285",
+        "26955460"
+      ]
+    },
+    "differences": {
+      "estimate": 0.02034105746376247,
+      "ci_low": 0.014059818896322906,
+      "ci_high": 0.02662229603120214
+    },
+    "k_observed": 2,
+    "k_expected": 9,
+    "missing_studies": [
+      "22129852",
+      "23645956",
+      "23899653",
+      "24319552",
+      "24706266",
+      "25196301",
+      "25300285",
+      "26955460"
+    ],
+    "extra_studies": [
+      "25905057"
+    ],
+    "numerically_matches": false
+  },
+  "synthesis": {
+    "k": 2,
+    "model": "random",
+    "tau2_estimator": "DerSimonian-Laird",
+    "ci_method": "normal",
+    "estimate": -0.5896589425362375,
+    "se": 0.16137094408990463,
+    "ci_low": -0.9059401811036771,
+    "ci_high": -0.27337770396879785,
+    "Q": 0.20962540104633584,
+    "I2": 0,
+    "tau2": 0,
+    "studies": [
+      "IRCT201307092017N14",
+      "NCT01752803"
+    ],
+    "weights": [
+      0.367434949829149,
+      0.6325650501708511
+    ],
+    "effects": [
+      {
+        "study_id": "IRCT201307092017N14",
+        "outcome": "FBG",
+        "unit": "dimensionless",
+        "value_type": "endpoint",
+        "timepoint_weeks": 8,
+        "timepoint_reported": "After intervention",
+        "n_treatment": 30,
+        "n_control": 30,
+        "mean_treatment": 139.22,
+        "mean_control": 182.16,
+        "sd_treatment": 46.66,
+        "sd_control": 73.78,
+        "design": "parallel",
+        "treatment": "Probiotic fermented milk (kefir) enriched with Lactobacillus casei, Lactobacillus acidophilus and Bifidobacterium lactis",
+        "control": "Conventional fermented milk (dough), designated placebo, containing Streptococcus thermophiles and Lactobacillus bulgaricus",
+        "evidence": [
+          "Clinical trial number of this study was IRCT201307092017N14.",
+          "The eligible participants were randomly assigned to intervention or placebo groups based on random block procedure produced by Random Allocation Software (RAS).",
+          "During the eight weeks of intervention, patients in the intervention group received 600ml fermented milk (kefir) containing probiotics twice a day (in lunch and dinner), and placebo group received 600 ml conventional fermented milk(dough) twice daily(with lunch and dinner).",
+          "Variables | Probiotic fermented milk(kefir)mean±SD (n=30) | Conventional fermented mean±SD (n=30) | P -value",
+          "Serum Glucose (mg/dl) |  |  | ",
+          "After intervention | 139.22±46.66\n \na\n | 182.16±73.78 | 0.01\n \nb",
+          "After removing the outlier data, there was no statistically significant differences in fasting blood glucose at the beginning of the study between two groups ( P =0.22)."
+        ],
+        "limitations": [
+          "Sample sizes are taken from the table headers. The text mentions removal of glucose outliers without specifying their number or whether this affected endpoint sample sizes."
+        ],
+        "validation_errors": [],
+        "record_id": "25905057",
+        "source_sha256": "c13846b9fad150ee85ff228342d12ffa90ec869368d6f598d77664d443e66e98",
+        "reported_unit": "mg/dL",
+        "source_unit": "mg/dL",
+        "effect": -0.6866004252452775,
+        "variance": 0.07087127016244793,
+        "measure": "SMD"
+      },
+      {
+        "study_id": "NCT01752803",
+        "outcome": "FBG",
+        "unit": "dimensionless",
+        "value_type": "endpoint",
+        "timepoint_weeks": 12,
+        "timepoint_reported": "Week 12",
+        "n_treatment": 48,
+        "n_control": 53,
+        "mean_treatment": 7.2,
+        "mean_control": 8.2,
+        "sd_treatment": 1.2,
+        "sd_control": 2.3,
+        "design": "parallel",
+        "treatment": "Hexbio multi-strain probiotics, one sachet twice daily for 12 weeks",
+        "control": "Matched placebo sachets twice daily for 12 weeks",
+        "evidence": [
+          "#NCT01752803.",
+          "p\nnoitcaretnI\nenilesab\n21\nkeeW\nenilesab\n6 keeW\npuorg-nihtiW\nDS\nnaeM\nn\n−\n−\n±\nseulav\neulav\np\nTTI\nPP\n21\nkeeW\n6 keeW\nenilesaB",
+          "559.0\n766.0\na)L/lomm(\nGBF\n5.1\n1.0\n7.1\n3.0\n418.0\n2.1\n2.7\n2.1\n0.7\n1.1\n3.7\n84\npuorg\nscitoiborP\n±\n−\n±\n−\n±\n±\n±\n1.2\n3.0\n2.2\n1.0\n775.0\n3.2\n2.8\n3.2\n0.8\n2.2\n9.7\n35\npuorg\nobecalP\n±\n±\n±\n±\n±"
+        ],
+        "limitations": [
+          "Endpoint means and SDs are per-protocol results; 68 participants per group were randomized. ITT endpoint means and SDs are not supplied.",
+          "Table 3 is encoded in reversed reading order in the supplied text; the extracted values restore that order. Values retain their reported mmol/L units for subsequent dimensionless SMD analysis."
+        ],
+        "original_evidence": [
+          "Table 3 header as supplied (reversed text):\np\nnoitcaretnI\nenilesab\n21\nkeeW\nenilesab\n6 keeW\npuorg-nihtiW\nDS\nnaeM\nn\n−\n−\n±\nseulav\neulav\np\nTTI\nPP\n21\nkeeW\n6 keeW\nenilesaB",
+          "Table 3 FBG label and rows as supplied (reversed text):\n559.0\n766.0\na)L/lomm(\nGBF\n5.1\n1.0\n7.1\n3.0\n418.0\n2.1\n2.7\n2.1\n0.7\n1.1\n3.7\n84\npuorg\nscitoiborP\n±\n−\n±\n−\n±\n±\n±\n1.2\n3.0\n2.2\n1.0\n775.0\n3.2\n2.8\n3.2\n0.8\n2.2\n9.7\n35\npuorg\nobecalP\n±\n±\n±\n±\n±",
+          "In this article, the results presented are related to PP analysis unless otherwise stated, while the results of ITT analysis are reflected by the p values."
+        ],
+        "discarded_unmatched_evidence": [
+          "This 12-week randomized, double-blind, parallel-group,\nplacebo-controlled trial was conducted at the diabetes clinic",
+          "For the purpose of PP analyses, 48 participants in probi-\notics and 53 participants in placebo group completed the\nintervention successfully with compliance rate of >85 %",
+          "In this\narticle, the results presented are related to PP analysis\nunless otherwise stated, while the results of ITT analysis\nare reflected by the p values.",
+          "Supplementation was provided by Hexbio® B-Crobes\nLaboratory Sdn. Bhd. (Ipoh, Malaysia).",
+          "asked to mix the contents of the sachets with one glass of\nwater (approximately 250 mL) and drink twice per day\n(morning and evening) before or after meal.",
+          "Sachets were identical in terms of nutri-\ntional value, appearance, texture, weight and smell and\nwere only differentiated by a code (“A” or “B”) placed"
+        ],
+        "validation_errors": [],
+        "record_id": "26988693",
+        "source_sha256": "8caf7a52af1ad40101924b5fc387370fb0f1927e6ea1e397c90a857e5c33a781",
+        "reported_unit": "mmol/L",
+        "source_unit": "mmol/L",
+        "effect": -0.5333490202192539,
+        "variance": 0.041166646164586165,
+        "measure": "SMD"
+      }
+    ],
+    "leave_one_out": []
+  },
+  "new_autonomous_sources": [
+    "26988693",
+    "23899653"
+  ],
+  "asemi_result": {
+    "id": "23899653",
+    "status": "extracted",
+    "result": {
+      "eligibility": "include",
+      "reason": "English full-text randomized, double-blind, parallel placebo-controlled trial in people with type 2 diabetes, published July 5, 2013, before the cutoff. Endpoint SD availability does not affect eligibility.",
+      "rows": [],
+      "missing": [
+        "Asemi-2013-trial: endpoint FBG SDs are unavailable. Table 3 reports means ± SE, which cannot be substituted for SDs or converted under the extraction rules; therefore no rows are extracted.",
+        "Table 3 headers: \"Placebo (n = 27) Probiotic supplement (n = 27) pb\" and \"week 0 week 8 change pa we ek 0 week 8 change pa\". Row: \"FPG, mg/dl 134.5±9.6 163.3±12 28.8±8.5 0.002 143.8±10.7 145.4±9.5 1.6±6 0.80 0.01\". Footnote: \"Data are means ± SE.\" Endpoint means at \"week 8\" are 145.4 mg/dl for probiotic and 163.3 mg/dl for placebo, with 27 analyzed per group."
+      ]
+    },
+    "source_sha256": "1d69174006963bdd7fd2225ce2e8b0a0eeac4ff63ee0170154935c697dc0dcc2"
+  }
+}

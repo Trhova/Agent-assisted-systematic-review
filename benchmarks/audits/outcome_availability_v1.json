@@ -1,0 +1,18 @@
+{
+  "id": "outcome_availability_v1",
+  "scope": "Read-only reporting experiment; no new scientific/model/numerical decisions",
+  "cases": [
+    {
+      "id": "popp2021_v2",
+      "run": "data/benchmarks/popp2021_v2/popp2021_hospital_mortality_development_v1/d2cc93475219"
+    },
+    {
+      "id": "perez2020_v2",
+      "run": "data/benchmarks/perez2020_v2/perez2020_ashwagandha_vo2max_development_v2/3576ccdea7d5"
+    },
+    {
+      "id": "rawat2021_iv_v1",
+      "run": "data/benchmarks/rawat2021_iv_v1/rawat2021_iv_covid_hospital_stay_v1/64f1fbb555e4"
+    }
+  ]
+}

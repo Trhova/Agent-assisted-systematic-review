@@ -1,0 +1,21 @@
+{
+  "tests_passed": 146,
+  "test_command": ".venv/bin/python -m pytest -q",
+  "lint_scope": "Changed runtime and tests; Ruff E4,E7,E9,F,I. Full legacy repository lint is not clean.",
+  "code_sha256": "ce5957d1dfe2bf3a41d2fa113d9ba7ac85c60a9d860bc18d0feaf4aceaf40388",
+  "checks": {
+    "test_report.txt": {
+      "path": "data/benchmarks/reproduction_v3_final/test_report.txt",
+      "sha256": "9f9a0631d858829379a5e95305b5e60ec7629f5cf984903cc571a70f95d1e975"
+    },
+    "lint_report.txt": {
+      "path": "data/benchmarks/reproduction_v3_final/lint_report.txt",
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "frozen_input_verification.json": {
+      "path": "data/benchmarks/reproduction_v3_final/frozen_input_verification.json",
+      "sha256": "f96f2c92a7ac637180aba72fdac27664f087791c6274c299cba4ddd92b1172bc"
+    }
+  },
+  "note": "All benchmark processes exited. Scientific reproduction failed; passing software tests is not scientific validation."
+}

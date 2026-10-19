@@ -1,0 +1,14 @@
+{
+  "status": "Unqualified candidate; no model or numerical run submitted",
+  "review": "Alabed2014 Colchicine for pericarditis, DOI10.1002/14651858.CD010652.pub2",
+  "original_review_pdf": "data/benchmarks/alabed2014_qualification_v1/review.pdf",
+  "source": "https://openaccess.city.ac.uk/id/eprint/4043/5/Colchicine%20for%20pericarditis.pdf",
+  "fit_observations": [
+    "Published total-adverse-effects outcome pools four parallel randomized trials with fixed Mantel-Haenszel RR; method supported by current binary engine.",
+    "Time-to-recurrence primary outcome uses hazard ratios and is unsupported by current RR engine. Do not substitute RR for HR.",
+    "Fixed-time recurrence forests require additional primary-input qualification; primary ICAP composite numbers and review18-month cells differ, so outcome definition/timepoint/source origin must be established before any contract."
+  ],
+  "next_action": "Qualify complete original COPE, CORE, CORP and ICAP reports for total adverse-event participant counts, arm denominators, observation periods, independence and definitions. Do not freeze or launch until all four sources and compatible inputs qualify.",
+  "selection_basis": "Published supported estimator, parallel design and directly reported binary safety outcome; not predicted numerical agreement.",
+  "no_extraction_gold": "Review PDF and pooled answers must remain outside model screening/extraction inputs."
+}

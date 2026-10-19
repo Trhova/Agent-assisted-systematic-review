@@ -1,0 +1,239 @@
+{
+  "run": "data/benchmarks/rawat2021_iv_v1/rawat2021_iv_covid_hospital_stay_v1/64f1fbb555e4",
+  "rows": [
+    {
+      "record_id": "33409026",
+      "study_id": "Kumari-2020-trial",
+      "source_sha256_matches": true,
+      "route": "intravenous",
+      "values": {
+        "n_treatment": 75,
+        "n_control": 75,
+        "mean_treatment": 8.1,
+        "mean_control": 10.7,
+        "sd_treatment": 1.8,
+        "sd_control": 2.2
+      },
+      "summary_audit": [
+        {
+          "arm": "treatment",
+          "original_type": "mean_SD",
+          "original_statistics": {
+            "mean": 8.1,
+            "sd": 1.8,
+            "q1": null,
+            "median": null,
+            "q3": null,
+            "n": 75
+          },
+          "unit": "days",
+          "source_locator": "Table 2, Comparison of outcomes between the two groups, Days spent in the hospital row",
+          "summary_evidence": [
+            "Outcome | SOC + IV vitamin C (n=75) | SOC without IV vitamin C (n=75) | P-value",
+            "Days spent in the hospital, mean + SD | 8.1 ± 1.8 | 10.7 ± 2.2 | <0.0001*"
+          ],
+          "denominator_evidence": [
+            "Outcome | SOC + IV vitamin C (n=75) | SOC without IV vitamin C (n=75) | P-value"
+          ],
+          "source_sha256": "38adb1f8f21b02c2752b0c149390beca769e6812df2b95395e456671e32eb632",
+          "estimated": false,
+          "method": "reported_mean_SD",
+          "derived_mean": 8.1,
+          "derived_sd": 1.8,
+          "method_sha256": "2e8fefd630bd6642df326d22b6f2817aecfa985b3bfc8cf564d880f724f62c9b",
+          "limitation": null
+        },
+        {
+          "arm": "control",
+          "original_type": "mean_SD",
+          "original_statistics": {
+            "mean": 10.7,
+            "sd": 2.2,
+            "q1": null,
+            "median": null,
+            "q3": null,
+            "n": 75
+          },
+          "unit": "days",
+          "source_locator": "Table 2, Comparison of outcomes between the two groups, Days spent in the hospital row",
+          "summary_evidence": [
+            "Outcome | SOC + IV vitamin C (n=75) | SOC without IV vitamin C (n=75) | P-value",
+            "Days spent in the hospital, mean + SD | 8.1 ± 1.8 | 10.7 ± 2.2 | <0.0001*"
+          ],
+          "denominator_evidence": [
+            "Outcome | SOC + IV vitamin C (n=75) | SOC without IV vitamin C (n=75) | P-value"
+          ],
+          "source_sha256": "38adb1f8f21b02c2752b0c149390beca769e6812df2b95395e456671e32eb632",
+          "estimated": false,
+          "method": "reported_mean_SD",
+          "derived_mean": 10.7,
+          "derived_sd": 2.2,
+          "method_sha256": "2e8fefd630bd6642df326d22b6f2817aecfa985b3bfc8cf564d880f724f62c9b",
+          "limitation": null
+        }
+      ],
+      "validation_errors": []
+    },
+    {
+      "record_id": "33420963",
+      "study_id": "NCT04264533",
+      "source_sha256_matches": true,
+      "route": "intravenous",
+      "values": {
+        "n_treatment": 27,
+        "n_control": 29,
+        "mean_treatment": 35.0,
+        "mean_control": 32.8,
+        "sd_treatment": 17.0,
+        "sd_control": 17.0
+      },
+      "summary_audit": [
+        {
+          "arm": "treatment",
+          "original_type": "mean_SD",
+          "original_statistics": {
+            "mean": 35.0,
+            "sd": 17.0,
+            "q1": null,
+            "median": null,
+            "q3": null,
+            "n": 27
+          },
+          "unit": "days",
+          "source_locator": "Table 2, Hospital stay, days row; Vitamin C column and table footnote; Results, Baseline characteristics of the patients.",
+          "summary_evidence": [
+            "Variable | Day | Vitamin C ( n  = 27) | Placebo ( n  = 29) | Difference, coefficient (95% CI) | P value",
+            "Hospital stay, days |  | 35.0 ± 17.0 | 32.8 ± 17.0 | 2.2(− 7.5 to 11.8) | 0.65",
+            "Data were expressed as mean ± standard deviation, as median [interquartile range], or as numbers (percentage)."
+          ],
+          "denominator_evidence": [
+            "Variable | Day | Vitamin C ( n  = 27) | Placebo ( n  = 29) | Difference, coefficient (95% CI) | P value",
+            "All participants (56) were included in the primary intention-to-treat analysis"
+          ],
+          "source_sha256": "23dd730d4493f2d4edf06ce7ff7753e8fa0ab3b828c9c001323f160ddf0521a0",
+          "estimated": false,
+          "method": "reported_mean_SD",
+          "derived_mean": 35.0,
+          "derived_sd": 17.0,
+          "method_sha256": "2e8fefd630bd6642df326d22b6f2817aecfa985b3bfc8cf564d880f724f62c9b",
+          "limitation": null
+        },
+        {
+          "arm": "control",
+          "original_type": "mean_SD",
+          "original_statistics": {
+            "mean": 32.8,
+            "sd": 17.0,
+            "q1": null,
+            "median": null,
+            "q3": null,
+            "n": 29
+          },
+          "unit": "days",
+          "source_locator": "Table 2, Hospital stay, days row; Placebo column and table footnote; Results, Baseline characteristics of the patients.",
+          "summary_evidence": [
+            "Variable | Day | Vitamin C ( n  = 27) | Placebo ( n  = 29) | Difference, coefficient (95% CI) | P value",
+            "Hospital stay, days |  | 35.0 ± 17.0 | 32.8 ± 17.0 | 2.2(− 7.5 to 11.8) | 0.65",
+            "Data were expressed as mean ± standard deviation, as median [interquartile range], or as numbers (percentage)."
+          ],
+          "denominator_evidence": [
+            "Variable | Day | Vitamin C ( n  = 27) | Placebo ( n  = 29) | Difference, coefficient (95% CI) | P value",
+            "All participants (56) were included in the primary intention-to-treat analysis"
+          ],
+          "source_sha256": "23dd730d4493f2d4edf06ce7ff7753e8fa0ab3b828c9c001323f160ddf0521a0",
+          "estimated": false,
+          "method": "reported_mean_SD",
+          "derived_mean": 32.8,
+          "derived_sd": 17.0,
+          "method_sha256": "2e8fefd630bd6642df326d22b6f2817aecfa985b3bfc8cf564d880f724f62c9b",
+          "limitation": null
+        }
+      ],
+      "validation_errors": []
+    },
+    {
+      "record_id": "33573699",
+      "study_id": "IRCT20200411047025N1",
+      "source_sha256_matches": true,
+      "route": "intravenous",
+      "values": {
+        "n_treatment": 30,
+        "n_control": 30,
+        "mean_treatment": 9.213,
+        "mean_control": 7.5695,
+        "sd_treatment": 3.89210109393521,
+        "sd_control": 6.227361750296335
+      },
+      "summary_audit": [
+        {
+          "arm": "treatment",
+          "original_type": "median_IQR",
+          "original_statistics": {
+            "mean": null,
+            "sd": null,
+            "q1": 7,
+            "median": 8.5,
+            "q3": 12,
+            "n": 30
+          },
+          "unit": "day",
+          "source_locator": "Table 1, Hospital length of stay row, Case column; table header and footnote",
+          "summary_evidence": [
+            "Case ( n  = 30) | Control ( n  = 30)",
+            "Hospital length of stay (day), median (IQR) | 8.50 (7.0–12.0) | 6.50(4.0–12.0) | 0.028",
+            "IQR  interquartile range (25–75%)"
+          ],
+          "denominator_evidence": [
+            "Case ( n  = 30) | Control ( n  = 30)"
+          ],
+          "source_sha256": "dbc1c312fc2320fdbbc4df1bf024072f5a92bc652789ace6b36855019818f15c",
+          "estimated": true,
+          "method": {
+            "mean": "Luo2018_Eq11",
+            "sd": "Wan2014_Eq16",
+            "distribution": "normal"
+          },
+          "derived_mean": 9.213,
+          "derived_sd": 3.89210109393521,
+          "method_sha256": "2e8fefd630bd6642df326d22b6f2817aecfa985b3bfc8cf564d880f724f62c9b",
+          "limitation": "Normal-distribution approximation; conventional effect variance ignores summary-estimation uncertainty"
+        },
+        {
+          "arm": "control",
+          "original_type": "median_IQR",
+          "original_statistics": {
+            "mean": null,
+            "sd": null,
+            "q1": 4,
+            "median": 6.5,
+            "q3": 12,
+            "n": 30
+          },
+          "unit": "day",
+          "source_locator": "Table 1, Hospital length of stay row, Control column; table header and footnote",
+          "summary_evidence": [
+            "Case ( n  = 30) | Control ( n  = 30)",
+            "Hospital length of stay (day), median (IQR) | 8.50 (7.0–12.0) | 6.50(4.0–12.0) | 0.028",
+            "IQR  interquartile range (25–75%)"
+          ],
+          "denominator_evidence": [
+            "Case ( n  = 30) | Control ( n  = 30)"
+          ],
+          "source_sha256": "dbc1c312fc2320fdbbc4df1bf024072f5a92bc652789ace6b36855019818f15c",
+          "estimated": true,
+          "method": {
+            "mean": "Luo2018_Eq11",
+            "sd": "Wan2014_Eq16",
+            "distribution": "normal"
+          },
+          "derived_mean": 7.5695,
+          "derived_sd": 6.227361750296335,
+          "method_sha256": "2e8fefd630bd6642df326d22b6f2817aecfa985b3bfc8cf564d880f724f62c9b",
+          "limitation": "Normal-distribution approximation; conventional effect variance ignores summary-estimation uncertainty"
+        }
+      ],
+      "validation_errors": []
+    }
+  ],
+  "note": "Primary-source independent extraction, not secondary forest replay. Original quartiles and approximation assumptions retained. All three contributors to the published IV subgroup are present; one additional screened report has unresolved route."
+}

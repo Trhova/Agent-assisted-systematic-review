@@ -1,0 +1,156 @@
+{
+  "run": "data/benchmarks/reproduction_v3_final/ma2013_nafld_alt_reproduction_v2/bb8851b1d3fc",
+  "model": "gpt-6-astra",
+  "code_sha256": "ce5957d1dfe2bf3a41d2fa113d9ba7ac85c60a9d860bc18d0feaf4aceaf40388",
+  "scope": "Evaluator-only comparison with published forest cells; published cells are not adjudicated gold and never model inputs",
+  "results": [
+    {
+      "record_id": "21901256",
+      "reference": {
+        "record_id": "21901256",
+        "study_id": "Malaguarnera 2012",
+        "n_treatment": 34,
+        "n_control": 32,
+        "mean_treatment": -63.9,
+        "mean_control": -38,
+        "sd_treatment": 23.1,
+        "sd_control": 26,
+        "unit": "U/L",
+        "value_type": "change"
+      },
+      "source_status": "extracted",
+      "accepted": false,
+      "missing": [
+        "Within-arm ALT mean changes and their change SDs or supported change-mean SEs are not reported. Endpoint values cannot substitute for the prespecified change outcome, and change values or dispersions were not derived.",
+        "Page 4 (journal page 548), Table 2 reports baseline and endpoint ALT only. Exact header: \"Beforetreatment Aftertreatment Beforetreatment Aftertreatment\". Exact row: \"ALT(IU/L) 101±24.7 47.1±19.8***,(cid:2)(cid:2)(cid:2) 96.1±24.2 58.1±27.2***,(cid:2)(cid:2)(cid:2)\". Exact dispersion footnote: \"Allvaluesaremean±standarddeviation(SD)\". These SDs describe baseline and endpoint scores, not within-arm changes."
+      ],
+      "comparisons": []
+    },
+    {
+      "record_id": "21505361",
+      "reference": {
+        "record_id": "21505361",
+        "study_id": "Vajro 2011",
+        "n_treatment": 10,
+        "n_control": 10,
+        "mean_treatment": -30.2,
+        "mean_control": -2,
+        "sd_treatment": 32.4,
+        "sd_control": 29.9,
+        "unit": "U/L",
+        "value_type": "change"
+      },
+      "source_status": "missing_fulltext",
+      "accepted": false,
+      "missing": [],
+      "comparisons": []
+    },
+    {
+      "record_id": "22013734",
+      "reference": {
+        "record_id": "22013734",
+        "study_id": "Aller",
+        "n_treatment": 14,
+        "n_control": 14,
+        "mean_treatment": -7.3,
+        "mean_control": 4.1,
+        "sd_treatment": 28.6,
+        "sd_control": 34.1,
+        "unit": "U/L",
+        "value_type": "change"
+      },
+      "source_status": "extracted",
+      "accepted": false,
+      "missing": [
+        "Within-arm ALT mean changes and their change SDs or supported change-mean SEs are not reported for either arm at 3 months. Only baseline and endpoint means with SDs are supplied (page 3, printed page 1092, Results and Statistical Analysis). Endpoint values cannot substitute for the protocol-required changes; changes and change dispersions were not calculated."
+      ],
+      "comparisons": []
+    },
+    {
+      "record_id": "23396737",
+      "reference": {
+        "record_id": "23396737",
+        "study_id": "Wong 2013",
+        "n_treatment": 10,
+        "n_control": 10,
+        "mean_treatment": -26,
+        "mean_control": 2,
+        "sd_treatment": 91,
+        "sd_control": 41,
+        "unit": "U/L",
+        "value_type": "change"
+      },
+      "source_status": "extracted",
+      "accepted": true,
+      "missing": [],
+      "comparisons": [
+        {
+          "study_id": "NCT00870012",
+          "semantically_comparable": true,
+          "original_and_derived": {
+            "n_treatment": 10,
+            "n_control": 10,
+            "mean_treatment": -26,
+            "mean_control": 2,
+            "sd_treatment": 91,
+            "sd_control": 41
+          },
+          "differences": {
+            "n_treatment": 0,
+            "n_control": 0,
+            "mean_treatment": 0,
+            "mean_control": 0,
+            "sd_treatment": 0,
+            "sd_control": 0
+          },
+          "dispersion_audit": [
+            {
+              "arm": "treatment",
+              "original_type": "SD",
+              "original_value": 91,
+              "unit": "IU/L",
+              "value_type": "change",
+              "analyzed_n": 10,
+              "denominator_evidence": [
+                "10 assigned to received probiotics 10 assigned to usual care",
+                "0 lost to follow-up 0 lost to follow-up",
+                "10 included in final analysis 10 included in final analysis"
+              ],
+              "dispersion_evidence": [
+                "Absolute change. -26 ± 91 2 ± 41 0.39",
+                "Continuous variables were expressed as mean ± standard deviation or median (interquartile range)."
+              ],
+              "source_locator": "Table 2, article page 260 (supplied page 5), ALT absolute change row and footnote; Figure 1, article page 259 (supplied page 4), final analysis counts.",
+              "source_sha256": "4c7c6ab601f1996026d555cb052fdcf893531e4de373da36502d2fe81edcdba2",
+              "derived_sd": 91,
+              "transformation": "reported_SD"
+            },
+            {
+              "arm": "control",
+              "original_type": "SD",
+              "original_value": 41,
+              "unit": "IU/L",
+              "value_type": "change",
+              "analyzed_n": 10,
+              "denominator_evidence": [
+                "10 assigned to received probiotics 10 assigned to usual care",
+                "0 lost to follow-up 0 lost to follow-up",
+                "10 included in final analysis 10 included in final analysis"
+              ],
+              "dispersion_evidence": [
+                "Absolute change. -26 ± 91 2 ± 41 0.39",
+                "Continuous variables were expressed as mean ± standard deviation or median (interquartile range)."
+              ],
+              "source_locator": "Table 2, article page 260 (supplied page 5), ALT absolute change row and footnote; Figure 1, article page 259 (supplied page 4), final analysis counts.",
+              "source_sha256": "4c7c6ab601f1996026d555cb052fdcf893531e4de373da36502d2fe81edcdba2",
+              "derived_sd": 41,
+              "transformation": "reported_SD"
+            }
+          ],
+          "validation_errors": [],
+          "source_sha256": "4c7c6ab601f1996026d555cb052fdcf893531e4de373da36502d2fe81edcdba2"
+        }
+      ]
+    }
+  ]
+}

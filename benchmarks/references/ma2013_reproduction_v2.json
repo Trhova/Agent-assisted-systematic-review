@@ -1,0 +1,23 @@
+{
+  "id": "ma2013_nafld_alt_reproduction_v2",
+  "source": "https://www.wjgnet.com/1007-9327/full/v19/i40/6911.htm",
+  "doi": "10.3748/wjg.v19.i40.6911",
+  "outcome": "ALT",
+  "measure": "MD",
+  "unit": "U/L",
+  "model": "fixed",
+  "estimate": -23.71,
+  "ci_low": -33.46,
+  "ci_high": -13.95,
+  "k": 4,
+  "absolute_tolerance": 0.02,
+  "notes": "Figure 2B is change-score MD: negative within-arm ALT values; Wong primary Table 2 confirms score convention. Missing original change SDs must not be fabricated. Reference mean/SD derivations for other contributors require independent source audit.",
+  "expected_record_ids": [
+    "22013734",
+    "21505361",
+    "21901256",
+    "23396737"
+  ],
+  "value_type": "change",
+  "contract_version": "reproduction_v2"
+}

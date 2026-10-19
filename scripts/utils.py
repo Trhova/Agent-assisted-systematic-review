@@ -5,11 +5,12 @@ import dataclasses
 import datetime as dt
 import hashlib
 import json
+import logging
 import os
 import re
 import sys
 from pathlib import Path
-from typing import Any, Iterable, Optional, Literal
+from typing import Any, Iterable, Literal, Optional
 
 import pandas as pd
 import requests
@@ -18,7 +19,6 @@ from jsonschema import Draft202012Validator
 from pydantic import BaseModel, Field, ValidationError
 from rich.console import Console
 from rich.logging import RichHandler
-import logging
 
 console = Console()
 
@@ -418,6 +418,24 @@ def _openai_headers(cfg: OpenAIConfig) -> dict[str, str]:
     }
 
 
+def strict_response_schema(schema: dict[str, Any]) -> dict[str, Any]:
+    """Require every property for the Responses structured-output schema."""
+    import copy
+    result = copy.deepcopy(schema)
+    def visit(node: Any) -> None:
+        if isinstance(node, dict):
+            if node.get("type") == "object":
+                node["required"] = list(node.get("properties", {}))
+                node["additionalProperties"] = False
+            for value in node.values():
+                visit(value)
+        elif isinstance(node, list):
+            for value in node:
+                visit(value)
+    visit(result)
+    return result
+
+
 def call_llm_json(
     *,
     step: str,
@@ -487,16 +505,15 @@ def call_llm_json(
             {
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": prompt},
-                    *([{"type": "text", "text": "\n\n=== CONTEXT ===\n" + extra_context}] if extra_context else []),
-                    {"type": "text", "text": f"\n\n=== INPUT (record_id={record_id}) ===\n{input_text}\n"},
+                    {"type": "input_text", "text": prompt},
+                    *([{"type": "input_text", "text": "\n\n=== CONTEXT ===\n" + extra_context}] if extra_context else []),
+                    {"type": "input_text", "text": f"\n\n=== INPUT (record_id={record_id}) ===\n{input_text}\n"},
                 ],
             },
         ],
-        "response_format": {
-            "type": "json_schema",
-            "json_schema": {"name": f"{step}_schema", "schema": schema, "strict": True},
-        },
+        "text": {"format": {
+            "type": "json_schema", "name": f"{step}_schema", "schema": strict_response_schema(schema), "strict": True,
+        }},
     }
 
     payload_chat = {
@@ -577,7 +594,7 @@ def call_llm_json(
                     "role": "user",
                     "content": [
                         {
-                            "type": "text",
+                            "type": "input_text",
                             "text": f"Your prior output did not validate. Fix and return ONLY valid JSON. Errors:\n{last_err}",
                         }
                     ],

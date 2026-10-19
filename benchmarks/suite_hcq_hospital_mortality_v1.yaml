@@ -1,0 +1,10 @@
+id: hcq_hospital_mortality_development_v1
+prespecified_model: gpt-6-astra
+prespecified_backend: codex
+prespecified_code_sha256: b895c2ec7b167ff92a14b0486f212f2d282a353efd23ab160b5a718af6d93dd5
+cases:
+- id: hcq_hospital_mortality_development_v1
+  protocol: benchmarks/protocols/hcq_hospital_mortality_v1.yaml
+  protocol_sha256: b37d49d057fcf90165cb3465e466d457481dc1859c570b077dd70eaa7b802392
+  reference: benchmarks/references/hcq_hospital_mortality_v1.json
+  reference_sha256: 076f959bd743cf1885770eb12d02b26de35c4617946a415aa302764ba3160504

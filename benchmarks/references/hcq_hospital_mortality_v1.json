@@ -1,0 +1,17 @@
+{
+  "id": "hcq_hospital_mortality_development_v1",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8403035/",
+  "doi": "10.1016/j.lana.2021.100062",
+  "outcome": "all_cause_mortality_28_to_30_days",
+  "unit": "dimensionless",
+  "value_type": "binary_rr_mh_fixed_v1",
+  "measure": "RR",
+  "model": "mantel_haenszel_fixed",
+  "estimate": 0.88,
+  "ci_low": 0.58,
+  "ci_high": 1.33,
+  "k": 3,
+  "absolute_tolerance": 0.01,
+  "expected_record_ids": ["33165621", "33134417", "33813110"],
+  "notes": "Published TableS10 peer-reviewed-study sensitivity for mortality around4weeks; not the broader five-contributor result. Original forest FigS15 confirms fixed MH RR. Scope is predominantly hospital-treated cohorts, with HYCOVID's ambulatory minority retained explicitly. This target is evaluator-only."
+}

@@ -1,0 +1,18 @@
+{
+  "run": "data/benchmarks/alabed2014_v1/alabed2014_total_adverse_effects_development_v1/d72deae41224",
+  "scientific_result": "No pool: four correct primary extractions, two unresolved family pairs, five access gaps",
+  "scope": "Post-hoc developer-assisted four-trial comparison; CORP-2 outside restricted scope",
+  "reporting_exercise": {
+    "original_files": 201,
+    "all_unchanged": true,
+    "artifact_audit_valid": true,
+    "counts": {
+      "accepted_not_independent": 4,
+      "missing_fulltext_access": 5
+    },
+    "family_groups": 2,
+    "code_sha256": "4e4f9ed90f128baddeedf12afc35810c80be6634ead0d2fbc4bcb3c9b24a13c8",
+    "tests": 209
+  },
+  "reporting_output": "data/benchmarks/alabed2014_family_reporting_v2_final"
+}

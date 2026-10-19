@@ -1,0 +1,63 @@
+id: inhaled_symptom_recovery_development_v1
+frozen_on: '2026-10-15'
+query: '(EXT_ID:33844996 OR EXT_ID:34388395 OR EXT_ID:34728476 OR EXT_ID:34807241) AND SRC:MED'
+validate_query_fields: true
+eligibility: >-
+  Citation-defined complete four-trial published inhaled-corticosteroid comparison:
+  original individually randomized parallel outpatient COVID-19 trials STOIC,
+  PRINCIPLE budesonide arm versus concurrent usual-care control, CONTAIN, and
+  Clemency/Covis. Include open-label and placebo-controlled trials, preprints and
+  peer-reviewed reports available by30December2021; a later journal issue date does
+  not exclude an earlier source-dated primary preprint. Collate preprint/journal
+  companions as one study. Do not include other platform intervention arms or duplicate
+  controls. No hospitalization or continuous symptom-scale substitution. This is a
+  complete declared four-trial analysis, not an independent exhaustive systematic search.
+outcome: study_defined_symptom_recovery_by_day14
+unit: dimensionless
+value_type: binary_rr_mh_fixed_v1
+measure: RR
+model: mantel_haenszel_fixed
+binary_policy: binary_rr_mh_fixed_v1
+binary_complement_policy: binary_known_status_complement_v1
+randomization_unit_policy: randomization_unit_v2
+family_policy: family_evidence_tiers_v2
+model_adapter_attempts: 1
+timing_rule: >-
+  Extract study-defined overall symptom recovery byday14, preserving exact operational
+  definition. Use overall self-reported symptom absence atday14 rather than FLUPro
+  threshold in STOIC; early sustained recovery (recovered byday14 and remains recovered
+  throughday28) in PRINCIPLE; absence of ALL reported symptoms atday14 rather than
+  the respiratory-only primary outcome in CONTAIN; alleviation of all COVID-related
+  symptoms byday14 in Clemency. These are explicitly heterogeneous recovery constructs:
+  never describe them as identical symptom-free-atday14 endpoints. Retain that clinical
+  limitation in every applicable row and report. No count from a different endpoint.
+denominator_rule: >-
+  Use explicitly documented outcome-specific population/denominator. Preserve
+  per-protocol, modifiedITT, observed-case and missing-follow-up limitations. For
+  PRINCIPLE use the concurrent randomized comparison in the secondary outcome table.
+  Never use randomizedN as an analyzed denominator unless the original source
+  establishes the outcome population. Do not infer missing outcomes or balanced loss.
+complement_rule: >-
+  The exact known-status complement policy permits target=N-opposite only with
+  primary evidence for the original integer opposite-event count, same arm/timepoint
+  denominator with known status and exhaustive binary partition. Record original
+  definitions, evidence and transformation. Unobserved participants cannot be counted
+  as recovered. This is arithmetic recoding, not graph digitization or imputation.
+zero_event_policy: Add0.5 to all four cells when a cell is zero; retain originalcounts; exclude double-zero or double-all-event relative effects with explicit ledger.
+estimator_rationale: >-
+  Independently prespecified fixed Mantel-Haenszel RR with normal logRR intervals,
+  interpreted as a common-effect summary conditional on these diverse study definitions,
+  not proof of a universal clinical effect. Report heterogeneity, exact outcome differences
+  and each trial estimate. Published fixed sensitivity's exact metan configuration is
+  unestablished; do not claim exact-method reproduction from numerical proximity.
+evaluation_scope: >-
+  Agent-assisted post-hoc development comparison of complete published four-trial set,
+  using source-grounded operational definitions. Not whole-review completion,
+  exhaustive new trial discovery, prospective validation or exact-estimator reproduction.
+  One original preprint may represent its journal companion with explicit identity and
+  version limitation. Reference results remain evaluator-only. Qualification exposed
+  definition heterogeneity before this freeze; no target counts are supplied in this protocol.
+method_sources:
+- https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-06
+- https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10
+- https://training.cochrane.org/handbook/current/statistical-methods-revman5

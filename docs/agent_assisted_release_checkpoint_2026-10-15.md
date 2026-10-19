@@ -1,0 +1,25 @@
+# Agent-assisted release checkpoint — 15 October 2026
+
+Agent-assisted operation is now an accepted first-class execution model. Delivered a repository-local [operating skill](../skills/agent-assisted-review/SKILL.md), six concrete workflow branches and [finite v0.1 acceptance contract](agent_assisted_release.md). No scientific gate or original result changed. The skill covers normal source recovery/import, exact quotation repair, family/denominator adjudication, frozen execution, bounded recovery and audit/reporting, with actual entrypoints and preserved examples.
+
+## Actual exercise
+
+The skill validator passed. Its frozen read-only audit route was executed against the existing HCQ and Alabed runs. Both artifact audits passed, with exact deterministic synthesis replay. All425files in the two preserved runs remained unchanged. Auditor code02e3c854e832a0c9a5b833e2e95a62326f650db68a64185f34595bd3bf2e2201; actual historical HCQcodeb895c2ec… and Alabedcode7e790fb1… remain separately recorded. No model calls or scientific reruns. Outputs and exact commands are under `data/benchmarks/agent_assisted_release_v1`; `receipt.json` completed14:12:36UTC.
+
+A further frozen read-only HCQ evaluation replay verified the original source-image request receipts, exact source/mapping bindings and two successful model responses. All31reference-verification files also remained unchanged. It returned numerical agreement=true, input agreement=false, scoped reproduction=false. The second-stage manifest/receipt is `evaluation_manifest.json`/`evaluation_receipt.json`; this is actual receipt validation, not a new supplied attestation. The original `independently_verified` machine label means separate requests from the same model, whose errors can correlate.
+
+## Release disposition
+
+**HCQ supplies the first completed declared-analysis development case under the accepted assisted model.** This is an explicit agent assessment under the new release contract, not a changed historical comparator. It covers the frozen predominantly hospital-treated28–30day mortality sensitivity:94records,3independent contributing trials,0unresolved within that scope, primary-supported fixed-MH RR0.877845177[0.578064555,1.333090133]. All three source-checked RoB drafts and the original54input/asset pins and28successful request chains are documented in the original execution report. The new audit and source-verification replay support those preserved artifacts; no claim of independent clinical expertise is added.
+
+The published ORCHID denominators242/237 differ from primary mortality241/236 because one vital status per arm was unknown. The primary25/241 versus25/236 was not changed to force agreement. The rounded pooled estimate agrees while exact-input reproduction does not. This is an evidence-backed discrepancy success for the release benchmark, not a claim that the reference analysis was exactly reproduced. Mixed HYCOVID recruitment, TEACHfollow-up limitations, single-database discovery and incomplete supplementary access remain visible. The completed scope is not the whole14trial review, a pure inpatient-only population, or prospective validation. See original reports `autoresearch_hospital_mortality_2026-10-14.md` and `autoresearch_reference_context_2026-10-14.md`.
+
+**Alabed does not qualify as the second clean release case.** Valid artifact replay does not repair the old execution-pin deviation,5report gaps or broader eligibility/CORP-2 limitation. Its CORE arm-reversal explanation remains valuable discrepancy evidence. Popp, Rawat, Ma/Li and fixed-input soy sensitivity retain their explicit unresolved/scope limitations; none is promoted by this acceptance change.
+
+Current release position: workflow packaging/exercise delivered; one declared-analysis case supported; second complete case and final two-case release pass outstanding. The overall release is not complete. This closes the HCQ consolidation item earlier than the frozen plan's proposed next session; the plan itself remains preserved as a pinned input.
+
+## Next finite action
+
+Qualify a second method-compatible published analysis using at most two candidates and a declared retrieval budget before selecting one. Prefer a genuinely different intervention/question with complete primary access and supported independent randomization/statistics; choose on scientific/access fit, never predicted numerical agreement. Freeze and execute the selected scope through the skill. If qualification fails, retain the exact blocker and stop that bounded selection cycle, rather than indefinitely chasing one paper. Existing unresolved cases need decisive new evidence to qualify. Firouzi quotation repair is tracked useful backlog, not an arbitrary release prerequisite.
+
+No production statistical code changed this cycle, so no new implementation tests were added. The existing412-test suite passed again; skill validation and actual workflow replay are the relevant new checks. No runner remains. No extra schedule, external message, purchase or other-project action occurred.

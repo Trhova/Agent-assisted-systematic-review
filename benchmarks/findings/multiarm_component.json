@@ -1,0 +1,109 @@
+{
+  "role": "Real-source development component validation, outside both benchmark populations; not review reproduction.",
+  "record_id": "26445629",
+  "source": "https://pubmed.ncbi.nlm.nih.gov/26445629/",
+  "source_sha256": "cbd6aa13a4b7e80e87e47c2c1abdfae20d512e4ad446c73852882cbb5dad7cf4",
+  "v1": {
+    "protocol": {
+      "id": "multiarm_component_26445629_v1",
+      "frozen_on": "2026-10-12",
+      "purpose": "Real-source component check on an already acquired three-arm report; outside both review populations, not a meta-analysis benchmark. No reference numerical target.",
+      "eligibility": "Randomized parallel trial of live probiotic yogurt or a live probiotic capsule versus conventional yogurt plus placebo in adult petrochemical workers. Both probiotic intervention arms eligible for this component check.",
+      "outcome": "hs-CRP",
+      "unit": "mg/L",
+      "allowed_source_units": [
+        "mg/L"
+      ],
+      "value_type": "endpoint",
+      "timing_rule": "end of assigned treatment, 6 weeks",
+      "multiarm_policy": "combine_all_eligible_disjoint_arms_v1"
+    },
+    "result": [
+      "Week-6 hs-CRP endpoint means and SDs in permitted source units (mg/L) are unavailable for all three arms. The supplied Table 2 labels hs-CRP in µg/mL, rendered in the reversed PDF text as: \")Lm/gµ(\\nPRC‑sh\". Unit conversion is prohibited.",
+      "Extraction reports unresolved missing information"
+    ]
+  },
+  "v2": {
+    "protocol": {
+      "id": "multiarm_component_26445629_v2",
+      "frozen_on": "2026-10-12",
+      "purpose": "Real-source component check on an already acquired three-arm report; outside both review populations, not a meta-analysis benchmark. No reference numerical target.",
+      "eligibility": "Randomized parallel trial of live probiotic yogurt or a live probiotic capsule versus conventional yogurt plus placebo in adult petrochemical workers. Both probiotic intervention arms eligible for this component check.",
+      "outcome": "hs-CRP",
+      "unit": "µg/mL",
+      "allowed_source_units": [
+        "µg/mL"
+      ],
+      "value_type": "endpoint",
+      "timing_rule": "end of assigned treatment, 6 weeks",
+      "multiarm_policy": "combine_all_eligible_disjoint_arms_v1",
+      "revision_reason": "Version 1 correctly rejected the primary table unit µg/mL because only mg/L was prespecified. This source-component check now uses the reported unit without numerical conversion; original version-1 failure retained. No benchmark protocol or target is changed."
+    },
+    "protocol_sha256": "4e1b67dcdd6be0e9fc1b2a796fa6e88f8bc474abc4943bfcd1de1650379583e1",
+    "arm_verification": {
+      "valid": true,
+      "problems": []
+    },
+    "combined": {
+      "study_id": "IRCT201406222394N11",
+      "outcome": "hs-CRP",
+      "unit": "µg/mL",
+      "value_type": "endpoint",
+      "timepoint_reported": "Week 6",
+      "n_treatment": 25,
+      "mean_treatment": 20.108,
+      "sd_treatment": 20.971407519127876,
+      "n_control": 10,
+      "mean_control": 13.5,
+      "sd_control": 13.9
+    },
+    "original_arms": [
+      {
+        "arm_id": "probiotic_yogurt",
+        "label": "100 g/day probiotic yogurt plus one placebo capsule",
+        "role": "treatment",
+        "exclusion_reason": "",
+        "n": 12,
+        "mean": 16.0,
+        "sd": 12.8,
+        "study_id": "IRCT201406222394N11",
+        "outcome": "hs-CRP",
+        "unit": "µg/mL",
+        "value_type": "endpoint",
+        "timepoint_reported": "Week 6",
+        "independently_verified": true
+      },
+      {
+        "arm_id": "probiotic_capsule",
+        "label": "One probiotic capsule daily plus 100 g/day conventional yogurt",
+        "role": "treatment",
+        "exclusion_reason": "",
+        "n": 13,
+        "mean": 23.9,
+        "sd": 26.4,
+        "study_id": "IRCT201406222394N11",
+        "outcome": "hs-CRP",
+        "unit": "µg/mL",
+        "value_type": "endpoint",
+        "timepoint_reported": "Week 6",
+        "independently_verified": true
+      },
+      {
+        "arm_id": "conventional_yogurt_placebo",
+        "label": "100 g/day conventional yogurt plus one placebo capsule",
+        "role": "control",
+        "exclusion_reason": "",
+        "n": 10,
+        "mean": 13.5,
+        "sd": 13.9,
+        "study_id": "IRCT201406222394N11",
+        "outcome": "hs-CRP",
+        "unit": "µg/mL",
+        "value_type": "endpoint",
+        "timepoint_reported": "Week 6",
+        "independently_verified": true
+      }
+    ]
+  },
+  "visual_audit": "Rendered PDF page 5, Table 2: hs-CRP at Week 6 is 16.0±12.8 (probiotic yogurt n=12), 23.9±26.4 (capsule n=13), and 13.5±13.9 (conventional yogurt n=10); footnote states means±SD. Matches independent extractor. No numerical reference target or post-hoc effect selection."
+}

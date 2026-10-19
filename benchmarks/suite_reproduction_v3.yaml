@@ -1,0 +1,12 @@
+id: review_reproduction_v3_development
+cases:
+- id: ma2013_nafld_alt_reproduction_v2
+  protocol: benchmarks/protocols/ma2013_reproduction_v2.yaml
+  protocol_sha256: bb8851b1d3fc20f7f61fd5eefb9062a7cc3be230f912f51fff17c44c81950b5c
+  reference: benchmarks/references/ma2013_reproduction_v2.json
+  reference_sha256: 3f2a13e6b4984a373cf0577fb4f9454dfb9a40948db169205fca12c4b6218615
+- id: li2016_t2d_fbg_reproduction_v3
+  protocol: benchmarks/protocols/li2016_reproduction_v3.yaml
+  protocol_sha256: 664e537940510b3e7edd20e3bc864b728da54a9e9bfdf7a6c81bd3392601d157
+  reference: benchmarks/references/li2016_reproduction_v3.json
+  reference_sha256: cb8f24fac276ae82f0926e1e26b68e1784544e7b1dafda886c0bdd324eadf622

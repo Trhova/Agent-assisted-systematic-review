@@ -1,0 +1,13 @@
+id: luo_wan_quartiles_v1
+prespecified_on: '2026-10-13'
+scope: Optional independent parallel endpoint arm summaries only; never enabled for existing frozen protocols.
+inputs: Explicit median, first quartile, third quartile and outcome-specific analyzed n of at least 5 per arm; original mean and SD must be absent. Prefer reported means/SDs.
+mean: '(0.7 + 0.39/n) * (Q1+Q3)/2 + (0.3 - 0.39/n) * median'
+sd: '(Q3-Q1) / (2 * inverse_normal_cdf((0.75*n-0.125)/(n+0.25)))'
+method_sources:
+- https://doi.org/10.1177/0962280216669183
+- https://doi.org/10.1186/1471-2288-14-135
+- https://wviechtb.github.io/metafor/reference/conv.fivenum.html
+provenance: Retain original summaries, units, endpoint definition, analyzed denominator evidence, exact quotes, locator, source hash, input hash, method identity/hash, and estimated flag; independent source verification before pooling.
+assumptions: Normal-distribution approximation. Not an observed mean or SD. Conventional Hedges-g sampling variance does not account for summary-estimation uncertainty; historical reproduction only, with reported-statistics-only sensitivity mandatory. No retrospective skewness exclusion selected to improve target agreement.
+unsupported: Min/max alone, IQR width alone, ambiguous brackets, adjusted estimates, missing analyzed n, change-score dispersion, mixed arm summary definitions or shared-control comparisons.

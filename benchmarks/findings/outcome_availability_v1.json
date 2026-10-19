@@ -1,0 +1,56 @@
+{
+  "scope": "Actual read-only exports, not new clinical reproduction or adjudication",
+  "tests": 207,
+  "frozen_pairs_verified": 12,
+  "code_sha256": "83a89d6293a587ac346c12c6e9c26244a59fb3b176debdbaf5783ea112fe55ac",
+  "cases": [
+    {
+      "id": "popp2021_v2",
+      "original_files_unchanged": 208,
+      "counts": {
+        "accepted_with_reported_limitations": 2,
+        "unresolved_target_inputs": 1,
+        "reported_other_exclusion": 4,
+        "missing_fulltext_access": 2
+      },
+      "continuation_records": [
+        "33542047",
+        "32337546",
+        "33769172"
+      ],
+      "run_status_unchanged": "incomplete",
+      "numerical_decisions_unchanged": true
+    },
+    {
+      "id": "perez2020_v2",
+      "original_files_unchanged": 97,
+      "counts": {
+        "unresolved_target_inputs": 4,
+        "accepted": 1
+      },
+      "continuation_records": [
+        "26730141",
+        "21170205",
+        "journal-malik-2013-vo2",
+        "doi-10.18203-2319-2003.ijbcp20164114"
+      ],
+      "run_status_unchanged": "incomplete",
+      "numerical_decisions_unchanged": true
+    },
+    {
+      "id": "rawat2021_iv_v1",
+      "original_files_unchanged": 272,
+      "counts": {
+        "reported_other_exclusion": 6,
+        "accepted_with_reported_limitations": 3,
+        "reported_different_or_unavailable_outcome": 2,
+        "unresolved_target_inputs": 1
+      },
+      "continuation_records": [
+        "34803451"
+      ],
+      "run_status_unchanged": "incomplete",
+      "numerical_decisions_unchanged": true
+    }
+  ]
+}

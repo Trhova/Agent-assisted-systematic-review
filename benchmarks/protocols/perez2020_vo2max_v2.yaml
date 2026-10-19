@@ -1,0 +1,59 @@
+id: perez2020_ashwagandha_vo2max_development_v2
+frozen_on: '2026-10-14'
+query: TITLE_ABS:(Ashwagandha OR "Withania somnifera") AND TITLE_ABS:("oxygen consumption"
+  OR aerobic OR VO2 OR "cardiorespiratory endurance") AND FIRST_PDATE:[1900-01-01
+  TO 2019-09-30] AND SRC:MED
+eligibility: 'English published individually randomized parallel trials of Ashwagandha
+  (Withania somnifera) alone versus placebo or no supplementation in healthy participants
+  including late adolescents, adults and athletes, evaluating maximal oxygen consumption
+  (VO2max). Include direct maximal exercise measurements and exercise-based VO2max
+  estimates using a named prediction test or a stated prediction formula. A trial
+  does not need to repeat the original validation study or explicitly label the named
+  test validated; measurement validity and population-specific calibration are limitations
+  to assess, not additional eligibility gates. Do not substitute resting oxygen consumption
+  or an unrelated performance score. Exclude nonrandomized, animal, clinical patient
+  populations, crossover, cluster, protocols and multi-ingredient interventions where
+  Ashwagandha is not isolated. Enumerate all randomized arms, including ineligible
+  co-interventions. Incomplete numerical reporting does not make an otherwise eligible
+  trial ineligible: retain it as unresolved. Undefined units or internal contradictions
+  in analyzed denominators remain unresolved; do not choose whichever table, abstract
+  or number agrees with another publication. No exclusion merely because a result
+  is unusually low. Evidence of the measured construct must come from the primary
+  methods.'
+outcome: VO2max
+unit: mL/kg/min
+allowed_source_units:
+- mL/kg/min
+- ml/kg/min
+value_type: endpoint
+measure: MD
+model: random
+timing_rule: Final end-of-treatment measurement in each randomized trial; do not choose
+  an interim measurement when a later on-treatment endpoint is reported.
+dependence_rule: One independent comparison per trial; combine all eligible disjoint
+  active dose arms and all eligible disjoint control arms at the same final endpoint
+  using the prespecified multiarm policy. Never count a shared control twice.
+multiarm_policy: combine_all_eligible_disjoint_arms_v1
+bibliographic_supplement:
+  path: benchmarks/sources/perez2020_bibliographic_leads_v1.json
+  sha256: 9a4d3b4174c7689e91eab71ab1532180d0fd6474db43b77350aaf2b11d07c8e7
+validate_query_fields: true
+evaluation_scope: Prospectively frozen execution of a source-qualified historical
+  development case, selected after primary and review inspection. Not held-out validation.
+  Compare primary-supported estimates with the published review and explain errors
+  or ambiguities rather than force numerical agreement.
+search_implementation: Europe PMC MED title/abstract query through the review search
+  month, plus frozen bibliographic-only backward-citation leads for non-MED reports.
+  Not a recreation of Web of Science or Google Scholar.
+method_sources:
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC7230697/
+- https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-06
+selection_note: Published methods specify post-intervention endpoint MD. This version
+  explicitly resolves otherwise unspecified dose/time selection using all eligible
+  doses at final treatment, and cannot count agreement as literal reproduction if
+  the published forest used different choices.
+version_note: V1 retained as a failed observed run. Its additional within-trial explicit-validation
+  requirement was absent from the published review eligibility and wrongly blocked
+  a primary trial that described the Cooper run test/formula. V2 corrects that scope
+  error before fresh execution; denominator, unit, all-dose/final-timepoint, source
+  and integrity requirements remain.

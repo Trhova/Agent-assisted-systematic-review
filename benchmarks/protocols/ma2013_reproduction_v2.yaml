@@ -1,0 +1,33 @@
+id: ma2013_nafld_alt_reproduction_v2
+frozen_on: '2026-10-13'
+query: (TITLE_ABS:(NAFLD OR NASH OR "nonalcoholic fatty liver" OR "nonalcoholic steatohepatitis"
+  OR "fatty liver") OR KW:"Fatty Liver") AND (TITLE_ABS:(probiotic* OR prebiotic*
+  OR synbiotic* OR bifidobacter* OR lactobacill* OR flora) OR KW:Probiotics) AND FIRST_PDATE:[1900-01-01
+  TO 2013-06-30] AND SRC:MED
+eligibility: Randomized controlled trials in humans of any age with radiological or
+  histological NAFLD/NASH. Live probiotics or synbiotics versus placebo or no active
+  intervention/usual care. Exclude other causes of liver disease, nonrandomized studies
+  and nonliving-only interventions. No language restriction. Publication by 2013-06-30.
+  Extract within-arm ALT changes from baseline to end of assigned treatment, with
+  their reported change SDs or supported within-arm change-mean SEs. Endpoint values
+  do not substitute for change values.
+search_date_note: Original review gives no exact search cutoff. Submission date 2013-06-30
+  is a frozen proxy, so exact historical search reproduction is not claimed.
+outcome: ALT
+unit: U/L
+value_type: change
+measure: MD
+model: fixed
+timing_rule: change from baseline to end of treatment
+dependence_rule: one independent parallel comparison per trial; unresolved multiarm/crossover
+  excluded from pooling
+dispersion_policy: within_arm_se_to_sd_v1
+evaluation_scope: Post-hoc development reproduction; primary-source extraction separated
+  from reference targets
+method_sources:
+- https://www.wjgnet.com/1007-9327/full/v19/i40/6911.htm
+- https://f6publishing.blob.core.windows.net/015e5f34-deee-4af0-a191-efc2b091d2bc/WJG-19-6911-g002.jpg
+search_implementation: Title/abstract and MeSH/publisher keyword bibliographic fields,
+  not default Europe PMC fulltext searching. Translated accessible MED query; not
+  a reconstruction of unavailable EMBASE/Cochrane searches.
+validate_query_fields: true

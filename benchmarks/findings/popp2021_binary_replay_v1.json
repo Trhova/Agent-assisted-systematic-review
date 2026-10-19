@@ -1,0 +1,27 @@
+{
+  "scope": "Evaluator-only independent rational-arithmetic replay of accepted original binary counts; not a new model run or clinical validation",
+  "rows": [
+    {
+      "record_id": "32579195",
+      "events_treatment": 1,
+      "n_treatment": 55,
+      "events_control": 4,
+      "n_control": 50,
+      "source_sha256": "6b9f768c743a9ee483bd474c74121582ba8aa37b4a7d97103845e262d7e1898f"
+    },
+    {
+      "record_id": "34672950",
+      "events_treatment": 1173,
+      "n_treatment": 5610,
+      "events_control": 1190,
+      "n_control": 5730,
+      "source_sha256": "ee43ec5f7857ff9f2ba96f3446492746807d07ca38cafa63a2671d00c204af25"
+    }
+  ],
+  "total_participants": 11445,
+  "RR": 1.0040345330957092,
+  "ci_low": 0.9345783117912358,
+  "ci_high": 1.078652618972719,
+  "log_se": 0.03657462808653065,
+  "estimate_difference_from_runtime": 0.0
+}

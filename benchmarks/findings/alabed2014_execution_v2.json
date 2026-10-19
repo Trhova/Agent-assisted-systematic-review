@@ -1,0 +1,64 @@
+{
+  "scientific_run_code": "95037f43b03035679d93fdce29197f7a57f7189ae7f36b2168226a82d02813ef",
+  "auditor_code": "0759ed52a4d465e86bb912ea999897f99045213b5fe350c4a1b2fa6e8d5ab637",
+  "tests": 218,
+  "audit_valid": true,
+  "audit_issues": [],
+  "current_run_files_unchanged": true,
+  "current_run_files": 206,
+  "original_v1_files_unchanged": true,
+  "original_v1_files": 212,
+  "counts": {
+    "retrieved": 157,
+    "screened": 157,
+    "fulltexts_attempted": 9,
+    "independent_effects": 0,
+    "supplemental_records": 0,
+    "abstract_candidates": 9,
+    "accepted_effects": 4,
+    "unresolved": 5
+  },
+  "family_pairs": [
+    {
+      "report_a": "23992557",
+      "report_b": "21873705",
+      "relationship": "distinct_trials",
+      "reason": "The reports document separate randomized cohorts: ICAP randomized 240 patients at an initial acute episode, whereas CORP randomized 120 patients at a first recurrence and excluded initial acute episodes. Different treatment durations and CORP's explicit discussion of ICAP as another trial corroborate distinct study identity. Neither source documents participant reuse or conflicting cohort linkage."
+    },
+    {
+      "report_a": "23992557",
+      "report_b": "16186468",
+      "relationship": "distinct_trials",
+      "reason": "The reports describe separate randomized cohorts: 240 patients with a first acute episode in A and 84 patients with a first recurrence in B. Their recruitment periods are separate, with B completing enrollment before A began. These affirmative cohort, population, and recruitment differences establish distinct randomizations. Neither source documents participant reuse or conflicting cohort linkage."
+    },
+    {
+      "report_a": "23992557",
+      "report_b": "16186437",
+      "relationship": "unclear",
+      "reason": "Codex model call failed; see response artifact"
+    },
+    {
+      "report_a": "21873705",
+      "report_b": "16186468",
+      "relationship": "unclear",
+      "reason": "Codex model call failed; see response artifact"
+    },
+    {
+      "report_a": "21873705",
+      "report_b": "16186437",
+      "relationship": "distinct_trials",
+      "reason": "CORP and COPE report separate randomizations in different recruitment periods, with different entry populations and treatment comparisons. These affirmative characteristics establish distinct randomized studies. Neither report documents participant reuse; possible later enrollment of a COPE participant in CORP remains theoretical."
+    },
+    {
+      "report_a": "16186468",
+      "report_b": "16186437",
+      "relationship": "distinct_trials",
+      "reason": "The reports affirmatively describe distinct randomized cohorts: CORE randomized 84 patients at first recurrence, whereas COPE randomized 120 patients at first acute pericarditis. Their colchicine courses also differ, at 6 versus 3 months. These support separate randomizations. Neither source documents participant reuse or links the cohorts; possible later reenrollment remains theoretical."
+    }
+  ],
+  "completion": {
+    "exit_code": 2,
+    "ended_at": "2026-10-14T08:16:53.302669+00:00"
+  },
+  "limitation": "Two family requests exhausted model503/429 retries. No pool. Four accepted extractions correct; five access gaps unchanged."
+}

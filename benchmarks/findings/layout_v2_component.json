@@ -1,0 +1,85 @@
+{
+  "role": "Complete large-document parsing/discovery component check, not pooled trial evidence or a benchmark reproduction.",
+  "source_sha256": "3b68009d2c9b38563e66e14b6e3209472322aa82c53527a36b0bf9c977159b6d",
+  "segments": {
+    "completed": 68,
+    "total": 68
+  },
+  "supported_candidates": [
+    {
+      "title": "The Role of Products of Colon Microflora in Pathogenesis of Nonalcoholic\nFatty Liver Disease",
+      "evidence": "(SFA) in faeces. We also made biopsy of liver. Patients have been\ndivided into 2 groups depending on activity of hepatitis: (1) steatosis;\n(2) steatohepatitis and into 3 groups depending on therapy: (1) statin\n10 mg; (2) probiotic (Bifiform complex 3 caps); (3) probiotic in\ncombination with statin.",
+      "occurrences": [
+        {
+          "title": "The Role of Products of Colon Microflora in Pathogenesis of Nonalcoholic\nFatty Liver Disease",
+          "evidence": "(SFA) in faeces. We also made biopsy of liver. Patients have been\ndivided into 2 groups depending on activity of hepatitis: (1) steatosis;\n(2) steatohepatitis and into 3 groups depending on therapy: (1) statin\n10 mg; (2) probiotic (Bifiform complex 3 caps); (3) probiotic in\ncombination with statin.",
+          "reason": "Uncertain match: human NAFLD treatment study with liver biopsy and probiotic groups, published in a 2011 conference collection. Probiotic plus statin versus statin alone may provide an eligible adjunct comparison. Randomization, live organism content, exclusion of other liver diseases, and end-of-treatment ALT reporting are not established.",
+          "publication_form": "conference_abstract",
+          "segment_start": 1253369,
+          "segment_end": 1313369,
+          "segment_sha256": "26c53785957ed4c2dcc9d5e376339f9aa3616b3749c7f650af1f1a8536fa4b39",
+          "source_sha256": "3b68009d2c9b38563e66e14b6e3209472322aa82c53527a36b0bf9c977159b6d"
+        }
+      ]
+    },
+    {
+      "title": "Liver Fibrosis Associated with Hepatogenic Ulcers and Erosions",
+      "evidence": "Our investigation included the study the complication of patients with\nthe Liver fibrosis, (LF) middle age 47.9 ± 1.1 years. Were identifi-\ncated hepatogenic ulcers in 33 patients with LF, in other contingents\nwere erosive process. Ulcers and erosions were localized in the\nantrum area of stomach. The group of patients used basic treatment of\nLF which included hepatoprotective and immunomodular medi-\ncines—‘‘Ursofalk’’ and ‘‘Dufalac’’ during a month. Immunocorrective\neffect of medicines which contain bifidobacterium and lactobacterium\nwas correct of disorder of T- and B-cellular of immune through the\naction of system of interleucines.",
+      "occurrences": [
+        {
+          "title": "Liver Fibrosis Associated with Hepatogenic Ulcers and Erosions",
+          "evidence": "Our investigation included the study the complication of patients with\nthe Liver fibrosis, (LF) middle age 47.9 ± 1.1 years. Were identifi-\ncated hepatogenic ulcers in 33 patients with LF, in other contingents\nwere erosive process. Ulcers and erosions were localized in the\nantrum area of stomach. The group of patients used basic treatment of\nLF which included hepatoprotective and immunomodular medi-\ncines—‘‘Ursofalk’’ and ‘‘Dufalac’’ during a month. Immunocorrective\neffect of medicines which contain bifidobacterium and lactobacterium\nwas correct of disorder of T- and B-cellular of immune through the\naction of system of interleucines.",
+          "reason": "Uncertain match: human liver-fibrosis treatment report involving bifidobacterium and lactobacterium, published in a 2011 conference collection. Randomization, NAFLD/NASH etiology, radiological or histological confirmation, organism viability, eligible comparator, and end-of-treatment ALT are not established in the excerpt.",
+          "publication_form": "conference_abstract",
+          "segment_start": 2107900,
+          "segment_end": 2167869,
+          "segment_sha256": "012f31d5264fc3be80ca4d0a395cfc0e4b0ab27dc45aed786fb46c630f84b281",
+          "source_sha256": "3b68009d2c9b38563e66e14b6e3209472322aa82c53527a36b0bf9c977159b6d"
+        }
+      ]
+    }
+  ],
+  "unsupported_candidates": 0,
+  "resolution": {
+    "records": [],
+    "ledger": [
+      {
+        "source_title": "The Role of Products of Colon Microflora in Pathogenesis of Nonalcoholic\nFatty Liver Disease",
+        "source_occurrences": [
+          {
+            "title": "The Role of Products of Colon Microflora in Pathogenesis of Nonalcoholic\nFatty Liver Disease",
+            "evidence": "(SFA) in faeces. We also made biopsy of liver. Patients have been\ndivided into 2 groups depending on activity of hepatitis: (1) steatosis;\n(2) steatohepatitis and into 3 groups depending on therapy: (1) statin\n10 mg; (2) probiotic (Bifiform complex 3 caps); (3) probiotic in\ncombination with statin.",
+            "reason": "Uncertain match: human NAFLD treatment study with liver biopsy and probiotic groups, published in a 2011 conference collection. Probiotic plus statin versus statin alone may provide an eligible adjunct comparison. Randomization, live organism content, exclusion of other liver diseases, and end-of-treatment ALT reporting are not established.",
+            "publication_form": "conference_abstract",
+            "segment_start": 1253369,
+            "segment_end": 1313369,
+            "segment_sha256": "26c53785957ed4c2dcc9d5e376339f9aa3616b3749c7f650af1f1a8536fa4b39",
+            "source_sha256": "3b68009d2c9b38563e66e14b6e3209472322aa82c53527a36b0bf9c977159b6d"
+          }
+        ],
+        "status": "unresolved",
+        "reason": "No unique exact normalized title match in MED",
+        "hit_count": 0
+      },
+      {
+        "source_title": "Liver Fibrosis Associated with Hepatogenic Ulcers and Erosions",
+        "source_occurrences": [
+          {
+            "title": "Liver Fibrosis Associated with Hepatogenic Ulcers and Erosions",
+            "evidence": "Our investigation included the study the complication of patients with\nthe Liver fibrosis, (LF) middle age 47.9 ± 1.1 years. Were identifi-\ncated hepatogenic ulcers in 33 patients with LF, in other contingents\nwere erosive process. Ulcers and erosions were localized in the\nantrum area of stomach. The group of patients used basic treatment of\nLF which included hepatoprotective and immunomodular medi-\ncines—‘‘Ursofalk’’ and ‘‘Dufalac’’ during a month. Immunocorrective\neffect of medicines which contain bifidobacterium and lactobacterium\nwas correct of disorder of T- and B-cellular of immune through the\naction of system of interleucines.",
+            "reason": "Uncertain match: human liver-fibrosis treatment report involving bifidobacterium and lactobacterium, published in a 2011 conference collection. Randomization, NAFLD/NASH etiology, radiological or histological confirmation, organism viability, eligible comparator, and end-of-treatment ALT are not established in the excerpt.",
+            "publication_form": "conference_abstract",
+            "segment_start": 2107900,
+            "segment_end": 2167869,
+            "segment_sha256": "012f31d5264fc3be80ca4d0a395cfc0e4b0ab27dc45aed786fb46c630f84b281",
+            "source_sha256": "3b68009d2c9b38563e66e14b6e3209472322aa82c53527a36b0bf9c977159b6d"
+          }
+        ],
+        "status": "unresolved",
+        "reason": "No unique exact normalized title match in MED",
+        "hit_count": 0
+      }
+    ],
+    "status": "incomplete"
+  }
+}

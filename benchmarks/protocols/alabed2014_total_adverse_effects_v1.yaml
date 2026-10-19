@@ -1,0 +1,47 @@
+id: alabed2014_total_adverse_effects_development_v1
+frozen_on: '2026-10-14'
+query: TITLE_ABS:colchicine AND TITLE_ABS:pericarditis AND FIRST_PDATE:[1900-01-01
+  TO 2014-08-04] AND SRC:MED
+validate_query_fields: true
+eligibility: Individually randomized parallel trials treating an established first
+  acute episode or first recurrence of predominantly idiopathic/viral pericarditis,
+  colchicine plus conventional anti-inflammatory care versus the same care with or
+  without placebo. Accept mixed idiopathic/viral/autoimmune cohorts as in the original
+  included trials; exclude trials solely preventing post-operative pericarditis, bacterial/neoplastic
+  disease, multiple-recurrence-only cohorts, nonrandomized designs, reviews and protocols.
+  No restriction on age, language, dose or treatment duration. Target total participants
+  with any reported adverse effect during study follow-up, not gastrointestinal-only
+  events, severe-only events, withdrawals or recurrent event totals. Otherwise eligible
+  trials with absent or ambiguous target inputs remain unresolved.
+outcome: total_adverse_effects_during_study_followup
+unit: dimensionless
+value_type: binary_rr_mh_fixed_v1
+measure: RR
+model: mantel_haenszel_fixed
+timing_rule: Cumulative adverse effects over the primary report study follow-up, retaining
+  each actual observation period and treatment duration. No imposed common month horizon;
+  no substitution of fixed-time recurrence outcomes.
+denominator_rule: Use explicit primary safety-table denominators, supported by participant
+  flow and analysis population. Preserve missing follow-up limitations and conflicting
+  denominators. Never derive integer counts by rounding percentages.
+binary_policy: binary_rr_mh_fixed_v1
+zero_event_policy: Add0.5 to all four cells if a cell is zero; retain originals; exclude
+  double-zero or double-all-event relative effects with explicit ledger; require two
+  informative independent trials.
+dependence_rule: One comparison per independent randomized trial. Distinct trial names
+  alone do not resolve explicit cohort-overlap evidence; evaluate recruitment, populations
+  and registry identifiers from primary sources.
+search_implementation: Europe PMC MED query through4August2014. Does not replicate
+  all original Cochrane databases.
+evaluation_scope: Developer-assisted historical development evaluation of the complete
+  published four-contributor total-adverse-effects comparison, not whole-review reproduction
+  or held-out validation. Deliberate restriction to first acute episode/first recurrence
+  matches published quantitative contributors; the broader review allowed multiple
+  recurrences but left CORP-2 awaiting assessment. That narrower comparison scope
+  is explicit and cannot establish completeness of the broader published question.
+method_sources:
+- https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10
+- https://training.cochrane.org/handbook/current/statistical-methods-revman5
+qualification_note: All four original quantitative contributors accessible before
+  execution. Variable full follow-up safety rather than identical timepoint. Reference
+  pooled numbers and evaluator discrepancy hypotheses are excluded from extraction.

@@ -1,0 +1,467 @@
+{
+  "ma2013_nafld_alt": {
+    "evaluation_type": "development run with evaluator-assisted source acquisition; not a blind autonomous benchmark",
+    "run_directory": "data/benchmarks/runs/ma2013_nafld_alt/b81b1cbd5975",
+    "status": {
+      "protocol_sha256": "b81b1cbd59757af13ef764883bd468b9807cef7688ba6b12afe09553c3f21a35",
+      "backend": "codex",
+      "model": null,
+      "code_sha256": "edb5cffb0b2e465ba06d18ee568be2d6a04d3592590953e105bba616a822b8db",
+      "started_at": "2026-10-12T12:51:55Z",
+      "status": "incomplete",
+      "errors": [
+        {
+          "id": "21484580",
+          "error": "Source exceeds audited input limit; document segmentation or source identity review required"
+        },
+        {
+          "id": "19669273",
+          "error": "Source exceeds audited input limit; document segmentation or source identity review required"
+        },
+        {
+          "id": "32226150",
+          "error": "Source exceeds audited input limit; document segmentation or source identity review required"
+        },
+        {
+          "id": "32226156",
+          "error": "Source exceeds audited input limit; document segmentation or source identity review required"
+        },
+        {
+          "id": "32226152",
+          "error": "Source exceeds audited input limit; document segmentation or source identity review required"
+        },
+        {
+          "id": "19288110",
+          "error": "Source exceeds audited input limit; document segmentation or source identity review required"
+        },
+        {
+          "id": "23625304",
+          "error": "Source exceeds audited input limit; document segmentation or source identity review required"
+        },
+        {
+          "id": "23613005",
+          "error": "Source exceeds audited input limit; document segmentation or source identity review required"
+        },
+        {
+          "id": "15113312",
+          "error": "Source exceeds audited input limit; document segmentation or source identity review required"
+        },
+        {
+          "id": "15702496",
+          "error": "Source exceeds audited input limit; document segmentation or source identity review required"
+        }
+      ],
+      "counts": {
+        "retrieved": 972,
+        "fulltexts_attempted": 105,
+        "screened": 972,
+        "abstract_candidates": 105,
+        "accepted_effects": 2,
+        "unresolved": 93
+      },
+      "limitations": [
+        "Single accessible bibliographic database; no claim of historical multi-database search equivalence.",
+        "No model-independent guarantee against training-data contamination.",
+        "Only independent parallel continuous outcomes with reported SDs; no imputation."
+      ]
+    },
+    "fulltext_status_counts": {
+      "extracted": 15,
+      "missing_fulltext": 80,
+      "error": 10
+    },
+    "synthesis": {
+      "k": 2,
+      "model": "fixed",
+      "tau2_estimator": "DerSimonian-Laird",
+      "ci_method": "normal",
+      "estimate": -9.800639639538396,
+      "se": 5.324832339896526,
+      "ci_low": -20.237119249449727,
+      "ci_high": 0.6358399703729365,
+      "Q": 0.22844571426304955,
+      "I2": 0,
+      "tau2": 0,
+      "studies": [
+        "Aller-2011-trial",
+        "Malaguarnera-2011-trial"
+      ],
+      "weights": [
+        0.18172126673660657,
+        0.8182787332633935
+      ],
+      "effects": [
+        {
+          "study_id": "Aller-2011-trial",
+          "outcome": "ALT",
+          "unit": "U/L",
+          "value_type": "endpoint",
+          "timepoint_weeks": null,
+          "timepoint_reported": "3 months",
+          "n_treatment": 14,
+          "n_control": 14,
+          "mean_treatment": 60.4,
+          "mean_control": 64.8,
+          "sd_treatment": 30.4,
+          "sd_control": 35.5,
+          "design": "parallel",
+          "treatment": "One daily tablet containing 500 million Lactobacillus bulgaricus and Streptococcus thermophilus",
+          "control": "One daily placebo tablet containing 120 mg starch",
+          "evidence": [
+            "3 months: group I, treated with one tablet per day\nreduction with diet changes are usually recom-\nwith 500 million of Lactobacillus bulgaricus and\nmended as the first step in the treatment of pa-\nStreptococcus thermophilus and group II, treated\nwith one placebo tablet (120 mg of starch).",
+            "– Randomized to dietary – Randomized to control\nintervention (n= 15) group (n= 15)\n– Probiotic intervention – Placebo intervention\n(n= 15) (n= 15)",
+            "Analized (n= 14) Analysis Analized (n=14)",
+            "In group I, alanine amino transferase (ALT:\n67.7±25.1 vs. 60.4±30.4 UI/L; p<0.05), aspartate",
+            "p<0.05) decreased. After treatment in group II, all\nThe results were expressed as means ± standard liver function parameters remained unchanged;\ndeviation. The distribution of variables was ana- alanine amino transferase (ALT: 60.7±32.1 vs.\nlyzed with Kolmogorov-Smirnov test. Quantitative 64.8±35.5 UI/L; p<0.05), aspartate aminotrans-",
+            "total of 28patients. The 2patients excluded from\n0.1 kg and body mass index (BMI) computed as the analysis had taken less than 90% of the\nbody weight/(height2). Waist (narrowest diameter tablets set."
+          ],
+          "limitations": [
+            "Analysis excluded two randomized participants who took less than 90% of tablets; 14 of 15 participants per arm were analyzed.",
+            "The control ALT result is described as unchanged despite a reported p<0.05; the endpoint mean and SD are consistently reported.",
+            "ALT values are reported in narrative text rather than a table."
+          ],
+          "original_evidence": [
+            "Page 1: \"A sample of 30 patients\nwith NAFLD (diagnosed by liver biopsy)\"",
+            "Page 2: \"Each patient received a total of 90 tablets\nand should intake 1 per day, completing 3 months\nof treatment.\"",
+            "Page 2, Figure 1: \"Analized (n= 14) Analysis Analized (n=14)\"",
+            "Page 3: \"The results were expressed as means ± standard\ndeviation.\"",
+            "Page 3: \"In group I, alanine amino transferase (ALT:\n67.7±25.1 vs. 60.4±30.4 UI/L; p<0.05)\"",
+            "Page 3: \"After treatment in group II, all\nliver function parameters remained unchanged;\nalanine amino transferase (ALT: 60.7±32.1 vs.\n64.8±35.5 UI/L; p<0.05)\""
+          ],
+          "discarded_unmatched_evidence": [],
+          "validation_errors": [],
+          "record_id": "22013734",
+          "source_sha256": "742e73eb832726d5988c18c255dc54b1aa570851853fe00c274d752f15c2f4b3",
+          "reported_unit": "U/L",
+          "source_unit": "U/L",
+          "effect": -4.399999999999999,
+          "variance": 156.02928571428572,
+          "measure": "MD"
+        },
+        {
+          "study_id": "Malaguarnera-2011-trial",
+          "outcome": "ALT",
+          "unit": "U/L",
+          "value_type": "endpoint",
+          "timepoint_weeks": 24,
+          "timepoint_reported": "24 weeks",
+          "n_treatment": 34,
+          "n_control": 32,
+          "mean_treatment": 47.1,
+          "mean_control": 58.1,
+          "sd_treatment": 19.8,
+          "sd_control": 27.2,
+          "design": "parallel",
+          "treatment": "Bifidobacterium longum with fructo-oligosaccharides plus lifestyle modification",
+          "control": "Placebo plus lifestyle modification",
+          "evidence": [
+            "Table2 Comparisonofthelaboratoryparametersbetweenthetreatmentgroupsa",
+            "GroupA:Bifidobacteriumlongum?FOS? GroupB:placebo?lifestylemodification\nlifestylemodification(n=34) (n=32)",
+            "Beforetreatment Aftertreatment Beforetreatment Aftertreatment",
+            "ALT(IU/L) 101±24.7 47.1±19.8***,(cid:2)(cid:2)(cid:2) 96.1±24.2 58.1±27.2***,(cid:2)(cid:2)(cid:2)",
+            "Allvaluesaremean±standarddeviation(SD)",
+            "ComparisonbetweenGroupAandGroupBafter24weeksoftreatment:(cid:2)P\\0.001;(cid:2)(cid:2)P\\0.05;(cid:2)(cid:2)(cid:2)P=NS"
+          ],
+          "limitations": [
+            "The abstract describes equal allocation, whereas Table 2, Table 1, the trial profile, and Results report 34 treatment and 32 control participants; the extracted sample sizes follow those detailed reports."
+          ],
+          "validation_errors": [],
+          "record_id": "21901256",
+          "source_sha256": "43ba58e9e4fa33429e49750c80dafe9f7d6cf76c301c38b237e591df5995a939",
+          "reported_unit": "IU/L",
+          "source_unit": "U/L",
+          "effect": -11.0,
+          "variance": 34.650588235294116,
+          "measure": "MD"
+        }
+      ],
+      "leave_one_out": []
+    },
+    "comparison": {
+      "reference": {
+        "id": "ma2013_nafld_alt",
+        "source": "https://www.wjgnet.com/1007-9327/full/v19/i40/6911.htm",
+        "doi": "10.3748/wjg.v19.i40.6911",
+        "outcome": "ALT",
+        "measure": "MD",
+        "unit": "U/L",
+        "model": "fixed",
+        "estimate": -23.71,
+        "ci_low": -33.46,
+        "ci_high": -13.95,
+        "k": 4,
+        "absolute_tolerance": 0.02,
+        "notes": "Published review reports no exact search date. Protocol uses submission date proxy. Endpoint convention must be checked against source trials; no change-SD imputation.",
+        "expected_record_ids": [
+          "22013734",
+          "21505361",
+          "21901256",
+          "23396737"
+        ]
+      },
+      "run_status": "incomplete",
+      "reproduced": false,
+      "reason": "Not reproduced; inspect coverage, definitions and extraction evidence",
+      "report_coverage": {
+        "reference_reports": 4,
+        "retrieved": 4,
+        "retained_after_abstract_screening": 4,
+        "accessible_fulltexts": 3,
+        "missing_from_search": [],
+        "excluded_at_abstract": [],
+        "missing_fulltexts": [
+          "21505361"
+        ]
+      },
+      "differences": {
+        "estimate": 13.909360360461605,
+        "ci_low": 13.222880750550274,
+        "ci_high": 14.585839970372936
+      },
+      "k_observed": 2,
+      "k_expected": 4,
+      "missing_studies": [
+        "21505361",
+        "23396737"
+      ],
+      "extra_studies": [],
+      "numerically_matches": false
+    }
+  },
+  "li2016_t2d_fbg": {
+    "evaluation_type": "development run with evaluator-assisted source acquisition; not a blind autonomous benchmark",
+    "run_directory": "data/benchmarks/runs/li2016_t2d_fbg/08f8481c02f3",
+    "status": {
+      "protocol_sha256": "08f8481c02f3e2496af3894aaf596169e069fd99dce8878b9ac69bc48b0b3b3d",
+      "backend": "codex",
+      "model": null,
+      "code_sha256": "edb5cffb0b2e465ba06d18ee568be2d6a04d3592590953e105bba616a822b8db",
+      "started_at": "2026-10-12T12:51:56Z",
+      "status": "incomplete",
+      "errors": [
+        {
+          "id": "21484580",
+          "error": "Source exceeds audited input limit; document segmentation or source identity review required"
+        }
+      ],
+      "counts": {
+        "retrieved": 2180,
+        "fulltexts_attempted": 50,
+        "screened": 2180,
+        "abstract_candidates": 50,
+        "accepted_effects": 2,
+        "unresolved": 33
+      },
+      "limitations": [
+        "Single accessible bibliographic database; no claim of historical multi-database search equivalence.",
+        "No model-independent guarantee against training-data contamination.",
+        "Only independent parallel continuous outcomes with reported SDs; no imputation."
+      ]
+    },
+    "fulltext_status_counts": {
+      "extracted": 27,
+      "missing_fulltext": 22,
+      "error": 1
+    },
+    "synthesis": {
+      "k": 2,
+      "model": "random",
+      "tau2_estimator": "DerSimonian-Laird",
+      "ci_method": "normal",
+      "estimate": -0.5896589425362375,
+      "se": 0.16137094408990463,
+      "ci_low": -0.9059401811036771,
+      "ci_high": -0.27337770396879785,
+      "Q": 0.20962540104633584,
+      "I2": 0,
+      "tau2": 0,
+      "studies": [
+        "IRCT201307092017N14",
+        "NCT01752803"
+      ],
+      "weights": [
+        0.367434949829149,
+        0.6325650501708511
+      ],
+      "effects": [
+        {
+          "study_id": "IRCT201307092017N14",
+          "outcome": "FBG",
+          "unit": "dimensionless",
+          "value_type": "endpoint",
+          "timepoint_weeks": 8,
+          "timepoint_reported": "After intervention",
+          "n_treatment": 30,
+          "n_control": 30,
+          "mean_treatment": 139.22,
+          "mean_control": 182.16,
+          "sd_treatment": 46.66,
+          "sd_control": 73.78,
+          "design": "parallel",
+          "treatment": "Probiotic fermented milk (kefir) enriched with Lactobacillus casei, Lactobacillus acidophilus and Bifidobacterium lactis",
+          "control": "Conventional fermented milk (dough), designated placebo, containing Streptococcus thermophiles and Lactobacillus bulgaricus",
+          "evidence": [
+            "Clinical trial number of this study was IRCT201307092017N14.",
+            "The eligible participants were randomly assigned to intervention or placebo groups based on random block procedure produced by Random Allocation Software (RAS).",
+            "During the eight weeks of intervention, patients in the intervention group received 600ml fermented milk (kefir) containing probiotics twice a day (in lunch and dinner), and placebo group received 600 ml conventional fermented milk(dough) twice daily(with lunch and dinner).",
+            "Variables | Probiotic fermented milk(kefir)mean±SD (n=30) | Conventional fermented mean±SD (n=30) | P -value",
+            "Serum Glucose (mg/dl) |  |  | ",
+            "After intervention | 139.22±46.66\n \na\n | 182.16±73.78 | 0.01\n \nb",
+            "After removing the outlier data, there was no statistically significant differences in fasting blood glucose at the beginning of the study between two groups ( P =0.22)."
+          ],
+          "limitations": [
+            "Sample sizes are taken from the Table 4 headers (30 per group). The narrative mentions removal of glucose outliers without specifying their number or whether this affected endpoint sample sizes."
+          ],
+          "validation_errors": [],
+          "record_id": "25905057",
+          "source_sha256": "c13846b9fad150ee85ff228342d12ffa90ec869368d6f598d77664d443e66e98",
+          "reported_unit": "mg/dL",
+          "source_unit": "mg/dL",
+          "effect": -0.6866004252452775,
+          "variance": 0.07087127016244793,
+          "measure": "SMD"
+        },
+        {
+          "study_id": "NCT01752803",
+          "outcome": "FBG",
+          "unit": "dimensionless",
+          "value_type": "endpoint",
+          "timepoint_weeks": 12,
+          "timepoint_reported": "week 12",
+          "n_treatment": 48,
+          "n_control": 53,
+          "mean_treatment": 7.2,
+          "mean_control": 8.2,
+          "sd_treatment": 1.2,
+          "sd_control": 2.3,
+          "design": "parallel",
+          "treatment": "Hexbio multi-strain probiotics, six strains, one sachet twice daily for 12 weeks",
+          "control": "Matching placebo sachets twice daily for 12 weeks",
+          "evidence": [
+            "#NCT01752803.",
+            "p\nnoitcaretnI\nenilesab\n21\nkeeW\nenilesab\n6 keeW\npuorg-nihtiW\nDS\nnaeM\nn\n−\n−\n±\nseulav\neulav\np\nTTI\nPP\n21\nkeeW\n6 keeW\nenilesaB",
+            "559.0\n766.0\na)L/lomm(\nGBF\n5.1\n1.0\n7.1\n3.0\n418.0\n2.1\n2.7\n2.1\n0.7\n1.1\n3.7\n84\npuorg\nscitoiborP\n±\n−\n±\n−\n±\n±\n±\n1.2\n3.0\n2.2\n1.0\n775.0\n3.2\n2.8\n3.2\n0.8\n2.2\n9.7\n35\npuorg\nobecalP\n±\n±\n±\n±\n±"
+          ],
+          "limitations": [
+            "Endpoint means and SDs are per-protocol results for participants completing treatment with more than 85% compliance; 68 participants per arm were originally randomized.",
+            "Table 3 text is reversed in the supplied source; the extracted values reflect its restored reading direction.",
+            "Raw endpoint values retain the reported mmol/L unit; dimensionless SMD is not calculated."
+          ],
+          "original_evidence": [
+            "This 12-week randomized, double-blind, parallel-group,\nplacebo-controlled trial was conducted at the diabetes clinic\nof a teaching hospital in Kuala Lumpur, Malaysia.",
+            "Table 3 header, verbatim as supplied: p\nnoitcaretnI\nenilesab\n21\nkeeW\nenilesab\n6 keeW\npuorg-nihtiW\nDS\nnaeM\nn\n−\n−\n±\nseulav\neulav\np\nTTI\nPP\n21\nkeeW\n6 keeW\nenilesaB",
+            "Table 3 FBG rows, verbatim as supplied: 559.0\n766.0\na)L/lomm(\nGBF\n5.1\n1.0\n7.1\n3.0\n418.0\n2.1\n2.7\n2.1\n0.7\n1.1\n3.7\n84\npuorg\nscitoiborP\n±\n−\n±\n−\n±\n±\n±\n1.2\n3.0\n2.2\n1.0\n775.0\n3.2\n2.8\n3.2\n0.8\n2.2\n9.7\n35\npuorg\nobecalP\n±\n±\n±\n±\n±",
+            "In this\narticle, the results presented are related to PP analysis\nunless otherwise stated, while the results of ITT analysis\nare reflected by the p values."
+          ],
+          "discarded_unmatched_evidence": [
+            "This 12-week randomized, double-blind, parallel-group,\nplacebo-controlled trial was conducted at the diabetes clinic\nof a teaching hospital in Kuala Lumpur, Malaysia.",
+            "On the other hand, PP analysis was performed on those\nparticipants who had successfully completed the 12-week\nintervention with more than 85 % compliance rate. In this\narticle, the results presented are related to PP analysis\nunless otherwise stated, while the results of ITT analysis\nare reflected by the p values.",
+            "For the purpose of PP analyses, 48 participants in probi-\notics and 53 participants in placebo group completed the\nintervention successfully with compliance rate of >85 %",
+            "A total of 136 participants (52.2 % male) were randomly\nallocated to the probiotics (n 68) or placebo (n 68)\n= =\ngroup.",
+            "Supplementation was provided by Hexbio® B-Crobes\nLaboratory Sdn. Bhd. (Ipoh, Malaysia). Each sachet pro-\nvided a 3 1010 dose of six viable microbial cell prepa-\n×\nration strains: three strains from the genus Lactobacillus,\nFirmicutes phyla (Lactobacillus acidophilus, Lactobacillus\ncasei, Lactobacillus lactis) and three strains from the genus\nBifidobacterium and Actinobacteria phyla (Bifidobacte-\nrium bifidum, Bifidobacterium longum and Bifidobacterium\ninfantis).",
+            "asked to mix the contents of the sachets with one glass of\nwater (approximately 250 mL) and drink twice per day\n(morning and evening) before or after meal.",
+            "Sachets containing\neither probiotics—the term used throughout this study to\nrefer to microbial cell preparations (MCP)—or a placebo\nwere given to the participants according to their group\nassignment. Sachets were identical in terms of nutri-\ntional value, appearance, texture, weight and smell",
+            "All the measurements were taken at baseline, week 6 and\nweek 12."
+          ],
+          "validation_errors": [],
+          "record_id": "26988693",
+          "source_sha256": "8caf7a52af1ad40101924b5fc387370fb0f1927e6ea1e397c90a857e5c33a781",
+          "reported_unit": "mmol/L",
+          "source_unit": "mmol/L",
+          "effect": -0.5333490202192539,
+          "variance": 0.041166646164586165,
+          "measure": "SMD"
+        }
+      ],
+      "leave_one_out": []
+    },
+    "comparison": {
+      "reference": {
+        "id": "li2016_t2d_fbg",
+        "source": "https://pubmed.ncbi.nlm.nih.gov/27368052/",
+        "doi": "10.1097/MD.0000000000004088",
+        "outcome": "FBG",
+        "measure": "SMD",
+        "unit": "dimensionless",
+        "model": "random",
+        "estimate": -0.61,
+        "ci_low": -0.92,
+        "ci_high": -0.3,
+        "k": 9,
+        "absolute_tolerance": 0.02,
+        "notes": "Article abstract labels SMD with mmol/L and figure captions call effects weighted mean differences. Frozen primary comparison follows abstract SMD. This inconsistency is a scientific uncertainty, not a tuning opportunity.",
+        "expected_review_record_ids": [
+          "23967428",
+          "25196301",
+          "25300285",
+          "26988693",
+          "21700013",
+          "22129852",
+          "24319552",
+          "23899653",
+          "24706266",
+          "25197295",
+          "26955460",
+          "23645956"
+        ],
+        "identity_note": "Twelve reports cited as included in the review (references 23–34); not asserted to be twelve independent trials, or all nine FBG contributors.",
+        "expected_record_ids": [
+          "23899653",
+          "26955460",
+          "22129852",
+          "26988693",
+          "24319552",
+          "25300285",
+          "23645956",
+          "24706266",
+          "25196301"
+        ]
+      },
+      "run_status": "incomplete",
+      "reproduced": false,
+      "reason": "Not reproduced; inspect coverage, definitions and extraction evidence",
+      "report_coverage": {
+        "reference_reports": 12,
+        "retrieved": 11,
+        "retained_after_abstract_screening": 10,
+        "accessible_fulltexts": 5,
+        "missing_from_search": [
+          "24319552"
+        ],
+        "excluded_at_abstract": [
+          "26955460"
+        ],
+        "missing_fulltexts": [
+          "21700013",
+          "22129852",
+          "24319552",
+          "24706266",
+          "25196301",
+          "25300285",
+          "26955460"
+        ]
+      },
+      "differences": {
+        "estimate": 0.02034105746376247,
+        "ci_low": 0.014059818896322906,
+        "ci_high": 0.02662229603120214
+      },
+      "k_observed": 2,
+      "k_expected": 9,
+      "missing_studies": [
+        "22129852",
+        "23645956",
+        "23899653",
+        "24319552",
+        "24706266",
+        "25196301",
+        "25300285",
+        "26955460"
+      ],
+      "extra_studies": [
+        "25905057"
+      ],
+      "numerically_matches": false
+    }
+  }
+}

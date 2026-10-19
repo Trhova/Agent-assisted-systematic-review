@@ -1,0 +1,278 @@
+{
+  "run": "data/benchmarks/reproduction_v2_integration/dispersion_integration_v1/6d186fdab89e",
+  "status": {
+    "protocol_sha256": "6d186fdab89e33879f2a9766356ffcace80f3cd7a2928852018bff535ec4183b",
+    "backend": "codex",
+    "model": "gpt-6-astra",
+    "source_search_model": "gpt-6-astra",
+    "code_sha256": "22cfd834b6b423c8c2f8c0a4dc62b8e4283c88bc8107f0f4ac88ca3cbd565886",
+    "started_at": "2026-10-13T13:24:47Z",
+    "status": "incomplete",
+    "errors": [
+      {
+        "stage": "synthesis",
+        "error": "Fewer than two validated independent effects"
+      }
+    ],
+    "publication_integrity_flags": [
+      {
+        "record_id": "23899653",
+        "indexed_flags": [
+          "Linked Expression of concern in: 37334997"
+        ]
+      }
+    ],
+    "counts": {
+      "retrieved": 2,
+      "fulltexts_attempted": 2,
+      "independent_effects": 1,
+      "supplemental_records": 0,
+      "screened": 2,
+      "abstract_candidates": 2,
+      "accepted_effects": 1,
+      "unresolved": 1
+    },
+    "limitations": [
+      "Single accessible bibliographic database; no claim of historical multi-database search equivalence.",
+      "No model-independent guarantee against training-data contamination.",
+      "Independent parallel continuous outcomes; only prespecified source-backed transformations, no imputation."
+    ],
+    "finished_at": "2026-10-13T13:27:40Z",
+    "pending_segments": 0,
+    "can_resume_internal_work": false
+  },
+  "extractions": [
+    {
+      "id": "23899653",
+      "status": "publication_integrity_unresolved",
+      "result": {
+        "eligibility": "include",
+        "reason": "Full English article published in 2013 reporting a randomized, double-blind, parallel placebo-controlled trial of multispecies probiotic supplementation in people with type 2 diabetes.",
+        "rows": [
+          {
+            "study_id": "Asemi-2013-trial",
+            "outcome": "FBG",
+            "unit": "mg/dL",
+            "value_type": "endpoint",
+            "timepoint_weeks": 8,
+            "timepoint_reported": "week 8",
+            "n_treatment": 27,
+            "n_control": 27,
+            "mean_treatment": 145.4,
+            "mean_control": 163.3,
+            "sd_treatment": 49.363448015713004,
+            "sd_control": 62.353829072479584,
+            "design": "parallel",
+            "treatment": "Daily multispecies probiotic supplement containing seven bacterial strains and 100 mg fructo-oligosaccharide for 8 weeks",
+            "control": "Identical placebo capsule containing the same substance without bacteria",
+            "evidence": [
+              "Placebo (n = 27) Probiotic supplement (n = 27) pb",
+              "week 0 week 8 change pa we ek 0 week 8 change pa",
+              "FPG, mg/dl 134.5±9.6 163.3±12 28.8±8.5 0.002 143.8±10.7 145.4±9.5 1.6±6 0.80 0.01",
+              "Data are means ± SE. a Obtained from a paired t test for the within-group comparisons. b Obtained from an independent Student’s t test for the between-\ngroup comparisons."
+            ],
+            "limitations": [],
+            "dispersion_type_treatment": "SE",
+            "reported_dispersion_treatment": 9.5,
+            "dispersion_scope_treatment": "unadjusted_arm_mean",
+            "dispersion_evidence_treatment": [
+              "Data are means ± SE. a Obtained from a paired t test for the within-group comparisons. b Obtained from an independent Student’s t test for the between-\ngroup comparisons.",
+              "FPG, mg/dl 134.5±9.6 163.3±12 28.8±8.5 0.002 143.8±10.7 145.4±9.5 1.6±6 0.80 0.01"
+            ],
+            "denominator_evidence_treatment": [
+              "Placebo (n = 27) Probiotic supplement (n = 27) pb",
+              "week 0 week 8 change pa we ek 0 week 8 change pa",
+              "Analyzed (n = 27) Analyzed (n = 27)"
+            ],
+            "source_locator_treatment": "Page 5, Table 3, FPG row, probiotic supplement week 8 column and table footnote; page 4, Figure 1, analysis counts",
+            "dispersion_type_control": "SE",
+            "reported_dispersion_control": 12,
+            "dispersion_scope_control": "unadjusted_arm_mean",
+            "dispersion_evidence_control": [
+              "Data are means ± SE. a Obtained from a paired t test for the within-group comparisons. b Obtained from an independent Student’s t test for the between-\ngroup comparisons.",
+              "FPG, mg/dl 134.5±9.6 163.3±12 28.8±8.5 0.002 143.8±10.7 145.4±9.5 1.6±6 0.80 0.01"
+            ],
+            "denominator_evidence_control": [
+              "Placebo (n = 27) Probiotic supplement (n = 27) pb",
+              "week 0 week 8 change pa we ek 0 week 8 change pa",
+              "Analyzed (n = 27) Analyzed (n = 27)"
+            ],
+            "source_locator_control": "Page 5, Table 3, FPG row, placebo week 8 column and table footnote; page 4, Figure 1, analysis counts",
+            "original_statistics_sha256": "f965007de687b8715ce098057277d6d5431b7e9cc21bec7417f726ebabe8d016",
+            "dispersion_audit": [
+              {
+                "arm": "treatment",
+                "original_type": "SE",
+                "original_value": 9.5,
+                "unit": "mg/dL",
+                "value_type": "endpoint",
+                "analyzed_n": 27,
+                "denominator_evidence": [
+                  "Placebo (n = 27) Probiotic supplement (n = 27) pb",
+                  "week 0 week 8 change pa we ek 0 week 8 change pa",
+                  "Analyzed (n = 27) Analyzed (n = 27)"
+                ],
+                "dispersion_evidence": [
+                  "Data are means ± SE. a Obtained from a paired t test for the within-group comparisons. b Obtained from an independent Student’s t test for the between-\ngroup comparisons.",
+                  "FPG, mg/dl 134.5±9.6 163.3±12 28.8±8.5 0.002 143.8±10.7 145.4±9.5 1.6±6 0.80 0.01"
+                ],
+                "source_locator": "Page 5, Table 3, FPG row, probiotic supplement week 8 column and table footnote; page 4, Figure 1, analysis counts",
+                "source_sha256": "1d69174006963bdd7fd2225ce2e8b0a0eeac4ff63ee0170154935c697dc0dcc2",
+                "derived_sd": 49.363448015713004,
+                "transformation": "SD=SE*sqrt(analyzed_within_arm_n)"
+              },
+              {
+                "arm": "control",
+                "original_type": "SE",
+                "original_value": 12,
+                "unit": "mg/dL",
+                "value_type": "endpoint",
+                "analyzed_n": 27,
+                "denominator_evidence": [
+                  "Placebo (n = 27) Probiotic supplement (n = 27) pb",
+                  "week 0 week 8 change pa we ek 0 week 8 change pa",
+                  "Analyzed (n = 27) Analyzed (n = 27)"
+                ],
+                "dispersion_evidence": [
+                  "Data are means ± SE. a Obtained from a paired t test for the within-group comparisons. b Obtained from an independent Student’s t test for the between-\ngroup comparisons.",
+                  "FPG, mg/dl 134.5±9.6 163.3±12 28.8±8.5 0.002 143.8±10.7 145.4±9.5 1.6±6 0.80 0.01"
+                ],
+                "source_locator": "Page 5, Table 3, FPG row, placebo week 8 column and table footnote; page 4, Figure 1, analysis counts",
+                "source_sha256": "1d69174006963bdd7fd2225ce2e8b0a0eeac4ff63ee0170154935c697dc0dcc2",
+                "derived_sd": 62.353829072479584,
+                "transformation": "SD=SE*sqrt(analyzed_within_arm_n)"
+              }
+            ],
+            "validation_errors": [
+              "Publication integrity unresolved: Linked Expression of concern in: 37334997"
+            ],
+            "record_id": "23899653",
+            "source_sha256": "1d69174006963bdd7fd2225ce2e8b0a0eeac4ff63ee0170154935c697dc0dcc2"
+          }
+        ],
+        "missing": []
+      },
+      "source_sha256": "1d69174006963bdd7fd2225ce2e8b0a0eeac4ff63ee0170154935c697dc0dcc2",
+      "publication_integrity_flags": [
+        "Linked Expression of concern in: 37334997"
+      ]
+    },
+    {
+      "id": "23645956",
+      "status": "extracted",
+      "result": {
+        "eligibility": "include",
+        "reason": "English-language randomized parallel trial published in 2013 in people with type 2 diabetes, comparing probiotic capsules with placebo for six weeks.",
+        "rows": [
+          {
+            "study_id": "Mazloom-2013-trial",
+            "outcome": "FBG",
+            "unit": "mg/dL",
+            "value_type": "endpoint",
+            "timepoint_weeks": 6,
+            "timepoint_reported": "After six weeks of experiment",
+            "n_treatment": 16,
+            "n_control": 18,
+            "mean_treatment": 158.69,
+            "mean_control": 162.67,
+            "sd_treatment": 65.52,
+            "sd_control": 69.49445445501388,
+            "design": "parallel",
+            "treatment": "1500 mg probiotic capsules twice daily containing L. acidophilus, L. bulgaricus, L. bifidum, and L. casei",
+            "control": "1500 mg placebo capsules containing 1000 mg magnesium stearate twice daily",
+            "evidence": [
+              "Using balanced block random sampling, subjects were then divided into two groups of intervention (probiotics) and placebo.",
+              "This single-blinded clinical trial comprised 40 patients with type 2 diabetes recruited from medical clinic affiliated with Shiraz University of Medical Sciences (SUMS) Shiraz Iran.",
+              "After six weeks of experiment, fasting blood samples were collected and analyzed for all aforementioned parameters.",
+              "The mean parameters in placebo and treatment groups",
+              "Plecebo group mean±SE \n \n after intervention",
+              "Treatment group mean±SE \n \n after intervention",
+              "FBG (mg/dl) | 149.83±14.06 | 162.67±16.38 | 158.56±13.70 | 158.69±16.38 | 0.27 | 0.99"
+            ],
+            "limitations": [
+              "Table 2 does not repeat analyzed sample sizes; denominators are supported by the Results cohort and Table 1 arm headers."
+            ],
+            "dispersion_type_treatment": "SE",
+            "reported_dispersion_treatment": 16.38,
+            "dispersion_scope_treatment": "unadjusted_arm_mean",
+            "dispersion_evidence_treatment": [
+              "Treatment group mean±SE \n \n after intervention",
+              "FBG (mg/dl) | 149.83±14.06 | 162.67±16.38 | 158.56±13.70 | 158.69±16.38 | 0.27 | 0.99"
+            ],
+            "denominator_evidence_treatment": [
+              "The study was conducted on 34 patients, of which 26 were females and 8 males.",
+              "Treatment (mean±SD) \n \n (n=16)",
+              "After six weeks of experiment, fasting blood samples were collected and analyzed for all aforementioned parameters."
+            ],
+            "source_locator_treatment": "Table 2, FBG row, treatment after intervention column; Results opening paragraph and Table 1 treatment header; Study Design final sentence.",
+            "dispersion_type_control": "SE",
+            "reported_dispersion_control": 16.38,
+            "dispersion_scope_control": "unadjusted_arm_mean",
+            "dispersion_evidence_control": [
+              "Plecebo group mean±SE \n \n after intervention",
+              "FBG (mg/dl) | 149.83±14.06 | 162.67±16.38 | 158.56±13.70 | 158.69±16.38 | 0.27 | 0.99"
+            ],
+            "denominator_evidence_control": [
+              "The study was conducted on 34 patients, of which 26 were females and 8 males.",
+              "Placebo (mean±SD*) \n \n (n=18)",
+              "After six weeks of experiment, fasting blood samples were collected and analyzed for all aforementioned parameters."
+            ],
+            "source_locator_control": "Table 2, FBG row, placebo after intervention column; Results opening paragraph and Table 1 placebo header; Study Design final sentence.",
+            "original_statistics_sha256": "a460ff645f8743fe6fa674cd89ab3f5cf66ac09f71f50a6a58cc1065912882ca",
+            "dispersion_audit": [
+              {
+                "arm": "treatment",
+                "original_type": "SE",
+                "original_value": 16.38,
+                "unit": "mg/dL",
+                "value_type": "endpoint",
+                "analyzed_n": 16,
+                "denominator_evidence": [
+                  "The study was conducted on 34 patients, of which 26 were females and 8 males.",
+                  "Treatment (mean±SD) \n \n (n=16)",
+                  "After six weeks of experiment, fasting blood samples were collected and analyzed for all aforementioned parameters."
+                ],
+                "dispersion_evidence": [
+                  "Treatment group mean±SE \n \n after intervention",
+                  "FBG (mg/dl) | 149.83±14.06 | 162.67±16.38 | 158.56±13.70 | 158.69±16.38 | 0.27 | 0.99"
+                ],
+                "source_locator": "Table 2, FBG row, treatment after intervention column; Results opening paragraph and Table 1 treatment header; Study Design final sentence.",
+                "source_sha256": "45d25458b506551e7ee66f45d8c0a5e4ce7602feb491ecba5e656d09376c093b",
+                "derived_sd": 65.52,
+                "transformation": "SD=SE*sqrt(analyzed_within_arm_n)"
+              },
+              {
+                "arm": "control",
+                "original_type": "SE",
+                "original_value": 16.38,
+                "unit": "mg/dL",
+                "value_type": "endpoint",
+                "analyzed_n": 18,
+                "denominator_evidence": [
+                  "The study was conducted on 34 patients, of which 26 were females and 8 males.",
+                  "Placebo (mean±SD*) \n \n (n=18)",
+                  "After six weeks of experiment, fasting blood samples were collected and analyzed for all aforementioned parameters."
+                ],
+                "dispersion_evidence": [
+                  "Plecebo group mean±SE \n \n after intervention",
+                  "FBG (mg/dl) | 149.83±14.06 | 162.67±16.38 | 158.56±13.70 | 158.69±16.38 | 0.27 | 0.99"
+                ],
+                "source_locator": "Table 2, FBG row, placebo after intervention column; Results opening paragraph and Table 1 placebo header; Study Design final sentence.",
+                "source_sha256": "45d25458b506551e7ee66f45d8c0a5e4ce7602feb491ecba5e656d09376c093b",
+                "derived_sd": 69.49445445501388,
+                "transformation": "SD=SE*sqrt(analyzed_within_arm_n)"
+              }
+            ],
+            "validation_errors": [],
+            "record_id": "23645956",
+            "source_sha256": "45d25458b506551e7ee66f45d8c0a5e4ce7602feb491ecba5e656d09376c093b",
+            "reported_unit": "mg/dL"
+          }
+        ],
+        "missing": []
+      },
+      "source_sha256": "45d25458b506551e7ee66f45d8c0a5e4ce7602feb491ecba5e656d09376c093b"
+    }
+  ],
+  "scope": "Known-source live Astra integration check; not independent search evaluation"
+}

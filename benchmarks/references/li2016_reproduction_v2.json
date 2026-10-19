@@ -1,0 +1,43 @@
+{
+  "id": "li2016_t2d_fbg_reproduction_v2",
+  "source": "https://pubmed.ncbi.nlm.nih.gov/27368052/",
+  "doi": "10.1097/MD.0000000000004088",
+  "outcome": "FBG",
+  "measure": "SMD",
+  "unit": "dimensionless",
+  "model": "random",
+  "estimate": -0.61,
+  "ci_low": -0.92,
+  "ci_high": -0.3,
+  "k": 9,
+  "absolute_tolerance": 0.02,
+  "notes": "Figure 3 and source audits identify endpoint SMD despite contradictory caption/unit labels. Operational eligibility follows included comparator/yeast scope. Asemi and Mazloom primary SEs must be converted, not copied as SD; known discrepancies remain benchmark outcomes.",
+  "expected_review_record_ids": [
+    "23967428",
+    "25196301",
+    "25300285",
+    "26988693",
+    "21700013",
+    "22129852",
+    "24319552",
+    "23899653",
+    "24706266",
+    "25197295",
+    "26955460",
+    "23645956"
+  ],
+  "identity_note": "Twelve reports cited as included in the review (references 23\u201334); not asserted to be twelve independent trials, or all nine FBG contributors.",
+  "expected_record_ids": [
+    "23899653",
+    "26955460",
+    "22129852",
+    "26988693",
+    "24319552",
+    "25300285",
+    "23645956",
+    "24706266",
+    "25196301"
+  ],
+  "value_type": "endpoint",
+  "contract_version": "reproduction_v2"
+}

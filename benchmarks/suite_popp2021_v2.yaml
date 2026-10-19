@@ -1,0 +1,9 @@
+id: popp2021_binary_acquisition_continuation_v2
+prespecified_model: gpt-6-astra
+prespecified_backend: codex
+cases:
+- id: popp2021_hospital_mortality_development_v1
+  protocol: benchmarks/protocols/popp2021_hospital_mortality_v1.yaml
+  protocol_sha256: d2cc93475219520b598aac86f7dca809b98468d32ba2518ec2db5215e2b35d95
+  reference: benchmarks/references/popp2021_hospital_mortality_v1.json
+  reference_sha256: 141b5e2b1ac73add5ef43535081a3b810bc6ca300a7fd4fa198ef3b9b294623b

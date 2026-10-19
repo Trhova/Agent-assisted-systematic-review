@@ -1,0 +1,12 @@
+id: frozen_historical_meta_analyses_2026_10_12
+cases:
+- id: ma2013_nafld_alt
+  protocol: benchmarks/protocols/ma2013.yaml
+  protocol_sha256: b81b1cbd59757af13ef764883bd468b9807cef7688ba6b12afe09553c3f21a35
+  reference: benchmarks/references/ma2013.json
+  reference_sha256: 80c93cf7c21abc20c0ff89188ad38fcf30477318a33407acb215c8e354380766
+- id: li2016_t2d_fbg
+  protocol: benchmarks/protocols/li2016.yaml
+  protocol_sha256: 08f8481c02f3e2496af3894aaf596169e069fd99dce8878b9ac69bc48b0b3b3d
+  reference: benchmarks/references/li2016.json
+  reference_sha256: 99a7115a7ecd2459d4b6952bd963340d359e617e90368a4115d343c0837e998d

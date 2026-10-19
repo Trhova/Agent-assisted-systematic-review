@@ -1,0 +1,467 @@
+{
+  "cycle": "2026-10-14",
+  "classification": "Historical development; failed scientific reproduction; no autonomous pooled estimate",
+  "cases": [
+    {
+      "version": 1,
+      "run": "data/benchmarks/perez2020_v1/perez2020_ashwagandha_vo2max_development_v1/9b6d0a691c23",
+      "protocol_sha256": "9b6d0a691c234741ee71570bf51c574a966a1addd217f9aef69d9cf92db40c93",
+      "code_sha256": "6ca781dc3ed77318e5d719baa70217e688acedd54ed4cb7ff83be2ea743e7081",
+      "model": "gpt-6-astra",
+      "backend": "codex",
+      "counts": {
+        "retrieved": 7,
+        "screened": 7,
+        "fulltexts_attempted": 5,
+        "independent_effects": 1,
+        "supplemental_records": 2,
+        "abstract_candidates": 5,
+        "accepted_effects": 1,
+        "unresolved": 4
+      },
+      "reproduced": false,
+      "artifact_integrity_valid": true,
+      "risk_of_bias_drafts": {
+        "source_checked": 1,
+        "unverified": 0,
+        "limitations": [
+          "Automated drafts are not expert-validated RoB2 assessments.",
+          "Abbreviated project template; no independent registry/protocol retrieval or GRADE assessment.",
+          "These ratings do not change numerical inclusion, effects, weights or benchmark comparisons."
+        ]
+      },
+      "model_request_count": 9,
+      "accepted": [
+        {
+          "study_id": "Shenoy-2012-trial",
+          "outcome": "VO2max",
+          "unit": "mL/kg/min",
+          "value_type": "endpoint",
+          "timepoint_reported": "upon completion of the eight-week intervention",
+          "n_treatment": 18,
+          "mean_treatment": 52.0,
+          "sd_treatment": 4.8,
+          "n_control": 19,
+          "mean_control": 44.4,
+          "sd_control": 5.7,
+          "derivation": {
+            "policy": "combine_all_eligible_disjoint_arms_v1",
+            "treatment": {
+              "n": 18,
+              "mean": 52.0,
+              "sd": 4.8,
+              "arm_ids": [
+                "experimental"
+              ],
+              "derivation": "within-arm plus between-arm sums of squares",
+              "original_arms": [
+                {
+                  "arm_id": "experimental",
+                  "label": "Ashwagandha aqueous root extract, 1,000 mg/day",
+                  "role": "treatment",
+                  "exclusion_reason": "",
+                  "n": 18,
+                  "mean": 52.0,
+                  "sd": 4.8,
+                  "evidence": [
+                    "The  Ashwagandha  ( W. Somnifera ) used was in the form of standardized aqueous root extract, which was obtained in the form of capsules from Dabur India Limited.",
+                    "The capsules were given over eight weeks, at a dosage of two capsules (each capsule containing 500 mg) a day, 1,000 mg/day (taken daily in the morning and evening).",
+                    "Parameter Placebo group (n=19)* Experimental group (n=18)†",
+                    "Table 3: Mean values (±SD) of pre-post\nreadings of experimental and placebo groups\nVariables Experimental Placebo\nPre test Post test Pre test Post test\nTime to exhaustion 15.79 ± 0.8 16.93 ± 1.3 15.62 ± 1.0 15.64 ± 1.0\n(min)\nVO max (mL/kg/min) 46.2 ± 3.2 52.0 ± 4.8 44.6 ± 4.3 44.4 ± 5.7\n2",
+                    "A graded exercise test (GXT) was performed on a treadmill (FitNex 200 treadmill), running on the Bruce protocol in which subjects were asked to perform till volitional exhaustion. This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention.",
+                    "During the maximal GXT, metabolic gases were collected using the Vista MX-Turbofit metabolic measurement system. The VO 2  max and respiratory exchange ratio (RER) were computed automatically, averaged and saved by a computer every 15 seconds."
+                  ],
+                  "study_id": "Shenoy-2012-trial",
+                  "outcome": "VO2max",
+                  "unit": "mL/kg/min",
+                  "value_type": "endpoint",
+                  "timepoint_reported": "upon completion of the eight-week intervention",
+                  "independently_verified": true
+                }
+              ]
+            },
+            "control": {
+              "n": 19,
+              "mean": 44.4,
+              "sd": 5.7,
+              "arm_ids": [
+                "placebo"
+              ],
+              "derivation": "within-arm plus between-arm sums of squares",
+              "original_arms": [
+                {
+                  "arm_id": "placebo",
+                  "label": "Starch placebo capsules",
+                  "role": "control",
+                  "exclusion_reason": "",
+                  "n": 19,
+                  "mean": 44.4,
+                  "sd": 5.7,
+                  "evidence": [
+                    "In this study, the placebo group was supplemented equally with placebo capsules containing starch powder for the duration of eight weeks.",
+                    "Parameter Placebo group (n=19)* Experimental group (n=18)†",
+                    "Table 3: Mean values (±SD) of pre-post\nreadings of experimental and placebo groups\nVariables Experimental Placebo\nPre test Post test Pre test Post test\nTime to exhaustion 15.79 ± 0.8 16.93 ± 1.3 15.62 ± 1.0 15.64 ± 1.0\n(min)\nVO max (mL/kg/min) 46.2 ± 3.2 52.0 ± 4.8 44.6 ± 4.3 44.4 ± 5.7\n2",
+                    "This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention."
+                  ],
+                  "study_id": "Shenoy-2012-trial",
+                  "outcome": "VO2max",
+                  "unit": "mL/kg/min",
+                  "value_type": "endpoint",
+                  "timepoint_reported": "upon completion of the eight-week intervention",
+                  "independently_verified": true
+                }
+              ]
+            },
+            "all_arms": [
+              {
+                "arm_id": "experimental",
+                "label": "Ashwagandha aqueous root extract, 1,000 mg/day",
+                "role": "treatment",
+                "exclusion_reason": "",
+                "n": 18,
+                "mean": 52.0,
+                "sd": 4.8,
+                "evidence": [
+                  "The  Ashwagandha  ( W. Somnifera ) used was in the form of standardized aqueous root extract, which was obtained in the form of capsules from Dabur India Limited.",
+                  "The capsules were given over eight weeks, at a dosage of two capsules (each capsule containing 500 mg) a day, 1,000 mg/day (taken daily in the morning and evening).",
+                  "Parameter Placebo group (n=19)* Experimental group (n=18)†",
+                  "Table 3: Mean values (±SD) of pre-post\nreadings of experimental and placebo groups\nVariables Experimental Placebo\nPre test Post test Pre test Post test\nTime to exhaustion 15.79 ± 0.8 16.93 ± 1.3 15.62 ± 1.0 15.64 ± 1.0\n(min)\nVO max (mL/kg/min) 46.2 ± 3.2 52.0 ± 4.8 44.6 ± 4.3 44.4 ± 5.7\n2",
+                  "A graded exercise test (GXT) was performed on a treadmill (FitNex 200 treadmill), running on the Bruce protocol in which subjects were asked to perform till volitional exhaustion. This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention.",
+                  "During the maximal GXT, metabolic gases were collected using the Vista MX-Turbofit metabolic measurement system. The VO 2  max and respiratory exchange ratio (RER) were computed automatically, averaged and saved by a computer every 15 seconds."
+                ],
+                "study_id": "Shenoy-2012-trial",
+                "outcome": "VO2max",
+                "unit": "mL/kg/min",
+                "value_type": "endpoint",
+                "timepoint_reported": "upon completion of the eight-week intervention",
+                "independently_verified": true
+              },
+              {
+                "arm_id": "placebo",
+                "label": "Starch placebo capsules",
+                "role": "control",
+                "exclusion_reason": "",
+                "n": 19,
+                "mean": 44.4,
+                "sd": 5.7,
+                "evidence": [
+                  "In this study, the placebo group was supplemented equally with placebo capsules containing starch powder for the duration of eight weeks.",
+                  "Parameter Placebo group (n=19)* Experimental group (n=18)†",
+                  "Table 3: Mean values (±SD) of pre-post\nreadings of experimental and placebo groups\nVariables Experimental Placebo\nPre test Post test Pre test Post test\nTime to exhaustion 15.79 ± 0.8 16.93 ± 1.3 15.62 ± 1.0 15.64 ± 1.0\n(min)\nVO max (mL/kg/min) 46.2 ± 3.2 52.0 ± 4.8 44.6 ± 4.3 44.4 ± 5.7\n2",
+                  "This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention."
+                ],
+                "study_id": "Shenoy-2012-trial",
+                "outcome": "VO2max",
+                "unit": "mL/kg/min",
+                "value_type": "endpoint",
+                "timepoint_reported": "upon completion of the eight-week intervention",
+                "independently_verified": true
+              }
+            ],
+            "disjointness_evidence": [
+              "The subjects were then randomly assigned, by using the block randomization method, into two groups: Experimental ( n  = 20) who consumed  Ashwagandha  extract capsules, and placebo ( n 20) who consumed placebo starch capsules. Each group comprised of an equal number of males and females.",
+              "During this study, three male subjects dropped out due to inconsistent attendance in training sessions. One was from the placebo group and the two from the experimental group."
+            ]
+          },
+          "design": "parallel",
+          "timepoint_weeks": 8,
+          "treatment": "Ashwagandha aqueous root extract, 1,000 mg/day",
+          "control": "Starch placebo capsules",
+          "evidence": [
+            "The subjects were then randomly assigned, by using the block randomization method, into two groups: Experimental ( n  = 20) who consumed  Ashwagandha  extract capsules, and placebo ( n 20) who consumed placebo starch capsules. Each group comprised of an equal number of males and females.",
+            "During this study, three male subjects dropped out due to inconsistent attendance in training sessions. One was from the placebo group and the two from the experimental group.",
+            "The  Ashwagandha  ( W. Somnifera ) used was in the form of standardized aqueous root extract, which was obtained in the form of capsules from Dabur India Limited.",
+            "The capsules were given over eight weeks, at a dosage of two capsules (each capsule containing 500 mg) a day, 1,000 mg/day (taken daily in the morning and evening).",
+            "Parameter Placebo group (n=19)* Experimental group (n=18)†",
+            "Table 3: Mean values (±SD) of pre-post\nreadings of experimental and placebo groups\nVariables Experimental Placebo\nPre test Post test Pre test Post test\nTime to exhaustion 15.79 ± 0.8 16.93 ± 1.3 15.62 ± 1.0 15.64 ± 1.0\n(min)\nVO max (mL/kg/min) 46.2 ± 3.2 52.0 ± 4.8 44.6 ± 4.3 44.4 ± 5.7\n2",
+            "A graded exercise test (GXT) was performed on a treadmill (FitNex 200 treadmill), running on the Bruce protocol in which subjects were asked to perform till volitional exhaustion. This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention.",
+            "During the maximal GXT, metabolic gases were collected using the Vista MX-Turbofit metabolic measurement system. The VO 2  max and respiratory exchange ratio (RER) were computed automatically, averaged and saved by a computer every 15 seconds.",
+            "In this study, the placebo group was supplemented equally with placebo capsules containing starch powder for the duration of eight weeks.",
+            "This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention."
+          ],
+          "limitations": [],
+          "original_arms_independently_verified": true,
+          "validation_errors": [],
+          "record_id": "23326093",
+          "source_sha256": "341cfe1e40a8fe7ee4de464207dc75a44bbe35d62af78ca5139c58332c9a747b",
+          "reported_unit": "mL/kg/min"
+        }
+      ],
+      "unresolved": [
+        {
+          "id": "26730141",
+          "eligibility": "include",
+          "missing": [
+            "Analyzed denominators are unresolved: Table 1 reports placebo n=24 and Ashwagandha n=25, whereas the abstract reports Ashwagandha n=24 and placebo n=25; the results narrative identifies an Ashwagandha withdrawal. Neither denominator assignment was selected.",
+            "Endpoint units are unresolved. The table footnote states: \"VOmax measurements are generally displayed in l/min. (i.e., liters per minute, representing the volume of oxygen consumed by the entire body each minute). SD: Standard\". It does not establish the reported values in the protocol-allowed mL/kg/min units. Means and SDs are retained exactly as reported without conversion or unit correction.",
+            "No trial registry identifier is supplied.",
+            "Extraction reports unresolved missing information"
+          ]
+        },
+        {
+          "id": "21170205",
+          "eligibility": "include",
+          "missing": [
+            "Arm-specific analyzed N at 8 weeks is not explicitly reported; n=10 per arm describes randomized allocation and has not been substituted for analyzed N.",
+            "No trial registry ID is supplied.",
+            "Table 5 labels VO2max as ml/kg, whereas primary measurement methods explicitly specify ml/kg/min; the extracted unit follows the primary methods.",
+            "Extraction reports unresolved missing information"
+          ]
+        },
+        {
+          "id": "journal-malik-2013-vo2",
+          "eligibility": "unclear",
+          "missing": [
+            "Explicit validation of the prediction test is not reported in the primary methods: \"Maximal oxygen consumption\n\ncapacity in ml/kg/min (VO 2max. = (22.351 x kilometers) - 11.288 with Cooper (1968) 12 min. run\n\ntest)\".",
+            "Endpoint analyzed N is not explicitly reported for either arm; n=16 per arm describes randomized allocation.",
+            "Intervention dose and placebo composition conflict: the abstract reports 500 mg twice daily and starch placebo; methods report one capsule daily and sugar placebo."
+          ]
+        },
+        {
+          "id": "doi-10.18203-2319-2003.ijbcp20164114",
+          "eligibility": "unclear",
+          "missing": [
+            "Explicit validation of the submaximal VO2max prediction test is not established in the supplied primary methods: \"Following this c) YMCA cycle\nergometer submaximal test was performed with 3-4\nincreasing workload (25, 75, 100, 125 Watt workload) for\n9-12 minutes after each of these test participant was\ninstructed to rest for 20 min.12,13\"",
+            "Analyzed day-28 N is not explicitly reported for any arm. Ten per arm describes randomization. The reported screening total, exclusions, placebo dropout and total of 30 volunteers leave participant accounting unresolved.",
+            "Day-28 SDs for WS330 and WS500 are unavailable in the supplied text.",
+            "Placebo day-28 dispersion is reported as ±1.63, but Table 2 does not explicitly identify it as SD. The supplied Mean ± SD statements accompany other figures; the Table 2 dispersion definition remains unresolved."
+          ]
+        }
+      ]
+    },
+    {
+      "version": 2,
+      "run": "data/benchmarks/perez2020_v2/perez2020_ashwagandha_vo2max_development_v2/3576ccdea7d5",
+      "protocol_sha256": "3576ccdea7d5a8799820ad1cf5cd98c24f9f1b7f5e954dab9e66e3884f42465e",
+      "code_sha256": "6ca781dc3ed77318e5d719baa70217e688acedd54ed4cb7ff83be2ea743e7081",
+      "model": "gpt-6-astra",
+      "backend": "codex",
+      "counts": {
+        "retrieved": 7,
+        "screened": 7,
+        "fulltexts_attempted": 5,
+        "independent_effects": 1,
+        "supplemental_records": 2,
+        "abstract_candidates": 5,
+        "accepted_effects": 1,
+        "unresolved": 4
+      },
+      "reproduced": false,
+      "artifact_integrity_valid": true,
+      "risk_of_bias_drafts": {
+        "source_checked": 1,
+        "unverified": 0,
+        "limitations": [
+          "Automated drafts are not expert-validated RoB2 assessments.",
+          "Abbreviated project template; no independent registry/protocol retrieval or GRADE assessment.",
+          "These ratings do not change numerical inclusion, effects, weights or benchmark comparisons."
+        ]
+      },
+      "model_request_count": 9,
+      "accepted": [
+        {
+          "study_id": "Shenoy-2012-cyclists",
+          "outcome": "VO2max",
+          "unit": "mL/kg/min",
+          "value_type": "endpoint",
+          "timepoint_reported": "upon completion of the eight-week intervention",
+          "n_treatment": 18,
+          "mean_treatment": 52.0,
+          "sd_treatment": 4.8,
+          "n_control": 19,
+          "mean_control": 44.4,
+          "sd_control": 5.7,
+          "derivation": {
+            "policy": "combine_all_eligible_disjoint_arms_v1",
+            "treatment": {
+              "n": 18,
+              "mean": 52.0,
+              "sd": 4.8,
+              "arm_ids": [
+                "experimental"
+              ],
+              "derivation": "within-arm plus between-arm sums of squares",
+              "original_arms": [
+                {
+                  "arm_id": "experimental",
+                  "label": "Ashwagandha aqueous root extract, 1,000 mg/day",
+                  "role": "treatment",
+                  "exclusion_reason": "",
+                  "n": 18,
+                  "mean": 52.0,
+                  "sd": 4.8,
+                  "evidence": [
+                    "The  Ashwagandha  ( W. Somnifera ) used was in the form of standardized aqueous root extract, which was obtained in the form of capsules from Dabur India Limited.",
+                    "The capsules were given over eight weeks, at a dosage of two capsules (each capsule containing 500 mg) a day, 1,000 mg/day (taken daily in the morning and evening).",
+                    "Parameter Placebo group (n=19)* Experimental group (n=18)†",
+                    "Table 3: Mean values (±SD) of pre-post\nreadings of experimental and placebo groups\nVariables Experimental Placebo\nPre test Post test Pre test Post test\nTime to exhaustion 15.79 ± 0.8 16.93 ± 1.3 15.62 ± 1.0 15.64 ± 1.0\n(min)\nVO max (mL/kg/min) 46.2 ± 3.2 52.0 ± 4.8 44.6 ± 4.3 44.4 ± 5.7\n2",
+                    "A graded exercise test (GXT) was performed on a treadmill (FitNex 200 treadmill), running on the Bruce protocol in which subjects were asked to perform till volitional exhaustion. This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention.",
+                    "During the maximal GXT, metabolic gases were collected using the Vista MX-Turbofit metabolic measurement system. The VO 2  max and respiratory exchange ratio (RER) were computed automatically, averaged and saved by a computer every 15 seconds."
+                  ],
+                  "study_id": "Shenoy-2012-cyclists",
+                  "outcome": "VO2max",
+                  "unit": "mL/kg/min",
+                  "value_type": "endpoint",
+                  "timepoint_reported": "upon completion of the eight-week intervention",
+                  "independently_verified": true
+                }
+              ]
+            },
+            "control": {
+              "n": 19,
+              "mean": 44.4,
+              "sd": 5.7,
+              "arm_ids": [
+                "placebo"
+              ],
+              "derivation": "within-arm plus between-arm sums of squares",
+              "original_arms": [
+                {
+                  "arm_id": "placebo",
+                  "label": "Starch placebo capsules",
+                  "role": "control",
+                  "exclusion_reason": "",
+                  "n": 19,
+                  "mean": 44.4,
+                  "sd": 5.7,
+                  "evidence": [
+                    "In this study, the placebo group was supplemented equally with placebo capsules containing starch powder for the duration of eight weeks.",
+                    "Parameter Placebo group (n=19)* Experimental group (n=18)†",
+                    "Table 3: Mean values (±SD) of pre-post\nreadings of experimental and placebo groups\nVariables Experimental Placebo\nPre test Post test Pre test Post test\nTime to exhaustion 15.79 ± 0.8 16.93 ± 1.3 15.62 ± 1.0 15.64 ± 1.0\n(min)\nVO max (mL/kg/min) 46.2 ± 3.2 52.0 ± 4.8 44.6 ± 4.3 44.4 ± 5.7\n2",
+                    "This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention."
+                  ],
+                  "study_id": "Shenoy-2012-cyclists",
+                  "outcome": "VO2max",
+                  "unit": "mL/kg/min",
+                  "value_type": "endpoint",
+                  "timepoint_reported": "upon completion of the eight-week intervention",
+                  "independently_verified": true
+                }
+              ]
+            },
+            "all_arms": [
+              {
+                "arm_id": "experimental",
+                "label": "Ashwagandha aqueous root extract, 1,000 mg/day",
+                "role": "treatment",
+                "exclusion_reason": "",
+                "n": 18,
+                "mean": 52.0,
+                "sd": 4.8,
+                "evidence": [
+                  "The  Ashwagandha  ( W. Somnifera ) used was in the form of standardized aqueous root extract, which was obtained in the form of capsules from Dabur India Limited.",
+                  "The capsules were given over eight weeks, at a dosage of two capsules (each capsule containing 500 mg) a day, 1,000 mg/day (taken daily in the morning and evening).",
+                  "Parameter Placebo group (n=19)* Experimental group (n=18)†",
+                  "Table 3: Mean values (±SD) of pre-post\nreadings of experimental and placebo groups\nVariables Experimental Placebo\nPre test Post test Pre test Post test\nTime to exhaustion 15.79 ± 0.8 16.93 ± 1.3 15.62 ± 1.0 15.64 ± 1.0\n(min)\nVO max (mL/kg/min) 46.2 ± 3.2 52.0 ± 4.8 44.6 ± 4.3 44.4 ± 5.7\n2",
+                  "A graded exercise test (GXT) was performed on a treadmill (FitNex 200 treadmill), running on the Bruce protocol in which subjects were asked to perform till volitional exhaustion. This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention.",
+                  "During the maximal GXT, metabolic gases were collected using the Vista MX-Turbofit metabolic measurement system. The VO 2  max and respiratory exchange ratio (RER) were computed automatically, averaged and saved by a computer every 15 seconds."
+                ],
+                "study_id": "Shenoy-2012-cyclists",
+                "outcome": "VO2max",
+                "unit": "mL/kg/min",
+                "value_type": "endpoint",
+                "timepoint_reported": "upon completion of the eight-week intervention",
+                "independently_verified": true
+              },
+              {
+                "arm_id": "placebo",
+                "label": "Starch placebo capsules",
+                "role": "control",
+                "exclusion_reason": "",
+                "n": 19,
+                "mean": 44.4,
+                "sd": 5.7,
+                "evidence": [
+                  "In this study, the placebo group was supplemented equally with placebo capsules containing starch powder for the duration of eight weeks.",
+                  "Parameter Placebo group (n=19)* Experimental group (n=18)†",
+                  "Table 3: Mean values (±SD) of pre-post\nreadings of experimental and placebo groups\nVariables Experimental Placebo\nPre test Post test Pre test Post test\nTime to exhaustion 15.79 ± 0.8 16.93 ± 1.3 15.62 ± 1.0 15.64 ± 1.0\n(min)\nVO max (mL/kg/min) 46.2 ± 3.2 52.0 ± 4.8 44.6 ± 4.3 44.4 ± 5.7\n2",
+                  "This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention."
+                ],
+                "study_id": "Shenoy-2012-cyclists",
+                "outcome": "VO2max",
+                "unit": "mL/kg/min",
+                "value_type": "endpoint",
+                "timepoint_reported": "upon completion of the eight-week intervention",
+                "independently_verified": true
+              }
+            ],
+            "disjointness_evidence": [
+              "The subjects were then randomly assigned, by using the block randomization method, into two groups: Experimental ( n  = 20) who consumed  Ashwagandha  extract capsules, and placebo ( n 20) who consumed placebo starch capsules. Each group comprised of an equal number of males and females.",
+              "During this study, three male subjects dropped out due to inconsistent attendance in training sessions. One was from the placebo group and the two from the experimental group."
+            ]
+          },
+          "design": "parallel",
+          "timepoint_weeks": 8,
+          "treatment": "Ashwagandha aqueous root extract, 1,000 mg/day",
+          "control": "Starch placebo capsules",
+          "evidence": [
+            "The subjects were then randomly assigned, by using the block randomization method, into two groups: Experimental ( n  = 20) who consumed  Ashwagandha  extract capsules, and placebo ( n 20) who consumed placebo starch capsules. Each group comprised of an equal number of males and females.",
+            "During this study, three male subjects dropped out due to inconsistent attendance in training sessions. One was from the placebo group and the two from the experimental group.",
+            "The  Ashwagandha  ( W. Somnifera ) used was in the form of standardized aqueous root extract, which was obtained in the form of capsules from Dabur India Limited.",
+            "The capsules were given over eight weeks, at a dosage of two capsules (each capsule containing 500 mg) a day, 1,000 mg/day (taken daily in the morning and evening).",
+            "Parameter Placebo group (n=19)* Experimental group (n=18)†",
+            "Table 3: Mean values (±SD) of pre-post\nreadings of experimental and placebo groups\nVariables Experimental Placebo\nPre test Post test Pre test Post test\nTime to exhaustion 15.79 ± 0.8 16.93 ± 1.3 15.62 ± 1.0 15.64 ± 1.0\n(min)\nVO max (mL/kg/min) 46.2 ± 3.2 52.0 ± 4.8 44.6 ± 4.3 44.4 ± 5.7\n2",
+            "A graded exercise test (GXT) was performed on a treadmill (FitNex 200 treadmill), running on the Bruce protocol in which subjects were asked to perform till volitional exhaustion. This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention.",
+            "During the maximal GXT, metabolic gases were collected using the Vista MX-Turbofit metabolic measurement system. The VO 2  max and respiratory exchange ratio (RER) were computed automatically, averaged and saved by a computer every 15 seconds.",
+            "In this study, the placebo group was supplemented equally with placebo capsules containing starch powder for the duration of eight weeks.",
+            "This GXT test was performed as pre test, prior to beginning  Ashwagandha  supplementation and post test, upon completion of the eight-week intervention."
+          ],
+          "limitations": [],
+          "original_arms_independently_verified": true,
+          "validation_errors": [],
+          "record_id": "23326093",
+          "source_sha256": "341cfe1e40a8fe7ee4de464207dc75a44bbe35d62af78ca5139c58332c9a747b",
+          "reported_unit": "mL/kg/min"
+        }
+      ],
+      "unresolved": [
+        {
+          "id": "26730141",
+          "eligibility": "include",
+          "missing": [
+            "Unambiguous analyzed N for each arm: Table 1 reports placebo n=24 and Ashwagandha n=25, whereas the abstract reports Ashwagandha n=24 and placebo n=25. Neither account was selected over the other.",
+            "Explicit confirmation of endpoint units compatible with mL/kg/min. The table footnote states: \"VOmax measurements are generally displayed in l/min. (i.e., liters per minute, representing the volume of oxygen consumed by the entire body each minute). SD: Standard\". Means and SDs are retained exactly as reported without conversion or inferred units.",
+            "Extraction reports unresolved missing information"
+          ]
+        },
+        {
+          "id": "21170205",
+          "eligibility": "include",
+          "missing": [
+            "Explicit arm-specific analyzed N at 8 weeks is unavailable. The stated n=10 per arm describes random assignment; analyzed denominators were not inferred from those counts or ANOVA degrees of freedom.",
+            "Methods explicitly define ml/kg/min, but Table 5 labels VO2 max as ml/kg. This reporting discrepancy is unresolved; extracted units follow the primary measurement methods.",
+            "Extraction reports unresolved missing information"
+          ]
+        },
+        {
+          "id": "journal-malik-2013-vo2",
+          "eligibility": "include",
+          "missing": [
+            "Analyzed N at the final endpoint is not explicitly reported for either arm; n=16 per arm describes randomized allocation.",
+            "Dose frequency is inconsistent: the abstract reports 500 mg twice daily, whereas methods report one capsule daily.",
+            "Placebo composition is inconsistent: the abstract reports starch capsules, whereas methods report sugar capsules.",
+            "Extraction reports unresolved missing information"
+          ]
+        },
+        {
+          "id": "doi-10.18203-2319-2003.ijbcp20164114",
+          "eligibility": "include",
+          "missing": [
+            "Day-28 analyzed N is not explicitly reported for any arm. Methods report 10 randomized per arm, while results describe 38 screened, seven excluded, one placebo dropout and 30 volunteers; the denominator discrepancy remains unresolved.",
+            "Day-28 VO2max SD for WS330 is unavailable in the supplied source.",
+            "Day-28 VO2max SD for WS500 is unavailable in the supplied source.",
+            "Table 2 reports placebo dispersion as ±1.63 without an explicit table-specific SD definition in the supplied text; nearby Mean ± SD statements accompany figures, so the dispersion definition requires confirmation.",
+            "Extraction reports unresolved missing information"
+          ]
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "tests_passed": 181,
+    "frozen_pairs_verified": 9,
+    "lint": "selected fatal/import checks pass"
+  },
+  "scientific_limit": "Source access qualification did not establish usable numeric inputs. No additional complete-review reproduction or pooled autonomous benchmark was achieved.",
+  "next_rule": "Before choosing another numerical reproduction case, document primary outcome-specific N, mean, SD/SE, unit, timepoint, arm independence and reference selection for every contributor; do not merely establish article access."
+}

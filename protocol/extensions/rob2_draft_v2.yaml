@@ -1,0 +1,8 @@
+id: rob2_draft_v2
+extends: rob2_draft_v1
+prespecified_on: '2026-10-12'
+reason: Real draft checking exposed interleaved PDF quotations and an uncalibrated legacy confidence field.
+reading_order: Retain the original source and optionally append a geometrically reconstructed reading-order view of the same identity-checked PDF. Preserve raw PDF and both text hashes; never change numerical extraction inputs.
+confidence: The legacy confidence field is null because no calibration supports a probability. It is never a filter, weight or measure of certainty.
+unchanged: Assignment estimand, outcome/timepoint, risk domains, source-only evidence, bounded repair, independent model check, and no effect on numerical benchmark definitions or results.
+provenance: Preserve previous draft failures, versioned assets and prior suite attempts. These remain drafts rather than expert-validated assessments.

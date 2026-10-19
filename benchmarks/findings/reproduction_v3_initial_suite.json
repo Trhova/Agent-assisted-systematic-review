@@ -1,0 +1,192 @@
+{
+  "suite": "review_reproduction_v3_development",
+  "suite_sha256": "72ceb4e6eee07ed07d86a52625b464c2b208e1c593354885d33f9faddb989578",
+  "status": "not_reproduced",
+  "evaluation_only": false,
+  "cases": [
+    {
+      "id": "ma2013_nafld_alt_reproduction_v2",
+      "run": "data/benchmarks/reproduction_v3_suite/ma2013_nafld_alt_reproduction_v2/bb8851b1d3fc",
+      "run_status": "incomplete",
+      "counts": {
+        "retrieved": 108,
+        "screened": 108,
+        "fulltexts_attempted": 15,
+        "independent_effects": 1,
+        "supplemental_records": 0,
+        "abstract_candidates": 15,
+        "accepted_effects": 1,
+        "unresolved": 14
+      },
+      "code_sha256": "95ac87339be0207ce380bda9b3f832bcf77f9ea5719a2f7b6777c2eabe4db637",
+      "comparison": {
+        "reference": {
+          "id": "ma2013_nafld_alt_reproduction_v2",
+          "source": "https://www.wjgnet.com/1007-9327/full/v19/i40/6911.htm",
+          "doi": "10.3748/wjg.v19.i40.6911",
+          "outcome": "ALT",
+          "measure": "MD",
+          "unit": "U/L",
+          "model": "fixed",
+          "estimate": -23.71,
+          "ci_low": -33.46,
+          "ci_high": -13.95,
+          "k": 4,
+          "absolute_tolerance": 0.02,
+          "notes": "Figure 2B is change-score MD: negative within-arm ALT values; Wong primary Table 2 confirms score convention. Missing original change SDs must not be fabricated. Reference mean/SD derivations for other contributors require independent source audit.",
+          "expected_record_ids": [
+            "22013734",
+            "21505361",
+            "21901256",
+            "23396737"
+          ],
+          "value_type": "change",
+          "contract_version": "reproduction_v2"
+        },
+        "run_status": "incomplete",
+        "reproduced": false,
+        "reason": "Incomplete execution or missing synthesis",
+        "report_coverage": {
+          "reference_reports": 4,
+          "retrieved": 4,
+          "retrieved_original_search": 4,
+          "retrieved_via_supplement": 0,
+          "retained_after_abstract_screening": 4,
+          "accessible_fulltexts": 3,
+          "missing_from_search": [],
+          "excluded_at_abstract": [],
+          "missing_fulltexts": [
+            "21505361"
+          ]
+        }
+      },
+      "reproduced": false,
+      "risk_of_bias_drafts": {
+        "source_checked": 1,
+        "unverified": 0,
+        "limitations": [
+          "Automated drafts are not expert-validated RoB2 assessments.",
+          "Abbreviated project template; no independent registry/protocol retrieval or GRADE assessment.",
+          "These ratings do not change numerical inclusion, effects, weights or benchmark comparisons."
+        ]
+      },
+      "execution_exit_code": 2,
+      "evaluation_only": false
+    },
+    {
+      "id": "li2016_t2d_fbg_reproduction_v3",
+      "run": "data/benchmarks/reproduction_v3_suite/li2016_t2d_fbg_reproduction_v3/664e53794051",
+      "run_status": "incomplete",
+      "counts": {
+        "retrieved": 688,
+        "screened": 688,
+        "fulltexts_attempted": 31,
+        "independent_effects": 3,
+        "supplemental_records": 0,
+        "abstract_candidates": 31,
+        "accepted_effects": 3,
+        "unresolved": 24
+      },
+      "code_sha256": "95ac87339be0207ce380bda9b3f832bcf77f9ea5719a2f7b6777c2eabe4db637",
+      "comparison": {
+        "reference": {
+          "id": "li2016_t2d_fbg_reproduction_v3",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/27368052/",
+          "doi": "10.1097/MD.0000000000004088",
+          "outcome": "FBG",
+          "measure": "SMD",
+          "unit": "dimensionless",
+          "model": "random",
+          "estimate": -0.61,
+          "ci_low": -0.92,
+          "ci_high": -0.3,
+          "k": 9,
+          "absolute_tolerance": 0.02,
+          "notes": "Figure 3 and source audits identify endpoint SMD despite contradictory caption/unit labels. Operational eligibility follows included comparator/yeast scope. Asemi and Mazloom primary SEs must be converted, not copied as SD; known discrepancies remain benchmark outcomes.",
+          "expected_review_record_ids": [
+            "23967428",
+            "25196301",
+            "25300285",
+            "26988693",
+            "21700013",
+            "22129852",
+            "24319552",
+            "23899653",
+            "24706266",
+            "25197295",
+            "26955460",
+            "23645956"
+          ],
+          "identity_note": "Twelve reports cited as included in the review (references 23–34); not asserted to be twelve independent trials, or all nine FBG contributors.",
+          "expected_record_ids": [
+            "23899653",
+            "26955460",
+            "22129852",
+            "26988693",
+            "24319552",
+            "25300285",
+            "23645956",
+            "24706266",
+            "25196301"
+          ],
+          "value_type": "endpoint",
+          "contract_version": "reproduction_v3"
+        },
+        "run_status": "incomplete",
+        "reproduced": false,
+        "reason": "Not reproduced; inspect coverage, definitions and extraction evidence",
+        "report_coverage": {
+          "reference_reports": 12,
+          "retrieved": 12,
+          "retrieved_original_search": 12,
+          "retrieved_via_supplement": 0,
+          "retained_after_abstract_screening": 12,
+          "accessible_fulltexts": 7,
+          "missing_from_search": [],
+          "excluded_at_abstract": [],
+          "missing_fulltexts": [
+            "21700013",
+            "22129852",
+            "24706266",
+            "25196301",
+            "25300285"
+          ]
+        },
+        "semantic_agreement": {
+          "agrees": true,
+          "issues": []
+        },
+        "differences": {
+          "estimate": 0.2544524831405042,
+          "ci_low": -0.020751824542339148,
+          "ci_high": 0.5296567908233477
+        },
+        "k_observed": 3,
+        "k_expected": 9,
+        "missing_studies": [
+          "22129852",
+          "23899653",
+          "24706266",
+          "25196301",
+          "25300285",
+          "26988693"
+        ],
+        "extra_studies": [],
+        "numerically_matches": false
+      },
+      "reproduced": false,
+      "risk_of_bias_drafts": {
+        "source_checked": 2,
+        "unverified": 1,
+        "limitations": [
+          "Automated drafts are not expert-validated RoB2 assessments.",
+          "Abbreviated project template; no independent registry/protocol retrieval or GRADE assessment.",
+          "These ratings do not change numerical inclusion, effects, weights or benchmark comparisons."
+        ]
+      },
+      "execution_exit_code": 2,
+      "evaluation_only": false
+    }
+  ],
+  "note": "Unit tests, cached development execution and secondary forest-plot calibration are not successful independent reproduction. Incomplete reviews cannot pass."
+}

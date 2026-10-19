@@ -1,0 +1,12 @@
+id: combine_all_eligible_disjoint_arms_v1
+status: opt_in_infrastructure_extension_not_enabled_in_frozen_benchmarks
+prespecified_on: '2026-10-12'
+source: https://training.cochrane.org/handbook/current/chapter-06
+selection: Combine all source-verified arms eligible for the same prespecified comparison; record protocol-based reasons for every omitted arm. Never select arms based on observed effect.
+requirements:
+  - Source evidence establishes disjoint randomized participants and unique arm identities.
+  - Outcome, unit, endpoint/change definition and timepoint agree across arms.
+  - Reported arm means, SDs and analyzed denominators have independent source verification.
+calculation: Combine sample sizes and weighted means; combined SD includes within-arm and between-arm sums of squares. Use each comparator participant once.
+unsupported: Unresolved eligibility, repeated controls, participant overlap, crossover, cluster designs, missing SDs or discordant timing remain blocked.
+integration: Set multiarm_policy to combine_all_eligible_disjoint_arms_v1 in a newly frozen endpoint-score protocol. Enumerate all randomized arms, independently verify every original value, role and participant-disjointness claim, then combine deterministically. No activation in either frozen historical benchmark.

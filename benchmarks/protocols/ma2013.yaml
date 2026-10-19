@@ -1,0 +1,12 @@
+id: ma2013_nafld_alt
+frozen_on: '2026-10-12'
+query: '(NAFLD OR NASH OR "nonalcoholic fatty liver" OR "nonalcoholic steatohepatitis" OR "fatty liver") AND (probiotic* OR prebiotic* OR synbiotic* OR bifidobacter* OR lactobacill* OR flora) AND FIRST_PDATE:[1900-01-01 TO 2013-06-30] AND SRC:MED'
+eligibility: 'Randomized controlled trials in humans of any age with radiological or histological NAFLD/NASH. Live probiotics or synbiotics versus placebo or no active intervention/usual care. Exclude other causes of liver disease, nonrandomized studies and nonliving-only interventions. No language restriction. Publication by 2013-06-30. Extract ALT at end of assigned treatment.'
+search_date_note: 'Original review gives no exact search cutoff. Submission date 2013-06-30 is a frozen proxy, so exact historical search reproduction is not claimed.'
+outcome: ALT
+unit: U/L
+value_type: endpoint
+measure: MD
+model: fixed
+timing_rule: end of treatment
+dependence_rule: one independent parallel comparison per trial; unresolved multiarm/crossover excluded from pooling

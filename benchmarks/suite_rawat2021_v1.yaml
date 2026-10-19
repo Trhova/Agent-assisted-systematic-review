@@ -1,0 +1,9 @@
+id: rawat2021_hospital_stay_development_v1
+prespecified_model: gpt-6-astra
+prespecified_backend: codex
+cases:
+- id: rawat2021_covid_hospital_stay_v1
+  protocol: benchmarks/protocols/rawat2021_hospital_stay_v1.yaml
+  protocol_sha256: b99a2892bf59a418a7ec718c81c66bab7d43afc703b44b2e19c4c0f9a8e6ef2d
+  reference: benchmarks/references/rawat2021_hospital_stay_v1.json
+  reference_sha256: b2cd9f2cf5916de35cb3dc8e8c5cbd50835ced1c30e422d6dc5b546972695cd5

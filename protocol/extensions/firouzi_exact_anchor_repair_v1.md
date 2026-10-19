@@ -1,0 +1,9 @@
+# Firouzi continuous exact-anchor repair v1
+
+Freeze before model execution. Source-only agent-assisted development continuation of preserved Li v3 candidate26988693; original scientific contract, numerical values, sources and failures remain unchanged. This is not the second release benchmark, a new complete review, or a numerical addendum.
+
+The previous candidate's table/dispersion anchors match the original rotation-corrected source, but narrative design and PP-population quotations reconstruct interleaved columns. Repair only the five quotation arrays (general evidence and each arm's dispersion/denominator evidence). No number, unit, statistic type, population, arm, timepoint, eligibility or limitation can change. Require every proposed snippet to match exactly apart from whitespace; do not silently discard invalid snippets or concatenate nonadjacent text.
+
+Use the identical preserved source and original scientific projection, verified against the prior successful extraction request/response and bibliographic record identity. A fresh full-field source verifier must check scientific meaning, including whether separated snippets actually share context. Existing derivation and normal evidence validators remain unchanged. Failed string or semantic checks remain failed, with raw output retained. No numerical admission/pooling; integrity, chronology and independence against all contributing studies remain pending for any later separately specified continuation.
+
+Explicit gpt-6-astra/codex, workerMedium, nested effortdefault/unpinned. Maximum2fresh adapter invocations, one attempt each,300secondtimeout. CLI internal transport attempts may occur. No automatic retry after uncertain failure. Freeze code, original protocol/source/request artifacts and this policy; output in a new directory. Same-model errors may correlate. Published review answers never enter requests.

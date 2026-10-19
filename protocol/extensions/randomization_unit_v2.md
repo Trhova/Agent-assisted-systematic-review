@@ -1,0 +1,15 @@
+# Allocation-unit guard v2
+
+Opt in with `randomization_unit_policy: randomization_unit_v2`. This policy adds a source-linked design preflight after full-text eligibility establishes inclusion and before numerical acceptance/pooling of non-collection original reports. It does not change original frozen protocols.
+
+Parallel arrangement and individual allocation are different properties. Before independent-participant synthesis, require affirmative evidence from the study's own allocation methods/participant flow, exact matched quotations and independent model verification. Individual allocation stratified by site is not site allocation; recruiting household contacts is not by itself household randomization. Designs described only in background/citations do not establish the current study's design. Missing methods or conflicting attribution remain unresolved.
+
+Verified household or other cluster allocation is unsupported by the present independent-person estimators, even when called parallel. Keep its report, primary evidence and unresolved status; do not automatically label the study ineligible. A new cluster-aware estimand would require a separately specified method and an appropriate adjusted effect/SE or justified cluster correction inputs. Do not assume ICC=0 or infer missing inputs. Accepted rows retain the preflight and its source hash for audit replay.
+
+Basis: Cochrane Handbook current Chapter23§23.1.1–23.1.5, https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-23 (consulted14October2026): grouped allocation induces dependence; ignoring it can overstate precision; adjusted analyses or justified correction are required. This does not prove any particular published significance conclusion wrong.
+
+The standalone `scripts.randomization_unit` entry point exercises exactly the same assessment on pinned primary-source documents. It requires a frozen Python identity, explicit model/backend and all source checksums before calls, fresh output, one adapter invocation per proposal/verification and preserves execution failures separately from scientific decisions. CLI transport retries are internal and are not counted as new adapter invocations. Successful assessments do not establish overall eligibility, numerical input validity, family independence or review completeness.
+
+V2 corrects the invocation order only: full-text exclusions remain exclusions without an unnecessary allocation assessment. V1 standalone primary-source design qualification is preserved; its assessment algorithm is unchanged apart from the policy identifier. Model-proposed numerical rows may exist before this guard, but cannot enter accepted effects or synthesis until the guard passes.
+
+V1 real qualification revealed quotation wrappers and PDF hyphenation causing failed exact matches in two individual-allocation controls. V2 adds at most one quotation-only repair, preserving the original proposal and repair result. Claim/unit cannot change during repair. Exact quote checks and subsequent independent claim verification remain mandatory. The standalone budget is at most three adapter invocations per source.

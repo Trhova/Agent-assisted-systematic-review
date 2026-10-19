@@ -1,0 +1,11 @@
+{
+  "run": "data/benchmarks/rob2_revision_v3/li2016_t2d_fbg_reproduction_v3/664e53794051",
+  "source_checked": 4,
+  "unverified": 0,
+  "unchanged_numerical_files": {
+    "synthesis.json": true,
+    "trial_families.json": true,
+    "benchmark_comparison.json": true
+  },
+  "note": "Bounded source-grounded draft revision and independent recheck; source/model checks are not expert RoB validation."
+}

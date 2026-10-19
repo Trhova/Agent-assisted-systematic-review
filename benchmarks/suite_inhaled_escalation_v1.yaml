@@ -1,0 +1,10 @@
+id: inhaled_escalation_development_v1
+prespecified_model: gpt-6-astra
+prespecified_backend: codex
+prespecified_code_sha256: eb9b151eb2da992aa78b56b163466352e719df4bd3d4ec7d0cfe7ba6b0a27353
+cases:
+- id: inhaled_escalation_development_v1
+  protocol: benchmarks/protocols/inhaled_escalation_v1.yaml
+  protocol_sha256: 771b952a834cff0ec71a5071ce143aa9ff1571c61f77cd839de2856a1dcd2a09
+  reference: benchmarks/references/inhaled_escalation_v1.json
+  reference_sha256: 5629422fac04b48e3edd444dd4f6d11dc58777db5d704440d5d14bbfdfc14ce2

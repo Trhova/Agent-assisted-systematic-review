@@ -1,0 +1,36 @@
+[
+  {
+    "id": "journal-malik-2013-vo2",
+    "title": "Effect of Ashwagandha (Withania Somnifera) Root Powder Supplementation on the VO2 max. And Hemoglobin in Hockey Players",
+    "abstract": "Randomized parallel placebo-controlled trial in male hockey players assessing maximal oxygen consumption with the Cooper run test after eight weeks of supplementation.",
+    "doi": "",
+    "pmcid": "",
+    "date": "2013-07-01",
+    "publication_types": [
+      "Randomized Controlled Trial"
+    ],
+    "related_notices": [],
+    "source_urls": [
+      "https://www.researchgate.net/publication/313791445_EFFECT_OF_ASHWAGANDHA_WITHANIA_SOMNIFERA_ROOT_POWDER_SUPPLEMENTATION_ON_THE_VO_2_MAX_AND_HEMOGLOBIN_IN_HOCKEY_PLAYERS"
+    ],
+    "discovery_source": "Backward citation from Perez-Gomez 2020, independently verified author-posted original primary report",
+    "date_evidence": "Author-posted original PDF header Vol.02 July2013 Issue03, pp91-99; current journal website has inconsistent retrospective pagination."
+  },
+  {
+    "id": "doi-10.18203-2319-2003.ijbcp20164114",
+    "title": "Effect of Withania somnifera on physical and cardiovascular performance induced by physical stress in healthy human volunteers",
+    "abstract": "Randomized placebo-controlled parallel pilot trial in healthy volunteers comparing two doses of Withania somnifera for 28 days, including oxygen consumption assessed by YMCA submaximal exercise testing.",
+    "doi": "10.18203/2319-2003.ijbcp20164114",
+    "pmcid": "",
+    "date": "2016-11-01",
+    "publication_types": [
+      "Randomized Controlled Trial"
+    ],
+    "related_notices": [],
+    "source_urls": [
+      "https://www.ijbcp.com/index.php/ijbcp/article/download/42/40/162"
+    ],
+    "discovery_source": "Backward citation from Perez-Gomez 2020, original publisher PDF",
+    "date_evidence": "Primary article footer November-December 2016"
+  }
+]

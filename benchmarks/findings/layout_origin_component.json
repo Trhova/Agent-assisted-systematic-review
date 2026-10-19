@@ -1,0 +1,82 @@
+{
+  "record_id": "16163567",
+  "source_pdf_sha256": "8bc6b6ad34c4a933e8acc1c06b0b9a082762e70ead7b5ea2294f391ee7844792",
+  "checks": [
+    {
+      "page": 1,
+      "parent_bbox": [
+        2,
+        -29.0,
+        597.28821,
+        756.19525
+      ],
+      "column_boxes": [
+        [
+          2,
+          -29.0,
+          299.644105,
+          756.19525
+        ],
+        [
+          299.644105,
+          -29.0,
+          597.28821,
+          756.19525
+        ]
+      ],
+      "characters": 8239,
+      "text_sha256": "6924bd35bc3da04c435dff8026d228c531e59025b0a2166c79cdc2b47d3f03d5"
+    },
+    {
+      "page": 2,
+      "parent_bbox": [
+        2,
+        -29.0,
+        597.28821,
+        756.19525
+      ],
+      "column_boxes": [
+        [
+          2,
+          -29.0,
+          299.644105,
+          756.19525
+        ],
+        [
+          299.644105,
+          -29.0,
+          597.28821,
+          756.19525
+        ]
+      ],
+      "characters": 8090,
+      "text_sha256": "a2fc2b20109fd79dd216db0832ed296c5b3e60120c3d26b7debc6530eea3dcd9"
+    },
+    {
+      "page": 3,
+      "parent_bbox": [
+        2,
+        -29.0,
+        597.28821,
+        756.19525
+      ],
+      "column_boxes": [
+        [
+          2,
+          -29.0,
+          299.644105,
+          756.19525
+        ],
+        [
+          299.644105,
+          -29.0,
+          597.28821,
+          756.19525
+        ]
+      ],
+      "characters": 8208,
+      "text_sha256": "38de2f980cedf84abc995c763c49b80076d5d0ca6cdc7802013308027aef6c28"
+    }
+  ],
+  "interpretation": "Three actual offset-origin pages now parse within parent coordinates. This is a parsing component check, not a whole-document review or benchmark reproduction."
+}

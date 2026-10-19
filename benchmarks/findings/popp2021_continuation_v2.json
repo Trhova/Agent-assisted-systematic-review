@@ -1,0 +1,52 @@
+{
+  "scope": "Isolated developer-assisted historical source continuation; no change in scientific contract or completion gates",
+  "run": "data/benchmarks/popp2021_v2/popp2021_hospital_mortality_development_v1/d2cc93475219",
+  "code_sha256": "49a974e7781395e97d3aea388efca21d6e95c5b32c056f355c604977516ac2c3",
+  "model": "gpt-6-astra",
+  "backend": "codex",
+  "acquisition_mode": "cache_only",
+  "counts": {
+    "retrieved": 132,
+    "screened": 132,
+    "fulltexts_attempted": 9,
+    "independent_effects": 2,
+    "supplemental_records": 1,
+    "abstract_candidates": 9,
+    "accepted_effects": 2,
+    "unresolved": 3
+  },
+  "request_counts": {
+    "review_requests": 15,
+    "rob_requests": 4
+  },
+  "resolved_source": "32445400 imported original PDF, classified non-trial by fresh model",
+  "remaining": [
+    "32337546 missing full text",
+    "33769172 missing full text; HAL metadata has no file",
+    "33542047 eligible trial, target mortality horizon unresolved"
+  ],
+  "estimate": 1.0040345330957092,
+  "ci_low": 0.9345795428672464,
+  "ci_high": 1.078651198116278,
+  "numerically_matches": true,
+  "reproduced": false,
+  "artifact_audit_valid": true,
+  "rob": {
+    "source_checked": 2,
+    "unverified": 0,
+    "limitations": [
+      "Automated drafts are not expert-validated RoB2 assessments.",
+      "Abbreviated project template; no independent registry/protocol retrieval or GRADE assessment.",
+      "These ratings do not change numerical inclusion, effects, weights or benchmark comparisons."
+    ]
+  },
+  "tests": 200,
+  "frozen_pairs_verified": 12,
+  "original_audit_artifacts_unchanged": 18,
+  "limitations": [
+    "Not complete autonomous review or held-out validation",
+    "Nested reasoning backend-default/unpinned",
+    "New source recovery developer-assisted; source acquisition constrained to preserved caches",
+    "Follow-up heterogeneity and RECOVERY incomplete mortality data retained"
+  ]
+}

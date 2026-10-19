@@ -1,0 +1,533 @@
+{
+  "schema_version": 1,
+  "classification": "post_hoc_development_readiness_not_validation",
+  "cases": [
+    {
+      "id": "ma2013_nafld_alt",
+      "classification": "post_hoc_development_audit",
+      "ready_for_independent_validation": false,
+      "validation_gate_reason": "Historical evaluated development runs cannot serve as fresh prospective validation, regardless of repaired coverage",
+      "protocol_agreement": {
+        "status": "not_established",
+        "semantic_contract": {
+          "agrees": false,
+          "issues": [
+            "value_type:unknown_protocol_or_reference"
+          ]
+        },
+        "limitations": [
+          "Single bibliographic database is not historical multidatabase search equivalence",
+          "Original review gives no exact search cutoff. Submission date 2013-06-30 is a frozen proxy, so exact historical search reproduction is not claimed."
+        ]
+      },
+      "records": [
+        {
+          "record_id": "22013734",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "22013734",
+            "decision": "include",
+            "reason": "Randomized placebo-controlled live-probiotic trial in biopsy-confirmed NAFLD, published before the cutoff. At 3 months, probiotic-group ALT was reported as 60.4 ± 30.4 UI/L; dispersion type is unspecified. Control endpoint ALT is absent from the supplied abstract."
+          },
+          "source_present": true,
+          "source_artifact": "data/benchmarks/final_suite_v1/ma2013_nafld_alt/b81b1cbd5975/sources/22013734/text.json",
+          "source_artifact_sha256": "821cac69a7857808afbf3cfcda92121ca467387a017bcf83505525fe22f76f62",
+          "extraction_status": "extracted",
+          "eligibility": "include",
+          "extraction_reason": "Published in 2011, this double-blind parallel randomized placebo-controlled trial enrolled humans with biopsy-confirmed NAFLD, excluded other causes of liver disease, and compared a probiotic containing Lactobacillus bulgaricus and Streptococcus thermophilus with starch placebo for 3 months.",
+          "missing_numeric_evidence": [],
+          "pooled": true
+        },
+        {
+          "record_id": "21505361",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "21505361",
+            "decision": "include",
+            "reason": "Randomized placebo-controlled trial of live Lactobacillus rhamnosus GG for 8 weeks in children with ultrasonographic fatty liver; other liver diseases excluded. Numerical end-treatment ALT is not supplied; only a between-group ALT variation P value of 0.03 is reported."
+          },
+          "source_present": false,
+          "source_artifact": null,
+          "source_artifact_sha256": null,
+          "extraction_status": "missing_fulltext",
+          "eligibility": null,
+          "extraction_reason": null,
+          "missing_numeric_evidence": [],
+          "pooled": false
+        },
+        {
+          "record_id": "21901256",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "21901256",
+            "decision": "include",
+            "reason": "Randomized trial in biopsy-assessed NASH comparing Bifidobacterium longum plus fructo-oligosaccharides and lifestyle modification with lifestyle modification alone for 24 weeks. ALT was assessed, but numerical end-treatment ALT is not supplied."
+          },
+          "source_present": true,
+          "source_artifact": "data/benchmarks/final_suite_v1/ma2013_nafld_alt/b81b1cbd5975/sources/21901256/text.json",
+          "source_artifact_sha256": "c7719b0b95d639b63e9523d093b434304609f2df9f3b43112112729ef6f9850c",
+          "extraction_status": "extracted",
+          "eligibility": "include",
+          "extraction_reason": "Randomized, double-blind, placebo-controlled parallel trial in adults with biopsy-confirmed NASH, excluding other causes of liver disease. Bifidobacterium longum with fructo-oligosaccharides was administered for 24 weeks alongside lifestyle modification. Published online before 2013-06-30.",
+          "missing_numeric_evidence": [],
+          "pooled": true
+        },
+        {
+          "record_id": "23396737",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "23396737",
+            "decision": "include",
+            "reason": "Randomized live-probiotic versus usual-care trial in histology-proven NASH, published before the cutoff. Treatment lasted 6 months; endpoint ALT is not reported in the supplied abstract."
+          },
+          "source_present": true,
+          "source_artifact": "data/benchmarks/final_suite_v1/ma2013_nafld_alt/b81b1cbd5975/sources/23396737/text.json",
+          "source_artifact_sha256": "c91daccf26e03b06e77116bf47deb53bf85bbb8f13064aea8b68e748097696e2",
+          "extraction_status": "extracted",
+          "eligibility": "include",
+          "extraction_reason": "NCT00870012 is a randomized parallel trial in 20 adults with histology-proven NASH, comparing live probiotics plus prebiotics with usual care for 6 months. Other liver disease causes were excluded, and publication preceded 2013-06-30. Eligibility is independent of unavailable ALT endpoint statistics.",
+          "missing_numeric_evidence": [
+            "NCT00870012: ALT endpoint means and SDs at month 6 are not reported. No endpoint comparison can be extracted without deriving missing values or substituting change statistics.",
+            "Table 2 reports change statistics only. Verbatim title: \"Table 2. Changes in hepatic and metabolic parameters between baseline and month 6.\" Header: \"Parameters Probiotic group Usual care group P*\" ALT heading and row: \"ALT (IU/L).\" \"Absolute change. -26 ± 91 2 ± 41 0.39\" These cannot be used as endpoint means and SDs."
+          ],
+          "pooled": false
+        }
+      ],
+      "queue_scope": "Reference review reports plus case-level scientific contracts; not the complete retained-candidate queue",
+      "reference_report_count": 4,
+      "reference_outcome_count": 4,
+      "search_coverage": {
+        "original": 4,
+        "total": 4
+      },
+      "source_coverage": {
+        "present": 3,
+        "note": "Presence does not establish numeric usability or eligibility"
+      },
+      "numeric_correctness": {
+        "status": "not_independently_adjudicated",
+        "reference_contributors_pooled": 2,
+        "extra_contributors": []
+      },
+      "reproducibility": {
+        "model": null,
+        "code_sha256": "720874f2e39f0baddd04c1cf71834a857f8940f96b226c9b610faa23598b7834",
+        "pending_segments": 0,
+        "historical_status": "incomplete"
+      },
+      "next_actions": [
+        {
+          "record_id": "21505361",
+          "category": "source_access",
+          "reason": "missing_fulltext",
+          "next_action": "Obtain lawful original report; retry only a newly evidenced access route"
+        },
+        {
+          "record_id": "23396737",
+          "category": "numeric_or_estimand_adjudication",
+          "reason": "NCT00870012: ALT endpoint means and SDs at month 6 are not reported. No endpoint comparison can be extracted without deriving missing values or substituting change statistics.; Table 2 reports change statistics only. Verbatim title: \"Table 2. Changes in hepatic and metabolic parameters between baseline and month 6.\" Header: \"Parameters Probiotic group Usual care group P*\" ALT heading and row: \"ALT (IU/L).\" \"Absolute change. -26 ± 91 2 ± 41 0.39\" These cannot be used as endpoint means and SDs.",
+          "next_action": "Inspect primary table and analyzed denominator; adjudicate separately from published forest values"
+        },
+        {
+          "record_id": null,
+          "category": "comparison_contract",
+          "reason": [
+            "value_type:unknown_protocol_or_reference"
+          ],
+          "next_action": "Create separately versioned source-backed contract for reference estimand; missing value_type is unknown, not established incompatibility"
+        },
+        {
+          "record_id": null,
+          "category": "reproducibility",
+          "reason": "Historical model identity was not pinned",
+          "next_action": "Keep historical result; require explicit model on a fresh prospectively frozen evaluation"
+        }
+      ],
+      "action_count": 4,
+      "input_artifact_hashes": {
+        "data/benchmarks/final_suite_v1/ma2013_nafld_alt/b81b1cbd5975/status.json": "69b4901b9bf3868190bf8878f0fff68a4cbe1597606f4b537725c89531fdaad3",
+        "data/benchmarks/final_suite_v1/ma2013_nafld_alt/b81b1cbd5975/protocol.json": "8eb8ae763c111a79f6f62b80e5451f58599859e01b9a51a542df7f03d071ec01",
+        "data/benchmarks/final_suite_v1/ma2013_nafld_alt/b81b1cbd5975/search.json": "a6bf972081a9a9a5794bd3ce142a71addd3a9d312f13aca7549d41e3fb7ffe02",
+        "data/benchmarks/final_suite_v1/ma2013_nafld_alt/b81b1cbd5975/screening.json": "843d2ffd68f9039f7cd390cca4bedae2058a6f40ba0e61e7a68534f4158c38cf",
+        "data/benchmarks/final_suite_v1/ma2013_nafld_alt/b81b1cbd5975/extractions.json": "716e605d7dcb2b8f8286768e28ba2474564a2944ad7faf6c5e0cdb03e5891df8",
+        "data/benchmarks/final_suite_v1/ma2013_nafld_alt/b81b1cbd5975/synthesis.json": "008444eead2921a3f15338688da7e02cf6522f4beae152c1dbbc698797de0e60"
+      }
+    },
+    {
+      "id": "li2016_t2d_fbg",
+      "classification": "post_hoc_development_audit",
+      "ready_for_independent_validation": false,
+      "validation_gate_reason": "Historical evaluated development runs cannot serve as fresh prospective validation, regardless of repaired coverage",
+      "protocol_agreement": {
+        "status": "not_established",
+        "semantic_contract": {
+          "agrees": false,
+          "issues": [
+            "value_type:unknown_protocol_or_reference"
+          ]
+        },
+        "limitations": [
+          "Single bibliographic database is not historical multidatabase search equivalence",
+          "Frozen placebo-only definition differs from included dietary-advice control"
+        ]
+      },
+      "records": [
+        {
+          "record_id": "23967428",
+          "reference_outcome_contributor": false,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "23967428",
+            "decision": "unclear",
+            "reason": "Placebo-controlled randomized trial in type 2 diabetes, but the abstract does not establish whether brewer's yeast was a probiotic or report end-treatment fasting glucose. Full text was not supplied to verify eligibility."
+          },
+          "source_present": true,
+          "source_artifact": "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3/sources/23967428/text.json",
+          "source_artifact_sha256": "3ce912c4a34ba71ffbdf12b6c1beeccdfeda25ad0a2f0279ed844e55255bc970",
+          "extraction_status": "extracted",
+          "eligibility": "exclude",
+          "extraction_reason": "Randomized placebo-controlled trial in people with type 2 diabetes, but the intervention was inactivated brewer’s yeast rather than probiotic supplementation. The article states: “Brewer’s yeast supplements or nutritional yeasts are dried and inactivated yeast cells called ‘Saccharomyces cerevisiae’ which have lost their fermentation activity.” Trial registry ID: IRCT138807062513N1.",
+          "missing_numeric_evidence": [
+            "End-of-treatment FBG means and SDs are not reported in the supplied article; this is separate from the intervention-based exclusion."
+          ],
+          "pooled": false
+        },
+        {
+          "record_id": "25196301",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "25196301",
+            "decision": "unclear",
+            "reason": "Potentially eligible randomized trial with probiotic and control bread arms in type 2 diabetes. Full text was not supplied to verify English accessibility, placebo suitability, or end-of-treatment fasting glucose values."
+          },
+          "source_present": false,
+          "source_artifact": null,
+          "source_artifact_sha256": null,
+          "extraction_status": "missing_fulltext",
+          "eligibility": null,
+          "extraction_reason": null,
+          "missing_numeric_evidence": [],
+          "pooled": false
+        },
+        {
+          "record_id": "25300285",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "25300285",
+            "decision": "unclear",
+            "reason": "Randomized fermented milk trial in type 2 diabetes; full text is needed to confirm probiotic intervention eligibility and extract end-treatment fasting glucose values."
+          },
+          "source_present": false,
+          "source_artifact": null,
+          "source_artifact_sha256": null,
+          "extraction_status": "missing_fulltext",
+          "eligibility": null,
+          "extraction_reason": null,
+          "missing_numeric_evidence": [],
+          "pooled": false
+        },
+        {
+          "record_id": "26988693",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "26988693",
+            "decision": "unclear",
+            "reason": "Abstract describes an eligible type 2 diabetes probiotic versus placebo RCT before the cutoff, but accessible English full text and endpoint fasting glucose cannot be verified from supplied sources."
+          },
+          "source_present": true,
+          "source_artifact": "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3/sources/26988693/text.json",
+          "source_artifact_sha256": "540a2c2f799806f7c2d0e0609f0c1d3effaede4a858fea99233fe1cf900f82c9",
+          "extraction_status": "extracted",
+          "eligibility": "include",
+          "extraction_reason": "English full-text randomized, double-blind, parallel-group trial in people with type 2 diabetes comparing probiotics with placebo for 12 weeks; published 2016-03-17, before the cutoff.",
+          "missing_numeric_evidence": [],
+          "pooled": true
+        },
+        {
+          "record_id": "21700013",
+          "reference_outcome_contributor": false,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "21700013",
+            "decision": "unclear",
+            "reason": "Potentially eligible randomized probiotic yogurt trial in type 2 diabetes; supplied abstract cannot confirm eligible placebo, accessible English full text, or end-treatment fasting glucose results."
+          },
+          "source_present": false,
+          "source_artifact": null,
+          "source_artifact_sha256": null,
+          "extraction_status": "missing_fulltext",
+          "eligibility": null,
+          "extraction_reason": null,
+          "missing_numeric_evidence": [],
+          "pooled": false
+        },
+        {
+          "record_id": "22129852",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "22129852",
+            "decision": "unclear",
+            "reason": "Potentially eligible randomized probiotic yogurt trial reporting fasting glucose; accessible English full text and comparator eligibility cannot be confirmed, and endpoint glucose values are not supplied."
+          },
+          "source_present": false,
+          "source_artifact": null,
+          "source_artifact_sha256": null,
+          "extraction_status": "missing_fulltext",
+          "eligibility": null,
+          "extraction_reason": null,
+          "missing_numeric_evidence": [],
+          "pooled": false
+        },
+        {
+          "record_id": "24319552",
+          "reference_outcome_contributor": true,
+          "in_original_search": false,
+          "retrieved": false,
+          "screening": {},
+          "source_present": false,
+          "source_artifact": null,
+          "source_artifact_sha256": null,
+          "extraction_status": null,
+          "eligibility": null,
+          "extraction_reason": null,
+          "missing_numeric_evidence": [],
+          "pooled": false
+        },
+        {
+          "record_id": "23899653",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "23899653",
+            "decision": "unclear",
+            "reason": "Abstract describes a placebo-controlled probiotic randomized trial in type 2 diabetes, but no full text was supplied to verify English accessibility and eligibility. Reported fasting glucose values are changes, not end-of-treatment levels."
+          },
+          "source_present": true,
+          "source_artifact": "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3/sources/23899653/text.json",
+          "source_artifact_sha256": "b9356c2b797776552e85d3bc613319e672406b56876e77c8b27e1bb03611269d",
+          "extraction_status": "extracted",
+          "eligibility": "include",
+          "extraction_reason": "English full-text randomized, double-blind, parallel placebo-controlled trial in people with type 2 diabetes, published July 5, 2013, before the cutoff. Endpoint SD availability does not affect eligibility.",
+          "missing_numeric_evidence": [
+            "Asemi-2013-trial: endpoint FBG SDs are unavailable. Table 3 reports means ± SE, which cannot be substituted for SDs or converted under the extraction rules; therefore no rows are extracted.",
+            "Table 3 headers: \"Placebo (n = 27) Probiotic supplement (n = 27) pb\" and \"week 0 week 8 change pa we ek 0 week 8 change pa\". Row: \"FPG, mg/dl 134.5±9.6 163.3±12 28.8±8.5 0.002 143.8±10.7 145.4±9.5 1.6±6 0.80 0.01\". Footnote: \"Data are means ± SE.\" Endpoint means at \"week 8\" are 145.4 mg/dl for probiotic and 163.3 mg/dl for placebo, with 27 analyzed per group."
+          ],
+          "pooled": false
+        },
+        {
+          "record_id": "24706266",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "24706266",
+            "decision": "unclear",
+            "reason": "Includes randomized probiotic and control bread arms in type 2 diabetes; full text, article accessibility, and end-treatment fasting glucose values are not supplied."
+          },
+          "source_present": false,
+          "source_artifact": null,
+          "source_artifact_sha256": null,
+          "extraction_status": "missing_fulltext",
+          "eligibility": null,
+          "extraction_reason": null,
+          "missing_numeric_evidence": [],
+          "pooled": false
+        },
+        {
+          "record_id": "25197295",
+          "reference_outcome_contributor": false,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "25197295",
+            "decision": "unclear",
+            "reason": "Randomized probiotic yogurt trial in type 2 diabetes, but full text and end-treatment fasting glucose results are not supplied."
+          },
+          "source_present": true,
+          "source_artifact": "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3/sources/25197295/text.json",
+          "source_artifact_sha256": "b36ad7ea75eab97d1b17fac80066732cabc873375726d65b9fbd433565f12e3e",
+          "extraction_status": "extracted",
+          "eligibility": "include",
+          "extraction_reason": "IRCT2014021516588N1 is a double-blind, randomized parallel trial in people with type 2 diabetes, comparing probiotic yogurt with conventional yogurt serving as the matched control for 8 weeks. The supplied English full article was published in June 2014, before the cutoff. Eligibility is independent of missing FBG results.",
+          "missing_numeric_evidence": [
+            "End-of-treatment FBG means and SDs are not reported for either group in the supplied article or supplementary PDF text; no FBG comparison can be extracted.",
+            "Reported HbA1c and lipid outcomes cannot substitute for FBG."
+          ],
+          "pooled": false
+        },
+        {
+          "record_id": "26955460",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "26955460",
+            "decision": "exclude",
+            "reason": "Control received dietary advice, not placebo."
+          },
+          "source_present": false,
+          "source_artifact": null,
+          "source_artifact_sha256": null,
+          "extraction_status": null,
+          "eligibility": null,
+          "extraction_reason": null,
+          "missing_numeric_evidence": [],
+          "pooled": false
+        },
+        {
+          "record_id": "23645956",
+          "reference_outcome_contributor": true,
+          "in_original_search": true,
+          "retrieved": true,
+          "screening": {
+            "id": "23645956",
+            "decision": "unclear",
+            "reason": "Abstract describes randomized probiotic versus placebo treatment in type 2 diabetes with fasting glucose measured, but full text is not supplied to confirm eligibility or extract endpoint values."
+          },
+          "source_present": true,
+          "source_artifact": "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3/sources/23645956/text.json",
+          "source_artifact_sha256": "37abb759bf5c8441f3d675e4a1c4258bddf03df028f66c629b85cb023629e8e2",
+          "extraction_status": "extracted",
+          "eligibility": "include",
+          "extraction_reason": "Mazloom-2013-trial is an eligible randomized parallel trial in people with type 2 diabetes comparing probiotic capsules with placebo for 6 weeks. The supplied English full article was published before 2016-04-12. Endpoint FBG is reported as mean±SE, without endpoint SDs, so no extraction rows are provided.",
+          "missing_numeric_evidence": [
+            "Endpoint FBG SDs are unavailable for both groups; reported SEs cannot be substituted or converted. Table 2 headers: \"Placebo group mean±SE before intervention\"; \"Plecebo group mean±SE\n \n after intervention\"; \"Treatment group mean±SE\n \n before intervention\"; \"Treatment group mean±SE\n \n after intervention\". Verbatim row: \"FBG (mg/dl) | 149.83±14.06 | 162.67±16.38 | 158.56±13.70 | 158.69±16.38 | 0.27 | 0.99\"."
+          ],
+          "pooled": false
+        }
+      ],
+      "queue_scope": "Reference review reports plus case-level scientific contracts; not the complete retained-candidate queue",
+      "reference_report_count": 12,
+      "reference_outcome_count": 9,
+      "search_coverage": {
+        "original": 11,
+        "total": 11
+      },
+      "source_coverage": {
+        "present": 5,
+        "note": "Presence does not establish numeric usability or eligibility"
+      },
+      "numeric_correctness": {
+        "status": "not_independently_adjudicated",
+        "reference_contributors_pooled": 1,
+        "extra_contributors": [
+          "25905057"
+        ]
+      },
+      "reproducibility": {
+        "model": null,
+        "code_sha256": "720874f2e39f0baddd04c1cf71834a857f8940f96b226c9b610faa23598b7834",
+        "pending_segments": 0,
+        "historical_status": "incomplete"
+      },
+      "next_actions": [
+        {
+          "record_id": "23967428",
+          "category": "eligibility_difference",
+          "reason": "Randomized placebo-controlled trial in people with type 2 diabetes, but the intervention was inactivated brewer’s yeast rather than probiotic supplementation. The article states: “Brewer’s yeast supplements or nutritional yeasts are dried and inactivated yeast cells called ‘Saccharomyces cerevisiae’ which have lost their fermentation activity.” Trial registry ID: IRCT138807062513N1.",
+          "next_action": "Adjudicate intervention/comparator against review methods; retain original exclusion"
+        },
+        {
+          "record_id": "25196301",
+          "category": "source_access",
+          "reason": "missing_fulltext",
+          "next_action": "Obtain lawful original report; retry only a newly evidenced access route"
+        },
+        {
+          "record_id": "25300285",
+          "category": "source_access",
+          "reason": "missing_fulltext",
+          "next_action": "Obtain lawful original report; retry only a newly evidenced access route"
+        },
+        {
+          "record_id": "21700013",
+          "category": "source_access",
+          "reason": "missing_fulltext",
+          "next_action": "Obtain lawful original report; retry only a newly evidenced access route"
+        },
+        {
+          "record_id": "22129852",
+          "category": "source_access",
+          "reason": "missing_fulltext",
+          "next_action": "Obtain lawful original report; retry only a newly evidenced access route"
+        },
+        {
+          "record_id": "24319552",
+          "category": "search_coverage",
+          "reason": "Absent from original and supplemental searches",
+          "next_action": "Audit indexed terminology and freeze a separate development query; do not insert reference answers into extraction"
+        },
+        {
+          "record_id": "23899653",
+          "category": "supported_derivation_extension",
+          "reason": "Asemi-2013-trial: endpoint FBG SDs are unavailable. Table 3 reports means ± SE, which cannot be substituted for SDs or converted under the extraction rules; therefore no rows are extracted.; Table 3 headers: \"Placebo (n = 27) Probiotic supplement (n = 27) pb\" and \"week 0 week 8 change pa we ek 0 week 8 change pa\". Row: \"FPG, mg/dl 134.5±9.6 163.3±12 28.8±8.5 0.002 143.8±10.7 145.4±9.5 1.6±6 0.80 0.01\". Footnote: \"Data are means ± SE.\" Endpoint means at \"week 8\" are 145.4 mg/dl for probiotic and 163.3 mg/dl for placebo, with 27 analyzed per group.",
+          "next_action": "Separately specify SD=SE*sqrt(analyzed arm n), verify endpoint denominator and unadjusted arm-mean SE, retain original SE and source provenance; never copy forest SD columns"
+        },
+        {
+          "record_id": "24706266",
+          "category": "source_access",
+          "reason": "missing_fulltext",
+          "next_action": "Obtain lawful original report; retry only a newly evidenced access route"
+        },
+        {
+          "record_id": "26955460",
+          "category": "eligibility_difference",
+          "reason": "Control received dietary advice, not placebo.",
+          "next_action": "Adjudicate intervention/comparator against review methods; retain original exclusion"
+        },
+        {
+          "record_id": "23645956",
+          "category": "supported_derivation_extension",
+          "reason": "Endpoint FBG SDs are unavailable for both groups; reported SEs cannot be substituted or converted. Table 2 headers: \"Placebo group mean±SE before intervention\"; \"Plecebo group mean±SE\n \n after intervention\"; \"Treatment group mean±SE\n \n before intervention\"; \"Treatment group mean±SE\n \n after intervention\". Verbatim row: \"FBG (mg/dl) | 149.83±14.06 | 162.67±16.38 | 158.56±13.70 | 158.69±16.38 | 0.27 | 0.99\".",
+          "next_action": "Separately specify SD=SE*sqrt(analyzed arm n), verify endpoint denominator and unadjusted arm-mean SE, retain original SE and source provenance; never copy forest SD columns"
+        },
+        {
+          "record_id": null,
+          "category": "comparison_contract",
+          "reason": [
+            "value_type:unknown_protocol_or_reference"
+          ],
+          "next_action": "Create separately versioned source-backed contract for reference estimand; missing value_type is unknown, not established incompatibility"
+        },
+        {
+          "record_id": null,
+          "category": "reproducibility",
+          "reason": "Historical model identity was not pinned",
+          "next_action": "Keep historical result; require explicit model on a fresh prospectively frozen evaluation"
+        }
+      ],
+      "action_count": 12,
+      "input_artifact_hashes": {
+        "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3/status.json": "9a80a8f3219d3b5b60ebd7cd91b3864a6c79f0fb39b4e9d449faa885e3fd0bc8",
+        "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3/protocol.json": "0ff4628bf0fd789ad903c82c1eb5a9d5c109705b79fa346be2d711662c9b7962",
+        "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3/search.json": "c1e9da6e9152b6667c578597b9324e1862b54b1acae381deba29022b4cd517bb",
+        "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3/screening.json": "a9e37bc373be2a3a992f5cac95ff28b155819e75e3a19cf7c7f34bd75c41ba24",
+        "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3/extractions.json": "57c76ea31be23875986f1481cfabbc65318ce0146b4c504beeaf1e3b4b9fa8bc",
+        "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3/synthesis.json": "7ceb34fe66419ee0e71d46e29d335fb7cfb005cf3b37514e70b3eb9a8a2195d1"
+      }
+    }
+  ],
+  "action_count": 16,
+  "ready_for_broad_validation_run": false,
+  "scope": "Diagnostic of historical development artifacts, not a general prospective launch validator",
+  "leakage_boundary": "Reference identities are evaluator-only. This audit and its actions must not be supplied to screening/extraction models in held-out evaluation."
+}

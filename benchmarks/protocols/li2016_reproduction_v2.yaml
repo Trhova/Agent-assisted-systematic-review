@@ -1,0 +1,40 @@
+id: li2016_t2d_fbg_reproduction_v2
+frozen_on: '2026-10-13'
+query: (TITLE_ABS:("type 2 diabetes" OR T2DM OR "type II diabetes") OR KW:"Diabetes
+  Mellitus, Type 2") AND (TITLE_ABS:(probiotic* OR synbiotic* OR lactobacill* OR bifidobacter*
+  OR saccharomyces OR yeast OR streptococc* OR enterococc* OR "gut microbiota" OR
+  "intestinal microbia" OR yogurt OR yoghurt) OR KW:Probiotics) AND FIRST_PDATE:[1900-01-01
+  TO 2016-04-12] AND SRC:MED
+eligibility: Human randomized controlled trials in people with type 2 diabetes, published
+  by 2016-04-12, full English article. Interventions are probiotic agents, synbiotic
+  products or nutritional brewer yeast (including inactivated Saccharomyces); controls
+  may be placebo, conventional matched food, no active supplement or dietary advice.
+  This operational reconstruction follows the published included intervention/comparator
+  scope, which is broader than its stated placebo/probiotic-only criteria. Exclude
+  other diabetes types, nonrandomized and animal studies. Extract unadjusted fasting
+  blood glucose endpoint means and dispersions at end of treatment; no change-score
+  SMD.
+outcome: FBG
+unit: dimensionless
+allowed_source_units:
+- mmol/L
+- mg/dL
+value_type: endpoint
+measure: SMD
+model: random
+timing_rule: end of treatment
+dependence_rule: one independent parallel comparison per trial; unresolved multiarm/crossover
+  excluded from pooling
+dispersion_policy: within_arm_se_to_sd_v1
+evaluation_scope: Post-hoc development reproduction; primary-source extraction separated
+  from reference targets
+method_sources:
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC4937966/
+eligibility_contract: Observed review inclusion reconstruction; divergence from stated
+  placebo-only/live-probiotic methods explicitly audited
+search_date_note: Published search terms broadened through yeast synonyms; accessible
+  MED implementation cannot recreate EMBASE/Cochrane or historical index snapshots.
+search_implementation: Title/abstract and MeSH/publisher keyword bibliographic fields,
+  not default Europe PMC fulltext searching. Translated accessible MED query; not
+  a reconstruction of unavailable EMBASE/Cochrane searches.
+validate_query_fields: true

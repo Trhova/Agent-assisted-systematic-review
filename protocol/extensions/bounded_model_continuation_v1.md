@@ -1,0 +1,13 @@
+# Bounded model continuation v1
+
+This operational policy recovers interrupted model-request work; it does not adjudicate studies or modify scientific contracts. Only explicit model identity, Codex backend, version1 isolated/no-web request contracts are supported. Source requests, source/success cache contents and executing Python must match the frozen manifest.
+
+Run only after reconciling that the source review/RoB runner is inactive. A shared ledger and nonblocking per-request lock coordinate recovery invocations using that ledger across different output directories. They do not lock unrelated ordinary model_json calls; single-operator reconciliation remains required. Use the same durable ledger for this installation; do not reset it to gain retries.
+
+First reuse exact successful requests with schema, digest and matching isolated raw-response verification. A valid negative scientific verdict is a successful request and is never retried to force agreement. Otherwise allow one outer adapter invocation only for a confirmed terminal turn.failed503/429. Earlier transient stderr cannot override a final permanent error. Unknown/no-response submissions, timeouts, tool-policy violations, validation results and ambiguous exceptions are blocked. A submitting ledger entry left by a crash remains uncertain until reconciled against verified success; process exit alone is not permission to resubmit.
+
+Recovery opts into model_json(max_attempts=1). The Codex CLI may retry transport internally; this bounds adapter invocations, not unseen provider attempts. Existing normal-call default remains2 for compatibility with historical behavior. Intent is durably recorded before the call. Confirmed failure exhausts the one-attempt budget; a new output path cannot reset it.
+
+Minimum cooldown is15minutes. Retry-After delay-seconds or HTTP-date is honored when available. New receipts record response_received_epoch. Legacy receipts use preserved file modification time, explicitly labeled as a conservative fallback; copies can defer work further. A malformed header blocks automatic retry. References: RFC9110§10.2.3 https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3 and RFC6585§4 https://www.rfc-editor.org/rfc/rfc6585.html#section-4 (consulted14October2026). Absence of a header is not evidence of immediate recovery.
+
+`ASR_MODEL_CACHE_ONLY=1` prevents new adapter calls in downstream replay. A continuation manifest can also set allow_new_adapter_calls:false. Outputs provide a complete verified successor model cache plus request-level state/provenance. Import into a fresh isolated runner using the existing verified-cache route; do not overwrite original failed artifacts. Scientific/source/family/eligibility checks still run downstream.

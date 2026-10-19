@@ -1,0 +1,555 @@
+{
+  "specification_sha256": "61649b6522abfdb338e0f3ead443af589f750510d075f2d66da09e57398d6e7c",
+  "cases": {
+    "ma2013": {
+      "policy": "artifact_consistency_v1",
+      "run": "data/benchmarks/reproduction_v3_final/ma2013_nafld_alt_reproduction_v2/bb8851b1d3fc",
+      "valid": true,
+      "issues": [],
+      "artifact_sha256": {
+        "status.json": "f41d0fb5307c8ba2c5b861fa5e6c5b33c96071d3c55df3a96e2b8b0796cd6d71",
+        "protocol.json": "bb8851b1d3fc20f7f61fd5eefb9062a7cc3be230f912f51fff17c44c81950b5c",
+        "code_snapshots/ce5957d1dfe2bf3a41d2fa113d9ba7ac85c60a9d860bc18d0feaf4aceaf40388.json": "ce5957d1dfe2bf3a41d2fa113d9ba7ac85c60a9d860bc18d0feaf4aceaf40388",
+        "accepted.json": "043987328fd151ba3f4ce2ebbca086e5529ec7d502a89f580669e2f716e9669a",
+        "extractions.json": "fd1602891d25fcf8e1e5679d1906169f31b060ef1cd86392fbcbfac5d8f6e557",
+        "trial_families.json": "22486e86c8f7c6a37068677326a9e1ce66dce6e426630ce2ebb4847c3da04f37",
+        "family_links.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "screening.json": "4e6e557584cec6037b5404dfaf214633d58da296ea35bd7a3d6d4990a3d58b25",
+        "search.json": "cc136611a7f217ee30d7f3f102a68d75681e5a6472b35630a97bbe85a9ac4cff",
+        "sources/23396737/text.json": "a423685872ae350e5bf4133c9b51cc3e60053a5a7b9e29224c351c59f1d7cd52",
+        "sources/23638162/text.json": "5687bd22cc0b6d37967c99b289239cfbe44244f0a45475a73f538693bb5aeaed",
+        "sources/22013734/text.json": "249b33dd5bbb7f9741d7cbb5c2bec5785ac4d8ff4d4917780a578144c22a175d",
+        "sources/23930163/text.json": "25dc910070a564f0ce38a539079cb0b4b61df3c2b6b9bf93c26443050410ff81",
+        "sources/21901256/text.json": "288ddda7a097afbdf1bc02ba157f335e6b46c0bb7429bac03441bceae480778d"
+      },
+      "limitations": [
+        "Internal consistency and deterministic replay do not independently establish the scientific truth of model decisions.",
+        "Hashes detect inconsistent artifacts; this is not a signed attestation against coordinated alteration.",
+        "Replay uses the current audited implementation; historical method changes can require separate evaluation."
+      ],
+      "run_status": "incomplete",
+      "model": "gpt-6-astra",
+      "backend": "codex",
+      "code_sha256": "ce5957d1dfe2bf3a41d2fa113d9ba7ac85c60a9d860bc18d0feaf4aceaf40388",
+      "observed_counts": {
+        "screened": 108,
+        "fulltexts_attempted": 15,
+        "accepted_effects": 1,
+        "independent_effects": 1,
+        "abstract_candidates": 15,
+        "unresolved": 14
+      },
+      "completion_supported": false,
+      "auditor_sha256": "7b45a15f3701a94c3c11584827962486e577680ebaf796384d2d2011a90c5eb5"
+    },
+    "li2016": {
+      "policy": "artifact_consistency_v1",
+      "run": "data/benchmarks/reproduction_v3_final/li2016_t2d_fbg_reproduction_v3/664e53794051",
+      "valid": true,
+      "issues": [],
+      "artifact_sha256": {
+        "status.json": "0a7f13199c94efa6742d55bf3275bccf9264b2d4d00f0c098bb168df24392aba",
+        "protocol.json": "664e537940510b3e7edd20e3bc864b728da54a9e9bfdf7a6c81bd3392601d157",
+        "code_snapshots/ce5957d1dfe2bf3a41d2fa113d9ba7ac85c60a9d860bc18d0feaf4aceaf40388.json": "ce5957d1dfe2bf3a41d2fa113d9ba7ac85c60a9d860bc18d0feaf4aceaf40388",
+        "accepted.json": "3645ee05951b0eefdabf5a326f2a936159d6b605fb4a2873b27d1fd1808d8529",
+        "extractions.json": "6fcbaedfae451ab98192fd577a0e84ae5b3a92c621f375cea764c85874361d5f",
+        "trial_families.json": "410fa7a2b3469b2539e767217fd6b51c8714579488c4c7b9fe53b0e002f12845",
+        "family_links.json": "fe37e4efb3d5ff3e79d7f5f698a91d26bf45dd295e675f2fe3f388b96105d62b",
+        "screening.json": "d41709bd62534061062328d5bcf33bc055fda97ebadb5ef6d0a20feba3cfa58c",
+        "search.json": "0117c79cd09475127063c1acfa60006b57dac965b80247e68b4fe4dfb6aa74b4",
+        "sources/26988693/text.json": "261f50dc20419a2905836acb29f7aee0b8ea6cc37df346762d933ff253c65eff",
+        "sources/25197295/text.json": "bc2c0bfe254a99457d735d044cca4dfd28b2fd2483cc498c3aee66558e2250af",
+        "sources/26955460/text.json": "aab3a778c41ba9e8cf00abb0332a6fb781c9384d852588124b4f6cb938409745",
+        "sources/26153197/text.json": "2b67c7d6dfd28ed5d99c161fef69612b02a6983faa40869d30752ce316367ed1",
+        "sources/22356933/text.json": "c61e5a9c081ce9001fedf601d5e871307c9f9e4802712b3ef70e017257216487",
+        "sources/26654906/text.json": "915bb1359a33fe4f41f5eb7e07ffd6beb37aaeb3ce80238e8e744b0dc1dc235e",
+        "sources/20815975/text.json": "47345d263bfdfa66fb398dbb1e2b83b430bb95e1bf890e4c1690eaa33a2a864d",
+        "sources/26261453/text.json": "c400d92553ba0dd54db6ecc4ee157886c7e94ed22ee8d77422339eb8f978d4d7",
+        "sources/23967428/text.json": "a0c18a2c784eed2acb5bd05937318f0e38325bb65ce184a14065a2acaffc838e",
+        "sources/24319552/text.json": "e5d7d0b595d76d5d1abed2b1c7e2c09a42b21d5c3abe90d187b7f020662cf85e",
+        "sources/29805870/text.json": "1edce737a0dfea33ff928d8c2d9f97e7104b63ef5d363b86bd65e2c53f034e85",
+        "sources/26577825/text.json": "7b8edf98657dca200d50557a7023e134e5211a173211ac29ed15894e01d4c663",
+        "sources/11376359/text.json": "4642855e41104f9da468aefedf44022e7b22f60af2e5f01951dbadc068ad6a9f",
+        "sources/25905057/text.json": "374a6687bcec85619db1bea5985270d78cd49a6f910ecdba201ffb6f5ea48c91",
+        "sources/31565493/text.json": "c97e3eec3423e141da3d6c5e44561f0245a98350031569763d1fca83147a6e3a",
+        "sources/23645956/text.json": "9943afdd57677ac0474a3da8119e7390d71f578cad9c61e13d19f07c33068468",
+        "sources/26478871/text.json": "a9ba9a24353059390648edd2f40c314a599c0bf8a9ed699b3950b2f28ad5c0f7",
+        "synthesis.json": "8b4750d1f4f457afa8e726b341a1f29dd3c7c8d8087fb770ded48e716e19a050"
+      },
+      "limitations": [
+        "Internal consistency and deterministic replay do not independently establish the scientific truth of model decisions.",
+        "Hashes detect inconsistent artifacts; this is not a signed attestation against coordinated alteration.",
+        "Replay uses the current audited implementation; historical method changes can require separate evaluation."
+      ],
+      "run_status": "incomplete",
+      "model": "gpt-6-astra",
+      "backend": "codex",
+      "code_sha256": "ce5957d1dfe2bf3a41d2fa113d9ba7ac85c60a9d860bc18d0feaf4aceaf40388",
+      "observed_counts": {
+        "screened": 688,
+        "fulltexts_attempted": 31,
+        "accepted_effects": 4,
+        "independent_effects": 4,
+        "abstract_candidates": 31,
+        "unresolved": 23
+      },
+      "completion_supported": false,
+      "replayed_synthesis": {
+        "k": 4,
+        "estimate": -0.4004663531005165,
+        "ci_low": -0.7971885931445384,
+        "ci_high": -0.0037441130564945246,
+        "I2": 57.00091784003559,
+        "tau2": 0.09115149941188234
+      },
+      "auditor_sha256": "7b45a15f3701a94c3c11584827962486e577680ebaf796384d2d2011a90c5eb5"
+    },
+    "rawat2021_all_routes": {
+      "policy": "artifact_consistency_v1",
+      "run": "data/benchmarks/rawat2021_v1_repair2/rawat2021_covid_hospital_stay_v1/b99a2892bf59",
+      "valid": true,
+      "issues": [],
+      "artifact_sha256": {
+        "status.json": "1a65c2eb497380ff66dcde82ae809afe6179522665ca9833ac23f2e2b0116b94",
+        "protocol.json": "b99a2892bf59a418a7ec718c81c66bab7d43afc703b44b2e19c4c0f9a8e6ef2d",
+        "code_snapshots/ecc7b11c91fbb49bc901e6239eece0af61c4f06fe9c7dea01c622ab4d1467adb.json": "ecc7b11c91fbb49bc901e6239eece0af61c4f06fe9c7dea01c622ab4d1467adb",
+        "accepted.json": "239e09c1dc0c15a4d9515b1e4cad5fc8c77ffaeae0152ac3e000433204e23355",
+        "extractions.json": "172d8f39a62beb4374f1895119570fcfc7dec53805b0a77a59ee0f857b6e2f22",
+        "trial_families.json": "eca65e3f6b27ee11e640e7a9a085bfc389da82305b80bbb059cd16cfa7a6bd5a",
+        "family_links.json": "b70645534064a1daa0adaad187cb8110149e9d0148e800a2b48deecef71b7d91",
+        "screening.json": "f6dfb7ea20d37904d527efb2111975cc209752cbfea54779735a9774427cb8db",
+        "search.json": "877b7b34ee53caec026e92e7fa97d62ba98e7afd5fd9cc949429db299f029708",
+        "search_supplement.json": "33edda0f10e45edaa17025b6cdbe09d73b2feaadb67ea781bb801345674c6bb9",
+        "frozen_bibliographic_supplement.json": "33edda0f10e45edaa17025b6cdbe09d73b2feaadb67ea781bb801345674c6bb9",
+        "sources/38046392/text.json": "996a845bfe2e4b224c384b9bb2ce93c1a68429b2b72ba4dcc43cbe2d615d632a",
+        "sources/33409026/text.json": "80058448c1a2df22481de792252977be4e21b3bff03f7f6a21893abc6e06bf89",
+        "sources/33420963/text.json": "6c4873d326c4a644d1d08eb053124994f2305b99d155de6cfa1da5ba9c45c72d",
+        "sources/33716536/text.json": "8d15e9c5a0762d000a26e1aa453190e0895674850706a4d478dceba4ad453774",
+        "sources/33680348/text.json": "dcb5b48e572b1d552b85422458004b70cb022ef7f41949612f7f8bb09d2f910b",
+        "sources/33573699/text.json": "bb6054bace4b918c0fb63e28e71f1b96318fc6e66d0bae94c79e81002b064157",
+        "sources/34803451/text.json": "615d94c2483bdc9698f6e40f8d8b6e83abff2639d9186f254ceccfa5c8e3c184",
+        "sources/doi-10.34172-ipp.2022.08/text.json": "a181e9185877569e8bca31b6abf7901b9db3cc19c0f67d863bb010ec047195d6",
+        "synthesis.json": "d6f64656a264cb5627e129ef866fe8d1a6a5aba75c5d994ebde154210b4cec1e"
+      },
+      "limitations": [
+        "Internal consistency and deterministic replay do not independently establish the scientific truth of model decisions.",
+        "Hashes detect inconsistent artifacts; this is not a signed attestation against coordinated alteration.",
+        "Replay uses the current audited implementation; historical method changes can require separate evaluation."
+      ],
+      "run_status": "incomplete",
+      "model": "gpt-6-astra",
+      "backend": "codex",
+      "code_sha256": "ecc7b11c91fbb49bc901e6239eece0af61c4f06fe9c7dea01c622ab4d1467adb",
+      "observed_counts": {
+        "screened": 230,
+        "fulltexts_attempted": 8,
+        "accepted_effects": 3,
+        "independent_effects": 3,
+        "abstract_candidates": 8,
+        "unresolved": 2
+      },
+      "completion_supported": false,
+      "replayed_synthesis": {
+        "k": 3,
+        "estimate": -0.2957338720194092,
+        "ci_low": -1.3892725962088668,
+        "ci_high": 0.7978048521700485,
+        "I2": 94.15358138430358,
+        "tau2": 0.877039507693203
+      },
+      "auditor_sha256": "7b45a15f3701a94c3c11584827962486e577680ebaf796384d2d2011a90c5eb5"
+    },
+    "rawat2021_iv": {
+      "policy": "artifact_consistency_v1",
+      "run": "data/benchmarks/rawat2021_iv_v1/rawat2021_iv_covid_hospital_stay_v1/64f1fbb555e4",
+      "valid": true,
+      "issues": [],
+      "artifact_sha256": {
+        "status.json": "31f68eea0154eefe2a121bbdfa447d93bb7419976f3292890cf690e0bae1c565",
+        "protocol.json": "64f1fbb555e4a3427e1d52522505d2cf4756c3f9a4dda42b64f5e2e5b51ada80",
+        "code_snapshots/e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745.json": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+        "accepted.json": "015164a40d80906b1ebe80eeae8da212c08adf197acd9ca7c839e30bbf3a2cde",
+        "extractions.json": "c03ad031ae20d1b13d97c9df2dc2dbcf7f6caa069b0000bfafba72be27932e31",
+        "trial_families.json": "ac5e26c8d5ea82da8a2a012d3276b8d9478c7be0bcb300370aab76ebee216995",
+        "family_links.json": "a6a6b574c4f9dd9d3a8cc55efa8e3930fb4b261e3911eb7919d7f7b8b9f98491",
+        "screening.json": "fe2f47086189dcde2dc993c2622df997b65c06fd4fede8b4eb1407182ea356fe",
+        "search.json": "877b7b34ee53caec026e92e7fa97d62ba98e7afd5fd9cc949429db299f029708",
+        "search_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+        "frozen_bibliographic_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+        "sources/38046392/text.json": "996a845bfe2e4b224c384b9bb2ce93c1a68429b2b72ba4dcc43cbe2d615d632a",
+        "sources/33081436/text.json": "199f1086a1b63c1232476692cd121321b2f5037ef262fd72a1dcbb420dcd4766",
+        "sources/33409026/text.json": "80058448c1a2df22481de792252977be4e21b3bff03f7f6a21893abc6e06bf89",
+        "sources/33420963/text.json": "6c4873d326c4a644d1d08eb053124994f2305b99d155de6cfa1da5ba9c45c72d",
+        "sources/33716536/text.json": "8d15e9c5a0762d000a26e1aa453190e0895674850706a4d478dceba4ad453774",
+        "sources/33680348/text.json": "dcb5b48e572b1d552b85422458004b70cb022ef7f41949612f7f8bb09d2f910b",
+        "sources/34513613/text.json": "e45870603d40ffbd22081001c9235b1277765d8feb7f3402402923da29a676d0",
+        "sources/35370379/text.json": "698180025e8df7dc2ac9d00e6bfb810505d6778e6844b9b30545d8800c7f60bb",
+        "sources/33573699/text.json": "bb6054bace4b918c0fb63e28e71f1b96318fc6e66d0bae94c79e81002b064157",
+        "sources/34803451/text.json": "615d94c2483bdc9698f6e40f8d8b6e83abff2639d9186f254ceccfa5c8e3c184",
+        "sources/doi-10.34172-ipp.2022.08/text.json": "a181e9185877569e8bca31b6abf7901b9db3cc19c0f67d863bb010ec047195d6",
+        "sources/doi-10.22037-jcma.v6i2.32182/text.json": "4eb9f089cb861771e8b4eac0b128e6db506a2dea73e18b04f18ac5bfbbcbc339",
+        "synthesis.json": "611a3c3d5a6fce5a9d873763c550c1d79ec20312f03dc713fc20e0fd0d0f5f73"
+      },
+      "limitations": [
+        "Internal consistency and deterministic replay do not independently establish the scientific truth of model decisions.",
+        "Hashes detect inconsistent artifacts; this is not a signed attestation against coordinated alteration.",
+        "Replay uses the current audited implementation; historical method changes can require separate evaluation."
+      ],
+      "run_status": "incomplete",
+      "model": "gpt-6-astra",
+      "backend": "codex",
+      "code_sha256": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+      "observed_counts": {
+        "screened": 231,
+        "fulltexts_attempted": 12,
+        "accepted_effects": 3,
+        "independent_effects": 3,
+        "abstract_candidates": 12,
+        "unresolved": 1
+      },
+      "completion_supported": false,
+      "replayed_synthesis": {
+        "k": 3,
+        "estimate": -0.2957338720194092,
+        "ci_low": -1.3892725962088668,
+        "ci_high": 0.7978048521700485,
+        "I2": 94.15358138430358,
+        "tau2": 0.877039507693203
+      },
+      "auditor_sha256": "7b45a15f3701a94c3c11584827962486e577680ebaf796384d2d2011a90c5eb5"
+    }
+  },
+  "corruptions": {
+    "synthesis_estimate": {
+      "audit": {
+        "policy": "artifact_consistency_v1",
+        "run": "data/benchmarks/artifact_consistency_v1/corruptions/synthesis_estimate",
+        "valid": false,
+        "issues": [
+          "synthesis_replay"
+        ],
+        "artifact_sha256": {
+          "status.json": "31f68eea0154eefe2a121bbdfa447d93bb7419976f3292890cf690e0bae1c565",
+          "protocol.json": "64f1fbb555e4a3427e1d52522505d2cf4756c3f9a4dda42b64f5e2e5b51ada80",
+          "code_snapshots/e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745.json": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+          "accepted.json": "015164a40d80906b1ebe80eeae8da212c08adf197acd9ca7c839e30bbf3a2cde",
+          "extractions.json": "c03ad031ae20d1b13d97c9df2dc2dbcf7f6caa069b0000bfafba72be27932e31",
+          "trial_families.json": "ac5e26c8d5ea82da8a2a012d3276b8d9478c7be0bcb300370aab76ebee216995",
+          "family_links.json": "a6a6b574c4f9dd9d3a8cc55efa8e3930fb4b261e3911eb7919d7f7b8b9f98491",
+          "screening.json": "fe2f47086189dcde2dc993c2622df997b65c06fd4fede8b4eb1407182ea356fe",
+          "search.json": "877b7b34ee53caec026e92e7fa97d62ba98e7afd5fd9cc949429db299f029708",
+          "search_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+          "frozen_bibliographic_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+          "sources/38046392/text.json": "996a845bfe2e4b224c384b9bb2ce93c1a68429b2b72ba4dcc43cbe2d615d632a",
+          "sources/33081436/text.json": "199f1086a1b63c1232476692cd121321b2f5037ef262fd72a1dcbb420dcd4766",
+          "sources/33409026/text.json": "80058448c1a2df22481de792252977be4e21b3bff03f7f6a21893abc6e06bf89",
+          "sources/33420963/text.json": "6c4873d326c4a644d1d08eb053124994f2305b99d155de6cfa1da5ba9c45c72d",
+          "sources/33716536/text.json": "8d15e9c5a0762d000a26e1aa453190e0895674850706a4d478dceba4ad453774",
+          "sources/33680348/text.json": "dcb5b48e572b1d552b85422458004b70cb022ef7f41949612f7f8bb09d2f910b",
+          "sources/34513613/text.json": "e45870603d40ffbd22081001c9235b1277765d8feb7f3402402923da29a676d0",
+          "sources/35370379/text.json": "698180025e8df7dc2ac9d00e6bfb810505d6778e6844b9b30545d8800c7f60bb",
+          "sources/33573699/text.json": "bb6054bace4b918c0fb63e28e71f1b96318fc6e66d0bae94c79e81002b064157",
+          "sources/34803451/text.json": "615d94c2483bdc9698f6e40f8d8b6e83abff2639d9186f254ceccfa5c8e3c184",
+          "sources/doi-10.34172-ipp.2022.08/text.json": "a181e9185877569e8bca31b6abf7901b9db3cc19c0f67d863bb010ec047195d6",
+          "sources/doi-10.22037-jcma.v6i2.32182/text.json": "4eb9f089cb861771e8b4eac0b128e6db506a2dea73e18b04f18ac5bfbbcbc339",
+          "synthesis.json": "7d64a71281793fd8ba9ffd99ee71e163de280a90a59b7d0663fff05a1c595214"
+        },
+        "limitations": [
+          "Internal consistency and deterministic replay do not independently establish the scientific truth of model decisions.",
+          "Hashes detect inconsistent artifacts; this is not a signed attestation against coordinated alteration.",
+          "Replay uses the current audited implementation; historical method changes can require separate evaluation."
+        ],
+        "run_status": "incomplete",
+        "model": "gpt-6-astra",
+        "backend": "codex",
+        "code_sha256": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+        "observed_counts": {
+          "screened": 231,
+          "fulltexts_attempted": 12,
+          "accepted_effects": 3,
+          "independent_effects": 3,
+          "abstract_candidates": 12,
+          "unresolved": 1
+        },
+        "completion_supported": false,
+        "replayed_synthesis": {
+          "k": 3,
+          "estimate": -0.2957338720194092,
+          "ci_low": -1.3892725962088668,
+          "ci_high": 0.7978048521700485,
+          "I2": 94.15358138430358,
+          "tau2": 0.877039507693203
+        },
+        "auditor_sha256": "7b45a15f3701a94c3c11584827962486e577680ebaf796384d2d2011a90c5eb5"
+      },
+      "reproduced": false,
+      "numerically_matches": true
+    },
+    "source_text": {
+      "audit": {
+        "policy": "artifact_consistency_v1",
+        "run": "data/benchmarks/artifact_consistency_v1/corruptions/source_text",
+        "valid": false,
+        "issues": [
+          "source_hash:38046392"
+        ],
+        "artifact_sha256": {
+          "status.json": "31f68eea0154eefe2a121bbdfa447d93bb7419976f3292890cf690e0bae1c565",
+          "protocol.json": "64f1fbb555e4a3427e1d52522505d2cf4756c3f9a4dda42b64f5e2e5b51ada80",
+          "code_snapshots/e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745.json": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+          "accepted.json": "015164a40d80906b1ebe80eeae8da212c08adf197acd9ca7c839e30bbf3a2cde",
+          "extractions.json": "c03ad031ae20d1b13d97c9df2dc2dbcf7f6caa069b0000bfafba72be27932e31",
+          "trial_families.json": "ac5e26c8d5ea82da8a2a012d3276b8d9478c7be0bcb300370aab76ebee216995",
+          "family_links.json": "a6a6b574c4f9dd9d3a8cc55efa8e3930fb4b261e3911eb7919d7f7b8b9f98491",
+          "screening.json": "fe2f47086189dcde2dc993c2622df997b65c06fd4fede8b4eb1407182ea356fe",
+          "search.json": "877b7b34ee53caec026e92e7fa97d62ba98e7afd5fd9cc949429db299f029708",
+          "search_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+          "frozen_bibliographic_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+          "sources/38046392/text.json": "e22e690d96e4ec8269c147e2a78efa5dbdc57a0107ad212426ce1373bc0ef6db",
+          "sources/33081436/text.json": "199f1086a1b63c1232476692cd121321b2f5037ef262fd72a1dcbb420dcd4766",
+          "sources/33409026/text.json": "80058448c1a2df22481de792252977be4e21b3bff03f7f6a21893abc6e06bf89",
+          "sources/33420963/text.json": "6c4873d326c4a644d1d08eb053124994f2305b99d155de6cfa1da5ba9c45c72d",
+          "sources/33716536/text.json": "8d15e9c5a0762d000a26e1aa453190e0895674850706a4d478dceba4ad453774",
+          "sources/33680348/text.json": "dcb5b48e572b1d552b85422458004b70cb022ef7f41949612f7f8bb09d2f910b",
+          "sources/34513613/text.json": "e45870603d40ffbd22081001c9235b1277765d8feb7f3402402923da29a676d0",
+          "sources/35370379/text.json": "698180025e8df7dc2ac9d00e6bfb810505d6778e6844b9b30545d8800c7f60bb",
+          "sources/33573699/text.json": "bb6054bace4b918c0fb63e28e71f1b96318fc6e66d0bae94c79e81002b064157",
+          "sources/34803451/text.json": "615d94c2483bdc9698f6e40f8d8b6e83abff2639d9186f254ceccfa5c8e3c184",
+          "sources/doi-10.34172-ipp.2022.08/text.json": "a181e9185877569e8bca31b6abf7901b9db3cc19c0f67d863bb010ec047195d6",
+          "sources/doi-10.22037-jcma.v6i2.32182/text.json": "4eb9f089cb861771e8b4eac0b128e6db506a2dea73e18b04f18ac5bfbbcbc339",
+          "synthesis.json": "611a3c3d5a6fce5a9d873763c550c1d79ec20312f03dc713fc20e0fd0d0f5f73"
+        },
+        "limitations": [
+          "Internal consistency and deterministic replay do not independently establish the scientific truth of model decisions.",
+          "Hashes detect inconsistent artifacts; this is not a signed attestation against coordinated alteration.",
+          "Replay uses the current audited implementation; historical method changes can require separate evaluation."
+        ],
+        "run_status": "incomplete",
+        "model": "gpt-6-astra",
+        "backend": "codex",
+        "code_sha256": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+        "observed_counts": {
+          "screened": 231,
+          "fulltexts_attempted": 12,
+          "accepted_effects": 3,
+          "independent_effects": 3,
+          "abstract_candidates": 12,
+          "unresolved": 1
+        },
+        "completion_supported": false,
+        "replayed_synthesis": {
+          "k": 3,
+          "estimate": -0.2957338720194092,
+          "ci_low": -1.3892725962088668,
+          "ci_high": 0.7978048521700485,
+          "I2": 94.15358138430358,
+          "tau2": 0.877039507693203
+        },
+        "auditor_sha256": "7b45a15f3701a94c3c11584827962486e577680ebaf796384d2d2011a90c5eb5"
+      },
+      "reproduced": false,
+      "numerically_matches": true
+    },
+    "family_rows": {
+      "audit": {
+        "policy": "artifact_consistency_v1",
+        "run": "data/benchmarks/artifact_consistency_v1/corruptions/family_rows",
+        "valid": false,
+        "issues": [
+          "family_resolution_replay"
+        ],
+        "artifact_sha256": {
+          "status.json": "31f68eea0154eefe2a121bbdfa447d93bb7419976f3292890cf690e0bae1c565",
+          "protocol.json": "64f1fbb555e4a3427e1d52522505d2cf4756c3f9a4dda42b64f5e2e5b51ada80",
+          "code_snapshots/e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745.json": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+          "accepted.json": "015164a40d80906b1ebe80eeae8da212c08adf197acd9ca7c839e30bbf3a2cde",
+          "extractions.json": "c03ad031ae20d1b13d97c9df2dc2dbcf7f6caa069b0000bfafba72be27932e31",
+          "trial_families.json": "0c18f02e0740ffd5cab9df2fa38a55a70cf538ac601d97bb617830243044a3df",
+          "family_links.json": "a6a6b574c4f9dd9d3a8cc55efa8e3930fb4b261e3911eb7919d7f7b8b9f98491",
+          "screening.json": "fe2f47086189dcde2dc993c2622df997b65c06fd4fede8b4eb1407182ea356fe",
+          "search.json": "877b7b34ee53caec026e92e7fa97d62ba98e7afd5fd9cc949429db299f029708",
+          "search_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+          "frozen_bibliographic_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+          "sources/38046392/text.json": "996a845bfe2e4b224c384b9bb2ce93c1a68429b2b72ba4dcc43cbe2d615d632a",
+          "sources/33081436/text.json": "199f1086a1b63c1232476692cd121321b2f5037ef262fd72a1dcbb420dcd4766",
+          "sources/33409026/text.json": "80058448c1a2df22481de792252977be4e21b3bff03f7f6a21893abc6e06bf89",
+          "sources/33420963/text.json": "6c4873d326c4a644d1d08eb053124994f2305b99d155de6cfa1da5ba9c45c72d",
+          "sources/33716536/text.json": "8d15e9c5a0762d000a26e1aa453190e0895674850706a4d478dceba4ad453774",
+          "sources/33680348/text.json": "dcb5b48e572b1d552b85422458004b70cb022ef7f41949612f7f8bb09d2f910b",
+          "sources/34513613/text.json": "e45870603d40ffbd22081001c9235b1277765d8feb7f3402402923da29a676d0",
+          "sources/35370379/text.json": "698180025e8df7dc2ac9d00e6bfb810505d6778e6844b9b30545d8800c7f60bb",
+          "sources/33573699/text.json": "bb6054bace4b918c0fb63e28e71f1b96318fc6e66d0bae94c79e81002b064157",
+          "sources/34803451/text.json": "615d94c2483bdc9698f6e40f8d8b6e83abff2639d9186f254ceccfa5c8e3c184",
+          "sources/doi-10.34172-ipp.2022.08/text.json": "a181e9185877569e8bca31b6abf7901b9db3cc19c0f67d863bb010ec047195d6",
+          "sources/doi-10.22037-jcma.v6i2.32182/text.json": "4eb9f089cb861771e8b4eac0b128e6db506a2dea73e18b04f18ac5bfbbcbc339",
+          "synthesis.json": "611a3c3d5a6fce5a9d873763c550c1d79ec20312f03dc713fc20e0fd0d0f5f73"
+        },
+        "limitations": [
+          "Internal consistency and deterministic replay do not independently establish the scientific truth of model decisions.",
+          "Hashes detect inconsistent artifacts; this is not a signed attestation against coordinated alteration.",
+          "Replay uses the current audited implementation; historical method changes can require separate evaluation."
+        ],
+        "run_status": "incomplete",
+        "model": "gpt-6-astra",
+        "backend": "codex",
+        "code_sha256": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+        "observed_counts": {
+          "screened": 231,
+          "fulltexts_attempted": 12,
+          "accepted_effects": 3,
+          "independent_effects": 3,
+          "abstract_candidates": 12,
+          "unresolved": 1
+        },
+        "completion_supported": false,
+        "replayed_synthesis": {
+          "k": 3,
+          "estimate": -0.2957338720194092,
+          "ci_low": -1.3892725962088668,
+          "ci_high": 0.7978048521700485,
+          "I2": 94.15358138430358,
+          "tau2": 0.877039507693203
+        },
+        "auditor_sha256": "7b45a15f3701a94c3c11584827962486e577680ebaf796384d2d2011a90c5eb5"
+      },
+      "reproduced": false,
+      "numerically_matches": true
+    },
+    "false_completion": {
+      "audit": {
+        "policy": "artifact_consistency_v1",
+        "run": "data/benchmarks/artifact_consistency_v1/corruptions/false_completion",
+        "valid": false,
+        "issues": [
+          "unsupported_complete_status"
+        ],
+        "artifact_sha256": {
+          "status.json": "e2d6edc5c66130e6cccc4231d090477d8e7f82c2d4e88aa10361a0787e2519b9",
+          "protocol.json": "64f1fbb555e4a3427e1d52522505d2cf4756c3f9a4dda42b64f5e2e5b51ada80",
+          "code_snapshots/e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745.json": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+          "accepted.json": "015164a40d80906b1ebe80eeae8da212c08adf197acd9ca7c839e30bbf3a2cde",
+          "extractions.json": "c03ad031ae20d1b13d97c9df2dc2dbcf7f6caa069b0000bfafba72be27932e31",
+          "trial_families.json": "ac5e26c8d5ea82da8a2a012d3276b8d9478c7be0bcb300370aab76ebee216995",
+          "family_links.json": "a6a6b574c4f9dd9d3a8cc55efa8e3930fb4b261e3911eb7919d7f7b8b9f98491",
+          "screening.json": "fe2f47086189dcde2dc993c2622df997b65c06fd4fede8b4eb1407182ea356fe",
+          "search.json": "877b7b34ee53caec026e92e7fa97d62ba98e7afd5fd9cc949429db299f029708",
+          "search_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+          "frozen_bibliographic_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+          "sources/38046392/text.json": "996a845bfe2e4b224c384b9bb2ce93c1a68429b2b72ba4dcc43cbe2d615d632a",
+          "sources/33081436/text.json": "199f1086a1b63c1232476692cd121321b2f5037ef262fd72a1dcbb420dcd4766",
+          "sources/33409026/text.json": "80058448c1a2df22481de792252977be4e21b3bff03f7f6a21893abc6e06bf89",
+          "sources/33420963/text.json": "6c4873d326c4a644d1d08eb053124994f2305b99d155de6cfa1da5ba9c45c72d",
+          "sources/33716536/text.json": "8d15e9c5a0762d000a26e1aa453190e0895674850706a4d478dceba4ad453774",
+          "sources/33680348/text.json": "dcb5b48e572b1d552b85422458004b70cb022ef7f41949612f7f8bb09d2f910b",
+          "sources/34513613/text.json": "e45870603d40ffbd22081001c9235b1277765d8feb7f3402402923da29a676d0",
+          "sources/35370379/text.json": "698180025e8df7dc2ac9d00e6bfb810505d6778e6844b9b30545d8800c7f60bb",
+          "sources/33573699/text.json": "bb6054bace4b918c0fb63e28e71f1b96318fc6e66d0bae94c79e81002b064157",
+          "sources/34803451/text.json": "615d94c2483bdc9698f6e40f8d8b6e83abff2639d9186f254ceccfa5c8e3c184",
+          "sources/doi-10.34172-ipp.2022.08/text.json": "a181e9185877569e8bca31b6abf7901b9db3cc19c0f67d863bb010ec047195d6",
+          "sources/doi-10.22037-jcma.v6i2.32182/text.json": "4eb9f089cb861771e8b4eac0b128e6db506a2dea73e18b04f18ac5bfbbcbc339",
+          "synthesis.json": "611a3c3d5a6fce5a9d873763c550c1d79ec20312f03dc713fc20e0fd0d0f5f73"
+        },
+        "limitations": [
+          "Internal consistency and deterministic replay do not independently establish the scientific truth of model decisions.",
+          "Hashes detect inconsistent artifacts; this is not a signed attestation against coordinated alteration.",
+          "Replay uses the current audited implementation; historical method changes can require separate evaluation."
+        ],
+        "run_status": "complete",
+        "model": "gpt-6-astra",
+        "backend": "codex",
+        "code_sha256": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+        "observed_counts": {
+          "screened": 231,
+          "fulltexts_attempted": 12,
+          "accepted_effects": 3,
+          "independent_effects": 3,
+          "abstract_candidates": 12,
+          "unresolved": 1
+        },
+        "completion_supported": false,
+        "replayed_synthesis": {
+          "k": 3,
+          "estimate": -0.2957338720194092,
+          "ci_low": -1.3892725962088668,
+          "ci_high": 0.7978048521700485,
+          "I2": 94.15358138430358,
+          "tau2": 0.877039507693203
+        },
+        "auditor_sha256": "7b45a15f3701a94c3c11584827962486e577680ebaf796384d2d2011a90c5eb5"
+      },
+      "reproduced": false,
+      "numerically_matches": true
+    },
+    "quartile_derivation": {
+      "audit": {
+        "policy": "artifact_consistency_v1",
+        "run": "data/benchmarks/artifact_consistency_v1/corruptions/quartile_derivation",
+        "valid": false,
+        "issues": [
+          "accepted_extraction_rows_differ",
+          "transformation_audit:33573699",
+          "family_resolution_replay",
+          "synthesis_replay"
+        ],
+        "artifact_sha256": {
+          "status.json": "31f68eea0154eefe2a121bbdfa447d93bb7419976f3292890cf690e0bae1c565",
+          "protocol.json": "64f1fbb555e4a3427e1d52522505d2cf4756c3f9a4dda42b64f5e2e5b51ada80",
+          "code_snapshots/e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745.json": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+          "accepted.json": "b8b86d6c8ee813033e9f5cadb14c1f87e4e464ba5297b24ba1f8762fe8d785f2",
+          "extractions.json": "c03ad031ae20d1b13d97c9df2dc2dbcf7f6caa069b0000bfafba72be27932e31",
+          "trial_families.json": "ac5e26c8d5ea82da8a2a012d3276b8d9478c7be0bcb300370aab76ebee216995",
+          "family_links.json": "a6a6b574c4f9dd9d3a8cc55efa8e3930fb4b261e3911eb7919d7f7b8b9f98491",
+          "screening.json": "fe2f47086189dcde2dc993c2622df997b65c06fd4fede8b4eb1407182ea356fe",
+          "search.json": "877b7b34ee53caec026e92e7fa97d62ba98e7afd5fd9cc949429db299f029708",
+          "search_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+          "frozen_bibliographic_supplement.json": "03eb2ccfed09e252a2f41035d10528b080a20de657c289be37ddec4a7a69be7d",
+          "sources/38046392/text.json": "996a845bfe2e4b224c384b9bb2ce93c1a68429b2b72ba4dcc43cbe2d615d632a",
+          "sources/33081436/text.json": "199f1086a1b63c1232476692cd121321b2f5037ef262fd72a1dcbb420dcd4766",
+          "sources/33409026/text.json": "80058448c1a2df22481de792252977be4e21b3bff03f7f6a21893abc6e06bf89",
+          "sources/33420963/text.json": "6c4873d326c4a644d1d08eb053124994f2305b99d155de6cfa1da5ba9c45c72d",
+          "sources/33716536/text.json": "8d15e9c5a0762d000a26e1aa453190e0895674850706a4d478dceba4ad453774",
+          "sources/33680348/text.json": "dcb5b48e572b1d552b85422458004b70cb022ef7f41949612f7f8bb09d2f910b",
+          "sources/34513613/text.json": "e45870603d40ffbd22081001c9235b1277765d8feb7f3402402923da29a676d0",
+          "sources/35370379/text.json": "698180025e8df7dc2ac9d00e6bfb810505d6778e6844b9b30545d8800c7f60bb",
+          "sources/33573699/text.json": "bb6054bace4b918c0fb63e28e71f1b96318fc6e66d0bae94c79e81002b064157",
+          "sources/34803451/text.json": "615d94c2483bdc9698f6e40f8d8b6e83abff2639d9186f254ceccfa5c8e3c184",
+          "sources/doi-10.34172-ipp.2022.08/text.json": "a181e9185877569e8bca31b6abf7901b9db3cc19c0f67d863bb010ec047195d6",
+          "sources/doi-10.22037-jcma.v6i2.32182/text.json": "4eb9f089cb861771e8b4eac0b128e6db506a2dea73e18b04f18ac5bfbbcbc339",
+          "synthesis.json": "611a3c3d5a6fce5a9d873763c550c1d79ec20312f03dc713fc20e0fd0d0f5f73"
+        },
+        "limitations": [
+          "Internal consistency and deterministic replay do not independently establish the scientific truth of model decisions.",
+          "Hashes detect inconsistent artifacts; this is not a signed attestation against coordinated alteration.",
+          "Replay uses the current audited implementation; historical method changes can require separate evaluation."
+        ],
+        "run_status": "incomplete",
+        "model": "gpt-6-astra",
+        "backend": "codex",
+        "code_sha256": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+        "observed_counts": {
+          "screened": 231,
+          "fulltexts_attempted": 12,
+          "accepted_effects": 3,
+          "independent_effects": 3,
+          "abstract_candidates": 12,
+          "unresolved": 1
+        },
+        "completion_supported": false,
+        "replayed_synthesis": {
+          "k": 3,
+          "estimate": -0.2957338720194092,
+          "ci_low": -1.3892725962088668,
+          "ci_high": 0.7978048521700485,
+          "I2": 94.15358138430358,
+          "tau2": 0.877039507693203
+        },
+        "auditor_sha256": "7b45a15f3701a94c3c11584827962486e577680ebaf796384d2d2011a90c5eb5"
+      },
+      "reproduced": false,
+      "numerically_matches": true
+    }
+  },
+  "model_execution": false,
+  "originals_unchanged": true,
+  "passed": true
+}

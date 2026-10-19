@@ -1,0 +1,25 @@
+{
+  "id": "popp2021_hospital_mortality_development_v1",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8521385/",
+  "doi": "10.1002/14651858.CD015045.pub2",
+  "outcome": "all_cause_mortality_up_to_28_days",
+  "unit": "dimensionless",
+  "value_type": "binary_rr_mh_fixed_v1",
+  "measure": "RR",
+  "model": "mantel_haenszel_fixed",
+  "estimate": 1.0,
+  "ci_low": 0.93,
+  "ci_high": 1.08,
+  "k": 2,
+  "absolute_tolerance": 0.01,
+  "expected_record_ids": [
+    "32579195",
+    "34672950"
+  ],
+  "expected_review_record_ids": [
+    "32579195",
+    "34672950",
+    "33542047"
+  ],
+  "notes": "Popp2021 published fixed-MH main mortality comparison, Table1 and sensitivity table; original main random-effects result also retained in review but not target here. Complete quantitative outcome, not whole review reproduction. Final RECOVERY companion mapped to preprint Horby2021. Audit primary counts and timing; no forced agreement."
+}

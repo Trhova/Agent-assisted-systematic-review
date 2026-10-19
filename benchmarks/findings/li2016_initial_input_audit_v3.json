@@ -1,0 +1,475 @@
+{
+  "run": "data/benchmarks/reproduction_v3_suite/li2016_t2d_fbg_reproduction_v3/664e53794051",
+  "model": "gpt-6-astra",
+  "code_sha256": "95ac87339be0207ce380bda9b3f832bcf77f9ea5719a2f7b6777c2eabe4db637",
+  "scope": "Evaluator-only comparison with published forest cells; published cells are not adjudicated gold and never model inputs",
+  "results": [
+    {
+      "record_id": "23899653",
+      "reference": {
+        "study_id": "Asemi 2013",
+        "mean_treatment": 145.4,
+        "sd_treatment": 9.5,
+        "n_treatment": 27,
+        "mean_control": 163.3,
+        "sd_control": 12,
+        "n_control": 27,
+        "record_id": "23899653",
+        "unit": "mg/dL",
+        "value_type": "endpoint"
+      },
+      "source_status": "publication_integrity_unresolved",
+      "accepted": false,
+      "missing": [],
+      "comparisons": [
+        {
+          "study_id": "Asemi-2013-trial",
+          "semantically_comparable": true,
+          "original_and_derived": {
+            "n_treatment": 27,
+            "n_control": 27,
+            "mean_treatment": 145.4,
+            "mean_control": 163.3,
+            "sd_treatment": 49.363448015713004,
+            "sd_control": 62.353829072479584
+          },
+          "differences": {
+            "n_treatment": 0,
+            "n_control": 0,
+            "mean_treatment": 0.0,
+            "mean_control": 0.0,
+            "sd_treatment": 39.863448015713004,
+            "sd_control": 50.353829072479584
+          },
+          "dispersion_audit": [
+            {
+              "arm": "treatment",
+              "original_type": "SE",
+              "original_value": 9.5,
+              "unit": "mg/dL",
+              "value_type": "endpoint",
+              "analyzed_n": 27,
+              "denominator_evidence": [
+                "Placebo (n = 27) Probiotic supplement (n = 27) pb",
+                "Analyzed (n = 27) Analyzed (n = 27)"
+              ],
+              "dispersion_evidence": [
+                "Data are means ± SE.",
+                "week 0 week 8 change pa we ek 0 week 8 change pa",
+                "FPG, mg/dl 134.5±9.6 163.3±12 28.8±8.5 0.002 143.8±10.7 145.4±9.5 1.6±6 0.80 0.01"
+              ],
+              "source_locator": "Page 5, Table 3, probiotic supplement week 8 FPG column and table footnote; page 4, Figure 1, analyzed denominators.",
+              "source_sha256": "1d69174006963bdd7fd2225ce2e8b0a0eeac4ff63ee0170154935c697dc0dcc2",
+              "derived_sd": 49.363448015713004,
+              "transformation": "SD=SE*sqrt(analyzed_within_arm_n)"
+            },
+            {
+              "arm": "control",
+              "original_type": "SE",
+              "original_value": 12,
+              "unit": "mg/dL",
+              "value_type": "endpoint",
+              "analyzed_n": 27,
+              "denominator_evidence": [
+                "Placebo (n = 27) Probiotic supplement (n = 27) pb",
+                "Analyzed (n = 27) Analyzed (n = 27)"
+              ],
+              "dispersion_evidence": [
+                "Data are means ± SE.",
+                "week 0 week 8 change pa we ek 0 week 8 change pa",
+                "FPG, mg/dl 134.5±9.6 163.3±12 28.8±8.5 0.002 143.8±10.7 145.4±9.5 1.6±6 0.80 0.01"
+              ],
+              "source_locator": "Page 5, Table 3, placebo week 8 FPG column and table footnote; page 4, Figure 1, analyzed denominators.",
+              "source_sha256": "1d69174006963bdd7fd2225ce2e8b0a0eeac4ff63ee0170154935c697dc0dcc2",
+              "derived_sd": 62.353829072479584,
+              "transformation": "SD=SE*sqrt(analyzed_within_arm_n)"
+            }
+          ],
+          "validation_errors": [
+            "Publication integrity unresolved: Linked Expression of concern in: 37334997"
+          ],
+          "source_sha256": "1d69174006963bdd7fd2225ce2e8b0a0eeac4ff63ee0170154935c697dc0dcc2"
+        }
+      ]
+    },
+    {
+      "record_id": "26955460",
+      "reference": {
+        "study_id": "Bayat 2016",
+        "mean_treatment": 126.25,
+        "sd_treatment": 34.01,
+        "n_treatment": 20,
+        "mean_control": 165.5,
+        "sd_control": 41.34,
+        "n_control": 20,
+        "record_id": "26955460",
+        "unit": "mg/dL",
+        "value_type": "endpoint"
+      },
+      "source_status": "extracted",
+      "accepted": true,
+      "missing": [],
+      "comparisons": [
+        {
+          "study_id": "IRCT2013041311763N7",
+          "semantically_comparable": true,
+          "original_and_derived": {
+            "n_treatment": 20,
+            "n_control": 20,
+            "mean_treatment": 126.25,
+            "mean_control": 165.5,
+            "sd_treatment": 34.01,
+            "sd_control": 41.34
+          },
+          "differences": {
+            "n_treatment": 0,
+            "n_control": 0,
+            "mean_treatment": 0.0,
+            "mean_control": 0.0,
+            "sd_treatment": 0.0,
+            "sd_control": 0.0
+          },
+          "dispersion_audit": [
+            {
+              "arm": "treatment",
+              "original_type": "SD",
+              "original_value": 34.01,
+              "unit": "mg/dL",
+              "value_type": "endpoint",
+              "analyzed_n": 20,
+              "denominator_evidence": [
+                "All 80 subjects completed the study (28.4 ± 2.9 y; body mass index, 23.1 ± 0.9 kg/m 2 ).",
+                "After 8 weeks intervention",
+                "Yogurt Pumpkin Yogurt + pumpkin Control",
+                "(20 patients) (20 patients) (20 patients) (20 patients)"
+              ],
+              "dispersion_evidence": [
+                "All quantitative variables have been reported as mean ± standard deviation, and qualitative variables as frequency (percent).",
+                "After 165.50±41.34 123.95±21.98 126.25±34.01 115.0±22.40"
+              ],
+              "source_locator": "PDF page 4, Table 3, FBS After row, Yogurt column; statistical analysis in article text/PDF page 2; Figure 1, PDF page 5, postintervention counts; Results, PDF page 3.",
+              "source_sha256": "6ddfa1d1173b8dc4154d8d130e2a2478e354ce23697c16d0479df91fd73eeba5",
+              "derived_sd": 34.01,
+              "transformation": "reported_SD"
+            },
+            {
+              "arm": "control",
+              "original_type": "SD",
+              "original_value": 41.34,
+              "unit": "mg/dL",
+              "value_type": "endpoint",
+              "analyzed_n": 20,
+              "denominator_evidence": [
+                "All 80 subjects completed the study (28.4 ± 2.9 y; body mass index, 23.1 ± 0.9 kg/m 2 ).",
+                "After 8 weeks intervention",
+                "Yogurt Pumpkin Yogurt + pumpkin Control",
+                "(20 patients) (20 patients) (20 patients) (20 patients)"
+              ],
+              "dispersion_evidence": [
+                "All quantitative variables have been reported as mean ± standard deviation, and qualitative variables as frequency (percent).",
+                "After 165.50±41.34 123.95±21.98 126.25±34.01 115.0±22.40"
+              ],
+              "source_locator": "PDF page 4, Table 3, FBS After row, Control column; statistical analysis in article text/PDF page 2; Figure 1, PDF page 5, postintervention counts; Results, PDF page 3.",
+              "source_sha256": "6ddfa1d1173b8dc4154d8d130e2a2478e354ce23697c16d0479df91fd73eeba5",
+              "derived_sd": 41.34,
+              "transformation": "reported_SD"
+            }
+          ],
+          "validation_errors": [],
+          "source_sha256": "6ddfa1d1173b8dc4154d8d130e2a2478e354ce23697c16d0479df91fd73eeba5"
+        }
+      ]
+    },
+    {
+      "record_id": "22129852",
+      "reference": {
+        "study_id": "Ejtahed 2012",
+        "mean_treatment": 7.36,
+        "sd_treatment": 2.41,
+        "n_treatment": 30,
+        "mean_control": 7.53,
+        "sd_control": 1.32,
+        "n_control": 30,
+        "record_id": "22129852",
+        "unit": "mmol/L",
+        "value_type": "endpoint"
+      },
+      "source_status": "missing_fulltext",
+      "accepted": false,
+      "missing": [],
+      "comparisons": []
+    },
+    {
+      "record_id": "26988693",
+      "reference": {
+        "study_id": "Firouzi 2016",
+        "mean_treatment": 7.2,
+        "sd_treatment": 1.2,
+        "n_treatment": 48,
+        "mean_control": 8.2,
+        "sd_control": 2.3,
+        "n_control": 53,
+        "record_id": "26988693",
+        "unit": "mmol/L",
+        "value_type": "endpoint"
+      },
+      "source_status": "error",
+      "accepted": false,
+      "missing": [],
+      "comparisons": [
+        {
+          "study_id": "NCT01752803",
+          "semantically_comparable": true,
+          "original_and_derived": {
+            "n_treatment": 48,
+            "n_control": 53,
+            "mean_treatment": 7.2,
+            "mean_control": 8.2,
+            "sd_treatment": 1.2,
+            "sd_control": 2.3
+          },
+          "differences": {
+            "n_treatment": 0,
+            "n_control": 0,
+            "mean_treatment": 0.0,
+            "mean_control": 0.0,
+            "sd_treatment": 0.0,
+            "sd_control": 0.0
+          },
+          "dispersion_audit": [],
+          "validation_errors": [],
+          "source_sha256": "38152b7b3cb561dbb86f2e02ecb2595da9ab9b522f64f3fa9a5daac78db774b5"
+        }
+      ]
+    },
+    {
+      "record_id": "24319552",
+      "reference": {
+        "study_id": "Hosseinzadeh 2013",
+        "mean_treatment": 163.3,
+        "sd_treatment": 53.3,
+        "n_treatment": 42,
+        "mean_control": 166.9,
+        "sd_control": 44.6,
+        "n_control": 42,
+        "record_id": "24319552",
+        "unit": "mg/dL",
+        "value_type": "endpoint"
+      },
+      "source_status": "extracted",
+      "accepted": true,
+      "missing": [],
+      "comparisons": [
+        {
+          "study_id": "IRCT138807062513N1",
+          "semantically_comparable": true,
+          "original_and_derived": {
+            "n_treatment": 42,
+            "n_control": 42,
+            "mean_treatment": 163.3,
+            "mean_control": 166.9,
+            "sd_treatment": 53.3,
+            "sd_control": 44.6
+          },
+          "differences": {
+            "n_treatment": 0,
+            "n_control": 0,
+            "mean_treatment": 0.0,
+            "mean_control": 0.0,
+            "sd_treatment": 0.0,
+            "sd_control": 0.0
+          },
+          "dispersion_audit": [
+            {
+              "arm": "treatment",
+              "original_type": "SD",
+              "original_value": 53.3,
+              "unit": "mg/dL",
+              "value_type": "endpoint",
+              "analyzed_n": 42,
+              "denominator_evidence": [
+                "During the intervention, five volunteers were excluded and 84 subjects (63 women and 21 men volunteers) finished the research finally [ Figure 1 ].",
+                "Participants of the brewer's yeast group received 1800 mg brewer's yeast (two 300 mg tablets three times daily;  N :42) for 12 weeks and placebo group ( N :42) received equal quantities of pills containing excipient without brewer's yeast for the same period of time.",
+                "Variables Brewer’s yeast Placebo Total",
+                "Number of patients 42 42 84"
+              ],
+              "dispersion_evidence": [
+                "index, HOMA‑IR=Homeostasis model assessment of insulin resistance, BMI=Body mass index, ¶Data are fasting values,\nexpressed as mean±standard deviation; Significant difference when compared with the baseline values (Paired t‑test): *P<0.05;"
+              ],
+              "source_locator": "Table 3, PDF page 5 (printed page 1135), FBS row and footnote; Methods, Patients and research design; Table 1, PDF page 4 (printed page 1134).",
+              "source_sha256": "1373603ec5b03979af472b34ee78c7b73bbfa2fedee4bfbdb8e4180234a2e71f",
+              "derived_sd": 53.3,
+              "transformation": "reported_SD"
+            },
+            {
+              "arm": "control",
+              "original_type": "SD",
+              "original_value": 44.6,
+              "unit": "mg/dL",
+              "value_type": "endpoint",
+              "analyzed_n": 42,
+              "denominator_evidence": [
+                "During the intervention, five volunteers were excluded and 84 subjects (63 women and 21 men volunteers) finished the research finally [ Figure 1 ].",
+                "Participants of the brewer's yeast group received 1800 mg brewer's yeast (two 300 mg tablets three times daily;  N :42) for 12 weeks and placebo group ( N :42) received equal quantities of pills containing excipient without brewer's yeast for the same period of time.",
+                "Variables Brewer’s yeast Placebo Total",
+                "Number of patients 42 42 84"
+              ],
+              "dispersion_evidence": [
+                "index, HOMA‑IR=Homeostasis model assessment of insulin resistance, BMI=Body mass index, ¶Data are fasting values,\nexpressed as mean±standard deviation; Significant difference when compared with the baseline values (Paired t‑test): *P<0.05;"
+              ],
+              "source_locator": "Table 3, PDF page 5 (printed page 1135), FBS row and footnote; Methods, Patients and research design; Table 1, PDF page 4 (printed page 1134).",
+              "source_sha256": "1373603ec5b03979af472b34ee78c7b73bbfa2fedee4bfbdb8e4180234a2e71f",
+              "derived_sd": 44.6,
+              "transformation": "reported_SD"
+            }
+          ],
+          "validation_errors": [],
+          "source_sha256": "1373603ec5b03979af472b34ee78c7b73bbfa2fedee4bfbdb8e4180234a2e71f"
+        }
+      ]
+    },
+    {
+      "record_id": "25300285",
+      "reference": {
+        "study_id": "Hove 2015",
+        "mean_treatment": 7.9,
+        "sd_treatment": 1.926,
+        "n_treatment": 23,
+        "mean_control": 9.9,
+        "sd_control": 3.407,
+        "n_control": 18,
+        "record_id": "25300285",
+        "unit": "mmol/L",
+        "value_type": "endpoint"
+      },
+      "source_status": "missing_fulltext",
+      "accepted": false,
+      "missing": [],
+      "comparisons": []
+    },
+    {
+      "record_id": "23645956",
+      "reference": {
+        "study_id": "Mazloom 2013",
+        "mean_treatment": 158.69,
+        "sd_treatment": 16.38,
+        "n_treatment": 16,
+        "mean_control": 162.67,
+        "sd_control": 16.38,
+        "n_control": 18,
+        "record_id": "23645956",
+        "unit": "mg/dL",
+        "value_type": "endpoint"
+      },
+      "source_status": "extracted",
+      "accepted": true,
+      "missing": [],
+      "comparisons": [
+        {
+          "study_id": "Mazloom-2013-trial",
+          "semantically_comparable": true,
+          "original_and_derived": {
+            "n_treatment": 16,
+            "n_control": 18,
+            "mean_treatment": 158.69,
+            "mean_control": 162.67,
+            "sd_treatment": 65.52,
+            "sd_control": 69.49445445501388
+          },
+          "differences": {
+            "n_treatment": 0,
+            "n_control": 0,
+            "mean_treatment": 0.0,
+            "mean_control": 0.0,
+            "sd_treatment": 49.14,
+            "sd_control": 53.114454455013885
+          },
+          "dispersion_audit": [
+            {
+              "arm": "treatment",
+              "original_type": "SE",
+              "original_value": 16.38,
+              "unit": "mg/dL",
+              "value_type": "endpoint",
+              "analyzed_n": 16,
+              "denominator_evidence": [
+                "The study was conducted on 34 patients, of which 26 were females and 8 males.",
+                "Treatment (mean±SD) \n \n (n=16)",
+                "After six weeks of experiment, fasting blood samples were collected and analyzed for all aforementioned parameters."
+              ],
+              "dispersion_evidence": [
+                "Treatment group mean±SE \n \n after intervention",
+                "FBG (mg/dl) | 149.83±14.06 | 162.67±16.38 | 158.56±13.70 | 158.69±16.38 | 0.27 | 0.99"
+              ],
+              "source_locator": "Results, Table 2, FBG row, treatment after intervention column; Table 1 treatment header; Study Design final blood collection.",
+              "source_sha256": "45d25458b506551e7ee66f45d8c0a5e4ce7602feb491ecba5e656d09376c093b",
+              "derived_sd": 65.52,
+              "transformation": "SD=SE*sqrt(analyzed_within_arm_n)"
+            },
+            {
+              "arm": "control",
+              "original_type": "SE",
+              "original_value": 16.38,
+              "unit": "mg/dL",
+              "value_type": "endpoint",
+              "analyzed_n": 18,
+              "denominator_evidence": [
+                "The study was conducted on 34 patients, of which 26 were females and 8 males.",
+                "Placebo (mean±SD*) \n \n (n=18)",
+                "After six weeks of experiment, fasting blood samples were collected and analyzed for all aforementioned parameters."
+              ],
+              "dispersion_evidence": [
+                "Plecebo group mean±SE \n \n after intervention",
+                "FBG (mg/dl) | 149.83±14.06 | 162.67±16.38 | 158.56±13.70 | 158.69±16.38 | 0.27 | 0.99"
+              ],
+              "source_locator": "Results, Table 2, FBG row, placebo after intervention column; Table 1 placebo header; Study Design final blood collection.",
+              "source_sha256": "45d25458b506551e7ee66f45d8c0a5e4ce7602feb491ecba5e656d09376c093b",
+              "derived_sd": 69.49445445501388,
+              "transformation": "SD=SE*sqrt(analyzed_within_arm_n)"
+            }
+          ],
+          "validation_errors": [],
+          "source_sha256": "45d25458b506551e7ee66f45d8c0a5e4ce7602feb491ecba5e656d09376c093b"
+        }
+      ]
+    },
+    {
+      "record_id": "24706266",
+      "reference": {
+        "study_id": "Shakeri 2014",
+        "mean_treatment": 123.7,
+        "sd_treatment": 38.9,
+        "n_treatment": 26,
+        "mean_control": 168.4,
+        "sd_control": 86.1,
+        "n_control": 26,
+        "record_id": "24706266",
+        "unit": "mg/dL",
+        "value_type": "endpoint"
+      },
+      "source_status": "missing_fulltext",
+      "accepted": false,
+      "missing": [],
+      "comparisons": []
+    },
+    {
+      "record_id": "25196301",
+      "reference": {
+        "study_id": "Tajadadi-Ebrahimi 2014",
+        "mean_treatment": 126.6,
+        "sd_treatment": 39.9,
+        "n_treatment": 27,
+        "mean_control": 170.1,
+        "sd_control": 71.6,
+        "n_control": 27,
+        "record_id": "25196301",
+        "unit": "mg/dL",
+        "value_type": "endpoint"
+      },
+      "source_status": "missing_fulltext",
+      "accepted": false,
+      "missing": [],
+      "comparisons": []
+    }
+  ]
+}

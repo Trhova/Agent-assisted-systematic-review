@@ -1,0 +1,68 @@
+{
+  "case": "Zheng2023 pulse pressure qualification v1",
+  "status": "not qualified for complete independent-trial reproduction",
+  "primary2017": {
+    "pmid": "28424510",
+    "doi": "10.1038/hr.2017.54",
+    "url": "https://www.nature.com/articles/hr201754.pdf",
+    "table": "Table 2, p887",
+    "estimand": "laboratory resting endpoint, immediately after 8-week training",
+    "n": [
+      10,
+      10
+    ],
+    "mean": [
+      56,
+      65
+    ],
+    "sd": [
+      8,
+      7
+    ],
+    "unit": "mmHg",
+    "denominator_evidence": "Results p886: control excluded from home-based measurements attended all laboratory sessions and was included in this report; Table1 4 male plus6 female each arm."
+  },
+  "primary2019": {
+    "pmid": "31141288",
+    "doi": "10.1002/pri.1785",
+    "source_capture": "2019_primary_family_capture.json",
+    "family_evidence_lines": [
+      285,
+      296
+    ],
+    "registry": "NCT02752217",
+    "family": "2018 study subgroup, explicitly stated in introduction",
+    "endpoint_evidence": "Table2 mean and SD; end of training8weeks, not12/16week follow-up",
+    "n": [
+      10,
+      10
+    ],
+    "mean": [
+      63,
+      76
+    ],
+    "sd": [
+      5.7,
+      7.3
+    ],
+    "unit": "mmHg",
+    "denominator_evidence": "Table1 Subjects10/10; Results excludes two lost control participants from all presented results."
+  },
+  "reference": "Review Figure5: four reports including overlapping2018/2019; laboratory endpoint matches2017/2019. Total92 supported by2017 laboratory N; characteristics table91 uses home-measurement N. No primary2018 input substituted from review.",
+  "remaining": "2018 full text unavailable from bounded publisher, OpenAlex, author-page and repository discovery routes;2010 author upload located, original full text acquisition/erratum assessment remains. No model/numerical review run launched.",
+  "files_sha256": {
+    "Zheng2023.pdf": "6d354cbbeffab207938cc684787913e89913e945a64df802060371f03db902dc",
+    "Ubolsakka2017.pdf.receipt.json": "c0a852decdf5bc6df4f9039ce15f801f6c611c70deac59faec1c24e37cdfbcc5",
+    "review_figure5.png": "68f6a284fc6d82d27ed9d0c4284565a04ada2385b62f73bbb72ebd514be6aa72",
+    "primary_metadata.json": "131c195412087f5ae3d74ab18abeb0ee80b097c816fea37f15cd384130e8b853",
+    "Zheng2023.pdf.receipt.json": "83269164710397d577457b0e42e2302590083983d925cde3f9e612845759b243",
+    "2019_primary_family_capture.json": "fb49d43766d0dfa6a190be96cae74aa938554ab0e3556d27b6101914a948ef35",
+    "W2795163686.json": "527cc92506ec9629f7c86ef8f06b4479cfd145e1aa62bda0640f6823af521a0a",
+    "Zheng2023.txt": "6991bf03d35d2da4a74bfa97139c325694f4a3fa18a65c0fe4dfcec0c48e9596",
+    "Ubolsakka2017.txt": "6f8a49683924655029b766ed194ceccbe3f3222d5a291c9df7354d9b84192dea",
+    "2019_rg_response.html": "406eb39690406e644aafa45377bd99ba1f12e58307a9ce12f616b273a21a8937",
+    "W2605604345.json": "56b877669c595cc42bd654ea86dfa0333ffdb2f6d5be1a0e8758f7de96b3bc02",
+    "Ubolsakka2017.pdf": "3c8258d29102e8351d80f1f16af103dbf213edc6e72a4b183f7d5f4dccf7deca"
+  },
+  "engineering": "family link conflict processing order counterexample repaired; synthetic experiment is separate from clinical evidence."
+}

@@ -1,0 +1,21 @@
+id: continuous_derivations_v1
+status: opt_in
+frozen_on: '2026-10-13'
+dispersion_policy: within_arm_se_to_sd_v1
+formula: SD = SE * sqrt(analyzed_within_arm_n)
+requirements:
+  - Explicit SE of an unadjusted within-arm mean, with analyzed denominator applicable to selected outcome and timepoint
+  - Original mean, SE, unit, score definition, denominator evidence, source locator, exact quotations, source hash and original-statistics hash retained
+  - Independent source verification of all originals and transformation
+prohibited:
+  - Treatment-difference or adjusted-estimate SE
+  - Inferred or conflicting denominators
+  - Substituting SE for SD
+  - Baseline SD for endpoint or change SD; correlation imputation; guessed SDs
+md_score_policy: endpoint_or_change_md_v1
+md_selection: Prefer endpoint; use reported mean change and its own dispersion only when endpoint mean/dispersion unavailable. Preserve each study's actual score definition. Both arms use the same score definition.
+smd_score_policy: Never mix endpoint and change scores
+sources:
+  - https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-06#section-6-5-2-2
+  - https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10#section-10-5-2
+original_protocols: Unchanged; opt-in required

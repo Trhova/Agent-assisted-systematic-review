@@ -1,0 +1,280 @@
+{
+  "suite": "frozen_historical_meta_analyses_2026_10_12",
+  "suite_sha256": "ea493d0635777bb407b0fdbd9d9801aba68f2bc0f18ff27e3b58f9dc413b46df",
+  "status": "not_reproduced",
+  "evaluation_only": false,
+  "cases": [
+    {
+      "id": "ma2013_nafld_alt",
+      "run": "data/benchmarks/final_suite_v1/ma2013_nafld_alt/b81b1cbd5975",
+      "run_status": "incomplete",
+      "counts": {
+        "retrieved": 972,
+        "fulltexts_attempted": 90,
+        "independent_effects": 2,
+        "supplemental_records": 0,
+        "screened": 972,
+        "abstract_candidates": 90,
+        "accepted_effects": 2,
+        "unresolved": 64
+      },
+      "code_sha256": "720874f2e39f0baddd04c1cf71834a857f8940f96b226c9b610faa23598b7834",
+      "comparison": {
+        "reference": {
+          "id": "ma2013_nafld_alt",
+          "source": "https://www.wjgnet.com/1007-9327/full/v19/i40/6911.htm",
+          "doi": "10.3748/wjg.v19.i40.6911",
+          "outcome": "ALT",
+          "measure": "MD",
+          "unit": "U/L",
+          "model": "fixed",
+          "estimate": -23.71,
+          "ci_low": -33.46,
+          "ci_high": -13.95,
+          "k": 4,
+          "absolute_tolerance": 0.02,
+          "notes": "Published review reports no exact search date. Protocol uses submission date proxy. Endpoint convention must be checked against source trials; no change-SD imputation.",
+          "expected_record_ids": [
+            "22013734",
+            "21505361",
+            "21901256",
+            "23396737"
+          ]
+        },
+        "run_status": "incomplete",
+        "reproduced": false,
+        "reason": "Not reproduced; inspect coverage, definitions and extraction evidence",
+        "report_coverage": {
+          "reference_reports": 4,
+          "retrieved": 4,
+          "retrieved_original_search": 4,
+          "retrieved_via_supplement": 0,
+          "retained_after_abstract_screening": 4,
+          "accessible_fulltexts": 3,
+          "missing_from_search": [],
+          "excluded_at_abstract": [],
+          "missing_fulltexts": [
+            "21505361"
+          ]
+        },
+        "differences": {
+          "estimate": 13.909360360461605,
+          "ci_low": 13.222880750550274,
+          "ci_high": 14.585839970372936
+        },
+        "k_observed": 2,
+        "k_expected": 4,
+        "missing_studies": [
+          "21505361",
+          "23396737"
+        ],
+        "extra_studies": [],
+        "numerically_matches": false
+      },
+      "reproduced": false,
+      "risk_of_bias_drafts": {
+        "source_checked": 2,
+        "unverified": 0,
+        "limitations": [
+          "Automated drafts are not expert-validated RoB2 assessments.",
+          "Abbreviated project template; no independent registry/protocol retrieval or GRADE assessment.",
+          "These ratings do not change numerical inclusion, effects, weights or benchmark comparisons."
+        ]
+      },
+      "execution_exit_code": 2,
+      "evaluation_only": false,
+      "observed_synthesis": {
+        "k": 2,
+        "estimate": -9.800639639538396,
+        "ci_low": -20.237119249449727,
+        "ci_high": 0.6358399703729365,
+        "I2": 0,
+        "tau2": 0,
+        "studies": [
+          "Aller-2011-trial",
+          "Malaguarnera-2011-trial"
+        ]
+      },
+      "parsed_documents": 30,
+      "risk_draft_summary": {
+        "policy": "rob2_draft_v2",
+        "source_checked": 2,
+        "unverified": 0,
+        "ratings": [
+          {
+            "record_id": "22013734",
+            "overall": "Some concerns",
+            "status": "source_checked_draft",
+            "confidence": null
+          },
+          {
+            "record_id": "21901256",
+            "overall": "Some concerns",
+            "status": "source_checked_draft",
+            "confidence": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "li2016_t2d_fbg",
+      "run": "data/benchmarks/final_suite_v1/li2016_t2d_fbg/08f8481c02f3",
+      "run_status": "incomplete",
+      "counts": {
+        "retrieved": 2180,
+        "fulltexts_attempted": 49,
+        "independent_effects": 2,
+        "supplemental_records": 0,
+        "screened": 2180,
+        "abstract_candidates": 49,
+        "accepted_effects": 2,
+        "unresolved": 28
+      },
+      "code_sha256": "720874f2e39f0baddd04c1cf71834a857f8940f96b226c9b610faa23598b7834",
+      "comparison": {
+        "reference": {
+          "id": "li2016_t2d_fbg",
+          "source": "https://pubmed.ncbi.nlm.nih.gov/27368052/",
+          "doi": "10.1097/MD.0000000000004088",
+          "outcome": "FBG",
+          "measure": "SMD",
+          "unit": "dimensionless",
+          "model": "random",
+          "estimate": -0.61,
+          "ci_low": -0.92,
+          "ci_high": -0.3,
+          "k": 9,
+          "absolute_tolerance": 0.02,
+          "notes": "Article abstract labels SMD with mmol/L and figure captions call effects weighted mean differences. Frozen primary comparison follows abstract SMD. This inconsistency is a scientific uncertainty, not a tuning opportunity.",
+          "expected_review_record_ids": [
+            "23967428",
+            "25196301",
+            "25300285",
+            "26988693",
+            "21700013",
+            "22129852",
+            "24319552",
+            "23899653",
+            "24706266",
+            "25197295",
+            "26955460",
+            "23645956"
+          ],
+          "identity_note": "Twelve reports cited as included in the review (references 23–34); not asserted to be twelve independent trials, or all nine FBG contributors.",
+          "expected_record_ids": [
+            "23899653",
+            "26955460",
+            "22129852",
+            "26988693",
+            "24319552",
+            "25300285",
+            "23645956",
+            "24706266",
+            "25196301"
+          ]
+        },
+        "run_status": "incomplete",
+        "reproduced": false,
+        "reason": "Not reproduced; inspect coverage, definitions and extraction evidence",
+        "report_coverage": {
+          "reference_reports": 12,
+          "retrieved": 11,
+          "retrieved_original_search": 11,
+          "retrieved_via_supplement": 0,
+          "retained_after_abstract_screening": 10,
+          "accessible_fulltexts": 5,
+          "missing_from_search": [
+            "24319552"
+          ],
+          "excluded_at_abstract": [
+            "26955460"
+          ],
+          "missing_fulltexts": [
+            "21700013",
+            "22129852",
+            "24319552",
+            "24706266",
+            "25196301",
+            "25300285",
+            "26955460"
+          ]
+        },
+        "differences": {
+          "estimate": 0.02034105746376247,
+          "ci_low": 0.014059818896322906,
+          "ci_high": 0.02662229603120214
+        },
+        "k_observed": 2,
+        "k_expected": 9,
+        "missing_studies": [
+          "22129852",
+          "23645956",
+          "23899653",
+          "24319552",
+          "24706266",
+          "25196301",
+          "25300285",
+          "26955460"
+        ],
+        "extra_studies": [
+          "25905057"
+        ],
+        "numerically_matches": false
+      },
+      "reproduced": false,
+      "risk_of_bias_drafts": {
+        "source_checked": 2,
+        "unverified": 0,
+        "limitations": [
+          "Automated drafts are not expert-validated RoB2 assessments.",
+          "Abbreviated project template; no independent registry/protocol retrieval or GRADE assessment.",
+          "These ratings do not change numerical inclusion, effects, weights or benchmark comparisons."
+        ]
+      },
+      "execution_exit_code": 2,
+      "evaluation_only": false,
+      "observed_synthesis": {
+        "k": 2,
+        "estimate": -0.5896589425362375,
+        "ci_low": -0.9059401811036771,
+        "ci_high": -0.27337770396879785,
+        "I2": 0,
+        "tau2": 0,
+        "studies": [
+          "IRCT201307092017N14",
+          "NCT01752803"
+        ]
+      },
+      "parsed_documents": 31,
+      "risk_draft_summary": {
+        "policy": "rob2_draft_v2",
+        "source_checked": 2,
+        "unverified": 0,
+        "ratings": [
+          {
+            "record_id": "25905057",
+            "overall": "Some concerns",
+            "status": "source_checked_draft",
+            "confidence": null
+          },
+          {
+            "record_id": "26988693",
+            "overall": "High",
+            "status": "source_checked_draft",
+            "confidence": null
+          }
+        ]
+      }
+    }
+  ],
+  "note": "Unit tests, cached development execution and secondary forest-plot calibration are not successful independent reproduction. Incomplete reviews cannot pass.",
+  "finished_at_utc": "2026-10-12T18:56:19Z",
+  "active_review_processes": [],
+  "validation": {
+    "pytest_passed": 107,
+    "selected_static_check_python_files": 52,
+    "git_diff_check": "passed",
+    "real_null_schema_probe": "passed"
+  },
+  "interpretation": "Completed autonomous warm development suite, not historical reproduction, not held-out validation, and not expert-validated risk of bias. Frozen protocols/references unchanged. The original and intermediate failures remain preserved."
+}

@@ -1,0 +1,131 @@
+{
+  "run": "data/benchmarks/runtime_v10/li2016_t2d_fbg/08f8481c02f3",
+  "status": {
+    "protocol_sha256": "08f8481c02f3e2496af3894aaf596169e069fd99dce8878b9ac69bc48b0b3b3d",
+    "backend": "codex",
+    "model": null,
+    "source_search_model": null,
+    "code_sha256": "85dd3eb5fadb8d706c07d00f586e987f04e98ca554e89736acfc9a0469c85a62",
+    "started_at": "2026-10-12T17:57:29Z",
+    "status": "incomplete",
+    "errors": [],
+    "publication_integrity_flags": [
+      {
+        "record_id": "26430929",
+        "indexed_flags": [
+          "Retracted Publication"
+        ]
+      }
+    ],
+    "counts": {
+      "retrieved": 2180,
+      "fulltexts_attempted": 49,
+      "independent_effects": 2,
+      "supplemental_records": 0,
+      "screened": 2180,
+      "abstract_candidates": 49,
+      "accepted_effects": 2,
+      "unresolved": 28
+    },
+    "limitations": [
+      "Single accessible bibliographic database; no claim of historical multi-database search equivalence.",
+      "No model-independent guarantee against training-data contamination.",
+      "Only independent parallel continuous outcomes with reported SDs; no imputation."
+    ],
+    "finished_at": "2026-10-12T17:57:30Z",
+    "pending_segments": 0,
+    "can_resume_internal_work": false
+  },
+  "comparison": {
+    "reference": {
+      "id": "li2016_t2d_fbg",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/27368052/",
+      "doi": "10.1097/MD.0000000000004088",
+      "outcome": "FBG",
+      "measure": "SMD",
+      "unit": "dimensionless",
+      "model": "random",
+      "estimate": -0.61,
+      "ci_low": -0.92,
+      "ci_high": -0.3,
+      "k": 9,
+      "absolute_tolerance": 0.02,
+      "notes": "Article abstract labels SMD with mmol/L and figure captions call effects weighted mean differences. Frozen primary comparison follows abstract SMD. This inconsistency is a scientific uncertainty, not a tuning opportunity.",
+      "expected_review_record_ids": [
+        "23967428",
+        "25196301",
+        "25300285",
+        "26988693",
+        "21700013",
+        "22129852",
+        "24319552",
+        "23899653",
+        "24706266",
+        "25197295",
+        "26955460",
+        "23645956"
+      ],
+      "identity_note": "Twelve reports cited as included in the review (references 23–34); not asserted to be twelve independent trials, or all nine FBG contributors.",
+      "expected_record_ids": [
+        "23899653",
+        "26955460",
+        "22129852",
+        "26988693",
+        "24319552",
+        "25300285",
+        "23645956",
+        "24706266",
+        "25196301"
+      ]
+    },
+    "run_status": "incomplete",
+    "reproduced": false,
+    "reason": "Not reproduced; inspect coverage, definitions and extraction evidence",
+    "report_coverage": {
+      "reference_reports": 12,
+      "retrieved": 11,
+      "retrieved_original_search": 11,
+      "retrieved_via_supplement": 0,
+      "retained_after_abstract_screening": 10,
+      "accessible_fulltexts": 5,
+      "missing_from_search": [
+        "24319552"
+      ],
+      "excluded_at_abstract": [
+        "26955460"
+      ],
+      "missing_fulltexts": [
+        "21700013",
+        "22129852",
+        "24319552",
+        "24706266",
+        "25196301",
+        "25300285",
+        "26955460"
+      ]
+    },
+    "differences": {
+      "estimate": 0.02034105746376247,
+      "ci_low": 0.014059818896322906,
+      "ci_high": 0.02662229603120214
+    },
+    "k_observed": 2,
+    "k_expected": 9,
+    "missing_studies": [
+      "22129852",
+      "23645956",
+      "23899653",
+      "24319552",
+      "24706266",
+      "25196301",
+      "25300285",
+      "26955460"
+    ],
+    "extra_studies": [
+      "25905057"
+    ],
+    "numerically_matches": false
+  },
+  "source_count": 31,
+  "interpretation": "Final full-provenance autonomous warm run; identical partial estimate, still not historical reproduction. Parser changes for offset-origin proceedings are included in the immutable code snapshot."
+}

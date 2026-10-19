@@ -1,0 +1,25 @@
+Dated evidence correction,14October2026 09:52UTC: the retained `16446775_publisher_preview.txt` contains a failed Nature redirect, not a synopsis. Earlier descriptions of a preserved publisher synopsis are unsupported by that artifact. A new Springer publisher route also failed. No non-primary exclusion has been made; all five access gaps remain. Historical text is retained below for provenance.
+
+# Family adjudication after the Alabed run
+
+The existing gate conflates two questions: whether papers report the same randomized study, and whether a person might ever have participated in two separately randomized studies. Alabed v1 demonstrates the consequence: all four extractions are usable, but two uncertain pairs remove every effect. That is a conservative model decision, not demonstrated participant overlap or a primary-trial error.
+
+[Cochrane Handbook4.6.2, updatedMarch2025](https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-04) recommends linking reports using registration, authors, setting, intervention, sample/baseline characteristics and recruitment chronology. Residual uncertainty can require investigator clarification. It does not prescribe universal explicit pairwise participant-disjointness statements. Interpreting merely possible reenrollment as automatically disqualifying every otherwise distinct trial exceeds what this guidance explicitly requires. Conversely, different registrations alone cannot negate affirmative overlap evidence. This is our methodological interpretation, not a Cochrane rule permitting unexamined dependence.
+
+Original registry snapshots and HTTP/hash receipts were newly retrieved into `data/benchmarks/alabed2014_family_evidence_v1`: NCT00128414 describes CORP, a randomized parallel first-recurrence trial with planned120 participants; NCT00128453 describes ICAP, a randomized parallel index-attack trial with actual240 participants. Both exclude colchicine treatment at enrollment. They support distinct protocols and randomizations, but do not explicitly forbid enrollment in the other study. CORP's primary article additionally excludes previous colchicine; that does not establish that placebo recipients never enrolled subsequently. No affirmative shared-participant statement was found in these retrieved records. Registry estimated enrollment is not substituted for original analyzed denominators.
+
+The existing model treats CORP–COPE as distinct despite recognizing theoretically possible reenrollment, but withholds ICAP–CORP and CORE–COPE because recruitment calendars overlap. This inconsistency is a reason to specify a generic evidence threshold, not to choose whichever answer produces the desired pool.
+
+Proposed next version, not activated in this cycle:
+
+- Separate randomized-study identity from affirmative participant reuse and unresolved conflicting linkage.
+- Require source-backed distinct randomization/cohort evidence across multiple characteristics; shared sites/authors/dates are investigation leads, not automatic proof of duplication.
+- Block pooling for documented reuse or conflicting cohort identity. Preserve a residual theoretical-reenrollment limitation when independently documented trials have no affirmative linkage; do not claim zero possible overlap.
+- Freeze the rule before a new evaluation; test same-registry companions, documented partial overlap, transitive conflicts, and truly distinct concurrent trials. Reassess the same fixed input set without published targets, retaining all old decisions and reporting sensitivity to the old stricter gate.
+
+Next evidence action: inspect the original CORP/ICAP design reports and linked protocols for cross-trial enrollment rules before deciding whether the proposed distinction is sufficient for a new Alabed execution. No outside author contact is authorized. Do not rerun unchanged sources under an unstated weaker threshold.
+
+Delivered now: availability reporter v2 propagates the actual family groups, stored pair reasons, exact source-quote checks and artifact locators into per-record routes and a paired continuation queue. It does not adjudicate, change accepted inputs or pool withheld effects. Real export on Alabed preserved201 original files; audit remains valid.209 tests pass, including paired evidence routing and unsafe-path refusal.
+
+
+Continuation: an opt-in generic policy is now implemented in `scripts/family_evidence_tiers.py`, documented in `protocol/extensions/family_evidence_tiers_v2.md`. The earlier proposal remains here as historical context. Original design abstracts17885522/17667033 and their acquisition receipts are preserved alongside the registry snapshots; full design articles were not obtained, and no cross-trial enrollment prohibition is asserted. A separately frozen Alabedv2 run is evaluating the revised rule with fresh decisions. The old v1 gate/results remain unchanged. Current tests217 include positive-reuse blocking, evidence/verification requirements, shared-registry conflict preservation and corruption of a secondary evidence feature in the read-only audit.

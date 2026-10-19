@@ -1,0 +1,54 @@
+{
+  "source": "https://f6publishing.blob.core.windows.net/015e5f34-deee-4af0-a191-efc2b091d2bc/WJG-19-6911-g002.jpg",
+  "evidence_level": "Published forest cells, evaluator-only, not independently verified primary gold",
+  "rows": [
+    {
+      "record_id": "21901256",
+      "study_id": "Malaguarnera 2012",
+      "n_treatment": 34,
+      "n_control": 32,
+      "mean_treatment": -63.9,
+      "mean_control": -38,
+      "sd_treatment": 23.1,
+      "sd_control": 26,
+      "unit": "U/L",
+      "value_type": "change"
+    },
+    {
+      "record_id": "21505361",
+      "study_id": "Vajro 2011",
+      "n_treatment": 10,
+      "n_control": 10,
+      "mean_treatment": -30.2,
+      "mean_control": -2,
+      "sd_treatment": 32.4,
+      "sd_control": 29.9,
+      "unit": "U/L",
+      "value_type": "change"
+    },
+    {
+      "record_id": "22013734",
+      "study_id": "Aller",
+      "n_treatment": 14,
+      "n_control": 14,
+      "mean_treatment": -7.3,
+      "mean_control": 4.1,
+      "sd_treatment": 28.6,
+      "sd_control": 34.1,
+      "unit": "U/L",
+      "value_type": "change"
+    },
+    {
+      "record_id": "23396737",
+      "study_id": "Wong 2013",
+      "n_treatment": 10,
+      "n_control": 10,
+      "mean_treatment": -26,
+      "mean_control": 2,
+      "sd_treatment": 91,
+      "sd_control": 41,
+      "unit": "U/L",
+      "value_type": "change"
+    }
+  ]
+}

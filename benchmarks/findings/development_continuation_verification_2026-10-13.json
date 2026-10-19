@@ -1,0 +1,59 @@
+{
+  "frozen_cases_checked": [
+    {
+      "suite": "benchmarks/suite_reproduction_v2.yaml",
+      "case": "ma2013_nafld_alt_reproduction_v2",
+      "protocol_sha256": "bb8851b1d3fc20f7f61fd5eefb9062a7cc3be230f912f51fff17c44c81950b5c",
+      "reference_sha256": "3f2a13e6b4984a373cf0577fb4f9454dfb9a40948db169205fca12c4b6218615"
+    },
+    {
+      "suite": "benchmarks/suite_reproduction_v2.yaml",
+      "case": "li2016_t2d_fbg_reproduction_v2",
+      "protocol_sha256": "53497b2531e120008160499993bfa8c7b302ddb0e90a98d89ab1b1b87880091d",
+      "reference_sha256": "9e0bc3c299f4eee9c2273c42554d98d6ae10d3c3bc7409bc0941741a62c5c4c3"
+    },
+    {
+      "suite": "benchmarks/suite_rawat2021_iv_v1.yaml",
+      "case": "rawat2021_iv_covid_hospital_stay_v1",
+      "protocol_sha256": "64f1fbb555e4a3427e1d52522505d2cf4756c3f9a4dda42b64f5e2e5b51ada80",
+      "reference_sha256": "762bc6a46b3266e30b851a441dec0eff707dd3bfff026667cd378d724d2bb1a0"
+    },
+    {
+      "suite": "benchmarks/suite_rawat2021_v1.yaml",
+      "case": "rawat2021_covid_hospital_stay_v1",
+      "protocol_sha256": "b99a2892bf59a418a7ec718c81c66bab7d43afc703b44b2e19c4c0f9a8e6ef2d",
+      "reference_sha256": "b2cd9f2cf5916de35cb3dc8e8c5cbd50835ced1c30e422d6dc5b546972695cd5"
+    },
+    {
+      "suite": "benchmarks/suite.yaml",
+      "case": "ma2013_nafld_alt",
+      "protocol_sha256": "b81b1cbd59757af13ef764883bd468b9807cef7688ba6b12afe09553c3f21a35",
+      "reference_sha256": "80c93cf7c21abc20c0ff89188ad38fcf30477318a33407acb215c8e354380766"
+    },
+    {
+      "suite": "benchmarks/suite.yaml",
+      "case": "li2016_t2d_fbg",
+      "protocol_sha256": "08f8481c02f3e2496af3894aaf596169e069fd99dce8878b9ac69bc48b0b3b3d",
+      "reference_sha256": "99a7115a7ecd2459d4b6952bd963340d359e617e90368a4115d343c0837e998d"
+    },
+    {
+      "suite": "benchmarks/suite_reproduction_v3.yaml",
+      "case": "ma2013_nafld_alt_reproduction_v2",
+      "protocol_sha256": "bb8851b1d3fc20f7f61fd5eefb9062a7cc3be230f912f51fff17c44c81950b5c",
+      "reference_sha256": "3f2a13e6b4984a373cf0577fb4f9454dfb9a40948db169205fca12c4b6218615"
+    },
+    {
+      "suite": "benchmarks/suite_reproduction_v3.yaml",
+      "case": "li2016_t2d_fbg_reproduction_v3",
+      "protocol_sha256": "664e537940510b3e7edd20e3bc864b728da54a9e9bfdf7a6c81bd3392601d157",
+      "reference_sha256": "cb8f24fac276ae82f0926e1e26b68e1784544e7b1dafda886c0bdd324eadf622"
+    }
+  ],
+  "model": "gpt-6-astra",
+  "new_iv_model_request_count": 26,
+  "reference_paths_and_tolerances_absent_from_extraction_requests": true,
+  "primary_hash_checks": true,
+  "tests_passed": 166,
+  "run_code_sha256": "e58c5409fb65a07c2aaf9f65b738819e3b66f56e872786d26954ca4f8524b745",
+  "limitations": "Checks do not establish freedom from training-data contamination or expert scientific validation."
+}

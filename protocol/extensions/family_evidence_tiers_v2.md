@@ -1,0 +1,13 @@
+# Source-supported study identity and participant reuse
+
+Opt-in protocol field: `family_policy: family_evidence_tiers_v2`. Existing protocols retain `source_pair_v1`; original observations are immutable.
+
+Motivation: the original prompt asks whether participants overlap and can demand explicit disjointness even when sources establish separate randomized studies. The revised policy separates study identity from actual reuse evidence. It follows the multi-characteristic approach in [Cochrane4.6.2, updatedMarch2025](https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-04), interpreted as an evidential judgement rather than universal participant-identity proof. It is a methodological assumption requiring development evaluation, not a guarantee of independence.
+
+The model must classify same study, distinct randomizations or unresolved identity; separately it records documented reuse, conflicting evidence, theoretical-only reuse, or no indication. Distinctness requires original passages from both sources for randomization and at least one additional population/recruitment/baseline/intervention/explicit-linkage characteristic. Registration alone, different titles and absence of evidence are insufficient. All feature quotations must match original text, and a separate verification call must confirm their joint entailment. Repair is bounded to two quotation attempts, pair count to64.
+
+Documented reuse and conflicting participant linkage always block. Same-study reports enter the existing deduplication/discordance gate. Unresolved identity remains blocked. Existing shared-registry and transitive conflicts still block even when a model proposes distinctness. Theoretical later reenrollment alone does not negate affirmative separate-randomization evidence, but remains an explicit residual limitation in family links and review availability reporting. No assumption about the number of reused participants, covariance or effect sizes is made.
+
+This policy does not establish participant-level disjointness. If affirmative reuse emerges, the analysis must be revised using an appropriate prespecified dependence method or withheld; this version implements no such covariance correction. Never choose the policy or classification from desired pooled agreement.
+
+Alabed development motivation: primary trial reports, original registry snapshots and2007 design abstracts distinguish acute and recurrent protocols. Full design-paper access was not established; abstracts/registries do not prove cross-trial enrollment was prohibited. These findings motivate explicit uncertainty tiers rather than study-specific exemptions. See `docs/family_adjudication_evidence_review_2026-10-14.md`.

@@ -1,0 +1,13 @@
+# Published text-table verification workflow
+
+Use this evaluator-only route when an original published table is available as readable text. It does not replace primary-study extraction, and never supplies published answers to scientific screening or extraction. Image-only sources retain the existing image workflow.
+
+Prepare a fresh `reference_original_text_verification_v1` manifest for `scripts.verify_reference_text`. Pin the actual Python bundle, explicit model, original review text and raw parent, source locator, proposed cell file, mapping, scientific protocol and all original primary contexts. Keep the initial blind request free of proposed cells and primary extracted results. The second request checks the independently produced reading against original sources and the proposed mapping. All seven axes—cells, trial identity, arms, timepoint, population, source locator and outcome—must be supported. Matching integers do not resolve ambiguous semantics.
+
+Execute the CLI through `scripts.run_frozen.command`, with a new output directory and no duplicate uncertain submission. The module limits itself to two adapter invocations, one per phase; backend-internal transport retries are not thereby counted. Actual requests, parsed responses and response receipts are preserved. Separate requests to the same model can share errors and are not independent human expertise.
+
+`validate_reference_receipt.validate_receipt(receipt, manifest)` now dispatches text receipts to an exact replay. It checks pinned source/reference/mapping files, actual request and response provenance, text rather than image modality, supplied source/contract context, saved versus returned readings, exact mapping quotation anchors and the original decision. Relabelling a failed receipt as valid does not pass. The source-verification receipt binds both the mapping file and its canonical content.
+
+A normal `evaluator_input_contract_v2` can consume that receipt using `independent_verification` and `model_verification_manifest`. Its mapping must exactly match the source-verified mapping and the accepted primary arm/time/study fields. Source verification can establish a published transcription while primary inputs disagree; such disagreement still prevents exact-input reproduction. Unknown published estimator, unresolved contributors and failed scientific integrity remain separate gates.
+
+Real example: `data/benchmarks/inhaled_escalation_reference_v1` (consult its terminal receipt before assuming success). Original inhaled recovery and all prior image verification receipts remain unchanged. This successor workflow does not alter the pinned original operating skill or release contract.

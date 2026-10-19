@@ -1,0 +1,37 @@
+# Agent-assisted review release contract v0.1
+
+Accepted operating model,15October2026: an agent in the loop, supported by strong guardrails and reusable skills/workflows. Agent research, source recovery, adjudication and troubleshooting are first-class operations. Fully unattended orchestration is **not** an acceptance requirement. Scientific evidence standards are unchanged. Historical reports retain their original wording; this contract does not retroactively turn assisted development into prospective or unattended validation.
+
+The finite first release is a usable, documented workflow that produces an auditable review and quantitative analysis, or a precise evidence-based abstention, with two completed published-analysis benchmark cases. It need not reproduce every outcome of each reference review. A declared outcome/subgroup can qualify only when its population, contributors, arms, timepoints and method are explicit and complete for that scope. Whole-review coverage is reported separately. Numerical agreement is not mandatory: primary-supported disagreement is a successful finding when the source-to-input-to-result chain explains it. Test counts, identical rounded estimates and recovery of all listed reference contributors alone do not establish completion.
+
+## Release gates
+
+1. **Operable workflow:** repository-local skill specifies inputs, outputs, bounded actions, evidence/provenance gates and concrete continuation/stop decisions for source recovery, quote repair, family/N adjudication, execution and audit. A real artifact replay demonstrates its commands, preserves originals and records agent intervention. No requirement for an agent-free run.
+2. **Two distinct published-analysis cases:** each scope is frozen before its scientific execution, has accessible primary inputs for every eligible contributor, compatible supported statistics, independently verified family/arm/time mapping and no unresolved potentially eligible study affecting that analysis. Search and source-availability limitations remain explicit. A limited search or incomplete multi-outcome review must not be called a completed full systematic review.
+3. **Evidence-backed comparison:** reference transcription/mapping is source-checked; primary inputs remain independent of published answers. Report input and numerical agreement separately. A discrepancy must identify the specific primary/reference cells or method and its impact; uncertainty remains a valid abstention, not a resolved discrepancy.
+4. **Execution integrity:** exact actual code/model/protocol/source identities, frozen assets, terminal receipts, bounded attempts, request provenance and independent-family synthesis replay are available. A historical pin deviation stays a deviation. A clean successor may be justified, but cannot conceal the failed observation or silently reuse unverifiable cache.
+5. **Usable handoff:** finite artifact index and commands, limitations, RoB-draft status, reproducible audit, remaining issues and next action. Current meaningful tests pass. Agent involvement and same-model correlated-error limits are disclosed. Clinical decision support, expert RoB2/GRADE and broad cross-domain validation are not claimed.
+
+These gates are conjunctions, not a score averaged across cases. A passing method-safety negative case is valuable but cannot substitute for either complete analysis. A failing benchmark must stay in the release dossier even if another qualifies. This is development release evidence; held-out/prospective evaluation is a later, separately specified milestone.
+
+## Existing evidence against the gates
+
+| Case | What is established | Remaining release qualification |
+|---|---|---|
+| HCQ predominantly hospital-treated28–30day mortality sensitivity |94screened,3independent trials,0unresolved within frozen scope; fixed-MH RR0.878[0.578,1.333]; source-verified reference mapping; ORCHID missing-vital-status denominator discrepancy preserved;3checked RoB drafts; exact execution pins |Strongest first-case candidate. Complete declared analysis, not entire14trial review or pure inpatient effect. Consolidate current audit/reference evidence in one dossier; retain mixed HYCOVID and TEACH follow-up limitations. |
+| Alabed four-trial total adverse effects |4primary effects,RR1.00[0.596,1.678]; CORE arm reversal explains published1.26;4checked RoB drafts |Not a clean second case:5report gaps, CORP-2/broader eligibility limitation, actual code differs from preregistered code. Do not relabel or rerun just to hide this. |
+| Popp mortality |Both published contributors,11,445participants; RR1.004[0.935,1.079] |3unresolved reports/target timing; complete listed contributor set is not proven eligibility completeness. |
+| Rawat IV hospital stay |3published contributors and numerical agreement |Additional candidate route unresolved; estimated summaries and uncertainty retained; not complete declared search. |
+| Ma/Li and Li fixed-input soy addendum |Partial source-supported effects; executed3→4effect sensitivity and new primary evidence |Access/N/integrity gaps; addendum is deliberately fixed-input and post-cutoff, not a completed updated review. |
+| HCQ outpatient/other negative cases |Household allocation safeguard and ambiguous statistic/denominator abstentions exercised |Safety regressions, not completed quantitative benchmarks. |
+
+Sources: current reports linked in `docs/autonomous_review_status.md`; historical13October observations remain in `docs/autonomous_development_results_2026-10-13.md`. The fresh replay and inventory are `data/benchmarks/agent_assisted_release_v1`. Audit validity concerns artifact consistency; the table above is an explicit agent release assessment, not an automated claim of scientific truth.
+
+## Bounded completion plan
+
+- **Now:** deliver the operating skill and demonstrate frozen read-only audit on real HCQ/Alabed artifacts, retaining exact before/after hashes and current versus original execution identities. Consolidate HCQ as the first declared-analysis candidate without a redundant numerical run.
+- **Next session:** close the HCQ dossier's release review: inspect the already completed blinded reference verification, actual request/asset receipts and report all scope/follow-up limitations in one finite case record. If a gate fails, record the exact blocker; do not assume a legacy `reproduced=true` is sufficient.
+- **Second case, bounded qualification:** prioritize a different published analysis with a complete primary set and supported design/statistics. Use at most two scientifically justified candidates and a stated retrieval budget before selection; freeze exact scope before execution. Selection must be based on design/access/estimand fit, not expected agreement. Existing unresolved cases can qualify only through genuinely new decisive evidence; no requirement to solve every inaccessible paper. If neither qualifies, publish a precise incomplete-release checkpoint instead of endless scouting or weakening gates.
+- **Final release pass:** execute the second qualified case through the skill, audit both case dossiers, run meaningful checks, and publish a versioned capability/limitations statement. Stop release work when all five gates pass; unrelated source backlog remains tracked rather than becoming an unlimited acceptance requirement.
+
+Firouzi exact-anchor repair remains a useful continuous-outcome backlog item, not a prerequisite imposed on this release. No new effect may be admitted without the same statistical, family and source gates.

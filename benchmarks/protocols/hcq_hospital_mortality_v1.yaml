@@ -1,0 +1,51 @@
+id: hcq_hospital_mortality_development_v1
+frozen_on: '2026-10-14'
+query: 'TITLE_ABS:hydroxychloroquine AND (TITLE_ABS:COVID-19 OR TITLE_ABS:SARS-CoV-2) AND (TITLE_ABS:placebo OR TITLE_ABS:blind*) AND FIRST_PDATE:[2020-01-01 TO 2021-05-17] AND SRC:MED'
+validate_query_fields: true
+eligibility: >-
+  Peer-reviewed original reports available by17May2021 of blinded placebo-controlled,
+  individually randomized parallel trials of hydroxychloroquine treatment for adults
+  with acute COVID-19 in predominantly hospitalized populations. Include hospitalized
+  cohorts and mixed cohorts when the majority were hospitalized at baseline; retain
+  the whole reported cohort and describe its ambulatory minority, without deriving an
+  unsupported inpatient-only subgroup. Exclude exclusively community outpatient
+  treatment, prevention/prophylaxis, open-label/non-placebo comparisons, combination
+  interventions that do not isolate hydroxychloroquine, cluster/crossover designs,
+  protocols without results, secondary reviews and non-peer-reviewed reports.
+  Target all-cause mortality at approximately4weeks, specifically a reported28-to30-day
+  follow-up. Exclude a different event/composite substitution; otherwise eligible
+  studies with missing target information remain unresolved.
+outcome: all_cause_mortality_28_to_30_days
+unit: dimensionless
+value_type: binary_rr_mh_fixed_v1
+measure: RR
+model: mantel_haenszel_fixed
+binary_policy: binary_rr_mh_fixed_v1
+randomization_unit_policy: randomization_unit_v2
+family_policy: family_evidence_tiers_v2
+timing_rule: >-
+  Use reported all-cause death at28to30days after randomization, retaining the exact
+  reported horizon. If both28and30days are reported prefer28days. Do not substitute
+  a14-day endpoint or hospital-discharge outcome of unspecified timing.
+denominator_rule: >-
+  Use original explicit outcome-specific analysis denominators, supported by table
+  headings, footnotes, participant flow and methods. Preserve exclusions, missing
+  vital status and follow-up limitations; do not assume unobserved participants survived
+  or replace an explicit analysis denominator with the randomized sample size.
+zero_event_policy: Add0.5 to all four cells if a cell is zero; retain originals; exclude double-zero or double-all-event relative effects with explicit ledger; require two informative independent trials.
+dependence_rule: Apply family_evidence_tiers_v2, retaining same-study/shared-registry/positive overlap and transitive-conflict gates; separate study evidence must be independently source-verified.
+search_implementation: >-
+  EuropePMC indexed MED placebo/blinding search through17May2021. This deliberately evaluates the
+  published peer-reviewed sensitivity, not the original14-trial review or its preprint
+  comparison. It does not reproduce the review's full multi-database search.
+evaluation_scope: >-
+  Post-hoc developer-assisted historical evaluation of the published peer-reviewed
+  predominantly hospital-treatment mortality sensitivity. The mixed-cohort rule is
+  an explicit operationalization preserving whole reported cohorts; this is not a
+  pure inpatient-only effect or prospective/held-out validation. Original sources
+  and reference semantics were inspected during qualification; pooled answers and
+  contributor cells remain outside screening/extraction requests.
+method_sources:
+- https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-10
+- https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-23
+- https://training.cochrane.org/handbook/current/statistical-methods-revman5

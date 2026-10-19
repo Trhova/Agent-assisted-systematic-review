@@ -1,0 +1,93 @@
+{
+  "run": "data/benchmarks/runtime_v9/ma2013_nafld_alt/b81b1cbd5975",
+  "status": {
+    "protocol_sha256": "b81b1cbd59757af13ef764883bd468b9807cef7688ba6b12afe09553c3f21a35",
+    "backend": "codex",
+    "model": null,
+    "source_search_model": null,
+    "code_sha256": "85dd3eb5fadb8d706c07d00f586e987f04e98ca554e89736acfc9a0469c85a62",
+    "started_at": "2026-10-12T18:09:35Z",
+    "status": "incomplete",
+    "errors": [],
+    "publication_integrity_flags": [
+      {
+        "record_id": "17369374",
+        "indexed_flags": [
+          "Retracted Publication"
+        ]
+      }
+    ],
+    "counts": {
+      "retrieved": 972,
+      "fulltexts_attempted": 90,
+      "independent_effects": 2,
+      "supplemental_records": 0,
+      "screened": 972,
+      "abstract_candidates": 90,
+      "accepted_effects": 2,
+      "unresolved": 64
+    },
+    "limitations": [
+      "Single accessible bibliographic database; no claim of historical multi-database search equivalence.",
+      "No model-independent guarantee against training-data contamination.",
+      "Only independent parallel continuous outcomes with reported SDs; no imputation."
+    ],
+    "finished_at": "2026-10-12T18:11:01Z",
+    "pending_segments": 0,
+    "can_resume_internal_work": false
+  },
+  "comparison": {
+    "reference": {
+      "id": "ma2013_nafld_alt",
+      "source": "https://www.wjgnet.com/1007-9327/full/v19/i40/6911.htm",
+      "doi": "10.3748/wjg.v19.i40.6911",
+      "outcome": "ALT",
+      "measure": "MD",
+      "unit": "U/L",
+      "model": "fixed",
+      "estimate": -23.71,
+      "ci_low": -33.46,
+      "ci_high": -13.95,
+      "k": 4,
+      "absolute_tolerance": 0.02,
+      "notes": "Published review reports no exact search date. Protocol uses submission date proxy. Endpoint convention must be checked against source trials; no change-SD imputation.",
+      "expected_record_ids": [
+        "22013734",
+        "21505361",
+        "21901256",
+        "23396737"
+      ]
+    },
+    "run_status": "incomplete",
+    "reproduced": false,
+    "reason": "Not reproduced; inspect coverage, definitions and extraction evidence",
+    "report_coverage": {
+      "reference_reports": 4,
+      "retrieved": 4,
+      "retrieved_original_search": 4,
+      "retrieved_via_supplement": 0,
+      "retained_after_abstract_screening": 4,
+      "accessible_fulltexts": 3,
+      "missing_from_search": [],
+      "excluded_at_abstract": [],
+      "missing_fulltexts": [
+        "21505361"
+      ]
+    },
+    "differences": {
+      "estimate": 13.909360360461605,
+      "ci_low": 13.222880750550274,
+      "ci_high": 14.585839970372936
+    },
+    "k_observed": 2,
+    "k_expected": 4,
+    "missing_studies": [
+      "21505361",
+      "23396737"
+    ],
+    "extra_studies": [],
+    "numerically_matches": false
+  },
+  "source_count": 30,
+  "interpretation": "Complete-provenance autonomous warm run with corrected page origins; no pending segmentation but evidence remains incomplete and reproduction failed."
+}

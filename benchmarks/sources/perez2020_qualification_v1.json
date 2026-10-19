@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-14",
+  "selection_basis": "Independent historical review with accessible full primary contributor set and supported parallel endpoint MD methods; not selected for numerical agreement. Primary qualification identified ambiguous N and time/dose discrepancies, retained as potential scientific non-reproduction outcomes.",
+  "sources": [
+    {
+      "path": "data/benchmarks/candidate_review_sources_2026-10-14/Malik2013_author_web_capture.txt",
+      "sha256": "df58896646453e5dffcc7f74fae316c7a4b0146e83937d3c9c89e0c98e00d282"
+    },
+    {
+      "path": "data/benchmarks/candidate_review_sources_2026-10-14/Malik2013_author_web_capture_part2.txt",
+      "sha256": "152cffb0d9b48bc7e34dd3df72bf5f09a82d04588ca135c34fc52e688c4c72bd"
+    },
+    {
+      "path": "data/benchmarks/candidate_review_sources_2026-10-14/PMC3545242.pdf",
+      "sha256": "fa7e97723f8afd77b591c64bb2b1cc950b0496fce287beaf4a9f3bb8064e9bc2"
+    },
+    {
+      "path": "data/benchmarks/candidate_review_sources_2026-10-14/PMC4687242.xml",
+      "sha256": "91d7402e24e54196c1102aa66bb28c04d4c69ad7297fdf05a245abf3c9e93048"
+    },
+    {
+      "path": "data/benchmarks/candidate_review_sources_2026-10-14/PMC4687242.pdf",
+      "sha256": "0ac30f8b340722393bf1762e168089e80e07ee14fbbbb0f6cfba54bde4c4363e"
+    },
+    {
+      "path": "data/benchmarks/candidate_review_sources_2026-10-14/PMC2996571.xml",
+      "sha256": "bc47b8089bdd451ba8c5b24c8a83ed8a289a5127e62a3599d5477152807358a3"
+    },
+    {
+      "path": "data/benchmarks/candidate_review_sources_2026-10-14/PMC7230697.xml",
+      "sha256": "ab290d2b8eea99e274eac3414eeb1183cc0209554f4639e003f8e3c2886f6d18"
+    },
+    {
+      "path": "data/benchmarks/candidate_review_sources_2026-10-14/PMC3545242.xml",
+      "sha256": "78bd13446a05481db9c885a39336965904dba4319352e31612c2008379e0e55b"
+    },
+    {
+      "path": "data/benchmarks/candidate_review_sources_2026-10-14/Tripathi2016.pdf",
+      "sha256": "a42a8eef198dad12bd5475d0da57d87f9f63271ca01483185cd6377f7dea25f9"
+    }
+  ],
+  "known_primary_issues": [
+    "Choudhary abstract/results say one Ashwagandha withdrawal, whereas Table1 and Table2 reverse the n24/n25 group labels. No arbitrary choice permitted.",
+    "Shenoy primary Table1 explicitly n18 active/n19 placebo after three withdrawals; published review reports nominal20/20.",
+    "Tripathi primary has two active doses and day28 final endpoint; review Table1/2 selects 330mg and two weeks without an explicit selection rule.",
+    "Sandhu Table5 says ml/kg and methods do not describe a clear incremental maximal test; retain uncertainty instead of assuming ml/kg/min or rejecting low values.",
+    "Malik original author-posted primary text is preserved via web tool. Direct journal requests are intercepted by institutional blocking; failed HTML remains named .pdf but is not scientific evidence. No local network bypass used."
+  ]
+}

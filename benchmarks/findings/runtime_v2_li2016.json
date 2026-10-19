@@ -1,0 +1,149 @@
+{
+  "evaluation": "Fresh screening and autonomous metadata-based acquisition; no evaluator-supplied PDFs. Frozen search reused.",
+  "status": {
+    "protocol_sha256": "08f8481c02f3e2496af3894aaf596169e069fd99dce8878b9ac69bc48b0b3b3d",
+    "backend": "codex",
+    "model": null,
+    "code_sha256": "3f3a75dc8849499c45163651fca21567e8797809ccba3f5ead65585c38f0642c",
+    "started_at": "2026-10-12T15:00:57Z",
+    "status": "incomplete",
+    "errors": [
+      {
+        "stage": "synthesis",
+        "error": "Fewer than two validated independent effects"
+      }
+    ],
+    "counts": {
+      "retrieved": 2180,
+      "screened": 2180,
+      "fulltexts_attempted": 49,
+      "independent_effects": 1,
+      "supplemental_records": 0,
+      "abstract_candidates": 49,
+      "accepted_effects": 1,
+      "unresolved": 30
+    },
+    "limitations": [
+      "Single accessible bibliographic database; no claim of historical multi-database search equivalence.",
+      "No model-independent guarantee against training-data contamination.",
+      "Only independent parallel continuous outcomes with reported SDs; no imputation."
+    ],
+    "pending_segments": 0,
+    "can_resume_internal_work": false
+  },
+  "source_types": {
+    "JATS": 22,
+    "JATS + PMC Cloud PDF": 3,
+    "automatically discovered public PDF": 2
+  },
+  "fulltext_status_counts": {
+    "extracted": 27,
+    "missing_fulltext": 22
+  },
+  "comparison": {
+    "reference": {
+      "id": "li2016_t2d_fbg",
+      "source": "https://pubmed.ncbi.nlm.nih.gov/27368052/",
+      "doi": "10.1097/MD.0000000000004088",
+      "outcome": "FBG",
+      "measure": "SMD",
+      "unit": "dimensionless",
+      "model": "random",
+      "estimate": -0.61,
+      "ci_low": -0.92,
+      "ci_high": -0.3,
+      "k": 9,
+      "absolute_tolerance": 0.02,
+      "notes": "Article abstract labels SMD with mmol/L and figure captions call effects weighted mean differences. Frozen primary comparison follows abstract SMD. This inconsistency is a scientific uncertainty, not a tuning opportunity.",
+      "expected_review_record_ids": [
+        "23967428",
+        "25196301",
+        "25300285",
+        "26988693",
+        "21700013",
+        "22129852",
+        "24319552",
+        "23899653",
+        "24706266",
+        "25197295",
+        "26955460",
+        "23645956"
+      ],
+      "identity_note": "Twelve reports cited as included in the review (references 23\u201334); not asserted to be twelve independent trials, or all nine FBG contributors.",
+      "expected_record_ids": [
+        "23899653",
+        "26955460",
+        "22129852",
+        "26988693",
+        "24319552",
+        "25300285",
+        "23645956",
+        "24706266",
+        "25196301"
+      ]
+    },
+    "run_status": "incomplete",
+    "reproduced": false,
+    "reason": "Incomplete execution or missing synthesis",
+    "report_coverage": {
+      "reference_reports": 12,
+      "retrieved": 11,
+      "retrieved_original_search": 11,
+      "retrieved_via_supplement": 0,
+      "retained_after_abstract_screening": 10,
+      "accessible_fulltexts": 3,
+      "missing_from_search": [
+        "24319552"
+      ],
+      "excluded_at_abstract": [
+        "26955460"
+      ],
+      "missing_fulltexts": [
+        "21700013",
+        "22129852",
+        "23899653",
+        "24319552",
+        "24706266",
+        "25196301",
+        "25300285",
+        "26955460",
+        "26988693"
+      ]
+    }
+  },
+  "screening_repeatability": {
+    "comparison": "Repeated development screening; no label correction or target-driven tuning",
+    "changes": [
+      {
+        "id": "24603757",
+        "old": "exclude",
+        "new": "unclear",
+        "new_reason": "Abstract describes dietary intervention cohorts in obese adults but does not establish type 2 diabetes, probiotic-versus-placebo randomization, or end-treatment fasting glucose; full text is not supplied."
+      },
+      {
+        "id": "21731368",
+        "old": "unclear",
+        "new": "exclude",
+        "new_reason": "Letter about rice preparation and musculoskeletal disorders, not an eligible trial article."
+      },
+      {
+        "id": "21484580",
+        "old": "unclear",
+        "new": "exclude",
+        "new_reason": "Conference oral presentations listing, not a full trial article."
+      },
+      {
+        "id": "23267272",
+        "old": "unclear",
+        "new": "exclude",
+        "new_reason": "Listing of recent publications, not an original randomized trial report."
+      },
+      {
+        "id": "21593974",
+        "old": "exclude",
+        "new": "unclear",
+        "new_reason": "No abstract or full text supplied; title and metadata do not establish trial eligibility."
+      }
+    ]
+  }
+}
