@@ -125,6 +125,7 @@ def stable_screening_columns() -> list[str]:
         "RoB2_notes",
         "RoB2_domains_json",
         "Multiplicity_flags",
+        "AssessmentStatus",
         "Comments",
         "record_id",
     ]

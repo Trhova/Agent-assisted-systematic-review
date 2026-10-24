@@ -196,6 +196,7 @@ def main() -> None:
                 "RoB2_notes": "",
                 "RoB2_domains_json": "",
                 "Multiplicity_flags": "",
+                "AssessmentStatus": "",
                 "Comments": "",
                 "record_id": r.get("record_id", ""),
             }

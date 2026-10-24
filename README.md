@@ -59,7 +59,7 @@ make all
 - `scripts/03_screen_abstracts_llm.py`: LLM abstract screening (structured outputs) → updates table + artifacts.
 - `scripts/04_extract_fulltext_llm.py`: LLM full-text extraction (structured outputs) → updates table + artifacts.
 - `scripts/05_rob2_llm.py`: LLM RoB2 judgments (structured outputs) → updates table + artifacts.
-- `scripts/06_apply_overrides_and_export.py`: deterministic tiering + overrides + exports + PRISMA counts.
+- `scripts/06_apply_overrides_and_export.py`: deterministic assessment status, inclusion and tiering + overrides + exports + PRISMA counts. Records without screening/extraction decisions are exported as not assessed (`AssessmentStatus`, empty `TierFinal`), never as Tier 3. Accepts `--outputs-dir`/`--work-dir`/`--overrides`/`--fulltext-dir` for scratch runs.
 
 ## Outputs
 
@@ -76,6 +76,7 @@ See:
 - `docs/rob2_guidance.md`
 - `docs/endpoint_taxonomy.md`
 - `docs/data_dictionary.md`
+- `docs/final_table_inclusion_fix_2026-10-24.md` (why the January 2026 final table had zero included studies, and the export-step fix)
 
 ## Autonomous quantitative reviews and historical benchmarks
 
